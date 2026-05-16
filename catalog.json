@@ -1,11 +1,11 @@
 {
-  "version": 2,
-  "updated": "2026-05-16",
+  "version": 3,
+  "updated": "2026-05-16T20:50",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
       "id": "de.lohnabrechnung",
-      "presetVersion": 2,
+      "presetVersion": 3,
       "name": "German Payslip",
       "emoji": "🇩🇪",
       "language": "de",
@@ -17,7 +17,7 @@
     },
     {
       "id": "it.busta-paga",
-      "presetVersion": 2,
+      "presetVersion": 3,
       "name": "Italian Busta Paga",
       "emoji": "🇮🇹",
       "language": "it",
@@ -29,7 +29,7 @@
     },
     {
       "id": "us.w2-paystub",
-      "presetVersion": 2,
+      "presetVersion": 3,
       "name": "US W-2 / Pay Stub",
       "emoji": "🇺🇸",
       "language": "en",
@@ -41,7 +41,7 @@
     },
     {
       "id": "generic.invoice",
-      "presetVersion": 2,
+      "presetVersion": 3,
       "name": "Generic Invoice",
       "emoji": "🧾",
       "language": "en",
@@ -53,7 +53,7 @@
     },
     {
       "id": "generic.bank-statement",
-      "presetVersion": 2,
+      "presetVersion": 3,
       "name": "Bank Statement",
       "emoji": "🏦",
       "language": "en",
