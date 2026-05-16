@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "updated": "2026-05-16T21:45",
+  "version": 4,
+  "updated": "2026-05-17T00:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -10,7 +10,7 @@
       "emoji": "🇩🇪",
       "language": "de",
       "country": "DE",
-      "description": "German Lohn-/Gehaltsabrechnung. Detects Steuerident-Nr., Rentenversicherungs-Nr., Krankenversicherungs-Nr., German dates, German phone numbers and BIC, plus names, addresses and IBAN.",
+      "description": "German Lohn-/Gehaltsabrechnung. Detects Steuerident-Nr., Rentenversicherungs-Nr., Krankenversicherungs-Nr., IBAN, German dates and phone numbers, plus names, addresses. Disables the noisy 'Amounts' detector.",
       "tags": ["payslip", "germany", "lohnabrechnung", "salary", "compliance"],
       "path": "presets/de/lohnabrechnung.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/lohnabrechnung.json"
@@ -22,43 +22,43 @@
       "emoji": "🇮🇹",
       "language": "it",
       "country": "IT",
-      "description": "Italian payslip. Detects Codice Fiscale, Partita IVA, Matricola INPS, Italian dates, Italian phone numbers and BIC, plus names, addresses and IBAN.",
+      "description": "Italian payslip. Detects Codice Fiscale, Partita IVA, Matricola INPS, IBAN, Italian dates and phone numbers, plus names, addresses. Disables the noisy 'Amounts' detector so salary figures aren't over-redacted.",
       "tags": ["payslip", "italy", "busta paga", "stipendio", "compliance"],
       "path": "presets/it/busta-paga.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/it/busta-paga.json"
     },
     {
       "id": "us.w2-paystub",
-      "presetVersion": 3,
+      "presetVersion": 4,
       "name": "US W-2 / Pay Stub",
       "emoji": "🇺🇸",
       "language": "en",
       "country": "US",
-      "description": "US tax forms and pay stubs. Detects SSN, EIN, US dates, ZIP, US phone numbers, bank routing numbers, plus names, addresses, account numbers and amounts.",
+      "description": "US tax forms and pay stubs (W-2, W-4, 1099, generic paystubs). Detects SSN, EIN, US dates, US ZIP codes, US phone numbers, bank routing numbers (context-anchored), plus names, addresses, account numbers and amounts.",
       "tags": ["payslip", "tax", "usa", "w2", "paystub", "irs", "compliance"],
       "path": "presets/us/w2-paystub.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/w2-paystub.json"
     },
     {
       "id": "generic.invoice",
-      "presetVersion": 3,
+      "presetVersion": 4,
       "name": "Generic Invoice",
       "emoji": "🧾",
       "language": "en",
       "country": null,
-      "description": "Generic invoice or receipt. Detects invoice numbers, dates, EU VAT IDs, international phone numbers, BIC, plus names, addresses, IBAN, emails. Amounts kept visible by default.",
+      "description": "Generic invoice or receipt. Detects invoice numbers, dates, EU VAT IDs, IBAN, BIC/SWIFT (context-anchored), international phones, plus names, addresses, emails. Amounts kept visible — toggle Amounts manually to hide totals too.",
       "tags": ["invoice", "receipt", "billing", "accounting"],
       "path": "presets/generic/invoice.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/generic/invoice.json"
     },
     {
       "id": "generic.bank-statement",
-      "presetVersion": 3,
+      "presetVersion": 4,
       "name": "Bank Statement",
       "emoji": "🏦",
       "language": "en",
       "country": null,
-      "description": "Bank or credit card statement. Detects IBAN, BIC/SWIFT, masked & full cards, transaction references, dates, international phone numbers, plus names, addresses, account numbers and amounts.",
+      "description": "Bank or credit card statement. Detects IBAN, BIC/SWIFT (context-anchored), masked card numbers, full card numbers (13-19 digits), transaction references, dates, international phones, plus names, addresses, account numbers and amounts.",
       "tags": ["banking", "bank statement", "credit card", "finance"],
       "path": "presets/generic/bank-statement.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/generic/bank-statement.json"

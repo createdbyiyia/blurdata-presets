@@ -1,9 +1,9 @@
 {
   "id": "us.w2-paystub",
-  "version": 3,
+  "version": 4,
   "name": "US W-2 / Pay Stub",
   "emoji": "🇺🇸",
-  "description": "US tax forms and pay stubs (W-2, W-4, 1099, generic paystubs). Detects SSN, EIN, US dates, US ZIP codes, US phone numbers, bank routing numbers, plus names, addresses, account numbers and amounts (wages are sensitive on tax forms).",
+  "description": "US tax forms and pay stubs (W-2, W-4, 1099, generic paystubs). Detects SSN, EIN, US dates, US ZIP codes, US phone numbers, bank routing numbers (context-anchored), plus names, addresses, account numbers and amounts.",
   "language": "en",
   "country": "US",
   "tags": ["payslip", "tax", "usa", "w2", "paystub", "irs", "compliance"],
@@ -34,14 +34,20 @@
     },
     {
       "name": "US phone number",
-      "regex": "(?:\\+1[\\s\\-.]?)?(?:\\(\\d{3}\\)|\\d{3})[\\s\\-.]?\\d{3}[\\s\\-.]?\\d{4}",
-      "description": "US phone numbers — (XXX) XXX-XXXX or XXX-XXX-XXXX, optional +1",
+      "regex": "(?<!\\d)(?:\\+1[\\s\\-.]?)?(?:\\(\\d{3}\\)|\\d{3})[\\s\\-.]?\\d{3}[\\s\\-.]?\\d{4}(?!\\d)",
+      "description": "US phone — (XXX) XXX-XXXX or XXX-XXX-XXXX, optional +1, bounded to avoid matching inside longer numbers",
       "enabled": true
     },
     {
       "name": "Bank routing number",
-      "regex": "\\b\\d{9}\\b",
-      "description": "US bank routing number (9 digits)",
+      "regex": "(?i)\\b(?:routing(?:\\s?(?:number|no\\.?|#))?|ABA|RTN)[\\s:#.\\-]*([0-9]{9})\\b",
+      "description": "US bank routing number — anchored to 'Routing'/'ABA'/'RTN' label to avoid false positives on any 9-digit run",
+      "enabled": true
+    },
+    {
+      "name": "Bank account number",
+      "regex": "(?i)\\b(?:account(?:\\s?(?:number|no\\.?|#))?|acct\\.?)[\\s:#.\\-]*([0-9]{6,17})\\b",
+      "description": "US bank account number (6-17 digits) — anchored to 'Account' label",
       "enabled": true
     },
     {
