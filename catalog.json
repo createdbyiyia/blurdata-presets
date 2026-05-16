@@ -1,11 +1,11 @@
 {
   "version": 3,
-  "updated": "2026-05-16T20:50",
+  "updated": "2026-05-16T21:45",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
       "id": "de.lohnabrechnung",
-      "presetVersion": 3,
+      "presetVersion": 4,
       "name": "German Payslip",
       "emoji": "🇩🇪",
       "language": "de",
@@ -17,7 +17,7 @@
     },
     {
       "id": "it.busta-paga",
-      "presetVersion": 3,
+      "presetVersion": 4,
       "name": "Italian Busta Paga",
       "emoji": "🇮🇹",
       "language": "it",
