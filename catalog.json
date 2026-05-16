@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "updated": "2026-05-16",
+  "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
+  "presets": [
+    {
+      "id": "de.lohnabrechnung",
+      "name": "German Payslip",
+      "emoji": "🇩🇪",
+      "language": "de",
+      "country": "DE",
+      "description": "German Lohn-/Gehaltsabrechnung. Detects Steuerident-Nr., Rentenversicherungs-Nr., Krankenversicherungs-Nr., German dates, plus names, addresses and IBAN. Disables the noisy generic 'Amounts' detector so salary figures in tables aren't over-redacted.",
+      "tags": ["payslip", "germany", "lohnabrechnung", "salary", "compliance"],
+      "path": "presets/de/lohnabrechnung.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/lohnabrechnung.json"
+    },
+    {
+      "id": "it.busta-paga",
+      "name": "Italian Busta Paga",
+      "emoji": "🇮🇹",
+      "language": "it",
+      "country": "IT",
+      "description": "Italian payslip. Detects Codice Fiscale, Partita IVA, Matricola INPS, Italian dates, plus names, addresses and IBAN. Disables the noisy generic 'Amounts' detector so salary figures in tables aren't over-redacted.",
+      "tags": ["payslip", "italy", "busta paga", "stipendio", "compliance"],
+      "path": "presets/it/busta-paga.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/it/busta-paga.json"
+    },
+    {
+      "id": "us.w2-paystub",
+      "name": "US W-2 / Pay Stub",
+      "emoji": "🇺🇸",
+      "language": "en",
+      "country": "US",
+      "description": "US tax forms and pay stubs (W-2, W-4, 1099, generic paystubs). Detects SSN, EIN, US dates, US ZIP codes, plus names, addresses, account numbers and amounts (wages are sensitive on tax forms).",
+      "tags": ["payslip", "tax", "usa", "w2", "paystub", "irs", "compliance"],
+      "path": "presets/us/w2-paystub.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/w2-paystub.json"
+    },
+    {
+      "id": "generic.invoice",
+      "name": "Generic Invoice",
+      "emoji": "🧾",
+      "language": "en",
+      "country": null,
+      "description": "Generic invoice or receipt. Detects invoice numbers, dates (multiple formats), VAT IDs, plus names, addresses, IBAN, emails. Amounts are kept visible by default.",
+      "tags": ["invoice", "receipt", "billing", "accounting"],
+      "path": "presets/generic/invoice.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/generic/invoice.json"
+    },
+    {
+      "id": "generic.bank-statement",
+      "name": "Bank Statement",
+      "emoji": "🏦",
+      "language": "en",
+      "country": null,
+      "description": "Bank or credit card statement. Detects IBAN, BIC/SWIFT, masked card numbers, transaction references, dates, plus names, addresses, account numbers and amounts.",
+      "tags": ["banking", "bank statement", "credit card", "finance"],
+      "path": "presets/generic/bank-statement.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/generic/bank-statement.json"
+    }
+  ]
+}

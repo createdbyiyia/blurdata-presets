@@ -1,0 +1,46 @@
+{
+  "id": "it.busta-paga",
+  "version": 1,
+  "name": "Italian Busta Paga",
+  "emoji": "🇮🇹",
+  "description": "Italian payslip. Detects Codice Fiscale, Partita IVA, Matricola INPS, Italian dates, plus names, addresses and IBAN. Disables the noisy generic 'Amounts' detector so salary figures in tables aren't over-redacted.",
+  "language": "it",
+  "country": "IT",
+  "tags": ["payslip", "italy", "busta paga", "stipendio", "compliance"],
+  "patterns": [
+    {
+      "name": "Codice Fiscale",
+      "regex": "\\b[A-Z]{6}\\d{2}[A-EHLMPR-T]\\d{2}[A-Z]\\d{3}[A-Z]\\b",
+      "description": "Italian tax code — 16 alphanumeric chars with specific structure",
+      "enabled": true
+    },
+    {
+      "name": "Partita IVA",
+      "regex": "(?:\\bIT)?\\b\\d{11}\\b",
+      "description": "Italian VAT number — 11 digits, optionally prefixed by IT",
+      "enabled": true
+    },
+    {
+      "name": "Matricola INPS",
+      "regex": "\\b\\d{10}\\b",
+      "description": "INPS contributor registration number (10 digits)",
+      "enabled": true
+    },
+    {
+      "name": "Italian date (DD/MM/YYYY or DD-MM-YYYY)",
+      "regex": "\\b\\d{2}[\\/.\\-]\\d{2}[\\/.\\-]\\d{4}\\b",
+      "description": "Italian date format — DD/MM/YYYY, DD.MM.YYYY or DD-MM-YYYY",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": true,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false
+  }
+}

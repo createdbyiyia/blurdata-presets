@@ -1,0 +1,46 @@
+{
+  "id": "generic.invoice",
+  "version": 1,
+  "name": "Generic Invoice",
+  "emoji": "🧾",
+  "description": "Generic invoice or receipt. Detects invoice numbers, dates (multiple formats), VAT IDs, plus names, addresses, IBAN, emails. Amounts are kept visible by default (most users WANT to share the totals) — toggle Amounts on manually if you also want to hide them.",
+  "language": "en",
+  "country": null,
+  "tags": ["invoice", "receipt", "billing", "accounting"],
+  "patterns": [
+    {
+      "name": "Invoice number",
+      "regex": "\\b(?:INV|INVOICE|FATTURA|RECHNUNG|FACTURE|N°|Nº|#)[-\\s:.]?[A-Z0-9]{3,15}\\b",
+      "description": "Invoice number with common prefixes (INV, INVOICE, N°, #, etc.)",
+      "enabled": true
+    },
+    {
+      "name": "EU VAT Number",
+      "regex": "\\b(?:AT|BE|BG|CY|CZ|DE|DK|EE|EL|ES|FI|FR|GB|HR|HU|IE|IT|LT|LU|LV|MT|NL|PL|PT|RO|SE|SI|SK)\\d{8,12}\\b",
+      "description": "EU VAT number — 2-letter country code + 8 to 12 digits",
+      "enabled": true
+    },
+    {
+      "name": "Date (any common format)",
+      "regex": "\\b\\d{1,2}[\\/.\\-]\\d{1,2}[\\/.\\-]\\d{2,4}\\b",
+      "description": "Dates in DD/MM/YYYY, MM/DD/YYYY, DD.MM.YYYY, DD-MM-YY etc.",
+      "enabled": true
+    },
+    {
+      "name": "Order / PO number",
+      "regex": "\\b(?:PO|ORDER|ORD)[-\\s:#]?[A-Z0-9]{3,15}\\b",
+      "description": "Purchase order or order number",
+      "enabled": false
+    }
+  ],
+  "builtin": {
+    "email": true,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false
+  }
+}

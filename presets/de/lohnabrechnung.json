@@ -1,0 +1,46 @@
+{
+  "id": "de.lohnabrechnung",
+  "version": 1,
+  "name": "German Payslip",
+  "emoji": "🇩🇪",
+  "description": "German Lohn-/Gehaltsabrechnung. Detects Steuerident-Nr., Rentenversicherungs-Nr., Krankenversicherungs-Nr., German dates, plus names, addresses and IBAN. Disables the noisy generic 'Amounts' detector so salary figures in tables aren't over-redacted.",
+  "language": "de",
+  "country": "DE",
+  "tags": ["payslip", "germany", "lohnabrechnung", "salary", "compliance"],
+  "patterns": [
+    {
+      "name": "Steueridentifikationsnummer",
+      "regex": "\\b\\d{11}\\b",
+      "description": "German Tax ID — 11 digits (Steuerident-Nr.)",
+      "enabled": true
+    },
+    {
+      "name": "Rentenversicherungsnummer",
+      "regex": "\\b\\d{8}[A-Z]\\d{3}\\b",
+      "description": "German pension insurance number (8 digits + 1 uppercase letter + 3 digits)",
+      "enabled": true
+    },
+    {
+      "name": "Krankenversicherungsnummer",
+      "regex": "\\b[A-Z]\\d{9}\\b",
+      "description": "German health insurance number (1 uppercase letter + 9 digits)",
+      "enabled": true
+    },
+    {
+      "name": "German date (DD.MM.YYYY)",
+      "regex": "\\b\\d{2}\\.\\d{2}\\.\\d{4}\\b",
+      "description": "German date format — DD.MM.YYYY",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": true,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false
+  }
+}
