@@ -1,9 +1,9 @@
 {
   "id": "generic.bank-statement",
-  "version": 1,
+  "version": 2,
   "name": "Bank Statement",
   "emoji": "🏦",
-  "description": "Bank or credit card statement. Detects IBAN, BIC/SWIFT, masked card numbers (****1234), transaction references, dates, plus names, addresses, account numbers and amounts (balances and transactions are sensitive).",
+  "description": "Bank or credit card statement. Detects IBAN, BIC/SWIFT, masked card numbers, full card numbers, transaction references, dates, international phone numbers, plus names, addresses, account numbers and amounts (balances and transactions are sensitive).",
   "language": "en",
   "country": null,
   "tags": ["banking", "bank statement", "credit card", "finance"],
@@ -30,6 +30,12 @@
       "name": "Transaction reference",
       "regex": "\\b(?:TXN|TRX|REF|RIF)[-\\s:#]?[A-Z0-9]{6,20}\\b",
       "description": "Transaction or reference ID with common prefixes",
+      "enabled": true
+    },
+    {
+      "name": "International phone number",
+      "regex": "\\+?\\d{1,3}[\\s\\-.]?\\(?\\d{2,4}\\)?[\\s\\-.]?\\d{3,4}[\\s\\-.]?\\d{3,4}",
+      "description": "International phone with optional country code and separators",
       "enabled": true
     },
     {

@@ -1,9 +1,9 @@
 {
   "id": "us.w2-paystub",
-  "version": 1,
+  "version": 2,
   "name": "US W-2 / Pay Stub",
   "emoji": "🇺🇸",
-  "description": "US tax forms and pay stubs (W-2, W-4, 1099, generic paystubs). Detects SSN, EIN, US dates, US ZIP codes, plus names, addresses, account numbers and amounts (wages are sensitive on tax forms).",
+  "description": "US tax forms and pay stubs (W-2, W-4, 1099, generic paystubs). Detects SSN, EIN, US dates, US ZIP codes, US phone numbers, bank routing numbers, plus names, addresses, account numbers and amounts (wages are sensitive on tax forms).",
   "language": "en",
   "country": "US",
   "tags": ["payslip", "tax", "usa", "w2", "paystub", "irs", "compliance"],
@@ -30,6 +30,18 @@
       "name": "US date (MM/DD/YYYY)",
       "regex": "\\b(?:0[1-9]|1[0-2])/(?:0[1-9]|[12]\\d|3[01])/\\d{4}\\b",
       "description": "US date format — MM/DD/YYYY",
+      "enabled": true
+    },
+    {
+      "name": "US phone number",
+      "regex": "(?:\\+1[\\s\\-.]?)?(?:\\(\\d{3}\\)|\\d{3})[\\s\\-.]?\\d{3}[\\s\\-.]?\\d{4}",
+      "description": "US phone numbers — (XXX) XXX-XXXX or XXX-XXX-XXXX, optional +1",
+      "enabled": true
+    },
+    {
+      "name": "Bank routing number",
+      "regex": "\\b\\d{9}\\b",
+      "description": "US bank routing number (9 digits)",
       "enabled": true
     },
     {
