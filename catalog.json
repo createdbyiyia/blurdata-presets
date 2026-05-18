@@ -65,13 +65,13 @@
     },
     {
       "id": "us.common-surnames",
-      "presetVersion": 1,
-      "name": "US Common Surnames",
-      "emoji": "🇺🇸",
+      "presetVersion": 2,
+      "name": "Common Surnames (US + Canada)",
+      "emoji": "🌎",
       "language": "en",
-      "country": "US",
-      "description": "Opt-in preset that hides the top 10,000 most common US surnames (US Census 2010, ~68% population coverage). Useful for redacting guest lists, reservation calendars, employee rosters, and any document that's essentially a column of names. Some false positives expected on common-word surnames (Brown, Green, Stone) — that's the tradeoff for opt-in coverage.",
-      "tags": ["surnames", "usa", "names", "roster", "calendar", "census"],
+      "country": null,
+      "description": "Opt-in preset that hides ~10,400 common surnames across the US and Canada — top 10k US Census 2010 plus curated French-Canadian, Scottish/Irish-Canadian, Asian-Canadian, and Eastern European immigrant surnames very common in Canadian rosters. For guest lists, reservation calendars, employee rosters. False positives expected on common-word surnames (Brown, Green, Stone) — opt-in tradeoff.",
+      "tags": ["surnames", "usa", "canada", "names", "roster", "calendar", "reservation", "census"],
       "path": "presets/us/common-surnames.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/common-surnames.json"
     }
