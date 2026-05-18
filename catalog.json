@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updated": "2026-05-17T00:00",
+  "version": 5,
+  "updated": "2026-05-18T19:10",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -62,6 +62,18 @@
       "tags": ["banking", "bank statement", "credit card", "finance"],
       "path": "presets/generic/bank-statement.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/generic/bank-statement.json"
+    },
+    {
+      "id": "us.common-surnames",
+      "presetVersion": 1,
+      "name": "US Common Surnames",
+      "emoji": "🇺🇸",
+      "language": "en",
+      "country": "US",
+      "description": "Opt-in preset that hides the top 10,000 most common US surnames (US Census 2010, ~68% population coverage). Useful for redacting guest lists, reservation calendars, employee rosters, and any document that's essentially a column of names. Some false positives expected on common-word surnames (Brown, Green, Stone) — that's the tradeoff for opt-in coverage.",
+      "tags": ["surnames", "usa", "names", "roster", "calendar", "census"],
+      "path": "presets/us/common-surnames.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/common-surnames.json"
     }
   ]
 }
