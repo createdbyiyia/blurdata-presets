@@ -5,12 +5,12 @@
   "presets": [
     {
       "id": "de.lohnabrechnung",
-      "presetVersion": 4,
+      "presetVersion": 5,
       "name": "German Payslip",
       "emoji": "🇩🇪",
       "language": "de",
       "country": "DE",
-      "description": "German Lohn-/Gehaltsabrechnung. Detects Steuerident-Nr., Rentenversicherungs-Nr., Krankenversicherungs-Nr., IBAN, German dates and phone numbers, plus names, addresses. Disables the noisy 'Amounts' detector.",
+      "description": "German Lohn-/Gehaltsabrechnung. Detects Steuerident-Nr., Rentenversicherungs-Nr., Krankenversicherungs-Nr., IBAN, German dates, German phone numbers, German street addresses and PLZ + city.",
       "tags": ["payslip", "germany", "lohnabrechnung", "salary", "compliance"],
       "path": "presets/de/lohnabrechnung.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/lohnabrechnung.json"

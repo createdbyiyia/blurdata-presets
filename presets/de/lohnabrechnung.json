@@ -1,9 +1,9 @@
 {
   "id": "de.lohnabrechnung",
-  "version": 4,
+  "version": 5,
   "name": "German Payslip",
   "emoji": "🇩🇪",
-  "description": "German Lohn-/Gehaltsabrechnung. Detects Steuerident-Nr., Rentenversicherungs-Nr., Krankenversicherungs-Nr., IBAN, German dates and phone numbers, plus names, addresses. Disables the noisy 'Amounts' detector.",
+  "description": "German Lohn-/Gehaltsabrechnung. Detects Steuerident-Nr., Rentenversicherungs-Nr., Krankenversicherungs-Nr., IBAN, German dates, German phone numbers, German street addresses (Greta-Junges-Weg 14) and German PLZ + city (30916 Isernhagen). Disables the noisy 'Amounts' detector so salary figures aren't over-redacted.",
   "language": "de",
   "country": "DE",
   "tags": ["payslip", "germany", "lohnabrechnung", "salary", "compliance"],
@@ -42,6 +42,18 @@
       "name": "German phone number",
       "regex": "(?<!\\d)(?:\\+49|0)[\\s/.\\-]?(?:\\(0\\))?[\\s/.\\-]?\\d{2,5}[\\s/.\\-]?\\d{4,10}(?!\\d)",
       "description": "German phone numbers — bounded to avoid matching inside longer numbers",
+      "enabled": true
+    },
+    {
+      "name": "German street address",
+      "regex": "(?i)\\b[A-ZÄÖÜ][\\p{L}.\\-]*(?:weg|stra(?:ß|ss)e|str\\.?|platz|gasse|allee|ring|hof|damm|ufer|steig|chaussee|tor|markt)\\s+\\d+\\s?[a-z]?\\b",
+      "description": "German street address — name (often hyphenated) ending in Weg/Straße/Strasse/Platz/Gasse/Allee/Ring/Hof/Damm/Ufer/Steig/Chaussee/Tor/Markt + house number. Example: 'Greta-Junges-Weg 14', 'Hauptstraße 27', 'Königsallee 2a'.",
+      "enabled": true
+    },
+    {
+      "name": "German postal code + city",
+      "regex": "(?-i)\\b\\d{5}\\s+[A-ZÄÖÜ][\\p{L}\\-]+(?:\\s+(?:am|an|im|in|bei|ob)\\s+(?:der|dem)?\\s*[A-ZÄÖÜ][\\p{L}\\-]+)?(?:\\s+[A-ZÄÖÜ][\\p{L}\\-]+){0,2}\\b",
+      "description": "German PLZ + city. 5-digit postal code + capitalized city, supports multi-word names (e.g. 'Frankfurt am Main', 'Rothenburg ob der Tauber'). Example: '30916 Isernhagen', '10117 Berlin', '60311 Frankfurt am Main'.",
       "enabled": true
     }
   ],
