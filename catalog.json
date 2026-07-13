@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updated": "2026-05-18T19:10",
+  "version": 6,
+  "updated": "2026-07-04T15:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -11,7 +11,13 @@
       "language": "de",
       "country": "DE",
       "description": "German Lohn-/Gehaltsabrechnung. Detects Steuerident-Nr., Rentenversicherungs-Nr., Krankenversicherungs-Nr., IBAN, German dates, German phone numbers, German street addresses and PLZ + city.",
-      "tags": ["payslip", "germany", "lohnabrechnung", "salary", "compliance"],
+      "tags": [
+        "payslip",
+        "germany",
+        "lohnabrechnung",
+        "salary",
+        "compliance"
+      ],
       "path": "presets/de/lohnabrechnung.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/lohnabrechnung.json"
     },
@@ -23,7 +29,13 @@
       "language": "it",
       "country": "IT",
       "description": "Italian payslip. Detects Codice Fiscale, Partita IVA, Matricola INPS, IBAN, Italian dates and phone numbers, plus names, addresses. Disables the noisy 'Amounts' detector so salary figures aren't over-redacted.",
-      "tags": ["payslip", "italy", "busta paga", "stipendio", "compliance"],
+      "tags": [
+        "payslip",
+        "italy",
+        "busta paga",
+        "stipendio",
+        "compliance"
+      ],
       "path": "presets/it/busta-paga.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/it/busta-paga.json"
     },
@@ -35,9 +47,37 @@
       "language": "en",
       "country": "US",
       "description": "US tax forms and pay stubs (W-2, W-4, 1099, generic paystubs). Detects SSN, EIN, US dates, US ZIP codes, US phone numbers, bank routing numbers (context-anchored), plus names, addresses, account numbers and amounts.",
-      "tags": ["payslip", "tax", "usa", "w2", "paystub", "irs", "compliance"],
+      "tags": [
+        "payslip",
+        "tax",
+        "usa",
+        "w2",
+        "paystub",
+        "irs",
+        "compliance"
+      ],
       "path": "presets/us/w2-paystub.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/w2-paystub.json"
+    },
+    {
+      "id": "us.medical-records",
+      "presetVersion": 1,
+      "name": "US Medical Records",
+      "emoji": "🏥",
+      "language": "en",
+      "country": "US",
+      "description": "US medical records and clinical notes. Detects patient names, DOB (multiple formats), MRN (6+ digit runs without decimals), SSN, full US addresses, ZIP, emails and phones. Preserves lab values by ignoring numbers with commas/periods.",
+      "tags": [
+        "medical",
+        "healthcare",
+        "hipaa",
+        "clinical",
+        "patient",
+        "phi",
+        "usa"
+      ],
+      "path": "presets/us/medical-records.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/medical-records.json"
     },
     {
       "id": "generic.invoice",
@@ -47,7 +87,12 @@
       "language": "en",
       "country": null,
       "description": "Generic invoice or receipt. Detects invoice numbers, dates, EU VAT IDs, IBAN, BIC/SWIFT (context-anchored), international phones, plus names, addresses, emails. Amounts kept visible — toggle Amounts manually to hide totals too.",
-      "tags": ["invoice", "receipt", "billing", "accounting"],
+      "tags": [
+        "invoice",
+        "receipt",
+        "billing",
+        "accounting"
+      ],
       "path": "presets/generic/invoice.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/generic/invoice.json"
     },
@@ -59,7 +104,12 @@
       "language": "en",
       "country": null,
       "description": "Bank or credit card statement. Detects IBAN, BIC/SWIFT (context-anchored), masked card numbers, full card numbers (13-19 digits), transaction references, dates, international phones, plus names, addresses, account numbers and amounts.",
-      "tags": ["banking", "bank statement", "credit card", "finance"],
+      "tags": [
+        "banking",
+        "bank statement",
+        "credit card",
+        "finance"
+      ],
       "path": "presets/generic/bank-statement.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/generic/bank-statement.json"
     },
@@ -71,7 +121,16 @@
       "language": "en",
       "country": null,
       "description": "Opt-in preset that hides ~10,400 common surnames across the US and Canada — top 10k US Census 2010 plus curated French-Canadian, Scottish/Irish-Canadian, Asian-Canadian, and Eastern European immigrant surnames very common in Canadian rosters. For guest lists, reservation calendars, employee rosters. False positives expected on common-word surnames (Brown, Green, Stone) — opt-in tradeoff.",
-      "tags": ["surnames", "usa", "canada", "names", "roster", "calendar", "reservation", "census"],
+      "tags": [
+        "surnames",
+        "usa",
+        "canada",
+        "names",
+        "roster",
+        "calendar",
+        "reservation",
+        "census"
+      ],
       "path": "presets/us/common-surnames.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/common-surnames.json"
     }

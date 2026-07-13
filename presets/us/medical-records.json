@@ -1,0 +1,78 @@
+{
+    "id": "us.medical-records",
+    "version": 1,
+    "name": "US Medical Records",
+    "emoji": "🏥",
+    "description": "US medical records and clinical notes. Detects patient names, dates of birth in every common format, Medical Record Numbers (MRN — 6+ digit runs without decimals), SSN, full US street addresses, ZIP codes, emails and US phone numbers. Preserves lab values by ignoring numbers with commas/periods and short runs (under 5 digits).",
+    "language": "en",
+    "country": "US",
+    "tags": [
+        "medical",
+        "healthcare",
+        "hipaa",
+        "clinical",
+        "patient",
+        "phi",
+        "usa"
+    ],
+    "patterns": [
+        {
+            "name": "Medical Record Number (MRN)",
+            "regex": "(?<![\\d.,])\\d{6,}(?![\\d.,])",
+            "description": "6+ contiguous digits with no adjacent digit, period or comma. Preserves lab values like 12.4 or 1,234.56 and short numbers under 5 digits.",
+            "enabled": true
+        },
+        {
+            "name": "Social Security Number (SSN)",
+            "regex": "\\b\\d{3}-\\d{2}-\\d{4}\\b",
+            "description": "US SSN — XXX-XX-XXXX format. 9-digit undashed SSNs are covered by the MRN pattern above.",
+            "enabled": true
+        },
+        {
+            "name": "US ZIP code",
+            "regex": "\\b\\d{5}(?:-\\d{4})?\\b",
+            "description": "US ZIP — 5 digits or ZIP+4",
+            "enabled": true
+        },
+        {
+            "name": "Date (MM/DD/YYYY or MM-DD-YYYY)",
+            "regex": "\\b(?:0?[1-9]|1[0-2])[/\\-](?:0?[1-9]|[12]\\d|3[01])[/\\-](?:19|20)\\d{2}\\b",
+            "description": "US date — MM/DD/YYYY or MM-DD-YYYY, 4-digit year 1900-2099",
+            "enabled": true
+        },
+        {
+            "name": "Date (Month DD, YYYY)",
+            "regex": "\\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\\.?\\s+\\d{1,2},?\\s+(?:19|20)\\d{2}\\b",
+            "description": "Long-form date — 'January 5, 1980' or 'Jan 5 1980'",
+            "enabled": true
+        },
+        {
+            "name": "Date (DD Month YYYY)",
+            "regex": "\\b\\d{1,2}\\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\\.?\\s+(?:19|20)\\d{2}\\b",
+            "description": "Alt long-form date — '5 January 1980' or '5 Jan 1980'",
+            "enabled": true
+        },
+        {
+            "name": "Date (YYYY-MM-DD, ISO)",
+            "regex": "\\b(?:19|20)\\d{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])\\b",
+            "description": "ISO date — YYYY-MM-DD",
+            "enabled": true
+        },
+        {
+            "name": "US phone number",
+            "regex": "(?<!\\d)(?:\\+1[\\s\\-.]?)?(?:\\(\\d{3}\\)|\\d{3})[\\s\\-.]?\\d{3}[\\s\\-.]?\\d{4}(?!\\d)",
+            "description": "US phone — (XXX) XXX-XXXX or XXX-XXX-XXXX or XXX.XXX.XXXX, optional +1, bounded to avoid matching inside longer numbers",
+            "enabled": true
+        }
+    ],
+    "builtin": {
+        "email": true,
+        "name": true,
+        "address": true,
+        "ip": false,
+        "url": false,
+        "amount": false,
+        "accountNumber": false,
+        "licensePlate": false
+    }
+}
