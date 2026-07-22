@@ -1,0 +1,86 @@
+{
+    "id": "uk.medical-records",
+    "version": 1,
+    "name": "UK Medical Records",
+    "emoji": "🇬🇧",
+    "description": "UK hospital and GP records. Detects NHS numbers, UK dates (dd/mm/yyyy and long form), UK postcodes, UK phone numbers, National Insurance numbers, hospital numbers and patient names. Preserves lab values and clinical scores — numbers with decimals or commas are left untouched.",
+    "language": "en",
+    "country": "GB",
+    "tags": [
+        "medical",
+        "healthcare",
+        "nhs",
+        "gp",
+        "hospital",
+        "clinical",
+        "patient",
+        "uk",
+        "gdpr"
+    ],
+    "patterns": [
+        {
+            "name": "NHS Number",
+            "regex": "(?<![\\d.,])[1-9]\\d{2}[ -]?\\d{3}[ -]?\\d{4}(?![\\d.,])",
+            "description": "10-digit NHS number, plain or in 3-3-4 format (e.g. 943 476 5919). Guarded so decimals and longer runs don't match.",
+            "enabled": true
+        },
+        {
+            "name": "Hospital / MRN number",
+            "regex": "(?<![\\d.,])\\d{6,}(?![\\d.,])",
+            "description": "6+ contiguous digits with no adjacent digit, period or comma — hospital numbers, local patient IDs. Preserves lab values like 12.4 or 1,234.56 and short numbers.",
+            "enabled": true
+        },
+        {
+            "name": "UK date (dd/mm/yyyy)",
+            "regex": "\\b(?:0?[1-9]|[12]\\d|3[01])[/\\-](?:0?[1-9]|1[0-2])[/\\-](?:19|20)\\d{2}\\b",
+            "description": "Day-first UK date — dd/mm/yyyy or dd-mm-yyyy, 4-digit year",
+            "enabled": true
+        },
+        {
+            "name": "UK date (dd/mm/yy, short year)",
+            "regex": "(?<![\\d/\\-])(?:0?[1-9]|[12]\\d|3[01])/(?:0?[1-9]|1[0-2])/\\d{2}(?![\\d/])",
+            "description": "Day-first date with 2-digit year (e.g. 05/03/62) — disabled by default, enable for older records",
+            "enabled": false
+        },
+        {
+            "name": "Date (DD Month YYYY)",
+            "regex": "\\b\\d{1,2}(?:st|nd|rd|th)?\\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\\.?\\s+(?:19|20)\\d{2}\\b",
+            "description": "Long-form UK date — '5 January 1980' or '5th January 1980'",
+            "enabled": true
+        },
+        {
+            "name": "Date (Month DD, YYYY)",
+            "regex": "\\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\\.?\\s+\\d{1,2},?\\s+(?:19|20)\\d{2}\\b",
+            "description": "Month-first long date — 'January 5, 1980'",
+            "enabled": true
+        },
+        {
+            "name": "UK postcode",
+            "regex": "(?-i)\\b[A-Z]{1,2}\\d[A-Z\\d]?\\s?\\d[A-Z]{2}\\b",
+            "description": "UK postcode — e.g. SW1A 1AA, M1 1AE, B33 8TH (case-sensitive)",
+            "enabled": true
+        },
+        {
+            "name": "UK phone number",
+            "regex": "(?<![\\d])(?:\\+44\\s?\\(?0?\\)?\\s?|\\(?0)\\d{2,4}\\)?[\\s\\-]?\\d{3,4}[\\s\\-]?\\d{3,4}(?![\\d])",
+            "description": "UK phone — 020 7946 0958, 07911 123456, +44 20 7946 0958",
+            "enabled": true
+        },
+        {
+            "name": "National Insurance number",
+            "regex": "(?-i)\\b[A-Z]{2}\\s?\\d{2}\\s?\\d{2}\\s?\\d{2}\\s?[A-D]\\b",
+            "description": "UK NI number — e.g. QQ 12 34 56 C or AB123456C",
+            "enabled": true
+        }
+    ],
+    "builtin": {
+        "email": true,
+        "name": true,
+        "address": true,
+        "ip": false,
+        "url": false,
+        "amount": false,
+        "accountNumber": false,
+        "licensePlate": false
+    }
+}

@@ -1,6 +1,6 @@
 {
-  "version": 6,
-  "updated": "2026-07-04T15:00",
+  "version": 7,
+  "updated": "2026-07-22T10:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -78,6 +78,28 @@
       ],
       "path": "presets/us/medical-records.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/medical-records.json"
+    },
+    {
+      "id": "uk.medical-records",
+      "presetVersion": 1,
+      "name": "UK Medical Records",
+      "emoji": "🇬🇧",
+      "language": "en",
+      "country": "GB",
+      "description": "UK hospital and GP records. Detects NHS numbers, UK dates (dd/mm/yyyy and long form), UK postcodes, UK phones, NI numbers, hospital numbers and patient names. Preserves lab values.",
+      "tags": [
+        "medical",
+        "healthcare",
+        "nhs",
+        "gp",
+        "hospital",
+        "clinical",
+        "patient",
+        "uk",
+        "gdpr"
+      ],
+      "path": "presets/uk/medical-records.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/uk/medical-records.json"
     },
     {
       "id": "generic.invoice",
