@@ -1,0 +1,52 @@
+{
+  "id": "es.dni",
+  "version": 1,
+  "name": "Spanish DNI / NIE",
+  "emoji": "🪪",
+  "description": "Spanish ID document (DNI) or foreigner ID (NIE) copy. Detects the DNI number (8 digits + letter), NIE (X/Y/Z + 7 digits + letter), the support number (número de soporte / IDESP), dates of birth and Spanish addresses, plus names. Pair with manual redaction to black out the photo and signature.",
+  "language": "es",
+  "country": "ES",
+  "tags": ["id card", "dni", "nie", "spain", "identidad", "identity", "rgpd", "gdpr"],
+  "patterns": [
+    {
+      "name": "DNI",
+      "regex": "(?i)\\b\\d{8}[A-Za-z]\\b",
+      "description": "Spanish national ID — 8 digits + control letter",
+      "enabled": true
+    },
+    {
+      "name": "NIE",
+      "regex": "(?i)\\b[XYZ]\\d{7}[A-Za-z]\\b",
+      "description": "Foreigner ID number — X/Y/Z + 7 digits + control letter",
+      "enabled": true
+    },
+    {
+      "name": "Número de soporte (IDESP)",
+      "regex": "(?i)\\b(?:n[uú]m(?:ero)?\\.?\\s*(?:de\\s*)?soporte|idesp)\\s*[:\\-]?\\s*([A-Z]{3}\\d{6})\\b",
+      "description": "Support/document number on the DNI, context-anchored",
+      "enabled": true
+    },
+    {
+      "name": "Spanish date (DD/MM/YYYY)",
+      "regex": "\\b\\d{2}[\\/.\\-]\\d{2}[\\/.\\-]\\d{4}\\b",
+      "description": "Date of birth / expiry — DD/MM/YYYY, DD.MM.YYYY or DD-MM-YYYY",
+      "enabled": true
+    },
+    {
+      "name": "Spanish phone number",
+      "regex": "(?<!\\d)(?:\\+34\\s?)?[6789]\\d{2}[\\s.\\-]?\\d{3}[\\s.\\-]?\\d{3}(?!\\d)",
+      "description": "Spanish phone — mobile (6/7) or landline (8/9), optional +34, bounded",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": false,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "version": 8,
-  "updated": "2026-08-01T10:00",
+  "version": 9,
+  "updated": "2026-08-01T12:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -291,6 +291,48 @@
       ],
       "path": "presets/de/fuehrerschein.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/fuehrerschein.json"
+    },
+    {
+      "id": "es.dni",
+      "presetVersion": 1,
+      "name": "Spanish DNI / NIE",
+      "emoji": "🪪",
+      "language": "es",
+      "country": "ES",
+      "description": "Spanish ID (DNI) or foreigner ID (NIE) copy. Detects the DNI (8 digits + letter), NIE, the support number (IDESP), dates of birth and Spanish addresses, plus names. Pair with manual redaction for photo and signature.",
+      "tags": [
+        "id card",
+        "dni",
+        "nie",
+        "spain",
+        "identidad",
+        "identity",
+        "rgpd",
+        "gdpr"
+      ],
+      "path": "presets/es/dni.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/es/dni.json"
+    },
+    {
+      "id": "es.factura",
+      "presetVersion": 1,
+      "name": "Spanish Factura",
+      "emoji": "🧾",
+      "language": "es",
+      "country": "ES",
+      "description": "Spanish invoice (factura). Detects NIF / CIF / DNI, IBAN, Spanish dates and phone numbers, plus names, addresses and emails. Amounts kept visible.",
+      "tags": [
+        "invoice",
+        "factura",
+        "spain",
+        "billing",
+        "nif",
+        "cif",
+        "autonomo",
+        "compliance"
+      ],
+      "path": "presets/es/factura.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/es/factura.json"
     }
   ]
 }
