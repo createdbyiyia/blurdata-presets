@@ -1,0 +1,58 @@
+{
+  "id": "it.atto-contratto",
+  "version": 1,
+  "name": "Italian Atto / Contratto",
+  "emoji": "📜",
+  "description": "Italian legal deed or contract (atto notarile, contratto). Detects Codice Fiscale, Partita IVA, IBAN, the notarial Repertorio/Raccolta number, Italian dates and phone numbers, plus the names and addresses of the parties and emails. Amounts kept visible so contract figures stay readable.",
+  "language": "it",
+  "country": "IT",
+  "tags": ["contract", "deed", "atto", "contratto", "notaio", "legal", "italy", "gdpr"],
+  "patterns": [
+    {
+      "name": "Codice Fiscale",
+      "regex": "(?-i)\\b[A-Z]{6}\\d{2}[A-EHLMPR-T]\\d{2}[A-Z]\\d{3}[A-Z]\\b",
+      "description": "Italian tax code — 16 uppercase alphanumeric chars (case-sensitive)",
+      "enabled": true
+    },
+    {
+      "name": "Partita IVA",
+      "regex": "\\b(?:IT\\s?)?\\d{11}\\b",
+      "description": "Italian VAT number — 11 digits, optional 'IT' prefix",
+      "enabled": true
+    },
+    {
+      "name": "IBAN",
+      "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:\\s?[A-Z0-9]){11,30}\\b",
+      "description": "International Bank Account Number — supports spaces between groups",
+      "enabled": true
+    },
+    {
+      "name": "Repertorio / Raccolta (notaio)",
+      "regex": "(?i)\\b(?:rep(?:ertorio)?\\.?|racc(?:olta)?\\.?)\\s*n?\\.?\\s*[:\\-]?\\s*(\\d{1,3}(?:[.\\s]?\\d{3})*)\\b",
+      "description": "Notarial repertory/collection number, context-anchored",
+      "enabled": true
+    },
+    {
+      "name": "Italian date (DD/MM/YYYY or DD-MM-YYYY)",
+      "regex": "\\b\\d{2}[\\/.\\-]\\d{2}[\\/.\\-]\\d{4}\\b",
+      "description": "Italian date format — DD/MM/YYYY, DD.MM.YYYY or DD-MM-YYYY",
+      "enabled": true
+    },
+    {
+      "name": "Italian phone number",
+      "regex": "(?<!\\d)(?:\\+39\\s?)?(?:0\\d{1,3}|3\\d{2})[\\s\\-./]?\\d{6,8}(?!\\d)",
+      "description": "Italian phone — fixed (0xx) or mobile (3xx), optional +39, bounded to avoid matching inside longer numbers",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": true,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false
+  }
+}

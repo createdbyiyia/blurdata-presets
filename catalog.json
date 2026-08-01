@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updated": "2026-07-22T10:00",
+  "version": 8,
+  "updated": "2026-08-01T10:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -155,6 +155,142 @@
       ],
       "path": "presets/us/common-surnames.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/common-surnames.json"
+    },
+    {
+      "id": "it.fattura",
+      "presetVersion": 1,
+      "name": "Italian Fattura",
+      "emoji": "🧾",
+      "language": "it",
+      "country": "IT",
+      "description": "Italian invoice (fattura). Detects Partita IVA, Codice Fiscale, IBAN, the SDI recipient code, Italian dates and phone numbers, plus names, addresses and emails. Amounts kept visible so line items stay readable.",
+      "tags": [
+        "invoice",
+        "fattura",
+        "italy",
+        "billing",
+        "partita iva",
+        "compliance"
+      ],
+      "path": "presets/it/fattura.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/it/fattura.json"
+    },
+    {
+      "id": "it.atto-contratto",
+      "presetVersion": 1,
+      "name": "Italian Atto / Contratto",
+      "emoji": "📜",
+      "language": "it",
+      "country": "IT",
+      "description": "Italian legal deed or contract (atto notarile, contratto). Detects Codice Fiscale, Partita IVA, IBAN, the notarial Repertorio/Raccolta number, Italian dates and phone numbers, plus the names and addresses of the parties and emails.",
+      "tags": [
+        "contract",
+        "deed",
+        "atto",
+        "contratto",
+        "notaio",
+        "legal",
+        "italy",
+        "gdpr"
+      ],
+      "path": "presets/it/atto-contratto.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/it/atto-contratto.json"
+    },
+    {
+      "id": "it.visura",
+      "presetVersion": 1,
+      "name": "Italian Visura",
+      "emoji": "🏛️",
+      "language": "it",
+      "country": "IT",
+      "description": "Italian company or cadastral record (visura camerale / catastale). Detects Partita IVA, Codice Fiscale, REA number, cadastral references (Foglio / Particella / Subalterno), IBAN, Italian dates and phone numbers, plus names and addresses.",
+      "tags": [
+        "visura",
+        "camerale",
+        "catastale",
+        "company",
+        "cadastral",
+        "italy",
+        "gdpr"
+      ],
+      "path": "presets/it/visura.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/it/visura.json"
+    },
+    {
+      "id": "de.rechnung",
+      "presetVersion": 1,
+      "name": "German Rechnung",
+      "emoji": "🧾",
+      "language": "de",
+      "country": "DE",
+      "description": "German invoice (Rechnung). Detects USt-IdNr, Steuernummer, IBAN, BIC/SWIFT, German dates, phones, street addresses and PLZ + city, plus names and emails. Amounts kept visible.",
+      "tags": [
+        "invoice",
+        "rechnung",
+        "germany",
+        "billing",
+        "umsatzsteuer",
+        "compliance"
+      ],
+      "path": "presets/de/rechnung.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/rechnung.json"
+    },
+    {
+      "id": "de.personalausweis",
+      "presetVersion": 1,
+      "name": "German Personalausweis",
+      "emoji": "🪪",
+      "language": "de",
+      "country": "DE",
+      "description": "German ID card (Personalausweis) or passport copy. Detects the Ausweisnummer, CAN/Zugangsnummer, Steuer-ID, the machine-readable zone (MRZ), date of birth and German addresses, plus names. Pair with manual redaction for photo and signature.",
+      "tags": [
+        "id card",
+        "personalausweis",
+        "ausweis",
+        "reisepass",
+        "germany",
+        "identity",
+        "gdpr"
+      ],
+      "path": "presets/de/personalausweis.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/personalausweis.json"
+    },
+    {
+      "id": "de.kontoauszug",
+      "presetVersion": 1,
+      "name": "German Kontoauszug",
+      "emoji": "🏦",
+      "language": "de",
+      "country": "DE",
+      "description": "German bank statement (Kontoauszug). Detects IBAN, BIC/SWIFT, Bankleitzahl (BLZ), Kontonummer, German dates, phones and addresses, plus account holder names. Amounts kept visible so you can prove income while redacting identities.",
+      "tags": [
+        "bank statement",
+        "kontoauszug",
+        "germany",
+        "banking",
+        "finance",
+        "gdpr"
+      ],
+      "path": "presets/de/kontoauszug.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/kontoauszug.json"
+    },
+    {
+      "id": "de.fuehrerschein",
+      "presetVersion": 1,
+      "name": "German Führerschein",
+      "emoji": "🚗",
+      "language": "de",
+      "country": "DE",
+      "description": "German driving licence (Führerschein) copy. Detects the Führerscheinnummer, date and place of birth, issue/expiry dates and German addresses, plus names. Pair with manual redaction for photo and signature.",
+      "tags": [
+        "driving licence",
+        "führerschein",
+        "germany",
+        "identity",
+        "gdpr"
+      ],
+      "path": "presets/de/fuehrerschein.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/fuehrerschein.json"
     }
   ]
 }

@@ -1,0 +1,64 @@
+{
+  "id": "de.personalausweis",
+  "version": 1,
+  "name": "German Personalausweis",
+  "emoji": "🪪",
+  "description": "German ID card (Personalausweis) or passport copy. Detects the document number (Ausweisnummer), the access number (CAN / Zugangsnummer), Steuer-ID, the machine-readable zone (MRZ), date of birth and German addresses, plus names. Pair with manual redaction to black out the photo and signature.",
+  "language": "de",
+  "country": "DE",
+  "tags": ["id card", "personalausweis", "ausweis", "reisepass", "germany", "identity", "gdpr"],
+  "patterns": [
+    {
+      "name": "Ausweisnummer / Dokumentennummer",
+      "regex": "(?i)\\b(?:ausweisnummer|ausweis-?nr\\.?|dokumentennummer|serien-?nr\\.?|pass-?nr\\.?)\\s*[:\\-]?\\s*([A-Z0-9]{9,10})\\b",
+      "description": "German ID/passport document number — 9-10 alphanumeric chars, context-anchored",
+      "enabled": true
+    },
+    {
+      "name": "Zugangsnummer (CAN)",
+      "regex": "(?i)\\b(?:can|zugangsnummer)\\s*[:\\-]?\\s*(\\d{6})\\b",
+      "description": "Card Access Number — 6 digits, context-anchored",
+      "enabled": true
+    },
+    {
+      "name": "Steuer-ID",
+      "regex": "\\b\\d{11}\\b",
+      "description": "German tax identification number — 11 digits",
+      "enabled": true
+    },
+    {
+      "name": "MRZ (machine-readable zone)",
+      "regex": "(?-i)\\b[A-Z0-9]{2,}<[A-Z0-9<]{12,}",
+      "description": "Machine-readable zone lines — filler-character '<' runs on ID/passport",
+      "enabled": true
+    },
+    {
+      "name": "German date (DD.MM.YYYY)",
+      "regex": "\\b\\d{2}\\.\\d{2}\\.\\d{4}\\b",
+      "description": "Date of birth / expiry — DD.MM.YYYY",
+      "enabled": true
+    },
+    {
+      "name": "German street address",
+      "regex": "(?i)\\b[A-ZÄÖÜ][\\p{L}.\\-]*(?:weg|stra(?:ß|ss)e|str\\.?|platz|gasse|allee|ring|hof|damm|ufer|steig|chaussee|tor|markt)\\s+\\d+\\s?[a-z]?\\b",
+      "description": "German street name + number",
+      "enabled": true
+    },
+    {
+      "name": "German postal code + city",
+      "regex": "(?-i)\\b\\d{5}\\s+[A-ZÄÖÜ][\\p{L}\\-]+(?:\\s+(?:am|an|im|in|bei|ob)\\s+(?:der|dem)?\\s*[A-ZÄÖÜ][\\p{L}\\-]+)?(?:\\s+[A-ZÄÖÜ][\\p{L}\\-]+){0,2}\\b",
+      "description": "German PLZ (5 digits) + city name",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": false,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "it.visura",
+  "version": 1,
+  "name": "Italian Visura",
+  "emoji": "🏛️",
+  "description": "Italian company or cadastral record (visura camerale / catastale). Detects Partita IVA, Codice Fiscale, REA number, cadastral references (Foglio / Particella / Subalterno), IBAN, Italian dates and phone numbers, plus names and addresses. Amounts kept visible.",
+  "language": "it",
+  "country": "IT",
+  "tags": ["visura", "camerale", "catastale", "company", "cadastral", "italy", "gdpr"],
+  "patterns": [
+    {
+      "name": "Partita IVA",
+      "regex": "\\b(?:IT\\s?)?\\d{11}\\b",
+      "description": "Italian VAT number — 11 digits, optional 'IT' prefix",
+      "enabled": true
+    },
+    {
+      "name": "Codice Fiscale",
+      "regex": "(?-i)\\b[A-Z]{6}\\d{2}[A-EHLMPR-T]\\d{2}[A-Z]\\d{3}[A-Z]\\b",
+      "description": "Italian tax code — 16 uppercase alphanumeric chars (case-sensitive)",
+      "enabled": true
+    },
+    {
+      "name": "Numero REA",
+      "regex": "(?i)\\b(?:REA|R\\.E\\.A\\.)\\s*[:\\-]?\\s*([A-Z]{2}\\s?-?\\s?\\d{5,7})\\b",
+      "description": "Economic Administrative Index number — province code + 5-7 digits, context-anchored",
+      "enabled": true
+    },
+    {
+      "name": "Riferimento catastale (Foglio/Particella/Sub)",
+      "regex": "(?i)\\b(?:foglio|fg\\.?|particella|part\\.?|mappale|map\\.?|subalterno|sub\\.?)\\s*[:\\-]?\\s*(\\d{1,5})\\b",
+      "description": "Cadastral reference — sheet/parcel/subordinate number, context-anchored",
+      "enabled": true
+    },
+    {
+      "name": "IBAN",
+      "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:\\s?[A-Z0-9]){11,30}\\b",
+      "description": "International Bank Account Number — supports spaces between groups",
+      "enabled": true
+    },
+    {
+      "name": "Italian date (DD/MM/YYYY or DD-MM-YYYY)",
+      "regex": "\\b\\d{2}[\\/.\\-]\\d{2}[\\/.\\-]\\d{4}\\b",
+      "description": "Italian date format — DD/MM/YYYY, DD.MM.YYYY or DD-MM-YYYY",
+      "enabled": true
+    },
+    {
+      "name": "Italian phone number",
+      "regex": "(?<!\\d)(?:\\+39\\s?)?(?:0\\d{1,3}|3\\d{2})[\\s\\-./]?\\d{6,8}(?!\\d)",
+      "description": "Italian phone — fixed (0xx) or mobile (3xx), optional +39, bounded to avoid matching inside longer numbers",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": true,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "de.fuehrerschein",
+  "version": 1,
+  "name": "German Führerschein",
+  "emoji": "🚗",
+  "description": "German driving licence (Führerschein) copy. Detects the licence number (Führerscheinnummer), date and place of birth, issue/expiry dates and German addresses, plus names. Pair with manual redaction to black out the photo and signature.",
+  "language": "de",
+  "country": "DE",
+  "tags": ["driving licence", "führerschein", "germany", "identity", "gdpr"],
+  "patterns": [
+    {
+      "name": "Führerscheinnummer",
+      "regex": "(?i)\\b(?:f(?:ü|ue)hrerschein-?nr\\.?|f(?:ü|ue)hrerscheinnummer)\\s*[:\\-]?\\s*([A-Z0-9]{9,12})\\b",
+      "description": "German driving licence number — 9-12 alphanumeric chars, context-anchored",
+      "enabled": true
+    },
+    {
+      "name": "German date (DD.MM.YYYY)",
+      "regex": "\\b\\d{2}\\.\\d{2}\\.\\d{4}\\b",
+      "description": "Date of birth / issue / expiry — DD.MM.YYYY",
+      "enabled": true
+    },
+    {
+      "name": "German street address",
+      "regex": "(?i)\\b[A-ZÄÖÜ][\\p{L}.\\-]*(?:weg|stra(?:ß|ss)e|str\\.?|platz|gasse|allee|ring|hof|damm|ufer|steig|chaussee|tor|markt)\\s+\\d+\\s?[a-z]?\\b",
+      "description": "German street name + number",
+      "enabled": true
+    },
+    {
+      "name": "German postal code + city",
+      "regex": "(?-i)\\b\\d{5}\\s+[A-ZÄÖÜ][\\p{L}\\-]+(?:\\s+(?:am|an|im|in|bei|ob)\\s+(?:der|dem)?\\s*[A-ZÄÖÜ][\\p{L}\\-]+)?(?:\\s+[A-ZÄÖÜ][\\p{L}\\-]+){0,2}\\b",
+      "description": "German PLZ (5 digits) + city name",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": false,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false
+  }
+}

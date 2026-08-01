@@ -1,0 +1,58 @@
+{
+  "id": "it.fattura",
+  "version": 1,
+  "name": "Italian Fattura",
+  "emoji": "🧾",
+  "description": "Italian invoice (fattura). Detects Partita IVA, Codice Fiscale, IBAN, the SDI recipient code (Codice Destinatario), Italian dates and phone numbers, plus names, addresses and emails. Amounts are kept visible so line items stay readable — toggle 'Amounts' manually to hide totals too.",
+  "language": "it",
+  "country": "IT",
+  "tags": ["invoice", "fattura", "italy", "billing", "partita iva", "compliance"],
+  "patterns": [
+    {
+      "name": "Partita IVA",
+      "regex": "\\b(?:IT\\s?)?\\d{11}\\b",
+      "description": "Italian VAT number — 11 digits, optional 'IT' prefix",
+      "enabled": true
+    },
+    {
+      "name": "Codice Fiscale",
+      "regex": "(?-i)\\b[A-Z]{6}\\d{2}[A-EHLMPR-T]\\d{2}[A-Z]\\d{3}[A-Z]\\b",
+      "description": "Italian tax code — 16 uppercase alphanumeric chars (case-sensitive)",
+      "enabled": true
+    },
+    {
+      "name": "IBAN",
+      "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:\\s?[A-Z0-9]){11,30}\\b",
+      "description": "International Bank Account Number — supports spaces between groups",
+      "enabled": true
+    },
+    {
+      "name": "Codice Destinatario (SDI)",
+      "regex": "(?i)\\b(?:codice destinatario|cod\\.?\\s?dest\\.?|codice sdi|sdi)\\s*[:\\-]?\\s*([A-Z0-9]{6,7})\\b",
+      "description": "SDI recipient code for e-invoicing — 6-7 alphanumeric chars, context-anchored",
+      "enabled": true
+    },
+    {
+      "name": "Italian date (DD/MM/YYYY or DD-MM-YYYY)",
+      "regex": "\\b\\d{2}[\\/.\\-]\\d{2}[\\/.\\-]\\d{4}\\b",
+      "description": "Italian date format — DD/MM/YYYY, DD.MM.YYYY or DD-MM-YYYY",
+      "enabled": true
+    },
+    {
+      "name": "Italian phone number",
+      "regex": "(?<!\\d)(?:\\+39\\s?)?(?:0\\d{1,3}|3\\d{2})[\\s\\-./]?\\d{6,8}(?!\\d)",
+      "description": "Italian phone — fixed (0xx) or mobile (3xx), optional +39, bounded to avoid matching inside longer numbers",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": true,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false
+  }
+}
