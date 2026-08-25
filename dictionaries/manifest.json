@@ -1,15 +1,23 @@
 {
-  "version": 2,
-  "updated": "2026-05-18T11:35",
+  "version": 3,
+  "updated": "2026-08-25T12:10",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "dictionaries": {
     "common_names": {
-      "version": 2,
+      "version": 3,
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/dictionaries/common_names.txt",
-      "entries": 1292,
+      "entries": 1793,
       "format": "sectioned",
       "format_doc": "Plain UTF-8, one name per line. Lines starting with '# <lang>' switch the active language section (e.g. '# en', '# it'). Subsequent non-empty lines belong to that section. Names are lowercased.",
-      "languages": ["en", "it", "de", "fr", "es", "pt", "nl"],
+      "languages": [
+        "en",
+        "it",
+        "de",
+        "fr",
+        "es",
+        "pt",
+        "nl"
+      ],
       "description": "Common first names for aggressive name detection — multi-language, sectioned by ISO 639-1 code. Used by BlurData's optional aggressive Name detector."
     }
   }
