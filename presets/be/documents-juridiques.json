@@ -1,0 +1,58 @@
+{
+  "id": "be.documents-juridiques",
+  "version": 1,
+  "name": "Belgian Legal Documents (FR)",
+  "emoji": "🇧🇪",
+  "description": "Belgian legal documents in French (citations, conclusions, actes). Detects the BCE company number, cadastral references (division, section, parcelle), Belgian street addresses and postal codes, company names by legal form (SRL, SA, ASBL…), IBAN, plus personal names. Amounts in € are kept visible on purpose.",
+  "language": "fr",
+  "country": "BE",
+  "tags": ["legal", "belgium", "avocat", "citations", "conclusions", "bce", "cadastre", "gdpr"],
+  "patterns": [
+    {
+      "name": "Numéro BCE / TVA",
+      "regex": "(?i)\\b(?:BE\\s?)?[01]\\d{3}[. ]\\d{3}[. ]\\d{3}\\b",
+      "description": "Banque-Carrefour des Entreprises — 0xxx.xxx.xxx, optional BE prefix (TVA)",
+      "enabled": true
+    },
+    {
+      "name": "Référence cadastrale",
+      "regex": "(?i)\\b(?:division\\s+\\d{1,3}|section\\s+[A-Z](?![a-zà-ÿ])|parcelle\\s+n?[°o]?\\s*\\d{1,5}\\s?[a-zA-Z]?|n[°o]\\s*\\d{1,5}\\s?[a-zA-Z]\\b)",
+      "description": "Cadastral reference — division, section, parcelle/n°, context-anchored",
+      "enabled": true
+    },
+    {
+      "name": "Adresse (rue + numéro)",
+      "regex": "(?i)\\b(?:rue|avenue|av\\.|chauss[ée]e|boulevard|bd\\.?|place|quai|all[ée]e|impasse|square|chemin|clos|dr[èe]ve)\\s+(?:de\\s|du\\s|des\\s|de la\\s|d')?[A-ZÀ-Ÿ][\\w'À-ÿ.-]*(?:\\s+[\\w'À-ÿ.-]+){0,3},?\\s*\\d{1,4}\\b",
+      "description": "Belgian/French street address — street type + name + house number",
+      "enabled": true
+    },
+    {
+      "name": "Code postal + ville",
+      "regex": "(?-i)\\b[1-9]\\d{3}\\s+[A-ZÀ-Ÿ][\\wÀ-ÿ'-]+(?:-[A-ZÀ-Ÿ][\\wÀ-ÿ'-]+)?\\b",
+      "description": "Belgian 4-digit postal code followed by city name",
+      "enabled": true
+    },
+    {
+      "name": "Société (forme juridique)",
+      "regex": "\\b[A-ZÀ-Ÿ][\\w'&À-ÿ.-]*(?:\\s+[\\w'&À-ÿ.-]+){0,4}\\s+(?:SRL|SPRL|SA|ASBL|SCS|SNC|SC|SCRL|BV|NV|VZW)\\b",
+      "description": "Company name followed by a Belgian legal form (SRL, SA, ASBL, NV…)",
+      "enabled": true
+    },
+    {
+      "name": "IBAN",
+      "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:\\s?[A-Z0-9]){11,30}\\b",
+      "description": "International Bank Account Number — supports spaces between groups",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": true,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false
+  }
+}

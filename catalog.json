@@ -1,6 +1,6 @@
 {
-  "version": 9,
-  "updated": "2026-08-01T12:00",
+  "version": 10,
+  "updated": "2026-08-25T10:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -333,6 +333,27 @@
       ],
       "path": "presets/es/factura.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/es/factura.json"
+    },
+    {
+      "id": "be.documents-juridiques",
+      "presetVersion": 1,
+      "name": "Belgian Legal Documents (FR)",
+      "emoji": "🇧🇪",
+      "language": "fr",
+      "country": "BE",
+      "description": "Belgian legal documents in French (citations, conclusions, actes). Detects the BCE company number, cadastral references, Belgian addresses and postal codes, company names by legal form, IBAN, plus names. Amounts in € stay visible.",
+      "tags": [
+        "legal",
+        "belgium",
+        "avocat",
+        "citations",
+        "conclusions",
+        "bce",
+        "cadastre",
+        "gdpr"
+      ],
+      "path": "presets/be/documents-juridiques.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/be/documents-juridiques.json"
     }
   ]
 }
