@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "updated": "2026-08-25T10:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
@@ -195,6 +195,27 @@
       ],
       "path": "presets/it/atto-contratto.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/it/atto-contratto.json"
+    },
+    {
+      "id": "it.atti-giudiziari",
+      "presetVersion": 1,
+      "name": "Italian Sentenze / Atti Giudiziari",
+      "emoji": "⚖️",
+      "language": "it",
+      "country": "IT",
+      "description": "Italian court judgments and judicial acts (sentenze, decreti, verbali, atti di stato civile). Detects codice fiscale (personal and company), partita IVA, cadastral references (foglio, particella, subalterno, categoria), vehicle plates, civil-registry act references, Italian dates in numeric and spelled-out form, phone numbers and IBAN. Court names and law citations stay readable.",
+      "tags": [
+        "legal",
+        "court",
+        "sentenza",
+        "tribunale",
+        "decreto",
+        "anonymization",
+        "italy",
+        "gdpr"
+      ],
+      "path": "presets/it/atti-giudiziari.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/it/atti-giudiziari.json"
     },
     {
       "id": "it.visura",
