@@ -1,6 +1,6 @@
 {
   "id": "us.w2-paystub",
-  "version": 7,
+  "version": 8,
   "name": "US W-2 / Pay Stub",
   "emoji": "🇺🇸",
   "description": "US tax forms and pay stubs (W-2, W-4, 1099, generic paystubs). Detects SSN, EIN, US dates, US ZIP codes, US phone numbers, bank routing numbers (context-anchored), plus names, addresses, account numbers and amounts.",
@@ -51,12 +51,6 @@
       "regex": "(?i)(?<=\\b(?:routing(?:\\s?(?:number|no\\.?|#))?|ABA|RTN)[\\s:#.\\-]{0,4})[0-9]{9}\\b",
       "description": "Routing number digits only: keyword anchors via lookbehind but stays visible",
       "enabled": true
-    },
-    {
-      "name": "Bank account number",
-      "regex": "(?i)(?<=\\b(?:account(?:\\s?(?:number|no\\.?|#))?|acct\\.?)[\\s:#.\\-]{0,4})[0-9]{6,17}\\b",
-      "description": "Account number digits only: the keyword (account/acct) anchors the match via lookbehind but stays visible. Off by default: the built-in Account Numbers group already catches bare digit runs; enable this for keyword-anchored precision",
-      "enabled": false
     },
     {
       "name": "Driver License (generic US)",
