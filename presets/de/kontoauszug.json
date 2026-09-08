@@ -1,19 +1,12 @@
 {
   "id": "de.kontoauszug",
-  "version": 2,
+  "version": 1,
   "name": "German Kontoauszug",
   "emoji": "🏦",
   "description": "German bank statement (Kontoauszug). Detects IBAN, BIC/SWIFT, Bankleitzahl (BLZ), Kontonummer, German dates, German phones and addresses, plus names and account holders. Amounts kept visible so you can prove income while redacting identities — toggle 'Amounts' manually to hide balances too.",
   "language": "de",
   "country": "DE",
-  "tags": [
-    "bank statement",
-    "kontoauszug",
-    "germany",
-    "banking",
-    "finance",
-    "gdpr"
-  ],
+  "tags": ["bank statement", "kontoauszug", "germany", "banking", "finance", "gdpr"],
   "patterns": [
     {
       "name": "IBAN",
@@ -35,8 +28,8 @@
     },
     {
       "name": "Kontonummer",
-      "regex": "(?i)(?<=\\b(?:kontonummer|konto-?nr\\.?|kto\\.?-?nr\\.?)[\\s:\\-]{0,4})\\d{6,10}\\b",
-      "description": "Account number digits only: the keyword anchors via lookbehind but stays visible",
+      "regex": "(?i)\\b(?:kontonummer|konto-?nr\\.?|kto\\.?-?nr\\.?)\\s*[:\\-]?\\s*(\\d{6,10})\\b",
+      "description": "German account number — 6-10 digits, context-anchored",
       "enabled": true
     },
     {

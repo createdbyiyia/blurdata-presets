@@ -1,17 +1,12 @@
 {
   "id": "generic.invoice",
-  "version": 5,
+  "version": 4,
   "name": "Generic Invoice",
   "emoji": "🧾",
   "description": "Generic invoice or receipt. Detects invoice numbers, dates, EU VAT IDs, IBAN, BIC/SWIFT (context-anchored), international phones, plus names, addresses, emails. Amounts kept visible — toggle Amounts manually to hide totals too.",
   "language": "en",
   "country": null,
-  "tags": [
-    "invoice",
-    "receipt",
-    "billing",
-    "accounting"
-  ],
+  "tags": ["invoice", "receipt", "billing", "accounting"],
   "patterns": [
     {
       "name": "Invoice number",
@@ -45,8 +40,8 @@
     },
     {
       "name": "International phone number",
-      "regex": "(?<!\\d)(?:\\+\\d{1,3}[\\s\\-.]?\\(?\\d{2,4}\\)?[\\s\\-.]?\\d{3,4}[\\s\\-.]?\\d{3,4}|\\(?\\d{2,4}\\)?[\\s\\-.]\\d{3,4}[\\s\\-.]\\d{3,4})(?!\\d)",
-      "description": "Phone with + prefix or explicit separators. Bare digit runs excluded: they collide with invoice and account numbers",
+      "regex": "(?<!\\d)\\+?\\d{1,3}[\\s\\-.]?\\(?\\d{2,4}\\)?[\\s\\-.]?\\d{3,4}[\\s\\-.]?\\d{3,4}(?!\\d)",
+      "description": "International phone — bounded to avoid matching inside longer numbers (IBANs, account numbers)",
       "enabled": true
     },
     {
