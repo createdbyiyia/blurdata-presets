@@ -1,5 +1,5 @@
 {
-  "version": 15,
+  "version": 16,
   "updated": "2026-08-25T10:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
@@ -61,7 +61,7 @@
     },
     {
       "id": "us.medical-records",
-      "presetVersion": 1,
+      "presetVersion": 2,
       "name": "US Medical Records",
       "emoji": "🏥",
       "language": "en",
@@ -103,7 +103,7 @@
     },
     {
       "id": "generic.invoice",
-      "presetVersion": 4,
+      "presetVersion": 5,
       "name": "Generic Invoice",
       "emoji": "🧾",
       "language": "en",
@@ -120,7 +120,7 @@
     },
     {
       "id": "generic.bank-statement",
-      "presetVersion": 4,
+      "presetVersion": 5,
       "name": "Bank Statement",
       "emoji": "🏦",
       "language": "en",
@@ -278,7 +278,7 @@
     },
     {
       "id": "de.kontoauszug",
-      "presetVersion": 1,
+      "presetVersion": 2,
       "name": "German Kontoauszug",
       "emoji": "🏦",
       "language": "de",
