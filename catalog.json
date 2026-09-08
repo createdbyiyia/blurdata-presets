@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "updated": "2026-08-25T10:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
@@ -41,7 +41,7 @@
     },
     {
       "id": "us.w2-paystub",
-      "presetVersion": 4,
+      "presetVersion": 5,
       "name": "US W-2 / Pay Stub",
       "emoji": "🇺🇸",
       "language": "en",
