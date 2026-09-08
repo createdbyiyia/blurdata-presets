@@ -1,6 +1,6 @@
 {
   "id": "us.w2-paystub",
-  "version": 5,
+  "version": 6,
   "name": "US W-2 / Pay Stub",
   "emoji": "🇺🇸",
   "description": "US tax forms and pay stubs (W-2, W-4, 1099, generic paystubs). Detects SSN, EIN, US dates, US ZIP codes, US phone numbers, bank routing numbers (context-anchored), plus names, addresses, account numbers and amounts.",
@@ -42,8 +42,8 @@
     },
     {
       "name": "US phone number",
-      "regex": "(?<!\\d)(?:\\+1[\\s\\-.]?)?(?:\\(\\d{3}\\)|\\d{3})[\\s\\-.]?\\d{3}[\\s\\-.]?\\d{4}(?!\\d)",
-      "description": "US phone — (XXX) XXX-XXXX or XXX-XXX-XXXX, optional +1, bounded to avoid matching inside longer numbers",
+      "regex": "(?<!\\d)(?:\\+1[\\s\\-.]?)?(?:\\(\\d{3}\\)[\\s\\-.]?|\\d{3}[\\s\\-.])\\d{3}[\\s\\-.]\\d{4}(?!\\d)",
+      "description": "US phone with explicit formatting (parens/dashes/dots/spaces). Bare 10-digit runs excluded: they collide with account numbers",
       "enabled": true
     },
     {
