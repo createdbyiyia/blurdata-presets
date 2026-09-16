@@ -3,49 +3,57 @@
   "version": 1,
   "name": "German Court Order (Gerichtsbeschluss)",
   "emoji": "⚖️",
-  "description": "German court orders, decisions and judicial correspondence (Beschluss, Urteil, Verfügung). Detects Aktenzeichen in the Roman-numeral department form (3 XVII H 1234), the standard form (12 C 345/22, 2 BvR 1/20), labeled birth dates (geb. am 01.02.1970), German phone numbers, street addresses and PLZ + Ort, plus names, addresses and e-mails from the built-in detectors. Court names, statutes and paragraph citations are not matched. Amounts (Streitwert, Kosten) are kept.",
+  "description": "German court orders, decisions and judicial correspondence (Beschluss, Urteil, Verfügung). Detects Aktenzeichen in the Roman-numeral department form (3 XVII H 1234), the standard form (12 C 345/22, 2 BvR 1/20) and after an Az./Geschäftszeichen label, labeled birth dates (geb. am 01.02.1970), German phone numbers, street addresses and PLZ + Ort, plus names and e-mails from the built-in detectors. Court names, statutes, paragraph citations, decision dates and amounts (Streitwert, Kosten) stay readable. The court's own address and phone number are covered too: untick Adresse / PLZ Ort / Telefon if you want them visible.",
   "language": "de",
   "country": "DE",
-  "tags": ["legal", "court", "gericht", "beschluss", "aktenzeichen", "anonymization", "dsgvo"],
+  "tags": [
+    "legal",
+    "court",
+    "gericht",
+    "beschluss",
+    "aktenzeichen",
+    "anonymization",
+    "dsgvo"
+  ],
   "patterns": [
     {
-      "name": "Aktenzeichen (Abteilung römisch)",
+      "name": "Aktenzeichen",
       "regex": "(?-i)\\b\\d{1,4}\\s+[IVXLC]{1,7}\\s+[A-Z]{1,3}\\s+\\d{1,6}(?:\\s?\\/\\s?\\d{2,4})?\\b",
       "description": "File numbers with a Roman-numeral department: 3 XVII H 1234, 776 XVII A 2345",
       "enabled": true
     },
     {
-      "name": "Aktenzeichen (Standard)",
+      "name": "Aktenzeichen",
       "regex": "(?-i)\\b\\d{1,4}\\s?[A-Z][A-Za-z]{0,2}\\s?\\d{1,6}\\s?\\/\\s?\\d{2,4}\\b",
       "description": "Standard file numbers with year suffix: 12 C 345/22, 4 O 123/21, 2 BvR 1/20",
       "enabled": true
     },
     {
-      "name": "Aktenzeichen nach Label",
+      "name": "Aktenzeichen",
       "regex": "(?i)(?<=\\b(?:Az\\.?|Aktenzeichen|Gesch(?:äfts)?-?(?:zeichen|z\\.)|Gz\\.?)[\\s:]{0,3})[0-9A-Za-z][0-9A-Za-z\\s./\\-]{3,24}\\d",
       "description": "Anything following an Az. / Aktenzeichen / Geschäftszeichen label, for formats not covered above",
       "enabled": true
     },
     {
-      "name": "Geburtsdatum (mit Label)",
+      "name": "Geburtsdatum",
       "regex": "(?i)(?<=\\b(?:geb\\.|geboren)\\s(?:am\\s)?)\\d{1,2}\\.\\d{1,2}\\.\\d{4}\\b",
       "description": "Birth dates after 'geb.' or 'geboren am'; other dates (decision date, deadlines) stay readable",
       "enabled": true
     },
     {
-      "name": "German phone number",
+      "name": "Telefon",
       "regex": "(?<!\\d)(?:\\+49|0)[\\s/.\\-]?(?:\\(0\\))?[\\s/.\\-]?\\d{2,5}[\\s/.\\-]?\\d{4,10}(?!\\d)",
       "description": "Landline and mobile numbers in German notation",
       "enabled": true
     },
     {
-      "name": "German street address",
+      "name": "Adresse",
       "regex": "(?i)\\b[A-ZÄÖÜ][\\p{L}.\\-]*(?:weg|stra(?:ß|ss)e|str\\.?|platz|gasse|allee|ring|hof|damm|ufer|steig|chaussee|tor|markt)\\s+\\d+\\s?[a-z]?\\b",
       "description": "Street + house number",
       "enabled": true
     },
     {
-      "name": "German postal code + city",
+      "name": "PLZ Ort",
       "regex": "(?-i)\\b\\d{5}\\s+[A-ZÄÖÜ][\\p{L}\\-]+(?:\\s+(?:am|an|im|in|bei|ob)\\s+(?:der|dem)?\\s*[A-ZÄÖÜ][\\p{L}\\-]+)?(?:\\s+[A-ZÄÖÜ][\\p{L}\\-]+){0,2}\\b",
       "description": "PLZ + Ort",
       "enabled": true

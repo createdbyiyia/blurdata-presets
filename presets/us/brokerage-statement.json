@@ -3,7 +3,7 @@
   "version": 1,
   "name": "US Brokerage Account Statement",
   "emoji": "📈",
-  "description": "US individual brokerage account statement (Schwab, Fidelity, Vanguard, Merrill, TD, IBKR and similar). Removes only client-identifying data: account numbers in labeled, partial and masked forms, SSN / tax ID (also masked), US phone numbers, ZIP+4 in address blocks, plus names, mailing addresses and e-mails from the built-in detectors. Keeps everything needed for portfolio analysis: security names, tickers, CUSIPs, quantities, prices, market values, balances, income, fees, cost basis, gains/losses, statement dates and custodian / broker information. Amounts and license plates are switched off so figures and account numbers are never treated as either. Signatures and QR codes are not detected: draw a manual box over them.",
+  "description": "US individual brokerage account statement (Schwab, Fidelity, Vanguard, Merrill, TD, IBKR and similar). Removes only client-identifying data: account holder names in capitals on registration lines, headers and footers, labeled client names in normal case, account numbers in labeled, partial and masked forms, SSN / tax ID (also masked), US phone numbers, state + ZIP in address blocks, plus mailing addresses and e-mails from the built-in detectors. The generic name detector and the generic account-number detector are switched off on purpose: they would treat security names (JOHNSON & JOHNSON, SCHWAB US DIVIDEND EQUITY ETF) as people and CUSIPs as account numbers. Amounts and license plates are off too, so figures stay readable. Keeps security names, tickers, CUSIPs, quantities, prices, market values, balances, income, fees, cost basis, gains/losses, statement dates and the custodian's name. The custodian's own phone number and ZIP code are covered: remove them with the X if you want them visible. Signatures and QR codes are not detected: draw a manual box over them.",
   "language": "en",
   "country": "US",
   "tags": [
@@ -17,19 +17,31 @@
   ],
   "patterns": [
     {
-      "name": "Account number (labeled)",
+      "name": "Account holder name",
+      "regex": "(?-i)\\b(?!(?:ACCOUNT|STATEMENT|TOTAL|SUMMARY|POSITIONS|TRANSACTIONS|INCOME|BEGINNING|ENDING|MARKET|VALUE|COST|BASIS|MEMBER|SIPC|FDIC|PAGE|CASH|QUALIFIED|BANK|INTEREST|DIVIDEND|EQUITIES|EQUITY|ETF|ETFS|MUTUAL|FUND|FUNDS|INC|CORP|CO|LLC|LTD|LP|TRUST|INDEX|STOCK|MKT|CAPITAL|GROWTH|TREASURY|BOND|BONDS|NOTES|SHARES|CLASS|SERIES|US|USA)\\b)[A-Z][A-Z'\\-]{1,}(?:\\s(?:[A-Z]\\.?|(?!(?:INC|CORP|CO|LLC|LTD|LP|ETF|FUND|TRUST|INDEX|STOCK|MKT|MARKET|EQUITY|DIVIDEND|BOND|CAPITAL|GROWTH|VALUE|INCOME|TREASURY|SHARES|CLASS|SERIES|TOTAL|BANK|NA|N\\.A\\.)\\b)[A-Z][A-Z'\\-]{1,}))+(?:\\s&\\s[A-Z][A-Z'\\-]{1,}(?:\\s(?:[A-Z]\\.?|[A-Z][A-Z'\\-]{1,}))+)?(?=\\s(?:JT\\s?TEN|JTWROS|JT\\sWROS|TOD|TTEE|TRUSTEE|CUST|CUSTODIAN|UTMA|UGMA|IRA|ROTH|SEP|BENE|FBO|·|-|–|\\||$)|$)(?!\\s+[A-Z]{1,5}\\s+[0-9A-Z]{9}\\b)",
+      "description": "Client and joint-holder names printed in capitals on registration lines, headers and footers (DANIEL R MORGAN & LAURA J MORGAN JT TEN). Security rows (name + symbol + CUSIP) and statement headings are excluded; if a capitalised security name is still caught, remove it with the X.",
+      "enabled": true
+    },
+    {
+      "name": "Client name",
+      "regex": "(?i)(?<=\\b(?:account\\sholder|account\\sowner|registration|registered\\sto|prepared\\sfor|owner|name|dear)[:\\s]{1,3}(?:mr\\.?|mrs\\.?|ms\\.?|dr\\.?)?\\s{0,2})[A-Z][a-z'\\-]+(?:\\s(?:[A-Z]\\.?|[A-Z][a-z'\\-]+)){1,4}(?:\\s(?:Jr\\.?|Sr\\.?|II|III))?",
+      "description": "Client names written in normal case after a label (Account Holder:, Registration:, Prepared for, Dear Mr. ...)",
+      "enabled": true
+    },
+    {
+      "name": "Account number",
       "regex": "(?i)(?<=\\b(?:account(?:\\s?(?:number|no\\.?|#|num\\.?))?|acct\\.?(?:\\s?(?:number|no\\.?|#))?|a\\/c)[\\s:#.\\-]{0,4})[A-Z]{0,3}-?\\d{2,4}[\\-\\s]?\\d{3,10}\\b",
       "description": "Account number after an Account / Acct / A/C label, with optional letter prefix and dash (e.g. 1234-5678, X12-345678, U1234567)",
       "enabled": true
     },
     {
-      "name": "Account number (bare, dash-separated)",
+      "name": "Account number",
       "regex": "(?<![\\d\\-])(?<!\\)\\s)\\d{3,4}-\\d{4,8}(?![\\d\\-])",
       "description": "Dash-separated account formats such as 1234-5678 or 123-456789 wherever they appear; phone numbers are left to the phone pattern",
       "enabled": true
     },
     {
-      "name": "Masked account number",
+      "name": "Masked account",
       "regex": "(?:\\*+|X{2,}|x{2,}|•+|\\.{3,})[\\-\\s]?\\d{3,5}\\b",
       "description": "Partially masked account or card numbers: ****1234, XXX-5678, ...4321",
       "enabled": true
@@ -41,19 +53,19 @@
       "enabled": true
     },
     {
-      "name": "SSN / Tax ID (full or masked)",
+      "name": "SSN",
       "regex": "(?-i)\\b(?:\\d{3}|X{3}|\\*{3})-(?:\\d{2}|X{2}|\\*{2})-\\d{4}\\b",
       "description": "Social Security or taxpayer ID, including masked forms such as XXX-XX-1234",
       "enabled": true
     },
     {
-      "name": "US phone number",
+      "name": "Phone",
       "regex": "(?<!\\d)(?:\\+1[\\s\\-.]?)?(?:\\(\\d{3}\\)|\\d{3})[\\s\\-.]\\d{3}[\\s\\-.]\\d{4}(?!\\d)",
       "description": "Client phone numbers; separators required so CUSIPs and account numbers are not matched",
       "enabled": true
     },
     {
-      "name": "State + ZIP code",
+      "name": "ZIP code",
       "regex": "(?-i)\\b[A-Z]{2}\\s\\d{5}(?:-\\d{4})?\\b",
       "description": "City line of an address block, e.g. FL 33101-1234 (two-letter state followed by ZIP)",
       "enabled": true
@@ -61,12 +73,12 @@
   ],
   "builtin": {
     "email": true,
-    "name": true,
+    "name": false,
     "address": true,
     "ip": false,
     "url": false,
     "amount": false,
-    "accountNumber": true,
+    "accountNumber": false,
     "licensePlate": false
   }
 }

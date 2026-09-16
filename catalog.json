@@ -1,6 +1,6 @@
 {
-  "version": 20,
-  "updated": "2026-09-16T17:05",
+  "version": 21,
+  "updated": "2026-09-16T18:30",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -375,6 +375,46 @@
       ],
       "path": "presets/be/documents-juridiques.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/be/documents-juridiques.json"
+    },
+    {
+      "id": "us.brokerage-statement",
+      "presetVersion": 1,
+      "name": "US Brokerage Account Statement",
+      "emoji": "📈",
+      "language": "en",
+      "country": "US",
+      "description": "US individual brokerage account statement (Schwab, Fidelity, Vanguard, Merrill, TD, IBKR and similar). Removes only client-identifying data: account holder names in capitals on registration lines, headers and footers, labeled client names in normal case, account numbers in labeled, partial and masked forms, SSN / tax ID (also masked), US phone numbers, state + ZIP in address blocks, plus mailing addresses and e-mails from the built-in detectors. The generic name detector and the generic account-number detector are switched off on purpose: they would treat security names (JOHNSON & JOHNSON, SCHWAB US DIVIDEND EQUITY ETF) as people and CUSIPs as account numbers. Amounts and license plates are off too, so figures stay readable. Keeps security names, tickers, CUSIPs, quantities, prices, market values, balances, income, fees, cost basis, gains/losses, statement dates and the custodian's name. The custodian's own phone number and ZIP code are covered: remove them with the X if you want them visible. Signatures and QR codes are not detected: draw a manual box over them.",
+      "tags": [
+        "brokerage",
+        "investment",
+        "statement",
+        "finance",
+        "de-identification",
+        "ai analysis",
+        "usa"
+      ],
+      "path": "presets/us/brokerage-statement.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/brokerage-statement.json"
+    },
+    {
+      "id": "de.gerichtsbeschluss",
+      "presetVersion": 1,
+      "name": "German Court Order (Gerichtsbeschluss)",
+      "emoji": "⚖️",
+      "language": "de",
+      "country": "DE",
+      "description": "German court orders, decisions and judicial correspondence (Beschluss, Urteil, Verfügung). Detects Aktenzeichen in the Roman-numeral department form (3 XVII H 1234), the standard form (12 C 345/22, 2 BvR 1/20) and after an Az./Geschäftszeichen label, labeled birth dates (geb. am 01.02.1970), German phone numbers, street addresses and PLZ + Ort, plus names and e-mails from the built-in detectors. Court names, statutes, paragraph citations, decision dates and amounts (Streitwert, Kosten) stay readable. The court's own address and phone number are covered too: untick Adresse / PLZ Ort / Telefon if you want them visible.",
+      "tags": [
+        "legal",
+        "court",
+        "gericht",
+        "beschluss",
+        "aktenzeichen",
+        "anonymization",
+        "dsgvo"
+      ],
+      "path": "presets/de/gerichtsbeschluss.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/gerichtsbeschluss.json"
     }
   ]
 }
