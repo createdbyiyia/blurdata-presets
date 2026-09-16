@@ -1,0 +1,72 @@
+{
+  "id": "us.brokerage-statement",
+  "version": 1,
+  "name": "US Brokerage Account Statement",
+  "emoji": "📈",
+  "description": "US individual brokerage account statement (Schwab, Fidelity, Vanguard, Merrill, TD, IBKR and similar). Removes only client-identifying data: account numbers in labeled, partial and masked forms, SSN / tax ID (also masked), US phone numbers, ZIP+4 in address blocks, plus names, mailing addresses and e-mails from the built-in detectors. Keeps everything needed for portfolio analysis: security names, tickers, CUSIPs, quantities, prices, market values, balances, income, fees, cost basis, gains/losses, statement dates and custodian / broker information. Amounts and license plates are switched off so figures and account numbers are never treated as either. Signatures and QR codes are not detected: draw a manual box over them.",
+  "language": "en",
+  "country": "US",
+  "tags": [
+    "brokerage",
+    "investment",
+    "statement",
+    "finance",
+    "de-identification",
+    "ai analysis",
+    "usa"
+  ],
+  "patterns": [
+    {
+      "name": "Account number (labeled)",
+      "regex": "(?i)(?<=\\b(?:account(?:\\s?(?:number|no\\.?|#|num\\.?))?|acct\\.?(?:\\s?(?:number|no\\.?|#))?|a\\/c)[\\s:#.\\-]{0,4})[A-Z]{0,3}-?\\d{2,4}[\\-\\s]?\\d{3,10}\\b",
+      "description": "Account number after an Account / Acct / A/C label, with optional letter prefix and dash (e.g. 1234-5678, X12-345678, U1234567)",
+      "enabled": true
+    },
+    {
+      "name": "Account number (bare, dash-separated)",
+      "regex": "(?<![\\d\\-])(?<!\\)\\s)\\d{3,4}-\\d{4,8}(?![\\d\\-])",
+      "description": "Dash-separated account formats such as 1234-5678 or 123-456789 wherever they appear; phone numbers are left to the phone pattern",
+      "enabled": true
+    },
+    {
+      "name": "Masked account number",
+      "regex": "(?:\\*+|X{2,}|x{2,}|•+|\\.{3,})[\\-\\s]?\\d{3,5}\\b",
+      "description": "Partially masked account or card numbers: ****1234, XXX-5678, ...4321",
+      "enabled": true
+    },
+    {
+      "name": "Account ending in",
+      "regex": "(?i)\\bending\\s+(?:in\\s+)?\\d{3,5}\\b",
+      "description": "Phrases like 'ending in 1234' or 'ending 4321'",
+      "enabled": true
+    },
+    {
+      "name": "SSN / Tax ID (full or masked)",
+      "regex": "(?-i)\\b(?:\\d{3}|X{3}|\\*{3})-(?:\\d{2}|X{2}|\\*{2})-\\d{4}\\b",
+      "description": "Social Security or taxpayer ID, including masked forms such as XXX-XX-1234",
+      "enabled": true
+    },
+    {
+      "name": "US phone number",
+      "regex": "(?<!\\d)(?:\\+1[\\s\\-.]?)?(?:\\(\\d{3}\\)|\\d{3})[\\s\\-.]\\d{3}[\\s\\-.]\\d{4}(?!\\d)",
+      "description": "Client phone numbers; separators required so CUSIPs and account numbers are not matched",
+      "enabled": true
+    },
+    {
+      "name": "State + ZIP code",
+      "regex": "(?-i)\\b[A-Z]{2}\\s\\d{5}(?:-\\d{4})?\\b",
+      "description": "City line of an address block, e.g. FL 33101-1234 (two-letter state followed by ZIP)",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": true,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false
+  }
+}
