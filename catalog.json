@@ -1,6 +1,6 @@
 {
-  "version": 21,
-  "updated": "2026-09-16T18:30",
+  "version": 22,
+  "updated": "2026-09-19T14:01",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -378,12 +378,12 @@
     },
     {
       "id": "us.brokerage-statement",
-      "presetVersion": 1,
+      "presetVersion": 2,
       "name": "US Brokerage Account Statement",
       "emoji": "📈",
       "language": "en",
       "country": "US",
-      "description": "US individual brokerage account statement (Schwab, Fidelity, Vanguard, Merrill, TD, IBKR and similar). Removes only client-identifying data: account holder names in capitals on registration lines, headers and footers, labeled client names in normal case, account numbers in labeled, partial and masked forms, SSN / tax ID (also masked), US phone numbers, state + ZIP in address blocks, plus mailing addresses and e-mails from the built-in detectors. The generic name detector and the generic account-number detector are switched off on purpose: they would treat security names (JOHNSON & JOHNSON, SCHWAB US DIVIDEND EQUITY ETF) as people and CUSIPs as account numbers. Amounts and license plates are off too, so figures stay readable. Keeps security names, tickers, CUSIPs, quantities, prices, market values, balances, income, fees, cost basis, gains/losses, statement dates and the custodian's name. The custodian's own phone number and ZIP code are covered: remove them with the X if you want them visible. Signatures and QR codes are not detected: draw a manual box over them.",
+      "description": "US individual brokerage account statement (Schwab, Fidelity, Vanguard, Merrill, Morgan Stanley, IBKR and similar). Removes only client-identifying data: account holder, joint holder, trustee and beneficiary names (capitals on registration lines and address blocks, or normal case after a label), account numbers in labeled, dashed, Fidelity/IBKR, partial and masked forms, SSN / tax ID (also masked), client phone numbers, the city, state and ZIP line, plus mailing addresses and e-mails from the built-in detectors. The generic name and account-number detectors are off on purpose, so security names and CUSIPs are never taken for people or accounts. Keeps account types (INDIVIDUAL TOD, ROTH IRA), security names, tickers, CUSIPs, quantities, prices, values, balances, income, fees, cost basis, gains/losses, dates, custodian names, toll-free service numbers and the advisor's name. Limits: the custodian's own street address and ZIP look like the client's and are covered too (remove them with the X), an unlabeled normal-case name without a middle initial is not detected, and signatures and QR codes need a manual box.",
       "tags": [
         "brokerage",
         "investment",
