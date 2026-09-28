@@ -1,0 +1,120 @@
+{
+  "id": "ch.medical-records",
+  "version": 1,
+  "name": "Swiss Medical Records (Dossier médical)",
+  "emoji": "🇨🇭",
+  "description": "Swiss medical records in French or German: discharge letters, consultation reports, lab results, medical correspondence. Detects the patient's name after its label, the date of birth (né le, née le, Geburtsdatum, or in parentheses after the name), the AVS/AHV number (756…), insurance card and insured numbers, patient, dossier and case numbers, GLN and RCC/ZSR identifiers, Swiss IBAN, NPA and locality, street addresses in the Swiss order, and Swiss phone numbers, plus names, e-mails and addresses from the built-in detectors. Turn on Barcodes & QR codes in the side panel to cover codes too. Keeps lab values, ICD-10 (CIM-10) and CHOP codes, examination dates and amounts. Doctors' names may be detected as well: click the X to keep one visible.",
+  "language": "fr",
+  "country": "CH",
+  "tags": [
+    "medical",
+    "healthcare",
+    "hospital",
+    "patient",
+    "avs",
+    "ahv",
+    "switzerland",
+    "suisse",
+    "schweiz",
+    "dossier médical",
+    "lpd",
+    "gdpr"
+  ],
+  "patterns": [
+    {
+      "name": "Patient name",
+      "regex": "(?-i)(?<=\\b(?i:patient(?:e|in)?|nom(?:[ \\t]et[ \\t]pr[ée]nom)?|pr[ée]nom|concerne|betr(?:ifft|\\.)|betreff|madame|monsieur|mademoiselle|mme|mlle|frau|herr|name|vorname)(?:[ \\t]?[:.])?[ \\t]{1,3}(?:(?i:madame|monsieur|mademoiselle|mme|mlle|frau|herr|m\\.)[ \\t])?)(?!(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+[ \\t])?(?:Dr|Prof|Dre|Pr|Méd|Med)\\b)(?:(?!(?i:pr[ée]nom|nom|n[ée]e?|date|t[ée]l|adresse|avs|patient|dossier|assur|geb|name|vorname|strasse|madame|monsieur|mademoiselle|mme|mlle|frau|herr)\\b)(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-'][A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+)*|[A-ZÀ-ÖØ-Þ]{2,}(?:[-'][A-ZÀ-ÖØ-Þ]+)*))(?:,?[ \\t](?:(?:de|du|des|der|von|van|le|la|di|da|del)[ \\t])?(?:(?!(?i:pr[ée]nom|nom|n[ée]e?|date|t[ée]l|adresse|avs|patient|dossier|assur|geb|name|vorname|strasse|madame|monsieur|mademoiselle|mme|mlle|frau|herr)\\b)(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-'][A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+)*|[A-ZÀ-ÖØ-Þ]{2,}(?:[-'][A-ZÀ-ÖØ-Þ]+)*))){1,3}",
+      "description": "Patient name after a label: Patient, Nom, Prénom, Concerne, Madame, Monsieur, Mme, Frau, Herr, Name. Titles like Dr or Prof are skipped.",
+      "enabled": true
+    },
+    {
+      "name": "Patient name",
+      "regex": "(?-i)(?<=\\b(?i:nom|pr[ée]nom|name|vorname)(?:[ \\t]?[:.])?[ \\t]{1,3})(?:(?!(?i:pr[ée]nom|nom|n[ée]e?|date|t[ée]l|adresse|avs|patient|dossier|assur|geb|name|vorname|strasse|madame|monsieur|mademoiselle|mme|mlle|frau|herr)\\b)(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-'][A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+)*|[A-ZÀ-ÖØ-Þ]{2,}(?:[-'][A-ZÀ-ÖØ-Þ]+)*))(?:[ \\t](?:(?!(?i:pr[ée]nom|nom|n[ée]e?|date|t[ée]l|adresse|avs|patient|dossier|assur|geb|name|vorname|strasse|madame|monsieur|mademoiselle|mme|mlle|frau|herr)\\b)(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-'][A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+)*|[A-ZÀ-ÖØ-Þ]{2,}(?:[-'][A-ZÀ-ÖØ-Þ]+)*)))?",
+      "description": "A single name after Nom, Prénom, Name or Vorname, as on forms with separate fields.",
+      "enabled": true
+    },
+    {
+      "name": "Date of birth",
+      "regex": "(?i)(?<=\\b(?:n[ée]e?[ \\t]le|date[ \\t]de[ \\t]naissance|naissance|ddn|geb(?:oren)?\\.?(?:[ \\t]am)?|geburtsdatum|geb\\.-?dat\\.?)[ \\t]{0,2}[:.]?[ \\t]{0,3})\\d{1,2}[./\\-]\\d{1,2}[./\\-](?:19|20)\\d{2}\\b",
+      "description": "Date of birth after né le, née le, date de naissance, DDN, geb., geboren am, Geburtsdatum. Examination dates stay visible.",
+      "enabled": true
+    },
+    {
+      "name": "Date of birth",
+      "regex": "(?<=\\()\\d{1,2}\\.\\d{1,2}\\.(?:19|20)\\d{2}(?=\\))",
+      "description": "Date of birth in parentheses right after a name: DUPONT Marie (12.03.1975).",
+      "enabled": true
+    },
+    {
+      "name": "AVS number",
+      "regex": "\\b756[.\\s]?(?:\\d{4}|X{4}|\\*{4})[.\\s]?(?:\\d{4}|X{4}|\\*{4})[.\\s]?\\d{2}\\b",
+      "description": "AVS / AHV number 756.1234.5678.97, with dots, spaces or none, also partly masked.",
+      "enabled": true
+    },
+    {
+      "name": "Insurance card",
+      "regex": "\\b80756\\d{15}\\b",
+      "description": "Swiss insurance card number: 20 digits starting with 80756.",
+      "enabled": true
+    },
+    {
+      "name": "GLN",
+      "regex": "\\b760\\d{10}\\b",
+      "description": "GLN of care providers and institutions: 13 digits starting with 760.",
+      "enabled": true
+    },
+    {
+      "name": "RCC number",
+      "regex": "(?i)(?<=\\b(?:n[°o][ \\t]?rcc|rcc|zsr(?:-?nr\\.?)?|n[°o][ \\t]?zsr|konkordatsnummer)(?:[ \\t]?[:.])?[ \\t]{0,3})[A-Z]\\d{6}\\b",
+      "description": "RCC / ZSR number of the care provider after its label: K123456.",
+      "enabled": true
+    },
+    {
+      "name": "Dossier number",
+      "regex": "(?i)(?<=\\b(?:n[°o][ \\t]?(?:de[ \\t])?(?:dossier|patient|cas|s[ée]jour|admission|hospitalisation|pid|ipp)|(?:dossier|patient|cas|s[ée]jour|admission)[ \\t]n[°o]|pid|ipp|fall(?:-?nr\\.?|nummer)|patienten-?(?:nr\\.?|nummer)|dossier-?(?:nr\\.?|nummer)|aufnahme-?nr\\.?)(?:[ \\t]?[:.])?[ \\t]{0,3})(?=[A-Z0-9\\-/]{5,})[A-Z]{0,3}-?\\d{2,12}(?:[-/]\\d{1,8})?\\b",
+      "description": "Patient, dossier, case, admission or PID number after its label.",
+      "enabled": true
+    },
+    {
+      "name": "Insured number",
+      "regex": "(?i)(?<=\\b(?:n[°o][ \\t]?(?:d['’][ \\t]?)?assur[ée]e?s?|num[ée]ro[ \\t](?:d['’][ \\t]?)?assur[ée]e?|n[°o][ \\t]?(?:de[ \\t])?police|n[°o][ \\t]?(?:de[ \\t])?carte|versicherten-?(?:nr\\.?|nummer)|policen-?(?:nr\\.?|nummer)|kartennummer|versichertennr\\.?)(?:[ \\t]?[:.])?[ \\t]{0,3})[A-Z0-9][A-Z0-9.\\-]{5,24}\\d\\b",
+      "description": "Insured, policy or card number after its label (n° d'assuré, Versichertennummer, n° de police).",
+      "enabled": true
+    },
+    {
+      "name": "IBAN",
+      "regex": "\\b(?:CH|LI)\\d{2}(?:[ \\t]?[0-9A-Z]{4}){4}[ \\t]?[0-9A-Z]\\b",
+      "description": "Swiss and Liechtenstein IBAN, with or without spaces.",
+      "enabled": true
+    },
+    {
+      "name": "NPA locality",
+      "regex": "(?-i)(?<![\\d.,])(?:CH[- ])?[1-9]\\d{3}[ \\t](?!(?:mg|ml|mmol|UI|IU|kcal|kJ|mm|cm|kg|g)\\b)[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-[ \\t]](?:(?:de|du|des|der|von|van|le|la|di|da|del)[ \\t])?[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+){0,2}\\b",
+      "description": "Postcode and locality: 1003 Lausanne, CH-8000 Zürich. Lab units such as 1000 mg are ignored.",
+      "enabled": true
+    },
+    {
+      "name": "Street address",
+      "regex": "(?i)\\b(?:rue|avenue|av\\.|chemin|ch\\.|route|rte|place|pl\\.|quai|impasse|sentier|promenade|passage|ruelle|boulevard|bd|all[ée]e)[ \\t](?:de[ \\t]la[ \\t]|de[ \\t]l['’]|des[ \\t]|du[ \\t]|de[ \\t]|d['’]|la[ \\t]|le[ \\t])?[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-[ \\t]](?:de[ \\t]|du[ \\t]|des[ \\t]|la[ \\t])?[A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+){0,3}[ \\t]\\d{1,4}[a-z]?\\b|\\b[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:strasse|straße|gasse|weg|platz|allee|ring|matte)\\b[ \\t]\\d{1,4}[a-z]?\\b",
+      "description": "Street and number in the Swiss order: Chemin des Roses 12, Rue du Lac 5, Bahnhofstrasse 10.",
+      "enabled": true
+    },
+    {
+      "name": "Phone",
+      "regex": "(?<![\\d.])(?:\\+41[ \\t]?(?:\\(0\\))?[ \\t]?|0041[ \\t]?|0)\\d{2}[ \\t]?\\d{3}[ \\t]?\\d{2}[ \\t]?\\d{2}(?![\\d.])",
+      "description": "Swiss phone numbers: +41 21 555 12 34, 021 555 12 34, 079 555 12 34.",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": true,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false,
+    "barcode": true
+  }
+}
