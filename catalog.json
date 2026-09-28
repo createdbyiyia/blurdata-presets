@@ -1,6 +1,6 @@
 {
-  "version": 23,
-  "updated": "2026-09-28T14:45",
+  "version": 24,
+  "updated": "2026-09-28T14:51",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -418,12 +418,12 @@
     },
     {
       "id": "ch.medical-records",
-      "presetVersion": 1,
+      "presetVersion": 2,
       "name": "Swiss Medical Records (Dossier médical)",
       "emoji": "🇨🇭",
       "language": "fr",
       "country": "CH",
-      "description": "Swiss medical records in French or German: discharge letters, consultation reports, lab results, medical correspondence. Detects the patient's name after its label, the date of birth (né le, née le, Geburtsdatum, or in parentheses after the name), the AVS/AHV number (756…), insurance card and insured numbers, patient, dossier and case numbers, GLN and RCC/ZSR identifiers, Swiss IBAN, NPA and locality, street addresses in the Swiss order, and Swiss phone numbers, plus names, e-mails and addresses from the built-in detectors. Turn on Barcodes & QR codes in the side panel to cover codes too. Keeps lab values, ICD-10 (CIM-10) and CHOP codes, examination dates and amounts. Doctors' names may be detected as well: click the X to keep one visible.",
+      "description": "Swiss medical records in French, German or Italian: discharge letters, consultation reports, lab results, medical correspondence. Detects the patient's name after its label, the date of birth (né le, née le, Geburtsdatum, or in parentheses after the name), the AVS/AHV number (756…), insurance card and insured numbers, patient, dossier and case numbers, the insurer's name, GLN and RCC/ZSR identifiers, Swiss IBAN, NPA and locality, street addresses in the Swiss order, and Swiss phone numbers, plus names, e-mails and addresses from the built-in detectors. Turn on Barcodes & QR codes in the side panel to cover codes too. Keeps lab values, ICD-10 (CIM-10) and CHOP codes, examination dates and amounts. Doctors' names may be detected as well: click the X to keep one visible. Handwritten signatures are not detected: draw a manual box over them.",
       "tags": [
         "medical",
         "healthcare",

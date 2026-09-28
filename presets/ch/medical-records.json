@@ -1,9 +1,9 @@
 {
   "id": "ch.medical-records",
-  "version": 1,
+  "version": 2,
   "name": "Swiss Medical Records (Dossier médical)",
   "emoji": "🇨🇭",
-  "description": "Swiss medical records in French or German: discharge letters, consultation reports, lab results, medical correspondence. Detects the patient's name after its label, the date of birth (né le, née le, Geburtsdatum, or in parentheses after the name), the AVS/AHV number (756…), insurance card and insured numbers, patient, dossier and case numbers, GLN and RCC/ZSR identifiers, Swiss IBAN, NPA and locality, street addresses in the Swiss order, and Swiss phone numbers, plus names, e-mails and addresses from the built-in detectors. Turn on Barcodes & QR codes in the side panel to cover codes too. Keeps lab values, ICD-10 (CIM-10) and CHOP codes, examination dates and amounts. Doctors' names may be detected as well: click the X to keep one visible.",
+  "description": "Swiss medical records in French, German or Italian: discharge letters, consultation reports, lab results, medical correspondence. Detects the patient's name after its label, the date of birth (né le, née le, Geburtsdatum, or in parentheses after the name), the AVS/AHV number (756…), insurance card and insured numbers, patient, dossier and case numbers, the insurer's name, GLN and RCC/ZSR identifiers, Swiss IBAN, NPA and locality, street addresses in the Swiss order, and Swiss phone numbers, plus names, e-mails and addresses from the built-in detectors. Turn on Barcodes & QR codes in the side panel to cover codes too. Keeps lab values, ICD-10 (CIM-10) and CHOP codes, examination dates and amounts. Doctors' names may be detected as well: click the X to keep one visible. Handwritten signatures are not detected: draw a manual box over them.",
   "language": "fr",
   "country": "CH",
   "tags": [
@@ -23,19 +23,19 @@
   "patterns": [
     {
       "name": "Patient name",
-      "regex": "(?-i)(?<=\\b(?i:patient(?:e|in)?|nom(?:[ \\t]et[ \\t]pr[ée]nom)?|pr[ée]nom|concerne|betr(?:ifft|\\.)|betreff|madame|monsieur|mademoiselle|mme|mlle|frau|herr|name|vorname)(?:[ \\t]?[:.])?[ \\t]{1,3}(?:(?i:madame|monsieur|mademoiselle|mme|mlle|frau|herr|m\\.)[ \\t])?)(?!(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+[ \\t])?(?:Dr|Prof|Dre|Pr|Méd|Med)\\b)(?:(?!(?i:pr[ée]nom|nom|n[ée]e?|date|t[ée]l|adresse|avs|patient|dossier|assur|geb|name|vorname|strasse|madame|monsieur|mademoiselle|mme|mlle|frau|herr)\\b)(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-'][A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+)*|[A-ZÀ-ÖØ-Þ]{2,}(?:[-'][A-ZÀ-ÖØ-Þ]+)*))(?:,?[ \\t](?:(?:de|du|des|der|von|van|le|la|di|da|del)[ \\t])?(?:(?!(?i:pr[ée]nom|nom|n[ée]e?|date|t[ée]l|adresse|avs|patient|dossier|assur|geb|name|vorname|strasse|madame|monsieur|mademoiselle|mme|mlle|frau|herr)\\b)(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-'][A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+)*|[A-ZÀ-ÖØ-Þ]{2,}(?:[-'][A-ZÀ-ÖØ-Þ]+)*))){1,3}",
+      "regex": "(?-i)(?<=\\b(?i:patient(?:e|in)?|nom(?:[ \\t]et[ \\t]pr[ée]nom)?|pr[ée]nom|concerne|betr(?:ifft|\\.)|betreff|madame|monsieur|mademoiselle|mme|mlle|frau|herr|name|vorname|paziente|signora|signor|sig\\.ra|sig\\.|cognome|nominativo)(?:[ \\t]?[:.])?[ \\t]{1,3}(?:(?i:madame|monsieur|mademoiselle|mme|mlle|frau|herr|signora|signor|m\\.)[ \\t])?)(?!(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+[ \\t])?(?:Dr|Prof|Dre|Pr|Méd|Med)\\b)(?:(?!(?i:pr[ée]nom|nom|n[ée]e?|date|t[ée]l|adresse|avs|patient|dossier|assur|geb|name|vorname|strasse|madame|monsieur|mademoiselle|mme|mlle|frau|herr|paziente|signora|signor|nat[oa]|cognome|nominativo|data)\\b)(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-'][A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+)*|[A-ZÀ-ÖØ-Þ]{2,}(?:[-'][A-ZÀ-ÖØ-Þ]+)*))(?:,?[ \\t](?:(?:de|du|des|der|von|van|le|la|di|da|del)[ \\t])?(?:(?!(?i:pr[ée]nom|nom|n[ée]e?|date|t[ée]l|adresse|avs|patient|dossier|assur|geb|name|vorname|strasse|madame|monsieur|mademoiselle|mme|mlle|frau|herr|paziente|signora|signor|nat[oa]|cognome|nominativo|data)\\b)(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-'][A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+)*|[A-ZÀ-ÖØ-Þ]{2,}(?:[-'][A-ZÀ-ÖØ-Þ]+)*))){1,3}",
       "description": "Patient name after a label: Patient, Nom, Prénom, Concerne, Madame, Monsieur, Mme, Frau, Herr, Name. Titles like Dr or Prof are skipped.",
       "enabled": true
     },
     {
       "name": "Patient name",
-      "regex": "(?-i)(?<=\\b(?i:nom|pr[ée]nom|name|vorname)(?:[ \\t]?[:.])?[ \\t]{1,3})(?:(?!(?i:pr[ée]nom|nom|n[ée]e?|date|t[ée]l|adresse|avs|patient|dossier|assur|geb|name|vorname|strasse|madame|monsieur|mademoiselle|mme|mlle|frau|herr)\\b)(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-'][A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+)*|[A-ZÀ-ÖØ-Þ]{2,}(?:[-'][A-ZÀ-ÖØ-Þ]+)*))(?:[ \\t](?:(?!(?i:pr[ée]nom|nom|n[ée]e?|date|t[ée]l|adresse|avs|patient|dossier|assur|geb|name|vorname|strasse|madame|monsieur|mademoiselle|mme|mlle|frau|herr)\\b)(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-'][A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+)*|[A-ZÀ-ÖØ-Þ]{2,}(?:[-'][A-ZÀ-ÖØ-Þ]+)*)))?",
+      "regex": "(?-i)(?<=\\b(?i:nom|pr[ée]nom|name|vorname|cognome|nominativo)(?:[ \\t]?[:.])?[ \\t]{1,3})(?:(?!(?i:pr[ée]nom|nom|n[ée]e?|date|t[ée]l|adresse|avs|patient|dossier|assur|geb|name|vorname|strasse|madame|monsieur|mademoiselle|mme|mlle|frau|herr|paziente|signora|signor|nat[oa]|cognome|nominativo|data)\\b)(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-'][A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+)*|[A-ZÀ-ÖØ-Þ]{2,}(?:[-'][A-ZÀ-ÖØ-Þ]+)*))(?:[ \\t](?:(?!(?i:pr[ée]nom|nom|n[ée]e?|date|t[ée]l|adresse|avs|patient|dossier|assur|geb|name|vorname|strasse|madame|monsieur|mademoiselle|mme|mlle|frau|herr|paziente|signora|signor|nat[oa]|cognome|nominativo|data)\\b)(?:[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-'][A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+)*|[A-ZÀ-ÖØ-Þ]{2,}(?:[-'][A-ZÀ-ÖØ-Þ]+)*)))?",
       "description": "A single name after Nom, Prénom, Name or Vorname, as on forms with separate fields.",
       "enabled": true
     },
     {
       "name": "Date of birth",
-      "regex": "(?i)(?<=\\b(?:n[ée]e?[ \\t]le|date[ \\t]de[ \\t]naissance|naissance|ddn|geb(?:oren)?\\.?(?:[ \\t]am)?|geburtsdatum|geb\\.-?dat\\.?)[ \\t]{0,2}[:.]?[ \\t]{0,3})\\d{1,2}[./\\-]\\d{1,2}[./\\-](?:19|20)\\d{2}\\b",
+      "regex": "(?i)(?<=\\b(?:n[ée]e?[ \\t]le|date[ \\t]de[ \\t]naissance|naissance|ddn|geb(?:oren)?\\.?(?:[ \\t]am)?|geburtsdatum|geb\\.-?dat\\.?|nat[oa][ \\t]il|data[ \\t]di[ \\t]nascita)[ \\t]{0,2}[:.]?[ \\t]{0,3})\\d{1,2}[./\\-]\\d{1,2}[./\\-](?:19|20)\\d{2}\\b",
       "description": "Date of birth after né le, née le, date de naissance, DDN, geb., geboren am, Geburtsdatum. Examination dates stay visible.",
       "enabled": true
     },
@@ -71,14 +71,26 @@
     },
     {
       "name": "Dossier number",
-      "regex": "(?i)(?<=\\b(?:n[°o][ \\t]?(?:de[ \\t])?(?:dossier|patient|cas|s[ée]jour|admission|hospitalisation|pid|ipp)|(?:dossier|patient|cas|s[ée]jour|admission)[ \\t]n[°o]|pid|ipp|fall(?:-?nr\\.?|nummer)|patienten-?(?:nr\\.?|nummer)|dossier-?(?:nr\\.?|nummer)|aufnahme-?nr\\.?)(?:[ \\t]?[:.])?[ \\t]{0,3})(?=[A-Z0-9\\-/]{5,})[A-Z]{0,3}-?\\d{2,12}(?:[-/]\\d{1,8})?\\b",
+      "regex": "(?i)(?<=\\b(?:n[°o][ \\t]?(?:de[ \\t])?(?:dossier|patient|cas|s[ée]jour|admission|hospitalisation|pid|ipp)|(?:dossier|patient|cas|s[ée]jour|admission)[ \\t]n[°o]|pid|ipp|fall(?:-?nr\\.?|nummer)|patienten-?(?:nr\\.?|nummer)|dossier-?(?:nr\\.?|nummer)|aufnahme-?nr\\.?|n(?:\\.|umero)[ \\t]?(?:paziente|dossier|caso|pratica)|(?:paziente|caso|pratica)[ \\t]n(?:\\.|umero)?)(?:[ \\t]?[:.])?[ \\t]{0,3})(?=[A-Z0-9\\-/]{5,})[A-Z]{0,3}-?\\d{2,12}(?:[-/]\\d{1,8})?\\b",
       "description": "Patient, dossier, case, admission or PID number after its label.",
       "enabled": true
     },
     {
       "name": "Insured number",
-      "regex": "(?i)(?<=\\b(?:n[°o][ \\t]?(?:d['’][ \\t]?)?assur[ée]e?s?|num[ée]ro[ \\t](?:d['’][ \\t]?)?assur[ée]e?|n[°o][ \\t]?(?:de[ \\t])?police|n[°o][ \\t]?(?:de[ \\t])?carte|versicherten-?(?:nr\\.?|nummer)|policen-?(?:nr\\.?|nummer)|kartennummer|versichertennr\\.?)(?:[ \\t]?[:.])?[ \\t]{0,3})[A-Z0-9][A-Z0-9.\\-]{5,24}\\d\\b",
+      "regex": "(?i)(?<=\\b(?:n[°o][ \\t]?(?:d['’][ \\t]?)?assur[ée]e?s?|num[ée]ro[ \\t](?:d['’][ \\t]?)?assur[ée]e?|n[°o][ \\t]?(?:de[ \\t])?police|n[°o][ \\t]?(?:de[ \\t])?carte|versicherten-?(?:nr\\.?|nummer)|policen-?(?:nr\\.?|nummer)|kartennummer|versichertennr\\.?|n(?:\\.|umero)[ \\t]?(?:assicurato|polizza|tessera)|tessera[ \\t]n(?:\\.|umero)?)(?:[ \\t]?[:.])?[ \\t]{0,3})[A-Z0-9][A-Z0-9.\\-]{5,24}\\d\\b",
       "description": "Insured, policy or card number after its label (n° d'assuré, Versichertennummer, n° de police).",
+      "enabled": true
+    },
+    {
+      "name": "Insurer",
+      "regex": "(?-i)(?<=\\b(?i:assurance(?:-maladie)?|assureur|caisse(?:-|[ \\t])maladie|krankenkasse|krankenversicherung|versicherung|versicherer|cassa[ \\t]malati|assicurazione|assicuratore)(?:[ \\t]?[:.])?[ \\t]{1,3})(?!(?i:n[°o]|num|de|du|des|obligatoire|maladie|LAMal|KVG|LaMal)\\b)[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÿ&'\\-]+(?:[ \\t](?:[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÿ&'\\-]+|SA|AG|SpA)){0,3}",
+      "description": "Insurer name after its label: Assurance, Assureur, Caisse-maladie, Krankenkasse, Versicherung, Cassa malati.",
+      "enabled": true
+    },
+    {
+      "name": "Insurer",
+      "regex": "(?-i)\\b(?:(?:Helsana|CSS|Swica|Concordia|Visana|Sanitas|Assura|Groupe[ \\t]Mutuel|Mutuel[ \\t]Assurance|KPT|CPT|Sympany|Vivao[ \\t]Sympany|Atupri|EGK|ÖKK|OKK|Agrisano|Intras|Arcosana|Aquilana|Provita|Sanagate|Galenos|Rhenusana|SLKK|Sodalis|Lumneziana|Vivacare|Sanavals|Suva|SUVA|Easy[ \\t]Sana|Philos|Progr[èe]s|Glarner[ \\t]Krankenversicherung)\\b(?:[ \\t](?:Assurances?|Versicherungen?|Assicurazioni|SA|AG)){0,2}|(?:Zurich|Zürich|AXA|Allianz|Generali|B[âa]loise|Mobili[èe]re|Vaudoise|Helvetia|Supra|Avenir|Compact|Steffisburg|Wädenswil|Einsiedler|Birchmeier|Assura)[ \\t](?:Assurances?|Assurance-maladie|Versicherung(?:en)?|Krankenkasse|Krankenversicherung|Assicurazioni|Insurance)(?:[ \\t](?:SA|AG))?)",
+      "description": "Swiss health and accident insurers by name: Helsana, CSS, Swica, Concordia, Visana, Sanitas, Assura, Groupe Mutuel, Suva and others.",
       "enabled": true
     },
     {
@@ -95,7 +107,7 @@
     },
     {
       "name": "Street address",
-      "regex": "(?i)\\b(?:rue|avenue|av\\.|chemin|ch\\.|route|rte|place|pl\\.|quai|impasse|sentier|promenade|passage|ruelle|boulevard|bd|all[ée]e)[ \\t](?:de[ \\t]la[ \\t]|de[ \\t]l['’]|des[ \\t]|du[ \\t]|de[ \\t]|d['’]|la[ \\t]|le[ \\t])?[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-[ \\t]](?:de[ \\t]|du[ \\t]|des[ \\t]|la[ \\t])?[A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+){0,3}[ \\t]\\d{1,4}[a-z]?\\b|\\b[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:strasse|straße|gasse|weg|platz|allee|ring|matte)\\b[ \\t]\\d{1,4}[a-z]?\\b",
+      "regex": "(?i)\\b(?:rue|avenue|av\\.|chemin|ch\\.|route|rte|place|pl\\.|quai|impasse|sentier|promenade|passage|ruelle|boulevard|bd|all[ée]e|via|viale|piazza|piazzale|corso|vicolo|salita)[ \\t](?:de[ \\t]la[ \\t]|de[ \\t]l['’]|des[ \\t]|du[ \\t]|de[ \\t]|d['’]|la[ \\t]|le[ \\t])?[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:[-[ \\t]](?:de[ \\t]|du[ \\t]|des[ \\t]|la[ \\t])?[A-ZÀ-ÖØ-Þ]?[a-zà-öø-ÿ]+){0,3}[ \\t]\\d{1,4}[a-z]?\\b|\\b[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ]+(?:strasse|straße|gasse|weg|platz|allee|ring|matte)\\b[ \\t]\\d{1,4}[a-z]?\\b",
       "description": "Street and number in the Swiss order: Chemin des Roses 12, Rue du Lac 5, Bahnhofstrasse 10.",
       "enabled": true
     },
