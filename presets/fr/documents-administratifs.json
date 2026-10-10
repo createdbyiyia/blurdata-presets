@@ -1,0 +1,108 @@
+{
+  "id": "fr.documents-administratifs",
+  "version": 1,
+  "name": "French Payslip, Invoice & Tax Notice",
+  "emoji": "🇫🇷",
+  "description": "French bulletin de paie, facture and avis d'impôt. Detects the NIR (numéro de sécurité sociale), SIRET, SIREN, French VAT number (TVA FR), numéro fiscal, tax notice reference, employee number, IBAN, French dates, phones, street addresses and postal code + city, plus names and emails. Amounts stay visible on purpose.",
+  "language": "fr",
+  "country": "FR",
+  "tags": [
+    "france",
+    "bulletin de paie",
+    "bulletin de salaire",
+    "fiche de paie",
+    "facture",
+    "avis d'impôt",
+    "NIR",
+    "SIRET",
+    "SIREN",
+    "TVA",
+    "RGPD",
+    "anonymiser",
+    "caviarder"
+  ],
+  "patterns": [
+    {
+      "name": "NIR",
+      "regex": "(?<!\\d)[1-478] ?\\d{2} ?\\d{2} ?(?:\\d{2}|2[AB]) ?\\d{3} ?\\d{3}(?: ?\\d{2})?(?!\\d)",
+      "description": "Numéro de sécurité sociale: 13 digits plus the 2-digit key, with or without spaces (Corsica 2A/2B included)",
+      "enabled": true
+    },
+    {
+      "name": "SIRET",
+      "regex": "(?<!\\d)\\d{3} ?\\d{3} ?\\d{3} ?\\d{5}(?!\\d)",
+      "description": "Establishment number: 14 digits, often written 123 456 789 00012",
+      "enabled": true
+    },
+    {
+      "name": "SIREN",
+      "regex": "(?<![\\d][ .]?)(?<!\\d)\\d{3}[ .]?\\d{3}[ .]?\\d{3}(?![ .]?\\d)",
+      "description": "Company number: 9 digits (123 456 789), only when it is not part of a longer number",
+      "enabled": true
+    },
+    {
+      "name": "TVA FR",
+      "regex": "(?-i)\\bFR ?[0-9A-HJ-NP-Z]{2} ?\\d{3} ?\\d{3} ?\\d{3}\\b",
+      "description": "French intra-EU VAT number: FR + 2-character key + SIREN",
+      "enabled": true
+    },
+    {
+      "name": "Numéro fiscal",
+      "regex": "(?<!\\d)[0-3]\\d ?\\d{2} ?\\d{3} ?\\d{3} ?\\d{3}(?!\\d)",
+      "description": "Tax ID on the avis d'impôt: 13 digits starting with 0-3",
+      "enabled": true
+    },
+    {
+      "name": "Réf. avis",
+      "regex": "(?<=r[ée]f[ée]rence de l['’]avis {0,3}: {0,3}|r[ée]f[ée]rence de l['’]avis {1,3})[0-9A-Z][0-9A-Z ]{8,20}[0-9A-Z]\\b",
+      "description": "Tax notice reference, anchored on the 'Référence de l'avis' label",
+      "enabled": true
+    },
+    {
+      "name": "Matricule",
+      "regex": "(?<=matricule {0,3}:? {0,3}|matricule n° {0,3})[A-Z0-9][A-Z0-9\\-]{2,14}\\b",
+      "description": "Employee number on a payslip, anchored on the 'Matricule' label",
+      "enabled": true
+    },
+    {
+      "name": "IBAN",
+      "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?: ?[A-Z0-9]){11,30}\\b",
+      "description": "International Bank Account Number, with or without spaces between groups",
+      "enabled": true
+    },
+    {
+      "name": "Date",
+      "regex": "\\b(?:0?[1-9]|[12]\\d|3[01])[/.\\-](?:0?[1-9]|1[0-2])[/.\\-](?:19|20)\\d{2}\\b",
+      "description": "French dates: JJ/MM/AAAA, JJ.MM.AAAA or JJ-MM-AAAA",
+      "enabled": true
+    },
+    {
+      "name": "Téléphone",
+      "regex": "(?<!\\d)(?:(?:\\+|00)33 ?(?:\\(0\\) ?)?|0)[1-9](?:[ .\\-]?\\d{2}){4}(?!\\d)",
+      "description": "French phone numbers: 01 23 45 67 89, 06.12.34.56.78, +33 6 12 34 56 78",
+      "enabled": true
+    },
+    {
+      "name": "Adresse",
+      "regex": "\\b\\d{1,4}(?: ?(?:bis|ter|quater))?,? (?:rue|avenue|av\\.|boulevard|bd|place|chemin|allée|allee|impasse|route|quai|cours|square|passage|résidence|residence|faubourg|rond-point|voie|sentier|hameau|lieu-dit)\\b(?: [\\w'’][\\w'’\\-.]{0,29}){1,5}",
+      "description": "Street address: number + street type + street name (rue, avenue, boulevard, impasse…)",
+      "enabled": true
+    },
+    {
+      "name": "Code postal",
+      "regex": "(?-i)(?<!\\d[ .]?)\\b(?:[0-8]\\d|9[0-8])\\d{3} {1,2}[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’\\-]{1,40}(?: (?!CEDEX\\b)(?:[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’\\-]{1,40}|sur|sous|lès|de|la|le|les|en|du|des)){0,3}(?: CEDEX(?: \\d{1,2})?)?",
+      "description": "Postal code + city, e.g. 75011 Paris, 69003 LYON, 75009 PARIS CEDEX 09",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": true,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false
+  }
+}

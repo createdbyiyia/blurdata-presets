@@ -1,42 +1,48 @@
 # BlurData Presets
 
-Community-curated **Document Presets** for [BlurData](https://blurdata.app) — the native macOS app that automatically detects and redacts PII in PDFs, screenshots, images and videos.
+Community-curated **Document Presets** for [BlurData](https://blurdata.app), the native macOS app that automatically detects and redacts PII in PDFs, scans, screenshots and images, or replaces it with consistent labels like [PERSON_1] (Pseudonymize) so documents can go to ChatGPT, Claude or any AI, with an optional clean Markdown export.
 
 A preset is a JSON file describing which detectors should run on a specific type of document (German payslip, US W-2, bank statement…), so a user can switch from "manual toggling everything" to "one click, the right things are detected" depending on the file.
 
 The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user opens **Browse Community Presets**. After download, each preset is cached locally and works fully offline.
 
-## Available presets (19)
+## Available presets (23)
 
 | Preset | Country | Detects |
 |---|---|---|
-| 🇩🇪 [German Payslip](presets/de/lohnabrechnung.json) | DE | Detects Steuerident-Nr |
-| 🇮🇹 [Italian Busta Paga](presets/it/busta-paga.json) | IT | Detects Codice Fiscale, Partita IVA, Matricola INPS, IBAN, Italian dates and phone numbers, plus names, addres… |
-| 🇺🇸 [US W-2 / Pay Stub](presets/us/w2-paystub.json) | US | Detects SSN, EIN, US dates, US ZIP codes, US phone numbers, bank routing numbers (context-anchored), plus name… |
-| 🏥 [US Medical Records](presets/us/medical-records.json) | US | Detects patient names, DOB (multiple formats), MRN (6+ digit runs without decimals), SSN, full US addresses, Z… |
-| 🇬🇧 [UK Medical Records](presets/uk/medical-records.json) | GB | Detects NHS numbers, UK dates (dd/mm/yyyy and long form), UK postcodes, UK phones, NI numbers, hospital number… |
-| 🧾 [Generic Invoice](presets/generic/invoice.json) | — | Detects invoice numbers, dates, EU VAT IDs, IBAN, BIC/SWIFT (context-anchored), international phones, plus nam… |
-| 🏦 [Bank Statement](presets/generic/bank-statement.json) | — | Detects IBAN, BIC/SWIFT (context-anchored), masked card numbers, full card numbers (13-19 digits), transaction… |
-| 🌎 [Common Surnames (US + Canada)](presets/us/common-surnames.json) | — | For guest lists, reservation calendars, employee rosters |
-| 🧾 [Italian Fattura](presets/it/fattura.json) | IT | Detects Partita IVA, Codice Fiscale, IBAN, the SDI recipient code, Italian dates and phone numbers, plus names… |
-| 📜 [Italian Atto / Contratto](presets/it/atto-contratto.json) | IT | Detects Codice Fiscale, Partita IVA, IBAN, the notarial Repertorio/Raccolta number, Italian dates and phone nu… |
-| ⚖️ [Italian Sentenze / Atti Giudiziari](presets/it/atti-giudiziari.json) | IT | Detects codice fiscale (personal and company), partita IVA, cadastral references (foglio, particella, subalter… |
-| 🏛️ [Italian Visura](presets/it/visura.json) | IT | Detects Partita IVA, Codice Fiscale, REA number, cadastral references (Foglio / Particella / Subalterno), IBAN… |
-| 🧾 [German Rechnung](presets/de/rechnung.json) | DE | Detects USt-IdNr, Steuernummer, IBAN, BIC/SWIFT, German dates, phones, street addresses and PLZ + city, plus n… |
-| 🪪 [German Personalausweis](presets/de/personalausweis.json) | DE | Detects the Ausweisnummer, CAN/Zugangsnummer, Steuer-ID, the machine-readable zone (MRZ), date of birth and Ge… |
-| 🏦 [German Kontoauszug](presets/de/kontoauszug.json) | DE | Detects IBAN, BIC/SWIFT, Bankleitzahl (BLZ), Kontonummer, German dates, phones and addresses, plus account hol… |
-| 🚗 [German Führerschein](presets/de/fuehrerschein.json) | DE | Detects the Führerscheinnummer, date and place of birth, issue/expiry dates and German addresses, plus names |
-| 🪪 [Spanish DNI / NIE](presets/es/dni.json) | ES | Detects the DNI (8 digits + letter), NIE, the support number (IDESP), dates of birth and Spanish addresses, pl… |
-| 🧾 [Spanish Factura](presets/es/factura.json) | ES | Detects NIF / CIF / DNI, IBAN, Spanish dates and phone numbers, plus names, addresses and emails |
-| 🇧🇪 [Belgian Legal Documents (FR)](presets/be/documents-juridiques.json) | BE | Detects the BCE company number, cadastral references, Belgian addresses and postal codes, company names by leg… |
+| 🇩🇪 [German Payslip](presets/de/lohnabrechnung.json) | DE | German Lohn-/Gehaltsabrechnung. Detects Steuerident-Nr., Rentenversicherungs-Nr., Krankenversicherungs-Nr.… |
+| 🇮🇹 [Italian Busta Paga](presets/it/busta-paga.json) | IT | Italian payslip. Detects Codice Fiscale, Partita IVA, Matricola INPS, IBAN, Italian dates and phone numbers… |
+| 🇺🇸 [US W-2 / Pay Stub](presets/us/w2-paystub.json) | US | US tax forms and pay stubs (W-2, W-4, 1099, generic paystubs). Detects SSN, EIN, US dates, US ZIP codes, US… |
+| 🏥 [US Medical Records](presets/us/medical-records.json) | US | US medical records and clinical notes. Detects patient names, DOB (multiple formats), MRN (6+ digit runs… |
+| 🇬🇧 [UK Medical Records](presets/uk/medical-records.json) | GB | UK hospital and GP records. Detects NHS numbers, UK dates (dd/mm/yyyy and long form), UK postcodes, UK… |
+| 🧾 [Generic Invoice](presets/generic/invoice.json) | — | Generic invoice or receipt. Detects invoice numbers, dates, EU VAT IDs, IBAN, BIC/SWIFT (context-anchored)… |
+| 🏦 [Bank Statement](presets/generic/bank-statement.json) | — | Bank or credit card statement. Detects IBAN, BIC/SWIFT (context-anchored), masked card numbers, full card… |
+| 🌎 [Common Surnames (US + Canada)](presets/us/common-surnames.json) | — | Opt-in preset that hides ~10,400 common surnames across the US and Canada — top 10k US Census 2010 plus… |
+| 🧾 [Italian Fattura](presets/it/fattura.json) | IT | Italian invoice (fattura). Detects Partita IVA, Codice Fiscale, IBAN, the SDI recipient code, Italian dates… |
+| 📜 [Italian Atto / Contratto](presets/it/atto-contratto.json) | IT | Italian legal deed or contract (atto notarile, contratto). Detects Codice Fiscale, Partita IVA, IBAN, the… |
+| ⚖️ [Italian Sentenze / Atti Giudiziari](presets/it/atti-giudiziari.json) | IT | Italian court judgments and judicial acts (sentenze, decreti, verbali, atti di stato civile). Detects codice… |
+| 🏛️ [Italian Visura](presets/it/visura.json) | IT | Italian company or cadastral record (visura camerale / catastale). Detects Partita IVA, Codice Fiscale, REA… |
+| 🧾 [German Rechnung](presets/de/rechnung.json) | DE | German invoice (Rechnung). Detects USt-IdNr, Steuernummer, IBAN, BIC/SWIFT, German dates, phones, street… |
+| 🪪 [German Personalausweis](presets/de/personalausweis.json) | DE | German ID card (Personalausweis) or passport copy. Detects the Ausweisnummer, CAN/Zugangsnummer, Steuer-ID… |
+| 🏦 [German Kontoauszug](presets/de/kontoauszug.json) | DE | German bank statement (Kontoauszug). Detects IBAN, BIC/SWIFT, Bankleitzahl (BLZ), Kontonummer, German dates… |
+| 🚗 [German Führerschein](presets/de/fuehrerschein.json) | DE | German driving licence (Führerschein) copy. Detects the Führerscheinnummer, date and place of birth… |
+| 🪪 [Spanish DNI / NIE](presets/es/dni.json) | ES | Spanish ID (DNI) or foreigner ID (NIE) copy. Detects the DNI (8 digits + letter), NIE, the support number… |
+| 🧾 [Spanish Factura](presets/es/factura.json) | ES | Spanish invoice (factura). Detects NIF / CIF / DNI, IBAN, Spanish dates and phone numbers, plus names… |
+| 🇧🇪 [Belgian Legal Documents (FR)](presets/be/documents-juridiques.json) | BE | Belgian legal documents in French (citations, conclusions, actes). Detects the BCE company number, cadastral… |
+| 📈 [US Brokerage Account Statement](presets/us/brokerage-statement.json) | US | US individual brokerage account statement (Schwab, Fidelity, Vanguard, Merrill, Morgan Stanley, IBKR and… |
+| ⚖️ [German Court Order (Gerichtsbeschluss)](presets/de/gerichtsbeschluss.json) | DE | German court orders, decisions and judicial correspondence (Beschluss, Urteil, Verfügung). Detects… |
+| 🇨🇭 [Swiss Medical Records (Dossier médical)](presets/ch/medical-records.json) | CH | Swiss medical records in French, German or Italian: discharge letters, consultation reports, lab results… |
+| 🇫🇷 [French Payslip, Invoice & Tax Notice](presets/fr/documents-administratifs.json) | FR | French bulletin de paie, facture and avis d'impôt. Detects the NIR (numéro de sécurité sociale), SIRET… |
 
 ## What you can anonymize, in your language
 
 - 🇮🇹 **Italiano**: anonimizzazione di sentenze, atti giudiziari, atti notarili, buste paga, fatture e visure. Rileva codice fiscale, partita IVA, dati catastali (foglio, particella, subalterno), targhe, IBAN e date.
-- 🇩🇪 **Deutsch**: Lohnabrechnungen und Dokumente schwärzen. Erkennt Steuer-ID, Rentenversicherungsnummer, Krankenversicherungsnummer, IBAN und Datumsangaben.
-- 🇪🇸 **Español**: anonimizar nóminas y documentos. Detecta DNI/NIE, número de la Seguridad Social, IBAN y fechas.
-- 🇫🇷 **Français**: anonymiser des documents juridiques belges (citations, conclusions, actes). Détecte le numéro BCE, les références cadastrales, les adresses et l'IBAN.
-- 🇬🇧 **English**: redact payslips, W-2s, invoices, bank statements and court documents. Detects SSN, EIN, National Insurance numbers, IBAN, card numbers and dates.
+- 🇩🇪 **Deutsch**: Lohnabrechnungen, Rechnungen, Kontoauszüge, Personalausweis, Führerschein und Gerichtsbeschlüsse schwärzen. Erkennt Steuer-ID, Rentenversicherungsnummer, Krankenversicherungsnummer, USt-IdNr, Ausweisnummer, IBAN und Datumsangaben.
+- 🇫🇷 **Français**: anonymiser et caviarder un bulletin de paie, une facture ou un avis d'impôt (France), des documents juridiques belges et des dossiers médicaux suisses. Détecte le NIR (numéro de sécurité sociale), SIRET, SIREN, TVA intracommunautaire, numéro fiscal, numéro AVS, numéro BCE, références cadastrales, adresses et IBAN.
+- 🇪🇸 **Español**: anonimizar DNI, NIE y facturas. Detecta DNI, NIE, NIF/CIF, IBAN, teléfonos y fechas.
+- 🇬🇧 **English**: redact payslips, W-2s, invoices, bank and brokerage statements, medical records and court documents. Detects SSN, EIN, National Insurance and NHS numbers, IBAN, card numbers and dates.
+
+Every preset works with both modes of the app: **Redact** removes the data from the file for good, **Pseudonymize** swaps it for consistent labels ([PERSON_1], [IBAN_1]…) so the document keeps its meaning for an AI, and can be saved as Markdown.
 
 All processing happens on-device in the BlurData app: documents never leave your Mac.
 

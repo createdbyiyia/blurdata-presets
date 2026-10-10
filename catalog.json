@@ -1,6 +1,6 @@
 {
-  "version": 24,
-  "updated": "2026-09-28T14:51",
+  "version": 25,
+  "updated": "2026-10-10T16:24",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -440,6 +440,32 @@
       ],
       "path": "presets/ch/medical-records.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/ch/medical-records.json"
+    },
+    {
+      "id": "fr.documents-administratifs",
+      "presetVersion": 1,
+      "name": "French Payslip, Invoice & Tax Notice",
+      "emoji": "🇫🇷",
+      "language": "fr",
+      "country": "FR",
+      "description": "French bulletin de paie, facture and avis d'impôt. Detects the NIR (numéro de sécurité sociale), SIRET, SIREN, French VAT number (TVA FR), numéro fiscal, tax notice reference, employee number, IBAN, French dates, phones, street addresses and postal code + city, plus names and emails. Amounts stay visible on purpose.",
+      "tags": [
+        "france",
+        "bulletin de paie",
+        "bulletin de salaire",
+        "fiche de paie",
+        "facture",
+        "avis d'impôt",
+        "NIR",
+        "SIRET",
+        "SIREN",
+        "TVA",
+        "RGPD",
+        "anonymiser",
+        "caviarder"
+      ],
+      "path": "presets/fr/documents-administratifs.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/fr/documents-administratifs.json"
     }
   ]
 }
