@@ -1,6 +1,6 @@
 {
-  "version": 25,
-  "updated": "2026-10-10T16:24",
+  "version": 26,
+  "updated": "2026-10-13T23:04",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -466,6 +466,56 @@
       ],
       "path": "presets/fr/documents-administratifs.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/fr/documents-administratifs.json"
+    },
+    {
+      "id": "us.consolidated-1099",
+      "presetVersion": 1,
+      "name": "US Broker Tax Statement (Consolidated 1099)",
+      "emoji": "🧾",
+      "language": "en",
+      "country": "US",
+      "description": "Year-end tax statement from a US broker (Form 1099 Composite / Consolidated 1099 from Schwab, Fidelity, Vanguard, E*TRADE, Merrill, Robinhood, IBKR and similar): 1099-DIV, 1099-INT, 1099-B, 1099-MISC and 1099-OID pages. Removes only what identifies the recipient: the account holder and joint holder names (in the address block or after a Recipient label), the street address and the city, state and ZIP line, the recipient's TIN or SSN (full or masked), account numbers in labeled, dashed, broker-specific and masked forms, client phone numbers and e-mails. Keeps everything you need for taxes or for an AI: box numbers and labels, all amounts, security names, CUSIPs, quantities, dates acquired and sold, proceeds, cost basis, gains and losses, wash sales, the payer's name and TIN and the broker's toll-free numbers. The broker's own street address is covered too (remove it with the X). Signatures and QR codes need a manual box.",
+      "tags": [
+        "united states",
+        "usa",
+        "1099",
+        "consolidated 1099",
+        "1099-b",
+        "1099-div",
+        "1099-int",
+        "tax",
+        "tax statement",
+        "brokerage",
+        "schwab",
+        "fidelity",
+        "vanguard",
+        "irs"
+      ],
+      "path": "presets/us/consolidated-1099.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/consolidated-1099.json"
+    },
+    {
+      "id": "us.tax-return-1040",
+      "presetVersion": 1,
+      "name": "US Tax Return (Form 1040)",
+      "emoji": "🇺🇸",
+      "language": "en",
+      "country": "US",
+      "description": "US individual income tax return (Form 1040, 1040-SR and schedules) and state returns with the same layout. Hides the taxpayer's, spouse's and dependents' names, SSNs and ITINs (also when written in separate boxes or masked), EINs, the home address and the city, state and ZIP line, the bank routing and account numbers for direct deposit, the Identity Protection PIN, the preparer's PTIN, phone numbers and e-mails. Keeps every amount, line number and label, the tax year and the filing status, so the return still makes sense.",
+      "tags": [
+        "united states",
+        "usa",
+        "1040",
+        "tax return",
+        "irs",
+        "income tax",
+        "schedule c",
+        "state return",
+        "ssn",
+        "tax"
+      ],
+      "path": "presets/us/tax-return-1040.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/tax-return-1040.json"
     }
   ]
 }

@@ -6,7 +6,7 @@ A preset is a JSON file describing which detectors should run on a specific type
 
 The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user opens **Browse Community Presets**. After download, each preset is cached locally and works fully offline.
 
-## Available presets (23)
+## Available presets (25)
 
 | Preset | Country | Detects |
 |---|---|---|
@@ -33,6 +33,8 @@ The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user
 | ⚖️ [German Court Order (Gerichtsbeschluss)](presets/de/gerichtsbeschluss.json) | DE | German court orders, decisions and judicial correspondence (Beschluss, Urteil, Verfügung). Detects… |
 | 🇨🇭 [Swiss Medical Records (Dossier médical)](presets/ch/medical-records.json) | CH | Swiss medical records in French, German or Italian: discharge letters, consultation reports, lab results… |
 | 🇫🇷 [French Payslip, Invoice & Tax Notice](presets/fr/documents-administratifs.json) | FR | French bulletin de paie, facture and avis d'impôt. Detects the NIR (numéro de sécurité sociale), SIRET… |
+| 🧾 [US Broker Tax Statement (Consolidated 1099)](presets/us/consolidated-1099.json) | US | Year-end tax statement from a US broker (Form 1099 Composite / Consolidated 1099 from Schwab, Fidelity… |
+| 🇺🇸 [US Tax Return (Form 1040)](presets/us/tax-return-1040.json) | US | US individual income tax return (Form 1040, 1040-SR and schedules) and state returns with the same layout.… |
 
 ## What you can anonymize, in your language
 
@@ -40,7 +42,7 @@ The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user
 - 🇩🇪 **Deutsch**: Lohnabrechnungen, Rechnungen, Kontoauszüge, Personalausweis, Führerschein und Gerichtsbeschlüsse schwärzen. Erkennt Steuer-ID, Rentenversicherungsnummer, Krankenversicherungsnummer, USt-IdNr, Ausweisnummer, IBAN und Datumsangaben.
 - 🇫🇷 **Français**: anonymiser et caviarder un bulletin de paie, une facture ou un avis d'impôt (France), des documents juridiques belges et des dossiers médicaux suisses. Détecte le NIR (numéro de sécurité sociale), SIRET, SIREN, TVA intracommunautaire, numéro fiscal, numéro AVS, numéro BCE, références cadastrales, adresses et IBAN.
 - 🇪🇸 **Español**: anonimizar DNI, NIE y facturas. Detecta DNI, NIE, NIF/CIF, IBAN, teléfonos y fechas.
-- 🇬🇧 **English**: redact payslips, W-2s, invoices, bank and brokerage statements, medical records and court documents. Detects SSN, EIN, National Insurance and NHS numbers, IBAN, card numbers and dates.
+- 🇬🇧 **English**: redact payslips, W-2s, tax returns (Form 1040), broker tax statements (Consolidated 1099), invoices, bank and brokerage statements, medical records and court documents. Detects SSN, EIN, PTIN, National Insurance and NHS numbers, IBAN, routing and account numbers, card numbers and dates.
 
 Every preset works with both modes of the app: **Redact** removes the data from the file for good, **Pseudonymize** swaps it for consistent labels ([PERSON_1], [IBAN_1]…) so the document keeps its meaning for an AI, and can be saved as Markdown.
 
