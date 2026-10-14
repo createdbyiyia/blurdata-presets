@@ -1,6 +1,6 @@
 {
-  "version": 28,
-  "updated": "2026-10-14T10:42",
+  "version": 29,
+  "updated": "2026-10-14T17:33",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -493,6 +493,29 @@
       ],
       "path": "presets/us/consolidated-1099.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/consolidated-1099.json"
+    },
+    {
+      "id": "de.werkstattauftrag",
+      "presetVersion": 1,
+      "name": "German Workshop Order (Werkstattauftrag)",
+      "emoji": "🔧",
+      "language": "de",
+      "country": "DE",
+      "description": "German workshop and repair orders (Werkstattauftrag, Reparaturauftrag, Auftragsbestätigung) from dealer and independent-garage systems. Hides the customer: name or company (after Herrn/Frau/Firma, in the address window, after Kunde:/Auftraggeber:/Halter:/Ansprechpartner:/z. Hd.), street and PLZ Ort, phone and mobile numbers, e-mail, every German licence plate (M-AB 1234, LÖ-X 99E, HH XY 1234H, also in free text) and only the last 6 characters of the VIN/FIN, so the first 11 stay readable. The workshop's name, letterhead, sender line, footer, switchboard number (ending in -0), fax, e-mail at workshop domains and staff names (Serviceberater:, Annahme:, Monteur:) stay visible, as do order and customer numbers, dates, km-Stand, Erstzulassung, HSN/TSN, make and model, work positions, part numbers, AW, prices and VAT. Limits: on scans and photos a name or address with no label or salutation on the same line (the address window) is not found and must be covered by hand; a workshop number without -0 (or a direct line without a Durchwahl label) is covered like a customer number; a VIN wrapped onto two lines is not recognised.",
+      "tags": [
+        "werkstattauftrag",
+        "reparaturauftrag",
+        "auftragsbestätigung",
+        "workshop order",
+        "car repair",
+        "kfz",
+        "fin",
+        "kennzeichen",
+        "germany",
+        "dsgvo"
+      ],
+      "path": "presets/de/werkstattauftrag.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/werkstattauftrag.json"
     }
   ]
 }

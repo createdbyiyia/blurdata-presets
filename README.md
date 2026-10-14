@@ -6,7 +6,7 @@ A preset is a JSON file describing which detectors should run on a specific type
 
 The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user opens **Browse Community Presets**. After download, each preset is cached locally and works fully offline.
 
-## Available presets (24)
+## Available presets (25)
 
 | Preset | Country | Detects |
 |---|---|---|
@@ -34,11 +34,12 @@ The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user
 | 🇨🇭 [Swiss Medical Records (Dossier médical)](presets/ch/medical-records.json) | CH | Swiss medical records in French, German or Italian: discharge letters, consultation reports, lab results… |
 | 🇫🇷 [French Payslip, Invoice & Tax Notice](presets/fr/documents-administratifs.json) | FR | French bulletin de paie, facture and avis d'impôt. Detects the NIR (numéro de sécurité sociale), SIRET… |
 | 🧾 [US Broker Tax Statement (Consolidated 1099)](presets/us/consolidated-1099.json) | US | Year-end tax statement from a US broker (Form 1099 Composite / Consolidated 1099 from Schwab, Fidelity… |
+| 🔧 [German Workshop Order (Werkstattauftrag)](presets/de/werkstattauftrag.json) | DE | German workshop and repair orders (Werkstattauftrag, Reparaturauftrag, Auftragsbestätigung) from dealer… |
 
 ## What you can anonymize, in your language
 
 - 🇮🇹 **Italiano**: anonimizzazione di sentenze, atti giudiziari, atti notarili, buste paga, fatture e visure. Rileva codice fiscale, partita IVA, dati catastali (foglio, particella, subalterno), targhe, IBAN e date.
-- 🇩🇪 **Deutsch**: Lohnabrechnungen, Rechnungen, Kontoauszüge, Personalausweis, Führerschein und Gerichtsbeschlüsse schwärzen. Erkennt Steuer-ID, Rentenversicherungsnummer, Krankenversicherungsnummer, USt-IdNr, Ausweisnummer, IBAN und Datumsangaben.
+- 🇩🇪 **Deutsch**: Lohnabrechnungen, Rechnungen, Kontoauszüge, Personalausweis, Führerschein, Gerichtsbeschlüsse und Werkstattaufträge schwärzen. Erkennt Steuer-ID, Rentenversicherungsnummer, Krankenversicherungsnummer, USt-IdNr, Ausweisnummer, IBAN, Kfz-Kennzeichen, FIN (nur die letzten 6 Stellen) und Datumsangaben.
 - 🇫🇷 **Français**: anonymiser et caviarder un bulletin de paie, une facture ou un avis d'impôt (France), des documents juridiques belges et des dossiers médicaux suisses. Détecte le NIR (numéro de sécurité sociale), SIRET, SIREN, TVA intracommunautaire, numéro fiscal, numéro AVS, numéro BCE, références cadastrales, adresses et IBAN.
 - 🇪🇸 **Español**: anonimizar DNI, NIE y facturas. Detecta DNI, NIE, NIF/CIF, IBAN, teléfonos y fechas.
 - 🇬🇧 **English**: redact payslips, W-2s, broker tax statements (Consolidated 1099), invoices, bank and brokerage statements, medical records and court documents. Detects SSN, EIN, National Insurance and NHS numbers, IBAN, routing and account numbers, card numbers and dates.
