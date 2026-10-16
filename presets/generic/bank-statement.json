@@ -1,9 +1,9 @@
 {
   "id": "generic.bank-statement",
-  "version": 4,
+  "version": 5,
   "name": "Bank Statement",
   "emoji": "🏦",
-  "description": "Bank or credit card statement. Detects IBAN, BIC/SWIFT (context-anchored), masked card numbers, full card numbers (13-19 digits), transaction references, dates, international phones, plus names, addresses, account numbers and amounts.",
+  "description": "Bank or credit card statement. Detects IBAN, BIC/SWIFT (context-anchored), masked card numbers, full card numbers (13-19 digits), transaction references, dates, phone numbers (US and Canada with extensions, European and international), plus names, addresses, account numbers and amounts.",
   "language": "en",
   "country": null,
   "tags": ["banking", "bank statement", "credit card", "finance"],
@@ -39,9 +39,9 @@
       "enabled": true
     },
     {
-      "name": "International phone number",
-      "regex": "(?<!\\d)\\+?\\d{1,3}[\\s\\-.]?\\(?\\d{2,4}\\)?[\\s\\-.]?\\d{3,4}[\\s\\-.]?\\d{3,4}(?!\\d)",
-      "description": "International phone — bounded to avoid matching inside longer numbers (IBANs, account numbers)",
+      "name": "Phone",
+      "regex": "(?<![A-Z]{2}\\d{2} [A-Z0-9]{4} )(?<![\\p{L}\\d+\\-./#$€£,])(?<!\\d )(?:(?:\\+?1[ .\\-]?)?(?:\\(\\d{3}\\)[ .\\-]?|\\d{3}[ .\\-])\\d{3}[ .\\-]\\d{4}(?:[ ]?(?:ext\\.?|extn\\.?|extension|x\\.?)[ ]?\\d{1,5})?|\\+1\\d{10}|[2-9]\\d{2}-\\d{4}|(?=\\+?(?:[ .\\-/()]{0,3}\\d){8})(?:\\+|00(?=[1-9]\\d{0,2}[ .\\-]))[1-9]\\d{0,2}(?:[ .\\-]?\\(0\\))?(?:[ .\\-/]?\\(?\\d{1,5}\\)?){2,6}|0[1-9](?:[ .\\-]\\d{2}){4}|\\(0\\d{1,4}\\)[ ]?\\d{2,4}(?:[ \\-]?\\d{2,4}){1,3}|(?=(?:[ /\\-]{0,3}\\d){8})0(?:\\d{1,4}[ ]|\\d{1,3}(?:-|[ ]?/[ ]?)(?!(?:19|20)\\d{2}(?!\\d)))\\d{3,8}(?:[ \\-]\\d{2,5}){0,3}|3\\d{2}[ .\\-]\\d{3}[ .\\-]?\\d{3,4}|[6-9]\\d{2}[ .]\\d{2,3}[ .]\\d{2,3}(?:[ .]\\d{2})?|9[1-8][ .]\\d{3}[ .]\\d{2}[ .]\\d{2}|(?<=(?:tel|phone|ph|cell|mobile|mob|home|work|fax|telefono|cellulare|telefon|handy|mobil|tél|portable|teléfono|móvil|tlf)\\.?[ ]?:?[ ]{0,2})\\+?\\d(?:[ .\\-/]?\\d){6,14})(?![\\p{L}\\d\\-/]|[.,]\\d)",
+      "description": "US and Canada numbers with area code (parentheses included), 7-digit local numbers like 555-0142, extensions (ext. 12, x12), international numbers with + or 00, and French, Italian, German, Spanish and UK formats. Plain digit runs only right after a phone label. Amounts, dates, ZIP codes, IBANs, card, account, routing and reference numbers are not taken.",
       "enabled": true
     },
     {

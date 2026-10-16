@@ -1,6 +1,6 @@
 {
-  "version": 30,
-  "updated": "2026-10-16T12:44",
+  "version": 31,
+  "updated": "2026-10-16T12:57",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -103,7 +103,7 @@
     },
     {
       "id": "generic.invoice",
-      "presetVersion": 5,
+      "presetVersion": 6,
       "name": "Generic Invoice",
       "emoji": "🧾",
       "language": "en",
@@ -120,12 +120,12 @@
     },
     {
       "id": "generic.bank-statement",
-      "presetVersion": 4,
+      "presetVersion": 5,
       "name": "Bank Statement",
       "emoji": "🏦",
       "language": "en",
       "country": null,
-      "description": "Bank or credit card statement. Detects IBAN, BIC/SWIFT (context-anchored), masked card numbers, full card numbers (13-19 digits), transaction references, dates, international phones, plus names, addresses, account numbers and amounts.",
+      "description": "Bank or credit card statement. Detects IBAN, BIC/SWIFT (context-anchored), masked card numbers, full card numbers (13-19 digits), transaction references, dates, phone numbers (US and Canada with extensions, European and international), plus names, addresses, account numbers and amounts.",
       "tags": [
         "banking",
         "bank statement",
