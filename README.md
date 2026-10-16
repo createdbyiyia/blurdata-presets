@@ -15,7 +15,7 @@ The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user
 | 🇺🇸 [US W-2 / Pay Stub](presets/us/w2-paystub.json) | US | US tax forms and pay stubs (W-2, W-4, 1099, generic paystubs). Detects SSN, EIN, US dates, US ZIP codes, US… |
 | 🏥 [US Medical Records](presets/us/medical-records.json) | US | US medical records and clinical notes. Detects patient names, DOB (multiple formats), MRN (6+ digit runs… |
 | 🇬🇧 [UK Medical Records](presets/uk/medical-records.json) | GB | UK hospital and GP records. Detects NHS numbers, UK dates (dd/mm/yyyy and long form), UK postcodes, UK… |
-| 🧾 [Generic Invoice](presets/generic/invoice.json) | — | Generic invoice or receipt. Detects invoice numbers, dates, EU VAT IDs, IBAN, BIC/SWIFT (context-anchored)… |
+| 🧾 [Generic Invoice](presets/generic/invoice.json) | — | Generic invoice or receipt. Detects invoice numbers, EU VAT IDs, IBAN, BIC/SWIFT (context-anchored), phone… |
 | 🏦 [Bank Statement](presets/generic/bank-statement.json) | — | Bank or credit card statement. Detects IBAN, BIC/SWIFT (context-anchored), masked card numbers, full card… |
 | 🌎 [Common Surnames (US + Canada)](presets/us/common-surnames.json) | — | Opt-in preset that hides ~10,400 common surnames across the US and Canada — top 10k US Census 2010 plus… |
 | 🧾 [Italian Fattura](presets/it/fattura.json) | IT | Italian invoice (fattura). Detects Partita IVA, Codice Fiscale, IBAN, the SDI recipient code, Italian dates… |

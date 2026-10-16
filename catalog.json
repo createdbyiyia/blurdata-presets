@@ -1,6 +1,6 @@
 {
-  "version": 29,
-  "updated": "2026-10-14T17:33",
+  "version": 30,
+  "updated": "2026-10-16T12:44",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -103,12 +103,12 @@
     },
     {
       "id": "generic.invoice",
-      "presetVersion": 4,
+      "presetVersion": 5,
       "name": "Generic Invoice",
       "emoji": "🧾",
       "language": "en",
       "country": null,
-      "description": "Generic invoice or receipt. Detects invoice numbers, dates, EU VAT IDs, IBAN, BIC/SWIFT (context-anchored), international phones, plus names, addresses, emails. Amounts kept visible — toggle Amounts manually to hide totals too.",
+      "description": "Generic invoice or receipt. Detects invoice numbers, EU VAT IDs, IBAN, BIC/SWIFT (context-anchored), phone numbers (US and Canada with extensions, European and international), plus names, addresses, emails. Dates and amounts stay visible; toggle Amounts manually to hide totals too.",
       "tags": [
         "invoice",
         "receipt",
