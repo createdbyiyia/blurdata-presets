@@ -35,6 +35,8 @@ The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user
 | 🇫🇷 [French Payslip, Invoice & Tax Notice](presets/fr/documents-administratifs.json) | FR | French bulletin de paie, facture and avis d'impôt. Detects the NIR (numéro de sécurité sociale), SIRET… |
 | 🧾 [US Broker Tax Statement (Consolidated 1099)](presets/us/consolidated-1099.json) | US | Year-end tax statement from a US broker (Form 1099 Composite / Consolidated 1099 from Schwab, Fidelity… |
 | 🔧 [German Workshop Order (Werkstattauftrag)](presets/de/werkstattauftrag.json) | DE | German workshop and repair orders (Werkstattauftrag, Reparaturauftrag, Auftragsbestätigung) from dealer… |
+| 🇬🇧 [UK Tax Return (SA100, SA302, P60, P45)](presets/uk/tax-return.json) | GB | UK Self Assessment documents: the SA100 tax return, the SA302 tax calculation and the P60 and P45… |
+| 🚜 [US Equipment Invoice / Sales Order](presets/us/equipment-invoice.json) | US | Invoices, sales orders and quotes from US machinery and equipment dealers (forestry, construction,… |
 
 ## What you can anonymize, in your language
 

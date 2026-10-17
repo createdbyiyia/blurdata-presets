@@ -1,6 +1,6 @@
 {
-  "version": 31,
-  "updated": "2026-10-16T12:57",
+  "version": 32,
+  "updated": "2026-10-17T22:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -516,6 +516,61 @@
       ],
       "path": "presets/de/werkstattauftrag.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/werkstattauftrag.json"
+    },
+    {
+      "id": "uk.tax-return",
+      "presetVersion": 1,
+      "name": "UK Tax Return (SA100, SA302, P60, P45)",
+      "emoji": "🇬🇧",
+      "language": "en",
+      "country": "GB",
+      "description": "UK Self Assessment documents: the SA100 tax return, the SA302 tax calculation and the P60 and P45 from an employer. Hides what points to you: your name and address, postcode, phone, e-mail, National Insurance number, UTR and date of birth, also when they are written one character per box, plus the bank sort code, account number and IBAN for refunds, the employer PAYE and Accounts Office references and your payroll number. Keeps what an accountant or an AI needs to read the return: every amount, box number, tax year, tax code, form name (SA100, SA102, SA302...), HMRC's own address and helpline numbers, and the employer's name (switch on Employer to hide it). Limits: on scans and photos, characters in boxes are often read one by one and can be missed, so check those fields; a date of birth after 2009 is found only right after its label; signatures need a manual box.",
+      "tags": [
+        "uk",
+        "united kingdom",
+        "hmrc",
+        "tax return",
+        "self assessment",
+        "sa100",
+        "sa302",
+        "p60",
+        "p45",
+        "national insurance",
+        "nino",
+        "utr",
+        "tax",
+        "gdpr"
+      ],
+      "path": "presets/uk/tax-return.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/uk/tax-return.json"
+    },
+    {
+      "id": "us.equipment-invoice",
+      "presetVersion": 1,
+      "name": "US Equipment Invoice / Sales Order",
+      "emoji": "🚜",
+      "language": "en",
+      "country": "US",
+      "description": "Invoices, sales orders and quotes from US machinery and equipment dealers (forestry, construction, farm, trucks and trailers), including old dot-matrix invoices scanned to PDF. Hides the customer: company and contact names, street and city lines of the Sold To, Bill To and Ship To blocks, customer phone numbers and e-mails, the customer number, the PO number, the tax, exemption or resale certificate number, the remarks after a Remarks or Comments label, the printed name of the signer, and every serial number (SER#, Serial No., S/N, SN, ESN, PIN, VIN, also 17-character PINs inside a table). Keeps make, model, year, hours, warranty codes, stock numbers, prices, totals, dates, terms, the invoice number (an optional pattern hides it too) and the dealer's name, phone, toll-free and fax numbers, mailboxes such as sales@ and web site. Limits: the dealer's own street and city line are covered like the customer's (remove them with the X); handwritten signatures, notes without a label and serials in a table column that are not 17-character PINs need a manual box; a person or street that is not recognised on a line under the Sold To label of a scan stays visible; makes such as John Deere can be taken for a person.",
+      "tags": [
+        "equipment invoice",
+        "sales order",
+        "quote",
+        "dealer",
+        "machinery",
+        "heavy equipment",
+        "forestry",
+        "logging",
+        "construction",
+        "farm equipment",
+        "appraisal",
+        "serial number",
+        "purchase order",
+        "dot matrix",
+        "usa"
+      ],
+      "path": "presets/us/equipment-invoice.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/equipment-invoice.json"
     }
   ]
 }

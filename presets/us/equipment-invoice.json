@@ -1,0 +1,124 @@
+{
+  "id": "us.equipment-invoice",
+  "version": 1,
+  "name": "US Equipment Invoice / Sales Order",
+  "emoji": "🚜",
+  "description": "Invoices, sales orders and quotes from US machinery and equipment dealers (forestry, construction, farm, trucks and trailers), including old dot-matrix invoices scanned to PDF. Hides the customer: company and contact names, street and city lines of the Sold To, Bill To and Ship To blocks, customer phone numbers and e-mails, the customer number, the PO number, the tax, exemption or resale certificate number, the remarks after a Remarks or Comments label, the printed name of the signer, and every serial number (SER#, Serial No., S/N, SN, ESN, PIN, VIN, also 17-character PINs inside a table). Keeps make, model, year, hours, warranty codes, stock numbers, prices, totals, dates, terms, the invoice number (an optional pattern hides it too) and the dealer's name, phone, toll-free and fax numbers, mailboxes such as sales@ and web site. Limits: the dealer's own street and city line are covered like the customer's (remove them with the X); handwritten signatures, notes without a label and serials in a table column that are not 17-character PINs need a manual box; a person or street that is not recognised on a line under the Sold To label of a scan stays visible; makes such as John Deere can be taken for a person.",
+  "language": "en",
+  "country": "US",
+  "tags": [
+    "equipment invoice",
+    "sales order",
+    "quote",
+    "dealer",
+    "machinery",
+    "heavy equipment",
+    "forestry",
+    "logging",
+    "construction",
+    "farm equipment",
+    "appraisal",
+    "serial number",
+    "purchase order",
+    "dot matrix",
+    "usa"
+  ],
+  "patterns": [
+    {
+      "name": "Serial",
+      "regex": "(?=[A-Za-z0-9])(?<=[ \\t#:$=.\\-])(?<=[LlOoMmRrNnUu#$.:=\\-][ \\t]{0,5})(?<=(?<![A-Za-z0-9])(?:SERIAL(?![A-Za-z])(?:[ \\t]?(?:NUMBER|NUM|NBR|NO)(?![A-Za-z])\\.?)?(?:[ \\t]{0,2}[#$])?|SER(?:(?:[ \\t]{0,2}[#$])|\\.(?:[ \\t]?NO(?![A-Za-z])\\.?)?|[ \\t]NO(?![A-Za-z])\\.?|[ \\t]NUM(?:BER)?(?![A-Za-z])\\.?)|S[ \\t]?/[ \\t]?N(?![A-Za-z])(?:[ \\t]{0,2}[#$])?|S\\.[ \\t]?N\\.(?:[ \\t]{0,2}[#$])?|E?SN(?![A-Za-z])(?:[ \\t]{0,2}[#$])?|S[MU](?=[ \\t]{0,2}:)|[PV]IN(?=[ \\t]{0,2}[#$:])(?:[ \\t]{0,2}[#$])?)[ \\t]{0,2}[:=\\-]?[ \\t]{0,3})(?:[A-Za-z0-9]{1,3}[ \\t](?=[A-Za-z0-9]{4}))?(?=[A-Za-z0-9\\-/.]{0,24}\\d)[A-Za-z0-9](?:[A-Za-z0-9]|[\\-/.](?=[A-Za-z0-9])){2,24}(?![A-Za-z0-9]|[\\-/.][A-Za-z0-9])",
+      "description": "Serial number after its label: SER#, SER #, SER. NO., Serial, Serial No., Serial Number, S/N, SN, ESN, PIN:, VIN:, with or without colon. The label stays readable; make, model, year, hours and warranty codes are not touched.",
+      "enabled": true
+    },
+    {
+      "name": "Serial",
+      "regex": "(?=[A-Za-z0-9])(?<=[Nn][ \\t]{1,2})(?<=(?<![A-Za-z0-9])[PV]IN[ \\t]{1,2})(?=[A-Za-z0-9]{8,17}(?![A-Za-z0-9]))(?=[A-Za-z0-9\\-/.]{0,24}\\d)[A-Za-z0-9]{8,17}(?![A-Za-z0-9]|[\\-/.][A-Za-z0-9])",
+      "description": "Product or vehicle identification number of 8 to 17 characters right after PIN or VIN.",
+      "enabled": true
+    },
+    {
+      "name": "Serial",
+      "regex": "(?-i)(?<![A-Za-z0-9\\-])(?=[A-Z0-9]{17}(?![A-Za-z0-9]))(?=(?:[0-9]{0,16}[A-Z]){3})(?=(?:[A-Z]{0,16}[0-9]){5})[A-Z0-9]{17}(?![A-Za-z0-9\\-])",
+      "description": "17-character PIN or VIN anywhere on the page, also inside a table column without a label (letters and digits mixed).",
+      "enabled": true
+    },
+    {
+      "name": "PO",
+      "regex": "(?=[A-Za-z0-9])(?<=[ \\t#:$=.\\-])(?<=[OoRr#$.:][ \\t]{0,5})(?<=(?<![A-Za-z0-9])(?:(?:(?:CUST(?:OMER)?|YOUR)[ \\t]?)?P[ \\t]?[./]?[ \\t]?O\\.?(?![A-Za-z])|(?:PURCHASE|(?:CUST(?:OMER)?|YOUR)[ \\t]?\\.?[ \\t]?)[ \\t]?ORDER(?![A-Za-z]))(?:(?:[ \\t]?(?:[#$]|NO(?![A-Za-z])\\.?|NUM(?:BER)?(?![A-Za-z])\\.?|NBR(?![A-Za-z])\\.?))[ \\t]{0,2}:?|[ \\t]{0,2}:)[ \\t]{0,3})(?!(?:DATE|SHIP|SOLD|BILL|TERMS?|TAX|INV|INVOICE|PAGE|VIA|REF|SALES(?:PERSON|MAN)?|SLSMN|CUST|CUSTOMER|ACCT|ACCOUNT|ORDER|QTY|PHONE|FAX|BOX|NONE|N/A)(?![A-Za-z0-9]))(?![A-Za-z0-9\\-/.#]{1,25}[ \\t]?:)[A-Za-z0-9](?:[A-Za-z0-9]|[\\-/.](?=[A-Za-z0-9])){1,24}(?![A-Za-z0-9]|[\\-/.][A-Za-z0-9])|(?=[A-Za-z0-9])(?<=[ \\t#:$=.\\-])(?<=[Oo.][ \\t]{1,2})(?<=(?<![A-Za-z0-9])P\\.?O\\.?[ \\t]{1,2})(?!(?:DATE|SHIP|SOLD|BILL|TERMS?|TAX|INV|INVOICE|PAGE|VIA|REF|SALES(?:PERSON|MAN)?|SLSMN|CUST|CUSTOMER|ACCT|ACCOUNT|ORDER|QTY|PHONE|FAX|BOX|NONE|N/A)(?![A-Za-z0-9]))(?![A-Za-z0-9\\-/.#]{1,25}[ \\t]?:)(?=[A-Za-z0-9\\-/.]{0,24}\\d)[A-Za-z0-9](?:[A-Za-z0-9]|[\\-/.](?=[A-Za-z0-9])){1,24}(?![A-Za-z0-9]|[\\-/.][A-Za-z0-9])",
+      "description": "Customer purchase order number after PO #, P.O. No., PO Number, Customer PO, Purchase Order. P.O. Box addresses are not taken.",
+      "enabled": true
+    },
+    {
+      "name": "Tax ID",
+      "regex": "(?=[A-Za-z0-9])(?<=[ \\t#:$=.\\-])(?<=[XxTtNnEeDdOoRrMmGg.#$:][ \\t]{0,5})(?<=(?<![A-Za-z0-9])(?:(?:SALES[ \\t]?)?TAX(?:[ \\t]?EXEMPT(?:ION)?)?|EXEMPT(?:ION)?|RESALE|SELLER'?S?[ \\t]PERMIT|FEIN|FED(?:ERAL)?[ \\t]?(?:TAX[ \\t]?)?ID|EIN)(?![A-Za-z])(?:[ \\t]?(?:ID|I\\.D\\.|NO|NUMBER|NUM|NBR|CERT(?:IFICATE)?|PERMIT|REG(?:ISTRATION)?)(?![A-Za-z])\\.?){0,2}[ \\t]{0,2}(?:#[ \\t]{0,2}:?|:)?[ \\t]{0,3})(?!\\d{1,3}(?:,\\d{3})*\\.\\d{2}(?!\\d)|\\d+\\.\\d{2}(?!\\d))(?![\\d.]{1,8}[ \\t]?%)(?=[A-Za-z0-9\\-/.]{0,24}\\d)[A-Za-z0-9](?:[A-Za-z0-9]|[\\-/.](?=[A-Za-z0-9])){2,24}(?![A-Za-z0-9]|[\\-/.][A-Za-z0-9])",
+      "description": "Customer tax, exemption or resale certificate number after Tax #, Tax ID, Tax Exempt No., Exempt #, Exemption Cert, Resale #, FEIN, Fed ID, EIN. Sales tax amounts and rates stay visible.",
+      "enabled": true
+    },
+    {
+      "name": "Customer no",
+      "regex": "(?=[A-Za-z0-9])(?<=[ \\t#:$=.\\-])(?<=[OoRrMmDd.#:][ \\t]{0,5})(?<=(?<![A-Za-z0-9])(?:CUST(?:OMER)?|ACC(?:OUN)?T|A/C)(?:[ \\t]?(?:#|NO(?![A-Za-z])\\.?|NUM(?:BER)?(?![A-Za-z])\\.?|NBR(?![A-Za-z])\\.?|ID(?![A-Za-z])))(?:[ \\t]{0,2}[#:])?[ \\t]{0,3})(?=[A-Za-z0-9\\-/.]{0,24}\\d)[A-Za-z0-9](?:[A-Za-z0-9]|[\\-/.](?=[A-Za-z0-9])){2,24}(?![A-Za-z0-9]|[\\-/.][A-Za-z0-9])|(?=[A-Za-z0-9])(?<=[ \\t#:$=.\\-])(?<=:[ \\t]{0,3})(?<=(?<![A-Za-z0-9])(?:CUST|ACCT)[ \\t]{0,2}:[ \\t]{0,3})(?=[A-Za-z0-9\\-/.]{0,24}\\d)[A-Za-z0-9](?:[A-Za-z0-9]|[\\-/.](?=[A-Za-z0-9])){2,24}(?![A-Za-z0-9]|[\\-/.][A-Za-z0-9])",
+      "description": "Customer or account number at the dealer after Cust #, Customer No., Customer ID, Account #, Acct No.",
+      "enabled": true
+    },
+    {
+      "name": "Customer",
+      "regex": "(?=[A-Za-z0-9&'’#])(?<=[ \\t:])(?<=(?:[Oo]|[Nn]\\.?|:)[ \\t]{0,5})(?<=(?<![A-Za-z0-9])(?:(?:(?:SOLD|BILL|SHIP|INVOICE)[ \\t]?-?[ \\t]?TO|ATTN\\.?|ATTENTION)[ \\t]{0,2}:?|(?:DELIVER(?:ED)?[ \\t]TO|OWNER|LESSEE|CUSTOMER(?:[ \\t]NAME)?|BUYER|PURCHASER|CONSIGNEE|CONTACT|SITE[ \\t]CONTACT|PRINT(?:ED)?[ \\t]NAME|NAME[ \\t]\\(PRINT(?:ED)?\\)|ACCEPTED[ \\t]BY(?:[ \\t]\\(CUSTOMER\\))?|RECEIVED[ \\t]BY|SIGNED[ \\t]BY)[ \\t]{0,2}:)[ \\t]{0,3})(?!(?:(?:SOLD|SHIP|BILL)[ \\t]?TO|PH(?:ONE)?|TEL|CELL|MOBILE|FAX|E-?MAIL|DATE|P\\.?O\\.?|TERMS|CUST(?:OMER)?[ \\t]?(?:#|NO)|TAX|ACCT|TITLE)(?![A-Za-z])|[^ \\t\\n:]{1,25}[ \\t]?:)(?!(?:SAME|WILL[ \\t]CALL|PICK[ \\t]?-?UP|CUSTOMER[ \\t]PICK|N/A|NONE)(?![A-Za-z]))[A-Za-z0-9&'’#][A-Za-z0-9&'’#.\\-/()]{0,30}(?:(?:,?[ \\t]{1,2}|[ \\t]{1,2}[\\-–][ \\t]{1,2})(?!(?:(?:SOLD|SHIP|BILL)[ \\t]?TO|PH(?:ONE)?|TEL|CELL|MOBILE|FAX|E-?MAIL|DATE|P\\.?O\\.?|TERMS|CUST(?:OMER)?[ \\t]?(?:#|NO)|TAX|ACCT|TITLE)(?![A-Za-z])|[^ \\t\\n:]{1,25}[ \\t]?:)[A-Za-z0-9&'’#][A-Za-z0-9&'’#.\\-/()]{0,30}){0,14}",
+      "description": "Customer name and address written on the same line as its label: Sold To:, Bill To:, Ship To:, Deliver To:, Customer:, Buyer:, Attn, Contact:, Site contact:, Print name:, Printed name:, Accepted by:, Received by:. Stops at the next label on the line; SAME, WILL CALL and PICK UP stay visible.",
+      "enabled": true
+    },
+    {
+      "name": "Customer",
+      "regex": "(?m)(?<=(?<![^\\n])[ \\t]{0,6})(?=[A-Za-z0-9&'’])(?![^\\n]{0,100}(?<![A-Za-z])(?:EQUIPMENT|EQUIP|TRACTORS?|IMPLEMENTS?|MACHINERY|MOTORS|SALES|SUPPLY|SUPPLIES|RENTALS?|DEALERS?(?:HIP)?|TURF|POWER|PARTS|FINANCE|FINANCIAL|BANK|CREDIT|CAPITAL|LEASING|INSURANCE|AUCTIONS?|AUCTIONEERS|INVOICE|QUOTATION|SPECIMEN|THANK)(?![A-Za-z]))(?:[A-Za-z0-9&'’][A-Za-z0-9&'’.\\-]{0,25}(?:[ \\t]{1,2}|,[ \\t]?)){0,5}(?:(?:LOGGING|TIMBER|TIMBERLANDS|FORESTRY|FOREST[ \\t]PRODUCTS|EXCAVATING|EXCAVATION|GRADING|CONSTRUCTION|CONTRACTING|CONTRACTORS|BUILDERS|TRUCKING|HAULING|FARMS?|RANCH(?:ES)?|DAIRY|ORCHARDS?|NURSERY|LANDSCAPING|LAND[ \\t]CLEARING|LAND[ \\t]MANAGEMENT|PAVING|DEMOLITION|SITEWORK|UTILITIES|PIPELINE|ENTERPRISES|HOLDINGS|INDUSTRIES|SERVICES|(?:&|AND)[ \\t]SONS|BROTHERS|BROS\\.?)(?![A-Za-z])(?:,?[ \\t]{1,2}(?:L\\.?L\\.?C\\.?|INC\\.?|INCORPORATED|CO\\.|CORP\\.?|CORPORATION|COMPANY|LTD\\.?|LIMITED|L\\.?L\\.?P\\.?|PLLC|L\\.P\\.|LP)(?![A-Za-z]))?|[A-Za-z0-9&'’][A-Za-z0-9&'’.\\-]{0,25},?[ \\t]{1,2}(?:L\\.?L\\.?C\\.?|INC\\.?|INCORPORATED|CO\\.|CORP\\.?|CORPORATION|COMPANY|LTD\\.?|LIMITED|L\\.?L\\.?P\\.?|PLLC|L\\.P\\.|LP)(?![A-Za-z]))(?:,?[ \\t]{1,2}(?:YARD|SITE|LANDING|UNIT|LOT|DIVISION|DIV\\.?|BRANCH|SHOP|PLANT|CAMP|JOB)[ \\t]?#?[A-Za-z0-9\\-]{1,8}|[ \\t]{1,2}[\\-–][ \\t]{1,2}[A-Za-z0-9&'’][A-Za-z0-9&'’.\\-]{0,25}(?:[ \\t][A-Za-z0-9&'’][A-Za-z0-9&'’.\\-]{0,25}){0,3})?(?=[ \\t]{0,6}$)",
+      "description": "A customer company alone on its line, as in the Sold To / Ship To block of a scan: a name ending in LLC, Inc., Co., Corp., Ltd. or in a trade word (Logging, Timber, Excavating, Construction, Trucking, Farms, Ranch, Enterprises, & Sons...), with an optional Yard / Site / Landing after it. Lines with Equipment, Tractor, Implement, Machinery, Sales, Supply, Rental, Bank or Finance stay visible, so the dealer's and the lender's names are kept.",
+      "enabled": true
+    },
+    {
+      "name": "Address",
+      "regex": "(?<![A-Za-z0-9])(?=[NSEW]?\\d)[NSEW]?\\d{1,6}[A-Z]?[ \\t]{1,2}(?:[NSEW]\\.?[ \\t])?(?:COUNTY|CNTY|CTY|CO\\.?|STATE|ST\\.?|US|U\\.S\\.|TOWNSHIP|TWP\\.?|PARISH|FARM[ \\t]TO[ \\t]MARKET)[ \\t]{1,2}(?:ROAD|RD\\.?|HWY\\.?|HIGHWAY|TRUNK|LINE|ROUTE|RTE\\.?)[ \\t]{1,2}[A-Z0-9]{1,5}(?:-?[A-Z])?(?:[ \\t]{1,2}[NSEW](?:\\.|(?![A-Za-z0-9])))?(?![A-Za-z0-9])|(?<![A-Za-z0-9])(?:RR|R\\.R\\.|RURAL[ \\t]ROUTE)[ \\t]?\\d{1,3}(?:,?[ \\t]{1,2}BOX[ \\t]\\d{1,5})?(?![A-Za-z0-9])",
+      "description": "Rural street lines in full: N1234 County Road K, 4810 County Road 1200 N, W2233 State Hwy 64, RR 2 Box 44.",
+      "enabled": true
+    },
+    {
+      "name": "Address",
+      "regex": "(?-i)(?m)(?<![A-Za-z\\d])(?!(?:No|Nr|Num|Number|Total|Ref|Code|Item|Qty|Page|Box|Tel|Fax|Phone|Account|Invoice|Order|Amount|Balance|Date|Year|Terms)(?![A-Za-z]))[A-Z][A-Za-z'.\\-]{1,24}(?:[ ]{1,2}[A-Z][A-Za-z'.\\-]{1,24}){0,2},[ ]{0,2}(?:AL|AK|AZ|AR|CA|CO|CT|DE|DC|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|PR|VI|GU)[ ]{1,2}\\d{5}(?:-\\d{4})?(?!\\d)|(?<=(?<![^\\n])[ \\t]{0,6})(?!(?:No|Nr|Num|Number|Total|Ref|Code|Item|Qty|Page|Box|Tel|Fax|Phone|Account|Invoice|Order|Amount|Balance|Date|Year|Terms)(?![A-Za-z]))[A-Z][A-Za-z'.\\-]{1,24}(?:[ ]{1,2}[A-Z][A-Za-z'.\\-]{1,24}){0,2}[ ]{1,2}(?:AL|AK|AZ|AR|CA|CO|CT|DE|DC|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|PR|VI|GU)[ ]{1,2}\\d{5}(?:-\\d{4})?(?=[ \\t]{0,6}$)",
+      "description": "City, state and ZIP line of an address block: SPRINGFIELD IL 62704, Anytown, WI 54000 (US state codes only).",
+      "enabled": true
+    },
+    {
+      "name": "Remarks",
+      "regex": "(?=[^ \\t\\n])(?<=:[ \\t]{0,3})(?<=(?<![A-Za-z])(?:REMARKS|COMMENTS|SPECIAL[ \\t]INSTRUCTIONS|DELIVERY[ \\t]INSTRUCTIONS|CUSTOMER[ \\t]NOTES|INTERNAL[ \\t]NOTES)[ \\t]{0,2}:[ \\t]{0,3})[^ \\t\\n](?:[^\\n]{0,250}[^ \\t\\n])?",
+      "description": "The rest of the line after Remarks:, Comments:, Special instructions:, Delivery instructions:, Customer notes:, Internal notes:.",
+      "enabled": true
+    },
+    {
+      "name": "Phone",
+      "regex": "(?=[+(0-9])(?!(?:\\+?1[ .\\-]?)?\\(?8(?:00|88|77|66|55|44|33)\\)?[ .\\-]?\\d{3})(?:(?<![A-Z]{2}\\d{2} [A-Z0-9]{4} )(?<![\\p{L}\\d+\\-./#$€£,])(?<!\\d )(?:(?:\\+?1[ .\\-]?)?(?:\\(\\d{3}\\)[ .\\-]?|\\d{3}[ .\\-])\\d{3}[ .\\-]\\d{4}(?:[ ]?(?:ext\\.?|extn\\.?|extension|x\\.?)[ ]?\\d{1,5})?|\\+1\\d{10}|[2-9]\\d{2}-\\d{4}|(?=\\+?(?:[ .\\-/()]{0,3}\\d){8})(?:\\+|00(?=[1-9]\\d{0,2}[ .\\-]))[1-9]\\d{0,2}(?:[ .\\-]?\\(0\\))?(?:[ .\\-/]?\\(?\\d{1,5}\\)?){2,6}|0[1-9](?:[ .\\-]\\d{2}){4}|\\(0\\d{1,4}\\)[ ]?\\d{2,4}(?:[ \\-]?\\d{2,4}){1,3}|(?=(?:[ /\\-]{0,3}\\d){8})0(?:\\d{1,4}[ ]|\\d{1,3}(?:-|[ ]?/[ ]?)(?!(?:19|20)\\d{2}(?!\\d)))\\d{3,8}(?:[ \\-]\\d{2,5}){0,3}|3\\d{2}[ .\\-]\\d{3}[ .\\-]?\\d{3,4}|[6-9]\\d{2}[ .]\\d{2,3}[ .]\\d{2,3}(?:[ .]\\d{2})?|9[1-8][ .]\\d{3}[ .]\\d{2}[ .]\\d{2}|(?<=(?:tel|phone|ph|cell|mobile|mob|home|work|fax|telefono|cellulare|telefon|handy|mobil|tél|portable|teléfono|móvil|tlf)\\.?[ ]?:?[ ]{0,2})\\+?\\d(?:[ .\\-/]?\\d){6,14})(?![\\p{L}\\d\\-/]|[.,]\\d))(?<!(?:fax|telefax|toll[ \\t]?-?free|tollfree)[^\\n]{0,45})(?<!(?:www\\.|https?://|(?:sales|info|parts|service|office)@)[^\\n]{0,100})(?![^\\n]{0,40}(?:(?<![A-Za-z])fax(?![A-Za-z])|www\\.|https?://))",
+      "description": "Customer phone numbers: US and Canada with area code (parentheses included), 7-digit local numbers, extensions, international. The dealer's numbers stay visible when they are toll-free, follow Fax, or share the line with a fax number or the dealer's web site.",
+      "enabled": true
+    },
+    {
+      "name": "Email",
+      "regex": "(?<![A-Za-z0-9._%+\\-@])(?!(?:sales|info|parts|service|office|admin|accounting|accounts|ar|ap|billing|orders?|contact|support|hello|team|dispatch|rentals?|quotes?|invoices?|noreply|no-reply|equipment|used|inventory|marketing|warranty)@)(?=[A-Za-z0-9._%+\\-]{1,64}@)[A-Za-z0-9._%+\\-]{1,64}@[A-Za-z0-9\\-]{1,63}(?:\\.[A-Za-z0-9\\-]{1,63}){0,4}\\.[A-Za-z]{2,24}(?![A-Za-z0-9\\-])",
+      "description": "Customer e-mail addresses. Dealer mailboxes such as sales@, parts@, service@, info@, office@ stay visible.",
+      "enabled": true
+    },
+    {
+      "name": "Invoice no",
+      "regex": "(?=[A-Za-z0-9])(?<=[ \\t#:$=.\\-])(?<=[EeVvOoRrMm#:.][ \\t]{0,5})(?<=(?<![A-Za-z0-9])(?:INVOICE|INV|QUOTE|QUOTATION)(?:[ \\t]?(?:#|NO(?![A-Za-z])\\.?|NUMBER|NUM(?![A-Za-z])\\.?))?[ \\t]{0,2}[:#]?[ \\t]{0,3})(?!(?:DATE|SHIP|SOLD|BILL|TERMS?|TAX|INV|INVOICE|PAGE|VIA|REF|SALES(?:PERSON|MAN)?|SLSMN|CUST|CUSTOMER|ACCT|ACCOUNT|ORDER|QTY|PHONE|FAX|BOX|NONE|N/A)(?![A-Za-z0-9]))(?![A-Za-z0-9\\-/.#]{1,25}[ \\t]?:)(?=[A-Za-z0-9\\-/.]{0,24}\\d)[A-Za-z0-9](?:[A-Za-z0-9]|[\\-/.](?=[A-Za-z0-9])){2,24}(?![A-Za-z0-9]|[\\-/.][A-Za-z0-9])",
+      "description": "Invoice or quote number after Invoice No., Invoice #, INV#, Quote #. Off by default: switch it on if the dealer's invoice number must be hidden too.",
+      "enabled": false
+    }
+  ],
+  "builtin": {
+    "email": false,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": false,
+    "licensePlate": false,
+    "barcode": false,
+    "phone": false
+  }
+}
