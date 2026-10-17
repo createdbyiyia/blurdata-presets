@@ -1,6 +1,6 @@
 {
   "id": "uk.tax-return",
-  "version": 1,
+  "version": 2,
   "name": "UK Tax Return (SA100, SA302, P60, P45)",
   "emoji": "🇬🇧",
   "description": "UK Self Assessment documents: the SA100 tax return, the SA302 tax calculation and the P60 and P45 from an employer. Hides what points to you: your name and address, postcode, phone, e-mail, National Insurance number, UTR and date of birth, also when they are written one character per box, plus the bank sort code, account number and IBAN for refunds, the employer PAYE and Accounts Office references and your payroll number. Keeps what an accountant or an AI needs to read the return: every amount, box number, tax year, tax code, form name (SA100, SA102, SA302...), HMRC's own address and helpline numbers, and the employer's name (switch on Employer to hide it). Limits: on scans and photos, characters in boxes are often read one by one and can be missed, so check those fields; a date of birth after 2009 is found only right after its label; signatures need a manual box.",
@@ -25,8 +25,8 @@
   "patterns": [
     {
       "name": "NI number",
-      "regex": "(?-i)(?<![A-Za-z0-9])[A-Z][ \\t]?[A-Z][ \\t\\-]{0,3}\\d[ \\t]?\\d[ \\t\\-]{0,3}\\d[ \\t]?\\d[ \\t\\-]{0,3}\\d[ \\t]?\\d[ \\t\\-]{0,3}[A-D](?![A-Za-z0-9])|(?-i:(?<![A-Za-z0-9])(?<![A-Za-z0-9] )[A-Z] [A-Z](?: \\d){2,6} [A-D](?![A-Za-z0-9]))",
-      "description": "National Insurance number in any spacing: QQ 12 34 56 C, QQ123456C, or one character per box.",
+      "regex": "(?-i)(?<![A-Za-z0-9])[A-Z][ \\t]?[A-Z][ \\t\\-]{0,3}\\d[ \\t]?\\d[ \\t\\-]{0,3}\\d[ \\t]?\\d[ \\t\\-]{0,3}\\d[ \\t]?\\d[ \\t\\-]{0,3}[A-D](?![A-Za-z0-9])|(?-i:(?<![A-Za-z0-9])(?<![A-Za-z0-9] )[A-Z] [A-Z](?: \\d){2,6} [A-D](?![A-Za-z0-9]))|(?<![^\\n])(?!SA|CT|TR|BX|NE|GB)[A-Z]{2}[ \\t|]{0,2}\\d{2}(?:[ \\t|]{0,2}\\d{1,2}){1,2}(?=[ \\t]{0,3}(?![^\\n]))",
+      "description": "National Insurance number in any spacing: QQ 12 34 56 C, QQ123456C, or one character per box; on a scan, also a line that holds only its first part (QQ12345) when the rest is read apart.",
       "enabled": true
     },
     {
@@ -79,8 +79,8 @@
     },
     {
       "name": "Postcode",
-      "regex": "(?-i)(?<![A-Za-z0-9])(?!B[ \\t]?X[ \\t]?\\d|N[ \\t]?E[ \\t]?9[ \\t]?[89])[A-PR-UWYZ](?:[ \\t]?[A-HK-Y])?[ \\t]?\\d(?:[ \\t]?[A-HJKPSTUW\\d])?[ \\t]{0,3}\\d[ \\t]?[ABD-HJLNP-UW-Z][ \\t]?[ABD-HJLNP-UW-Z](?![A-Za-z0-9])",
-      "description": "UK postcodes (AB1 2CD), also one character per box. HMRC and other organisation postcodes (BX9, NE98) stay visible.",
+      "regex": "(?-i)(?<![A-Za-z0-9])(?!B[ \\t]?X[ \\t]?\\d|N[ \\t]?E[ \\t]?9[ \\t]?[89])[A-PR-UWYZ](?:[ \\t]?[A-HK-Y])?[ \\t]?\\d(?:[ \\t]?[A-HJKPSTUW\\d])?[ \\t]{0,3}\\d[ \\t]?[ABD-HJLNP-UW-Z][ \\t]?[ABD-HJLNP-UW-Z](?![A-Za-z0-9])|(?<=(?i:post[ \\t]?code)[ \\t:]{1,4})(?!B[ \\t]?X[ \\t]?\\d|N[ \\t]?E[ \\t]?9[ \\t]?[89])[A-PR-UWYZ](?:[ \\t]?[A-HK-Y])?[ \\t]?\\d(?:[ \\t]?[A-HJKPSTUW\\d])?(?![ \\t]?[A-Za-z0-9])",
+      "description": "UK postcodes (AB1 2CD), also one character per box; after a Postcode label also the first half alone (NN4) when a scan reads the rest apart. HMRC and other organisation postcodes (BX9, NE98) stay visible.",
       "enabled": true
     },
     {
@@ -109,8 +109,8 @@
     },
     {
       "name": "PAYE reference",
-      "regex": "(?-i)(?<![A-Za-z0-9/])\\d[ \\t]?\\d[ \\t]?\\d[ \\t]{0,2}/[ \\t]{0,2}[A-Z](?:[ \\t]?[A-Z0-9]){1,9}(?![A-Za-z0-9])|(?<![A-Za-z0-9])\\d{3}[ \\t]?P[A-Z][ \\t]?\\d{7}[\\dX](?![A-Za-z0-9])",
-      "description": "Employer PAYE reference (123/AB45678) and Accounts Office reference (123PA00012345), also in boxes.",
+      "regex": "(?-i)(?<![A-Za-z0-9/])\\d[ \\t]?\\d[ \\t]?\\d[ \\t]{0,2}/[ \\t]{0,2}(?=[A-Z](?:[ \\t]?[A-Z]){0,8}(?:[ \\t]?\\d|[ \\t]{0,3}(?![^\\n])))[A-Z](?:[ \\t]?[A-Z0-9]){1,9}(?![A-Za-z0-9])|(?<![A-Za-z0-9/])(?<![A-Za-z0-9/][ \\t])\\d[ \\t]\\d[ \\t]\\d[ \\t]{0,2}/(?![ \\t]{0,2}[\\d/])|(?<![A-Za-z0-9/])\\d{3}/(?=[ \\t]{0,3}(?![^\\n]))|(?<![A-Za-z0-9])(?<![A-Za-z0-9][ \\t])(?!(?:[SC][ \\t])?K[ \\t]\\d|X[ \\t]\\d|S[ \\t]A[ \\t]\\d|C[ \\t]T[ \\t]\\d)[A-Z](?:[ \\t][A-Z]){0,2}(?:[ \\t]\\d){3,7}(?![ \\t]?[A-Za-z0-9])|(?<![A-Za-z0-9])\\d{3}[ \\t]?P[A-Z][ \\t]?\\d{7}[\\dX](?![A-Za-z0-9])",
+      "description": "Employer PAYE reference (123/AB45678) and Accounts Office reference (123PA00012345), also in boxes, also when the boxes after the slash are read apart (H B 2 9 3 8 4). Words next to it, such as HM Revenue and Customs, stay visible; so do tax codes (K475).",
       "enabled": true
     },
     {

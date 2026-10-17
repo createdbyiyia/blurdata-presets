@@ -1,6 +1,6 @@
 {
-  "version": 32,
-  "updated": "2026-10-17T22:00",
+  "version": 33,
+  "updated": "2026-10-18T00:46",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -519,7 +519,7 @@
     },
     {
       "id": "uk.tax-return",
-      "presetVersion": 1,
+      "presetVersion": 2,
       "name": "UK Tax Return (SA100, SA302, P60, P45)",
       "emoji": "🇬🇧",
       "language": "en",
@@ -546,12 +546,12 @@
     },
     {
       "id": "us.equipment-invoice",
-      "presetVersion": 1,
+      "presetVersion": 2,
       "name": "US Equipment Invoice / Sales Order",
       "emoji": "🚜",
       "language": "en",
       "country": "US",
-      "description": "Invoices, sales orders and quotes from US machinery and equipment dealers (forestry, construction, farm, trucks and trailers), including old dot-matrix invoices scanned to PDF. Hides the customer: company and contact names, street and city lines of the Sold To, Bill To and Ship To blocks, customer phone numbers and e-mails, the customer number, the PO number, the tax, exemption or resale certificate number, the remarks after a Remarks or Comments label, the printed name of the signer, and every serial number (SER#, Serial No., S/N, SN, ESN, PIN, VIN, also 17-character PINs inside a table). Keeps make, model, year, hours, warranty codes, stock numbers, prices, totals, dates, terms, the invoice number (an optional pattern hides it too) and the dealer's name, phone, toll-free and fax numbers, mailboxes such as sales@ and web site. Limits: the dealer's own street and city line are covered like the customer's (remove them with the X); handwritten signatures, notes without a label and serials in a table column that are not 17-character PINs need a manual box; a person or street that is not recognised on a line under the Sold To label of a scan stays visible; makes such as John Deere can be taken for a person.",
+      "description": "Invoices, sales orders and quotes from US machinery and equipment dealers (forestry, construction, farm, trucks and trailers), including old dot-matrix invoices scanned to PDF. Hides the customer: company and contact names, street and city lines of the Sold To, Bill To and Ship To blocks, customer phone numbers and e-mails, the customer number, the PO number, the tax, exemption or resale certificate number, the remarks after a Remarks, Comments, Notes or Delivery notes label, the lender and the loan, LN or contract number on a trade payoff, lien or financing line, the printed name of the signer, and every serial number (SER#, Serial No., S/N, SN, ESN, PIN, VIN, also 17-character PINs inside a table). Keeps make, model, year, hours, warranty codes, stock numbers, prices, totals and payoff amounts, dates, terms, notes that start with the dealer's standard wording (Prices valid..., Freight...), the invoice number (an optional pattern hides it too) and the dealer's name, phone, toll-free and fax numbers, mailboxes such as sales@ and web site. Limits: the dealer's own street and city line are covered like the customer's (remove them with the X); handwritten signatures, notes without a label, the second line of a Remarks or Notes block (a lender or loan number on it is still hidden) and serials in a table column that are not 17-character PINs need a manual box; a person or street that is not recognised on a line under the Sold To label of a scan stays visible; makes such as John Deere can be taken for a person.",
       "tags": [
         "equipment invoice",
         "sales order",
