@@ -63,7 +63,7 @@ Minimal preset:
 | `language` | no | ISO 639-1 code (`de`, `it`, `en`…) |
 | `country` | no | ISO 3166-1 alpha-2 (`DE`, `IT`, `US`…) or `null` if generic |
 | `tags` | no | Search/filter keywords |
-| `patterns` | yes | Array of `{name, regex, description, enabled}` — see safety rules below |
+| `patterns` | yes | Array of `{name, regex, description, enabled}` — see safety rules below. Every `name` must be unique in the preset: the app lists one row per pattern and uses the name as the Pseudonymize label, so several regexes for the same kind of data go into one pattern as alternatives, `(?:A)\|(?:B)` (a leading `(?-i)` makes the whole pattern case-sensitive; mix with `(?i:...)` / `(?-i:...)` groups) |
 | `builtin` | yes | Built-in detector overrides: keys are `email`, `name`, `address`, `ip`, `url`, `amount`, `accountNumber`, `licensePlate`. `true` enables, `false` disables, `null` (or absent) leaves user preference untouched |
 
 ## Safety rules for regex
@@ -86,6 +86,7 @@ File names: lowercase, hyphenated, English when possible (`bulletin-de-salaire.j
 
 ## Review checklist (what maintainer checks)
 
+- [ ] `python3 tools/check-presets.py` reports 0 errors (structure, versions in sync with `catalog.json`, unique pattern names)
 - [ ] Regex compiles in Swift's `NSRegularExpression`
 - [ ] No catastrophic backtracking (tested with 50KB random text input, returns in <100ms)
 - [ ] All examples in `description` and `name` are synthetic

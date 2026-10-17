@@ -1,6 +1,6 @@
 {
   "version": 33,
-  "updated": "2026-10-18T00:46",
+  "updated": "2026-10-18T00:59",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -378,7 +378,7 @@
     },
     {
       "id": "us.brokerage-statement",
-      "presetVersion": 2,
+      "presetVersion": 3,
       "name": "US Brokerage Account Statement",
       "emoji": "📈",
       "language": "en",
@@ -398,7 +398,7 @@
     },
     {
       "id": "de.gerichtsbeschluss",
-      "presetVersion": 1,
+      "presetVersion": 2,
       "name": "German Court Order (Gerichtsbeschluss)",
       "emoji": "⚖️",
       "language": "de",
@@ -418,7 +418,7 @@
     },
     {
       "id": "ch.medical-records",
-      "presetVersion": 2,
+      "presetVersion": 3,
       "name": "Swiss Medical Records (Dossier médical)",
       "emoji": "🇨🇭",
       "language": "fr",
@@ -469,7 +469,7 @@
     },
     {
       "id": "us.consolidated-1099",
-      "presetVersion": 2,
+      "presetVersion": 3,
       "name": "US Broker Tax Statement (Consolidated 1099)",
       "emoji": "🧾",
       "language": "en",
