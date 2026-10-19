@@ -1,6 +1,6 @@
 {
-  "version": 35,
-  "updated": "2026-10-19T14:00",
+  "version": 36,
+  "updated": "2026-10-19T17:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -571,6 +571,32 @@
       ],
       "path": "presets/us/equipment-invoice.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/equipment-invoice.json"
+    },
+    {
+      "id": "de.medical-records",
+      "presetVersion": 1,
+      "name": "German Medical Records (Arztbrief, Befund)",
+      "emoji": "🇩🇪",
+      "language": "de",
+      "country": "DE",
+      "description": "German medical documents: Arztbrief, Entlassungsbrief, Kurzarztbrief, Befundbericht, Laborbefund, Überweisungsschein (Muster 6), Reha-Entlassungsbericht, as text PDFs or scans. Detects the name of the patient and of relatives after their label (Patientin:, Name, Vorname:, Pat.:, Betr.:, Herr, Frau, Ehemann), also double-barrelled names with umlauts and particles (Müller-Lüdenscheidt, zu Hohenstetten, van der Heyde) and surname first; doctors' names after Dr. med., Prof., Dipl.-Med., OA or Chefärztin; the date of birth in every form (geb. am 03.07.1958, geb. 3.7.58, Geb.-Dat., *03.07.1958, (*1958), 3. Juli 1958); admission, discharge and other dates; the Krankenversichertennummer, the Rentenversicherungsnummer, case, patient and order numbers, LANR, BSNR and IK; German phone and fax numbers, street and house number, PLZ and town; plus e-mails and barcodes. Keeps diagnoses, ICD-10 codes, lab values, units and doses. Turn off Arzt to keep doctors' names visible, or Date to keep exam dates (dates of birth stay hidden). Limits: the clinic's own address in the letterhead is covered like the patient's (remove it with the X); on a form where the name sits under its printed label (Muster 6) the name may stay visible; handwritten signatures need a manual box.",
+      "tags": [
+        "medical",
+        "healthcare",
+        "hospital",
+        "patient",
+        "germany",
+        "deutschland",
+        "arztbrief",
+        "entlassungsbrief",
+        "befundbericht",
+        "laborbefund",
+        "krankenhaus",
+        "dsgvo",
+        "gdpr"
+      ],
+      "path": "presets/de/medical-records.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/medical-records.json"
     }
   ]
 }

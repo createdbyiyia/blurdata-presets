@@ -1,0 +1,121 @@
+{
+  "id": "de.medical-records",
+  "version": 1,
+  "name": "German Medical Records (Arztbrief, Befund)",
+  "emoji": "🇩🇪",
+  "description": "German medical documents: Arztbrief, Entlassungsbrief, Kurzarztbrief, Befundbericht, Laborbefund, Überweisungsschein (Muster 6), Reha-Entlassungsbericht, as text PDFs or scans. Detects the name of the patient and of relatives after their label (Patientin:, Name, Vorname:, Pat.:, Betr.:, Herr, Frau, Ehemann), also double-barrelled names with umlauts and particles (Müller-Lüdenscheidt, zu Hohenstetten, van der Heyde) and surname first; doctors' names after Dr. med., Prof., Dipl.-Med., OA or Chefärztin; the date of birth in every form (geb. am 03.07.1958, geb. 3.7.58, Geb.-Dat., *03.07.1958, (*1958), 3. Juli 1958); admission, discharge and other dates; the Krankenversichertennummer, the Rentenversicherungsnummer, case, patient and order numbers, LANR, BSNR and IK; German phone and fax numbers, street and house number, PLZ and town; plus e-mails and barcodes. Keeps diagnoses, ICD-10 codes, lab values, units and doses. Turn off Arzt to keep doctors' names visible, or Date to keep exam dates (dates of birth stay hidden). Limits: the clinic's own address in the letterhead is covered like the patient's (remove it with the X); on a form where the name sits under its printed label (Muster 6) the name may stay visible; handwritten signatures need a manual box.",
+  "language": "de",
+  "country": "DE",
+  "tags": [
+    "medical",
+    "healthcare",
+    "hospital",
+    "patient",
+    "germany",
+    "deutschland",
+    "arztbrief",
+    "entlassungsbrief",
+    "befundbericht",
+    "laborbefund",
+    "krankenhaus",
+    "dsgvo",
+    "gdpr"
+  ],
+  "patterns": [
+    {
+      "name": "Patient",
+      "regex": "(?-i)(?<=[ \\t])(?=\\p{Lu}|[vzdlto]\\p{Ll}{0,4}[ \\t])(?<=\\b(?i:patient(?:in)?|pat\\.|patientenname|name|nachname|familienname|vor-?[ \\t]und[ \\t]zuname|versicherte[r]?|betreffend|betr\\.|betreff|herr|herrn|frau|fräulein|geb\\.|geborene|ihre[mn]?[ \\t]patient(?:in|en)?|unsere[mn]?[ \\t]patient(?:in|en)?|ehemann|ehefrau|lebensgefährte|lebensgefährtin|lebenspartner(?:in)?|tochter|sohn|mutter|vater|bruder|angehörige[r]?|betreuer(?:in)?|bevollmächtigte[r]?|kontaktperson|begleitperson|bezugsperson|name,[ \\t]vorname|name[ \\t]des[ \\t]versicherten|name[ \\t]der[ \\t]versicherten|name[ \\t]des[ \\t]patienten|name[ \\t]der[ \\t]patientin)(?:[ \\t]?[:.])?[ \\t]{1,8}(?:(?i:frau|herr|herrn)[ \\t]{1,2})?)(?:(?:(?:von[ \\t]und[ \\t]zu|von[ \\t]der|von[ \\t]dem|von[ \\t]den|van[ \\t]der|van[ \\t]den|van[ \\t]de|de[ \\t]la|op[ \\t]de|von|vom|zu|zum|zur|van|de|del|della|di|da|dos|du|le|la|ten|ter|(?:Freiherr|Freifrau|Freiin|Graf|Gräfin|Prinz|Prinzessin|Edler|Edle|Ritter)[ \\t]von(?:[ \\t]der|[ \\t]dem)?)[ \\t])?(?!(?:Dr|Prof|PD|Priv|Dipl|Med|MUDr|Univ|OA|OÄ|Herr|Herrn|Frau|Fräulein|Kollege|Kollegen|Kollegin|Doktor|Schwester|Pfleger|Geb|Geboren|Geburtsdatum|Name|Vorname|Nachname|Patient|Patientin|Patienten|Anschrift|Adresse|Wohnort|Telefon|Tel|Fax|Mobil|Datum|Station|Zimmer|Fall|Fallnummer|Aufnahme|Entlassung|Versicherte|Versicherten|Versicherter|Krankenkasse|Kostenträger|Geschlecht|Diagnose|Diagnosen|Befund|Befunde|Labor|Klinik|Klinikum|Praxis|Ambulanz|Entlassungsbrief|Arztbrief|Kurzarztbrief|Befundbericht|Laborbefund|Überweisung|Bericht|Ihre|Ihren|Ihr|Unsere|Unser|Sehr|Mit|Und|Bei|Nach|Vor|Seit|Am|Im|In|Der|Die|Das|Den|Dem|Des|Ein|Eine|Einen|Keine|Kein|Siehe|Herz|Hausarzt|Hausärztin|Facharzt|Fachärztin|Oberarzt|Oberärztin|Chefarzt|Chefärztin|Stationsarzt|Stationsärztin|Assistenzarzt|Assistenzärztin|Arzt|Ärztin|Betreff|Betr|Ehemann|Ehefrau|Tochter|Sohn|Mutter|Vater|Jg|Jahrgang|Zeichen)\\b)(?:\\p{Lu}\\p{Ll}++(?:\\p{Lu}\\p{Ll}++)?+(?:[-'’]\\p{Lu}?\\p{Ll}++){0,3}+|\\p{Lu}{2,}+(?:[-'’]\\p{Lu}{2,}+){0,3}+)(?![:\\p{L}])(?:[ \\t](?:(?:von[ \\t]und[ \\t]zu|von[ \\t]der|von[ \\t]dem|von[ \\t]den|van[ \\t]der|van[ \\t]den|van[ \\t]de|de[ \\t]la|op[ \\t]de|von|vom|zu|zum|zur|van|de|del|della|di|da|dos|du|le|la|ten|ter|(?:Freiherr|Freifrau|Freiin|Graf|Gräfin|Prinz|Prinzessin|Edler|Edle|Ritter)[ \\t]von(?:[ \\t]der|[ \\t]dem)?)[ \\t])?(?!(?:Dr|Prof|PD|Dipl|Med|Univ|OA|OÄ|Herr|Herrn|Frau|Geb|Tel|Telefon|Fax|Mobil|Datum|Station|Zimmer|Klinik|Klinikum|Praxis|Anschrift|Adresse|Patient|Patientin|Name|Vorname|Diagnose|Diagnosen|Befund|Seite|Mit|Und|Kollege|Kollegin|Facharzt|Fachärztin|Chefarzt|Chefärztin|Oberarzt|Oberärztin|Unser|Unsere|Ihr|Ihre|Ihren|Sehr|Betreff|Betr|Zeichen|Jg|Jahrgang|Versicherten|Krankenkasse|Fallnummer|Aufnahme|Entlassung)\\b)(?:\\p{Lu}\\p{Ll}++(?:\\p{Lu}\\p{Ll}++)?+(?:[-'’]\\p{Lu}?\\p{Ll}++){0,3}+|\\p{Lu}{2,}+(?:[-'’]\\p{Lu}{2,}+){0,3}+)(?![:\\p{L}])){0,2},[ \\t](?!(?:Dr|Prof|PD|Priv|Dipl|Med|MUDr|Univ|OA|OÄ|Herr|Herrn|Frau|Fräulein|Kollege|Kollegen|Kollegin|Doktor|Schwester|Pfleger|Geb|Geboren|Geburtsdatum|Name|Vorname|Nachname|Patient|Patientin|Patienten|Anschrift|Adresse|Wohnort|Telefon|Tel|Fax|Mobil|Datum|Station|Zimmer|Fall|Fallnummer|Aufnahme|Entlassung|Versicherte|Versicherten|Versicherter|Krankenkasse|Kostenträger|Geschlecht|Diagnose|Diagnosen|Befund|Befunde|Labor|Klinik|Klinikum|Praxis|Ambulanz|Entlassungsbrief|Arztbrief|Kurzarztbrief|Befundbericht|Laborbefund|Überweisung|Bericht|Ihre|Ihren|Ihr|Unsere|Unser|Sehr|Mit|Und|Bei|Nach|Vor|Seit|Am|Im|In|Der|Die|Das|Den|Dem|Des|Ein|Eine|Einen|Keine|Kein|Siehe|Herz|Hausarzt|Hausärztin|Facharzt|Fachärztin|Oberarzt|Oberärztin|Chefarzt|Chefärztin|Stationsarzt|Stationsärztin|Assistenzarzt|Assistenzärztin|Arzt|Ärztin|Betreff|Betr|Ehemann|Ehefrau|Tochter|Sohn|Mutter|Vater|Jg|Jahrgang|Zeichen)\\b)(?:\\p{Lu}\\p{Ll}++(?:\\p{Lu}\\p{Ll}++)?+(?:[-'’]\\p{Lu}?\\p{Ll}++){0,3}+|\\p{Lu}{2,}+(?:[-'’]\\p{Lu}{2,}+){0,3}+)(?![:\\p{L}])(?:[ \\t](?!(?:Dr|Prof|PD|Dipl|Med|Univ|OA|OÄ|Herr|Herrn|Frau|Geb|Tel|Telefon|Fax|Mobil|Datum|Station|Zimmer|Klinik|Klinikum|Praxis|Anschrift|Adresse|Patient|Patientin|Name|Vorname|Diagnose|Diagnosen|Befund|Seite|Mit|Und|Kollege|Kollegin|Facharzt|Fachärztin|Chefarzt|Chefärztin|Oberarzt|Oberärztin|Unser|Unsere|Ihr|Ihre|Ihren|Sehr|Betreff|Betr|Zeichen|Jg|Jahrgang|Versicherten|Krankenkasse|Fallnummer|Aufnahme|Entlassung)\\b)(?:\\p{Lu}\\p{Ll}++(?:\\p{Lu}\\p{Ll}++)?+(?:[-'’]\\p{Lu}?\\p{Ll}++){0,3}+|\\p{Lu}{2,}+(?:[-'’]\\p{Lu}{2,}+){0,3}+)(?![:\\p{L}])){0,2}|(?:(?:von[ \\t]und[ \\t]zu|von[ \\t]der|von[ \\t]dem|von[ \\t]den|van[ \\t]der|van[ \\t]den|van[ \\t]de|de[ \\t]la|op[ \\t]de|von|vom|zu|zum|zur|van|de|del|della|di|da|dos|du|le|la|ten|ter|(?:Freiherr|Freifrau|Freiin|Graf|Gräfin|Prinz|Prinzessin|Edler|Edle|Ritter)[ \\t]von(?:[ \\t]der|[ \\t]dem)?)[ \\t])?(?!(?:Dr|Prof|PD|Priv|Dipl|Med|MUDr|Univ|OA|OÄ|Herr|Herrn|Frau|Fräulein|Kollege|Kollegen|Kollegin|Doktor|Schwester|Pfleger|Geb|Geboren|Geburtsdatum|Name|Vorname|Nachname|Patient|Patientin|Patienten|Anschrift|Adresse|Wohnort|Telefon|Tel|Fax|Mobil|Datum|Station|Zimmer|Fall|Fallnummer|Aufnahme|Entlassung|Versicherte|Versicherten|Versicherter|Krankenkasse|Kostenträger|Geschlecht|Diagnose|Diagnosen|Befund|Befunde|Labor|Klinik|Klinikum|Praxis|Ambulanz|Entlassungsbrief|Arztbrief|Kurzarztbrief|Befundbericht|Laborbefund|Überweisung|Bericht|Ihre|Ihren|Ihr|Unsere|Unser|Sehr|Mit|Und|Bei|Nach|Vor|Seit|Am|Im|In|Der|Die|Das|Den|Dem|Des|Ein|Eine|Einen|Keine|Kein|Siehe|Herz|Hausarzt|Hausärztin|Facharzt|Fachärztin|Oberarzt|Oberärztin|Chefarzt|Chefärztin|Stationsarzt|Stationsärztin|Assistenzarzt|Assistenzärztin|Arzt|Ärztin|Betreff|Betr|Ehemann|Ehefrau|Tochter|Sohn|Mutter|Vater|Jg|Jahrgang|Zeichen)\\b)(?:\\p{Lu}\\p{Ll}++(?:\\p{Lu}\\p{Ll}++)?+(?:[-'’]\\p{Lu}?\\p{Ll}++){0,3}+|\\p{Lu}{2,}+(?:[-'’]\\p{Lu}{2,}+){0,3}+)(?![:\\p{L}])(?:[ \\t](?:(?:von[ \\t]und[ \\t]zu|von[ \\t]der|von[ \\t]dem|von[ \\t]den|van[ \\t]der|van[ \\t]den|van[ \\t]de|de[ \\t]la|op[ \\t]de|von|vom|zu|zum|zur|van|de|del|della|di|da|dos|du|le|la|ten|ter|(?:Freiherr|Freifrau|Freiin|Graf|Gräfin|Prinz|Prinzessin|Edler|Edle|Ritter)[ \\t]von(?:[ \\t]der|[ \\t]dem)?)[ \\t])?(?!(?:Dr|Prof|PD|Dipl|Med|Univ|OA|OÄ|Herr|Herrn|Frau|Geb|Tel|Telefon|Fax|Mobil|Datum|Station|Zimmer|Klinik|Klinikum|Praxis|Anschrift|Adresse|Patient|Patientin|Name|Vorname|Diagnose|Diagnosen|Befund|Seite|Mit|Und|Kollege|Kollegin|Facharzt|Fachärztin|Chefarzt|Chefärztin|Oberarzt|Oberärztin|Unser|Unsere|Ihr|Ihre|Ihren|Sehr|Betreff|Betr|Zeichen|Jg|Jahrgang|Versicherten|Krankenkasse|Fallnummer|Aufnahme|Entlassung)\\b)(?:\\p{Lu}\\p{Ll}++(?:\\p{Lu}\\p{Ll}++)?+(?:[-'’]\\p{Lu}?\\p{Ll}++){0,3}+|\\p{Lu}{2,}+(?:[-'’]\\p{Lu}{2,}+){0,3}+)(?![:\\p{L}])){0,3})",
+      "description": "Name of the patient or a relative after its label: Patient, Patientin, Pat., Name, Vorname, Name des Versicherten, betreffend, Betr., Herr, Frau, Ihre Patientin, Ehemann, Tochter, Begleitperson. Whole names with hyphens, umlauts and particles (von, zu, van der, Freiherr von), also surname first: Müller-Lüdenscheidt, Elisabeth.",
+      "enabled": true
+    },
+    {
+      "name": "Arzt",
+      "regex": "(?-i)(?<=[ \\t])(?=\\p{Lu}|[vzdlto]\\p{Ll}{0,4}[ \\t])(?<=\\b(?:Dr\\.|Dres\\.|med\\.|dent\\.|nat\\.|phil\\.|habil\\.|univ\\.|vet\\.|medic\\.|hum\\.|sc\\.|biol\\.|h\\.[ \\t]?c\\.|Univ\\.|Prof\\.|PD|Priv\\.-Doz\\.|Dipl\\.-Med\\.|Dipl\\.-Psych\\.|MUDr\\.|OA|OÄ|Oberarzt|Oberärztin|Chefarzt|Chefärztin|Stationsarzt|Stationsärztin|Assistenzarzt|Assistenzärztin|Hausarzt|Hausärztin|Kollege|Kollegin|Kollegen)(?:[ \\t]?:)?[ \\t]{1,2})(?:\\p{Lu}\\.(?:-\\p{Lu}\\.)?[ \\t]{1,2}){0,2}(?:(?:von[ \\t]und[ \\t]zu|von[ \\t]der|von[ \\t]dem|von[ \\t]den|van[ \\t]der|van[ \\t]den|van[ \\t]de|de[ \\t]la|op[ \\t]de|von|vom|zu|zum|zur|van|de|del|della|di|da|dos|du|le|la|ten|ter|(?:Freiherr|Freifrau|Freiin|Graf|Gräfin|Prinz|Prinzessin|Edler|Edle|Ritter)[ \\t]von(?:[ \\t]der|[ \\t]dem)?)[ \\t])?(?!(?:Dr|Prof|PD|Priv|Dipl|Med|MUDr|Univ|OA|OÄ|Herr|Herrn|Frau|Fräulein|Kollege|Kollegen|Kollegin|Doktor|Schwester|Pfleger|Geb|Geboren|Geburtsdatum|Name|Vorname|Nachname|Patient|Patientin|Patienten|Anschrift|Adresse|Wohnort|Telefon|Tel|Fax|Mobil|Datum|Station|Zimmer|Fall|Fallnummer|Aufnahme|Entlassung|Versicherte|Versicherten|Versicherter|Krankenkasse|Kostenträger|Geschlecht|Diagnose|Diagnosen|Befund|Befunde|Labor|Klinik|Klinikum|Praxis|Ambulanz|Entlassungsbrief|Arztbrief|Kurzarztbrief|Befundbericht|Laborbefund|Überweisung|Bericht|Ihre|Ihren|Ihr|Unsere|Unser|Sehr|Mit|Und|Bei|Nach|Vor|Seit|Am|Im|In|Der|Die|Das|Den|Dem|Des|Ein|Eine|Einen|Keine|Kein|Siehe|Herz|Hausarzt|Hausärztin|Facharzt|Fachärztin|Oberarzt|Oberärztin|Chefarzt|Chefärztin|Stationsarzt|Stationsärztin|Assistenzarzt|Assistenzärztin|Arzt|Ärztin|Betreff|Betr|Ehemann|Ehefrau|Tochter|Sohn|Mutter|Vater|Jg|Jahrgang|Zeichen)\\b)(?:\\p{Lu}\\p{Ll}++(?:\\p{Lu}\\p{Ll}++)?+(?:[-'’]\\p{Lu}?\\p{Ll}++){0,3}+|\\p{Lu}{2,}+(?:[-'’]\\p{Lu}{2,}+){0,3}+)(?![:\\p{L}])(?:[ \\t](?:(?:von[ \\t]und[ \\t]zu|von[ \\t]der|von[ \\t]dem|von[ \\t]den|van[ \\t]der|van[ \\t]den|van[ \\t]de|de[ \\t]la|op[ \\t]de|von|vom|zu|zum|zur|van|de|del|della|di|da|dos|du|le|la|ten|ter|(?:Freiherr|Freifrau|Freiin|Graf|Gräfin|Prinz|Prinzessin|Edler|Edle|Ritter)[ \\t]von(?:[ \\t]der|[ \\t]dem)?)[ \\t])?(?!(?:Dr|Prof|PD|Dipl|Med|Univ|OA|OÄ|Herr|Herrn|Frau|Geb|Tel|Telefon|Fax|Mobil|Datum|Station|Zimmer|Klinik|Klinikum|Praxis|Anschrift|Adresse|Patient|Patientin|Name|Vorname|Diagnose|Diagnosen|Befund|Seite|Mit|Und|Kollege|Kollegin|Facharzt|Fachärztin|Chefarzt|Chefärztin|Oberarzt|Oberärztin|Unser|Unsere|Ihr|Ihre|Ihren|Sehr|Betreff|Betr|Zeichen|Jg|Jahrgang|Versicherten|Krankenkasse|Fallnummer|Aufnahme|Entlassung)\\b)(?:\\p{Lu}\\p{Ll}++(?:\\p{Lu}\\p{Ll}++)?+(?:[-'’]\\p{Lu}?\\p{Ll}++){0,3}+|\\p{Lu}{2,}+(?:[-'’]\\p{Lu}{2,}+){0,3}+)(?![:\\p{L}])){0,3}",
+      "description": "Doctor's name after the title: Dr. med., Prof. Dr. med. habil., Dipl.-Med., PD, OA, Oberärztin, Chefarzt, Stationsärztin, also with an initial (Dr. med. D. Sternberg). Turn it off to keep the doctors' names visible.",
+      "enabled": true
+    },
+    {
+      "name": "Geburtsdatum",
+      "regex": "(?=\\d{1,2}[./ \\t]|(?:19|20)\\d{2})(?<![\\d.,/])(?:(?<=(?i:\\bgeb\\.?(?:[ \\t]am)?|\\bgeboren(?:[ \\t]am)?|\\bgeburtsdatum|\\bgeb\\.-?dat(?:um|\\.)?|\\bgeburtstag|\\bgeb\\.-?datum|\\bgeb\\.[ \\t]?dat\\.?)[ \\t]{0,2}:?[ \\t]{0,8})(?:(?:0?[1-9]|[12]\\d|3[01])\\.[ \\t]?(?:0?[1-9]|1[0-2])\\.[ \\t]?(?:19|20)?\\d{2}(?![\\d.])|(?:0?[1-9]|[12]\\d|3[01])\\.?[ \\t]?(?i:(?:Januar|Jänner|Februar|März|Maerz|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember|Jan|Feb|Mär|Mrz|Apr|Jun|Jul|Aug|Sep|Sept|Okt|Nov|Dez))\\.?[ \\t](?:19|20)\\d{2}|(?:19|20)\\d{2}(?![\\d.]))|(?<=\\*[ \\t]?)(?:(?:0?[1-9]|[12]\\d|3[01])\\.[ \\t]?(?:0?[1-9]|1[0-2])\\.[ \\t]?(?:19|20)\\d{2}(?!\\d)|(?:19|20)\\d{2}(?![\\d.]))|(?<=(?i:\\bjg\\.|\\bjahrgang)[ \\t]{1,2})(?:19|20)\\d{2}(?!\\d))",
+      "description": "Date of birth in every form after its label: geb. am 03.07.1958, geb. 3.7.58, Geburtsdatum, Geb.-Dat., geboren am, 3. Juli 1958, *03.07.1958, (*1958), Jg. 1958. Stays on when Date is off.",
+      "enabled": true
+    },
+    {
+      "name": "Date",
+      "regex": "(?=\\d{1,2}[./ \\t]|\\d{4}-)(?<![\\d.,/\\-])(?<!(?i:\\bgeb\\.?(?:[ \\t]am)?|\\bgeboren(?:[ \\t]am)?|\\bgeburtsdatum|\\bgeb\\.-?dat(?:um|\\.)?|\\bgeburtstag|\\bgeb\\.-?datum|\\bgeb\\.[ \\t]?dat\\.?)[ \\t]{0,2}:?[ \\t]{0,8})(?<!\\*[ \\t]?)(?:(?<![\\d.,/])(?:0?[1-9]|[12]\\d|3[01])\\.[ \\t]?(?:0?[1-9]|1[0-2])\\.[ \\t]?(?:19|20)\\d{2}(?![\\d])|(?<![\\d.,/])(?:0?[1-9]|[12]\\d|3[01])/(?:0?[1-9]|1[0-2])/(?:19|20)\\d{2}(?![\\d/])|(?<![\\d.,/])(?:0?[1-9]|[12]\\d|3[01])\\.?[ \\t]?(?i:(?:Januar|Jänner|Februar|März|Maerz|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember|Jan|Feb|Mär|Mrz|Apr|Jun|Jul|Aug|Sep|Sept|Okt|Nov|Dez))\\.?[ \\t](?:19|20)\\d{2}|(?<![\\d\\-])(?:19|20)\\d{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])(?![\\d\\-])|(?<![\\d.,/])(?:0?[1-9]|[12]\\d|3[01])\\.(?:0?[1-9]|1[0-2])\\.(?=[ \\t]{0,2}(?:bis|-|–)[ \\t]{0,2}(?:0?[1-9]|[12]\\d|3[01])\\.(?:0?[1-9]|1[0-2])\\.(?:19|20)?\\d{2}(?!\\d)))",
+      "description": "Every other full date: 02.10.2026, 2.10.2026, 02/10/2026, 2026-10-02, 2. Oktober 2026, also the first day of a range (vom 02.10. bis 13.10.2026): admission, discharge, exam and letter dates. Turn it off to keep these dates visible: dates of birth stay hidden.",
+      "enabled": true
+    },
+    {
+      "name": "Short date",
+      "regex": "(?=\\d{1,2}\\.\\d)(?<![\\d.,/])(?<!(?i:\\bgeb\\.?(?:[ \\t]am)?|\\bgeboren(?:[ \\t]am)?|\\bgeburtsdatum|\\bgeb\\.-?dat(?:um|\\.)?|\\bgeburtstag|\\bgeb\\.-?datum|\\bgeb\\.[ \\t]?dat\\.?)[ \\t]{0,2}:?[ \\t]{0,8})(?<!\\*[ \\t]?)(?<![\\d.,/])(?:0?[1-9]|[12]\\d|3[01])\\.(?:0?[1-9]|1[0-2])\\.\\d{2}(?![\\d.,])",
+      "description": "Date with a 2-digit year and no birth label, as on the Muster forms and in older records (12.10.26, 03.07.58). Turn it off if it covers numbers that are not dates.",
+      "enabled": true
+    },
+    {
+      "name": "KV-Nummer",
+      "regex": "(?-i)(?:\\b[A-Z]\\d{9}\\b|(?=[A-Z]?\\d{6})(?<=(?i:versicherten-?nr\\.?|versichertennummer|vers\\.-?nr\\.?|kv-?nr\\.?|krankenversichertennummer|mitglieds-?nr\\.?|mitgliedsnummer)[ \\t]{0,2}:?[ \\t]{0,8})[A-Z]?\\d{6,12}\\b)",
+      "description": "Krankenversichertennummer: one capital letter and 9 digits (A123456780), and the number after Versicherten-Nr., Versichertennummer, Mitgliedsnummer.",
+      "enabled": true
+    },
+    {
+      "name": "SV-Nummer",
+      "regex": "(?-i)\\b\\d{2}[ \\t]?(?:0[1-9]|[12]\\d|3[01])(?:0[1-9]|1[0-2])\\d{2}[ \\t]?[A-Z][ \\t]?\\d{3}\\b",
+      "description": "Rentenversicherungsnummer, with or without spaces: 65 140266 S 512 (it contains the date of birth).",
+      "enabled": true
+    },
+    {
+      "name": "Fallnummer",
+      "regex": "(?-i)(?=[A-Z0-9][A-Z0-9\\-/.]{3})(?<=\\b(?i:fall-?(?:nr\\.?|nummer|id)|aufnahme-?(?:nr\\.?|nummer)|patienten-?(?:id|nr\\.?|nummer)|pat\\.-?(?:id|nr\\.?)|pid|auftrags-?(?:nr\\.?|nummer)|auftrag|labor-?(?:nr\\.?|nummer)|proben-?(?:nr\\.?|nummer)|befund-?(?:nr\\.?|nummer)|untersuchungs-?(?:nr\\.?|nummer)|behandlungs-?(?:nr\\.?|nummer)|maßnahme-?(?:nr\\.?|nummer)|msnr|episoden?-?(?:nr\\.?|nummer)|kranken(?:blatt|akten)-?(?:nr\\.?|nummer)|akten-?(?:nr\\.?|nummer)|archiv-?(?:nr\\.?|nummer))[ \\t]{0,2}:?[ \\t]{0,8})(?=[A-Z0-9\\-/.]*\\d)[A-Z0-9](?:[A-Z0-9]|[-/.](?=[A-Z0-9])){3,24}(?![A-Za-z0-9])",
+      "description": "Case, admission, patient, order and lab numbers after their label: Fallnummer, Aufnahme-Nr., Patienten-ID, Pat.-Nr., PID, Auftragsnummer, Labornummer.",
+      "enabled": true
+    },
+    {
+      "name": "LANR",
+      "regex": "(?=\\d{9}(?!\\d))(?:(?<=(?i:\\blanr|\\barzt-?nr\\.?|\\barztnummer)[ \\t]{0,2}:?[ \\t]{0,8})\\d{9}(?!\\d)|(?<=(?i:\\blanr)[ \\t]?/[ \\t]?(?i:bsnr)[ \\t]{0,2}:?[ \\t]{0,8})\\d{9}(?!\\d))",
+      "description": "Lebenslange Arztnummer: 9 digits after LANR, Arzt-Nr. or Arztnummer.",
+      "enabled": true
+    },
+    {
+      "name": "BSNR",
+      "regex": "(?=\\d{9}(?!\\d))(?:(?<!(?i:\\blanr)[ \\t]?/[ \\t]?(?i:bsnr)[ \\t]{0,2}:?[ \\t]{0,8})(?<=(?i:\\bbsnr|\\bbetriebsstätten-?(?:nr\\.?|nummer)|\\bbs-?nr\\.?)[ \\t]{0,2}:?[ \\t]{0,8})\\d{9}(?!\\d)|(?<=(?i:\\blanr)[ \\t]?/[ \\t]?(?i:bsnr)[ \\t]{0,2}:?[ \\t]{0,8}\\d{9}[ \\t]?/[ \\t]?)\\d{9}(?!\\d))",
+      "description": "Betriebsstättennummer: 9 digits after BSNR or Betriebsstätten-Nr.",
+      "enabled": true
+    },
+    {
+      "name": "IK-Nummer",
+      "regex": "(?=\\d{9}(?!\\d))(?<=(?i:\\bik(?:-?nr\\.?|-?nummer)?|\\biknr|\\binstitutionskennzeichen|\\bkostenträgerkennung|\\bkassen-?(?:nr\\.?|nummer))[ \\t]{0,2}:?[ \\t]{0,8})\\d{9}(?!\\d)",
+      "description": "Institutionskennzeichen: 9 digits after IK, IK-Nr., Kostenträgerkennung or Kassennummer.",
+      "enabled": true
+    },
+    {
+      "name": "Phone",
+      "regex": "(?<![\\p{L}\\d\\-/.,+])(?=(?:[ \\t/\\-()+]{0,3}\\d){8})(?:\\+49[ \\t]?(?:\\(0\\)[ \\t]?)?|0049[ \\t]?|\\(0|0)[1-9]\\d{1,4}\\)?(?:[ \\t]?/[ \\t]?|[ \\t]|-)?\\d{2,5}(?:[ \\t\\-]?\\d{1,5}){0,3}(?!\\d|[.,]\\d)",
+      "description": "German phone and fax numbers: 05531 707-2210, 0171 5839246, 0361 / 55 48 21, (05531) 7072210, +49 5531 707-0. Dates, lab values and postcodes are left alone.",
+      "enabled": true
+    },
+    {
+      "name": "Address",
+      "regex": "(?-i)(?<![\\p{L}\\d])(?:\\p{Lu}[\\p{L}\\-]*(?:straße|strasse|str\\.|weg|platz|gasse|allee|ring|damm|ufer|steig|stieg|chaussee|markt|pfad|anger|graben|wall|kamp|hof|park|zeile|twiete|höhe|grund|aue|brücke|wiese|heide|leite|halde|kai|promenade|hügel|berg|feld|garten|tor)[ \\t]\\d{1,4}(?:[ \\t]?[a-z])?(?:[ \\t]?[-–][ \\t]?\\d{1,4}(?!\\d)[a-z]?)?(?![\\d,.]\\d)(?!\\p{L})|\\p{Lu}\\p{Ll}+(?:-\\p{Lu}\\p{Ll}+){0,2}[ \\t](?:Straße|Strasse|Str\\.|Weg|Platz|Gasse|Allee|Ring|Damm|Ufer|Steig|Chaussee|Markt|Pfad|Graben|Wall|Kamp|Hof|Park|Tor|Promenade)[ \\t]\\d{1,4}(?:[ \\t]?[a-z])?(?:[ \\t]?[-–][ \\t]?\\d{1,4}(?!\\d)[a-z]?)?(?![\\d,.]\\d)(?!\\p{L})|(?:Am|An[ \\t]der|An[ \\t]den|An[ \\t]dem|Auf[ \\t]dem|Auf[ \\t]der|Auf[ \\t]den|Im|In[ \\t]der|In[ \\t]den|Zum|Zur|Unter[ \\t]den|Hinter[ \\t]der|Hinter[ \\t]dem|Vor[ \\t]dem|Bei[ \\t]der)[ \\t](?:\\p{Lu}\\p{Ll}+[ \\t]){0,2}\\p{Lu}\\p{Ll}+[ \\t]\\d{1,4}(?:[ \\t]?[a-z])?(?:[ \\t]?[-–][ \\t]?\\d{1,4}(?!\\d)[a-z]?)?(?![\\d,.]\\d)(?!\\p{L})(?=[ \\t]*(?:[,;·|/)\\r\\n]|$)))",
+      "description": "German street and house number: Lindenstraße 14, Kastanienallee 23, Weißenfelser Straße 40, Am Kreuzanger 7b, An der Alten Ziegelei 12.",
+      "enabled": true
+    },
+    {
+      "name": "PLZ Ort",
+      "regex": "(?-i)(?<![\\p{L}\\d.,\\-/])(?:D[ \\t-]{1,2})?\\d{5}[ \\t]{1,3}(?!(?:IE|I\\.E\\.|Einheiten|Zellen|Stück|Tbl|Tabl|Tabletten|Kps|Kapseln|Hub|Hübe|Tropfen|Euro|EUR|Patienten|Fälle|Stunden|Minuten|Tage|Schritte|Punkte|Mal|U|E)\\b)(?!(?:Tel|Telefon|Telefax|Fax|Mobil|Handy|Mail|Email|Postfach|Patient|Patientin|Geb|Datum|Seite|Krankenkasse|Versicherten|Name|Station|IK|BSNR|LANR)\\b)\\p{Lu}\\p{L}+(?:-\\p{Lu}\\p{L}+){0,2}(?:[ \\t](?:(?:am|an|im|in|bei|ob|vor|auf|unter)[ \\t](?:der|dem|den)?[ \\t]?)?(?!(?:Tel|Telefon|Telefax|Fax|Mobil|Handy|Mail|Email|Postfach|Patient|Patientin|Geb|Datum|Seite|Krankenkasse|Versicherten|Name|Station|IK|BSNR|LANR)\\b)\\p{Lu}\\p{L}+(?:-\\p{Lu}\\p{L}+){0,2}){0,2}(?:[ \\t]?\\(\\p{Lu}\\p{L}+\\))?(?:[ \\t]i\\.[ \\t]?\\p{Lu}[\\p{L}.]+)?(?!\\p{L})",
+      "description": "Postcode and town: 37627 Stadtoldendorf, D-45127 Essen, 06618 Naumburg (Saale), 34537 Bad Eschenwalde. Doses such as 10000 IE are ignored.",
+      "enabled": true
+    }
+  ],
+  "builtin": {
+    "email": true,
+    "name": true,
+    "address": true,
+    "ip": false,
+    "url": false,
+    "amount": false,
+    "accountNumber": true,
+    "licensePlate": false,
+    "barcode": true
+  }
+}
