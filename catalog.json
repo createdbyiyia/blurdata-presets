@@ -1,6 +1,6 @@
 {
-  "version": 33,
-  "updated": "2026-10-18T00:59",
+  "version": 34,
+  "updated": "2026-10-19T12:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -61,7 +61,7 @@
     },
     {
       "id": "us.medical-records",
-      "presetVersion": 1,
+      "presetVersion": 2,
       "name": "US Medical Records",
       "emoji": "🏥",
       "language": "en",
