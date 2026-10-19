@@ -5,7 +5,7 @@
   "thresholds": {
     "suggest": 5,
     "auto": 8,
-    "autoTurningOff": 11,
+    "autoTurningOff": 8,
     "margin": 4,
     "minSigns": 3
   },

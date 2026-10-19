@@ -117,8 +117,8 @@ switches suggestions off in every app at its next launch.
   document. Never put names, numbers or other data from a real document in a sign.
 - `refines` (optional): more general presets this one is a special case of (US Brokerage refines Bank
   Statement), so the general one's score does not hold the special one back.
-- `thresholds` (top level, optional): `suggest` (default 4), `auto` (8), `autoTurningOff` (11, needed to apply
-  a preset that would switch off a detector the user has on), `margin` (4, lead over the next preset),
+- `thresholds` (top level, optional): `suggest` (default 5), `auto` (8), `autoTurningOff` (8, same as `auto`: a
+  preset may switch off the detectors it lists; raise it to ask for a stronger match first), `margin` (4, lead over the next preset),
   `minSigns` (3 different signs to apply). The app never goes below its own floors.
 
 Check with `python3 tools/check-recognition.py`. Measure on the offline bench of the app before publishing a
