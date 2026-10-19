@@ -84,9 +84,50 @@ Folder structure:
 
 File names: lowercase, hyphenated, English when possible (`bulletin-de-salaire.json`, not `BulletinDeSalaire.json`).
 
+## Recognition signs (`recognition.json`, BlurData 1.6.3 and later, experimental)
+
+When a user opens a document and no preset is active, BlurData can suggest the right preset, or apply it
+with an Undo line when the match is clear. It reads the first three pages of the document on the Mac and
+looks for the **signs** of each document type listed in [`recognition.json`](recognition.json). Nothing
+leaves the Mac: the app downloads this file like the catalog, the document is never sent.
+
+`catalog.json` lists the file in its `recognition` object (older apps ignore the key). Removing that object
+switches suggestions off in every app at its next launch.
+
+```json
+{
+  "id": "generic.bank-statement",
+  "label": { "en": "a bank statement", "de": "ein Kontoauszug", "es": "un extracto bancario",
+             "fr": "un relevé bancaire", "it": "un estratto conto" },
+  "refines": [],
+  "signs": [
+    { "text": "statement period", "weight": 3 },
+    { "text": "opening balance", "weight": 2 },
+    { "text": "direct deposit", "weight": 1 }
+  ]
+}
+```
+
+- `id`: the catalog id of the preset.
+- `label`: what the document is, with its article, in en, de, es, fr, it. The app shows
+  "Looks like a bank statement · Use Bank Statement".
+- `signs`: phrases typical of the document, matched as whole words, ignoring case, accents and punctuation
+  (`PAYER'S TIN:` matches `payer s tin`). `weight` 3 = distinctive (a form code, the title: `SA100`,
+  `Lohnabrechnung`), 2 = typical, 1 = common but telling together with others. Each sign counts once per
+  document. Never put names, numbers or other data from a real document in a sign.
+- `refines` (optional): more general presets this one is a special case of (US Brokerage refines Bank
+  Statement), so the general one's score does not hold the special one back.
+- `thresholds` (top level, optional): `suggest` (default 4), `auto` (8), `autoTurningOff` (11, needed to apply
+  a preset that would switch off a detector the user has on), `margin` (4, lead over the next preset),
+  `minSigns` (3 different signs to apply). The app never goes below its own floors.
+
+Check with `python3 tools/check-recognition.py`. Measure on the offline bench of the app before publishing a
+change: a sign that appears in other kinds of documents makes wrong suggestions.
+
 ## Review checklist (what maintainer checks)
 
 - [ ] `python3 tools/check-presets.py` reports 0 errors (structure, versions in sync with `catalog.json`, unique pattern names)
+- [ ] `python3 tools/check-recognition.py` reports 0 errors when `recognition.json` changed
 - [ ] Regex compiles in Swift's `NSRegularExpression`
 - [ ] No catastrophic backtracking (tested with 50KB random text input, returns in <100ms)
 - [ ] All examples in `description` and `name` are synthetic

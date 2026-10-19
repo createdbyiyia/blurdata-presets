@@ -1,0 +1,2408 @@
+{
+  "version": 1,
+  "updated": "2026-10-19",
+  "about": "Signs of each document type, used by BlurData 1.6.3 and later to suggest a preset for an opened document. The check runs on the Mac: the app downloads this file, the document never leaves the Mac. A sign is a phrase typical of the document, matched as whole words, ignoring case, accents and punctuation; weight 1 (common), 2 (typical), 3 (distinctive). See CONTRIBUTING.md.",
+  "thresholds": {
+    "suggest": 5,
+    "auto": 8,
+    "autoTurningOff": 11,
+    "margin": 4,
+    "minSigns": 3
+  },
+  "presets": [
+    {
+      "id": "generic.bank-statement",
+      "autoApply": false,
+      "label": {
+        "en": "a bank statement",
+        "de": "ein Kontoauszug",
+        "es": "un extracto bancario",
+        "fr": "un relevé bancaire",
+        "it": "un estratto conto"
+      },
+      "signs": [
+        {
+          "text": "bank statement",
+          "weight": 3
+        },
+        {
+          "text": "account statement",
+          "weight": 2
+        },
+        {
+          "text": "statement period",
+          "weight": 3
+        },
+        {
+          "text": "statement date",
+          "weight": 1
+        },
+        {
+          "text": "opening balance",
+          "weight": 2
+        },
+        {
+          "text": "closing balance",
+          "weight": 2
+        },
+        {
+          "text": "beginning balance",
+          "weight": 2
+        },
+        {
+          "text": "ending balance",
+          "weight": 2
+        },
+        {
+          "text": "previous balance",
+          "weight": 1
+        },
+        {
+          "text": "new balance",
+          "weight": 1
+        },
+        {
+          "text": "available balance",
+          "weight": 2
+        },
+        {
+          "text": "balance brought forward",
+          "weight": 2
+        },
+        {
+          "text": "balance carried forward",
+          "weight": 2
+        },
+        {
+          "text": "deposits and other additions",
+          "weight": 3
+        },
+        {
+          "text": "withdrawals and other subtractions",
+          "weight": 3
+        },
+        {
+          "text": "deposits and credits",
+          "weight": 2
+        },
+        {
+          "text": "withdrawals and debits",
+          "weight": 2
+        },
+        {
+          "text": "checks paid",
+          "weight": 2
+        },
+        {
+          "text": "daily balance",
+          "weight": 2
+        },
+        {
+          "text": "account summary",
+          "weight": 1
+        },
+        {
+          "text": "activity summary",
+          "weight": 1
+        },
+        {
+          "text": "transaction history",
+          "weight": 2
+        },
+        {
+          "text": "direct deposit",
+          "weight": 1
+        },
+        {
+          "text": "debit card",
+          "weight": 1
+        },
+        {
+          "text": "checking",
+          "weight": 1
+        },
+        {
+          "text": "savings",
+          "weight": 1
+        },
+        {
+          "text": "overdraft",
+          "weight": 1
+        },
+        {
+          "text": "routing number",
+          "weight": 1
+        },
+        {
+          "text": "estratto conto",
+          "weight": 3
+        },
+        {
+          "text": "saldo iniziale",
+          "weight": 2
+        },
+        {
+          "text": "saldo finale",
+          "weight": 2
+        },
+        {
+          "text": "saldo contabile",
+          "weight": 2
+        },
+        {
+          "text": "releve de compte",
+          "weight": 3
+        },
+        {
+          "text": "releve bancaire",
+          "weight": 3
+        },
+        {
+          "text": "ancien solde",
+          "weight": 2
+        },
+        {
+          "text": "nouveau solde",
+          "weight": 2
+        },
+        {
+          "text": "extracto bancario",
+          "weight": 3
+        },
+        {
+          "text": "extracto de cuenta",
+          "weight": 3
+        },
+        {
+          "text": "saldo anterior",
+          "weight": 2
+        },
+        {
+          "text": "saldo final",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "us.brokerage-statement",
+      "refines": [
+        "generic.bank-statement"
+      ],
+      "label": {
+        "en": "a brokerage statement",
+        "de": "ein Depotauszug",
+        "es": "un extracto de valores",
+        "fr": "un relevé de compte-titres",
+        "it": "un estratto conto titoli"
+      },
+      "signs": [
+        {
+          "text": "brokerage",
+          "weight": 2
+        },
+        {
+          "text": "member sipc",
+          "weight": 3
+        },
+        {
+          "text": "sipc",
+          "weight": 1
+        },
+        {
+          "text": "beginning value",
+          "weight": 2
+        },
+        {
+          "text": "ending value",
+          "weight": 2
+        },
+        {
+          "text": "total account value",
+          "weight": 3
+        },
+        {
+          "text": "market value",
+          "weight": 2
+        },
+        {
+          "text": "cost basis",
+          "weight": 1
+        },
+        {
+          "text": "unrealized gain",
+          "weight": 2
+        },
+        {
+          "text": "unrealized gain loss",
+          "weight": 1
+        },
+        {
+          "text": "equities",
+          "weight": 2
+        },
+        {
+          "text": "mutual funds",
+          "weight": 1
+        },
+        {
+          "text": "etfs",
+          "weight": 1
+        },
+        {
+          "text": "positions",
+          "weight": 1
+        },
+        {
+          "text": "holdings",
+          "weight": 1
+        },
+        {
+          "text": "asset allocation",
+          "weight": 2
+        },
+        {
+          "text": "financial advisor",
+          "weight": 1
+        },
+        {
+          "text": "cusip",
+          "weight": 1
+        },
+        {
+          "text": "securities",
+          "weight": 1
+        },
+        {
+          "text": "income summary",
+          "weight": 1
+        },
+        {
+          "text": "cash and cash investments",
+          "weight": 2
+        },
+        {
+          "text": "jt ten",
+          "weight": 1
+        },
+        {
+          "text": "money market",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "us.consolidated-1099",
+      "label": {
+        "en": "a 1099 tax statement",
+        "de": "eine US-Steuerbescheinigung 1099",
+        "es": "un formulario fiscal 1099",
+        "fr": "un formulaire fiscal 1099",
+        "it": "un modulo fiscale 1099"
+      },
+      "signs": [
+        {
+          "text": "form 1099",
+          "weight": 3
+        },
+        {
+          "text": "consolidated form 1099",
+          "weight": 2
+        },
+        {
+          "text": "1099 div",
+          "weight": 3
+        },
+        {
+          "text": "1099 int",
+          "weight": 2
+        },
+        {
+          "text": "1099 b",
+          "weight": 3
+        },
+        {
+          "text": "1099 misc",
+          "weight": 1
+        },
+        {
+          "text": "1099 oid",
+          "weight": 2
+        },
+        {
+          "text": "payer s tin",
+          "weight": 3
+        },
+        {
+          "text": "recipient s tin",
+          "weight": 3
+        },
+        {
+          "text": "year end summary",
+          "weight": 2
+        },
+        {
+          "text": "total ordinary dividends",
+          "weight": 2
+        },
+        {
+          "text": "qualified dividends",
+          "weight": 2
+        },
+        {
+          "text": "dividends and distributions",
+          "weight": 2
+        },
+        {
+          "text": "federal income tax withheld",
+          "weight": 2
+        },
+        {
+          "text": "proceeds from broker",
+          "weight": 2
+        },
+        {
+          "text": "cost basis",
+          "weight": 1
+        },
+        {
+          "text": "proceeds",
+          "weight": 1
+        },
+        {
+          "text": "wash sale",
+          "weight": 2
+        },
+        {
+          "text": "interest income",
+          "weight": 1
+        },
+        {
+          "text": "tax year",
+          "weight": 1
+        },
+        {
+          "text": "composite",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "us.w2-paystub",
+      "label": {
+        "en": "a W-2 or pay stub",
+        "de": "ein W-2 oder eine US-Lohnabrechnung",
+        "es": "un W-2 o un recibo de nómina",
+        "fr": "un W-2 ou une fiche de paie",
+        "it": "un W-2 o una busta paga"
+      },
+      "signs": [
+        {
+          "text": "wage and tax statement",
+          "weight": 3
+        },
+        {
+          "text": "form w 2",
+          "weight": 3
+        },
+        {
+          "text": "w 2",
+          "weight": 1
+        },
+        {
+          "text": "pay stub",
+          "weight": 3
+        },
+        {
+          "text": "paystub",
+          "weight": 3
+        },
+        {
+          "text": "earnings statement",
+          "weight": 3
+        },
+        {
+          "text": "pay period",
+          "weight": 2
+        },
+        {
+          "text": "pay date",
+          "weight": 2
+        },
+        {
+          "text": "gross pay",
+          "weight": 2
+        },
+        {
+          "text": "net pay",
+          "weight": 2
+        },
+        {
+          "text": "year to date",
+          "weight": 1
+        },
+        {
+          "text": "ytd",
+          "weight": 1
+        },
+        {
+          "text": "federal withholding",
+          "weight": 2
+        },
+        {
+          "text": "social security tax",
+          "weight": 2
+        },
+        {
+          "text": "medicare tax",
+          "weight": 2
+        },
+        {
+          "text": "employer identification number",
+          "weight": 2
+        },
+        {
+          "text": "employee s social security number",
+          "weight": 2
+        },
+        {
+          "text": "form w 4",
+          "weight": 2
+        },
+        {
+          "text": "wages tips other compensation",
+          "weight": 3
+        },
+        {
+          "text": "deductions",
+          "weight": 1
+        },
+        {
+          "text": "hourly rate",
+          "weight": 1
+        },
+        {
+          "text": "regular pay",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "us.medical-records",
+      "label": {
+        "en": "a US medical record",
+        "de": "ein US-amerikanisches medizinisches Dokument",
+        "es": "un documento médico estadounidense",
+        "fr": "un dossier médical américain",
+        "it": "un documento medico statunitense"
+      },
+      "signs": [
+        {
+          "text": "patient",
+          "weight": 1
+        },
+        {
+          "text": "patient name",
+          "weight": 2
+        },
+        {
+          "text": "medical record number",
+          "weight": 3
+        },
+        {
+          "text": "mrn",
+          "weight": 2
+        },
+        {
+          "text": "diagnosis",
+          "weight": 2
+        },
+        {
+          "text": "physician",
+          "weight": 1
+        },
+        {
+          "text": "provider",
+          "weight": 1
+        },
+        {
+          "text": "insurance id",
+          "weight": 2
+        },
+        {
+          "text": "member id",
+          "weight": 1
+        },
+        {
+          "text": "clinic",
+          "weight": 1
+        },
+        {
+          "text": "office visit",
+          "weight": 2
+        },
+        {
+          "text": "chief complaint",
+          "weight": 3
+        },
+        {
+          "text": "medications",
+          "weight": 2
+        },
+        {
+          "text": "allergies",
+          "weight": 2
+        },
+        {
+          "text": "hipaa",
+          "weight": 2
+        },
+        {
+          "text": "icd 10",
+          "weight": 2
+        },
+        {
+          "text": "cpt",
+          "weight": 1
+        },
+        {
+          "text": "lab results",
+          "weight": 2
+        },
+        {
+          "text": "vital signs",
+          "weight": 2
+        },
+        {
+          "text": "patient billing",
+          "weight": 2
+        },
+        {
+          "text": "family medicine",
+          "weight": 1
+        },
+        {
+          "text": "copay",
+          "weight": 2
+        },
+        {
+          "text": "explanation of benefits",
+          "weight": 3
+        },
+        {
+          "text": "discharge summary",
+          "weight": 2
+        },
+        {
+          "text": "date of service",
+          "weight": 2
+        },
+        {
+          "text": "you owe",
+          "weight": 1
+        },
+        {
+          "text": "medicare",
+          "weight": 1
+        },
+        {
+          "text": "medicaid",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "uk.medical-records",
+      "label": {
+        "en": "a UK medical record",
+        "de": "ein britisches medizinisches Dokument",
+        "es": "un documento médico británico",
+        "fr": "un dossier médical britannique",
+        "it": "un documento medico britannico"
+      },
+      "signs": [
+        {
+          "text": "nhs number",
+          "weight": 3
+        },
+        {
+          "text": "nhs",
+          "weight": 2
+        },
+        {
+          "text": "nhs trust",
+          "weight": 2
+        },
+        {
+          "text": "gp surgery",
+          "weight": 2
+        },
+        {
+          "text": "general practitioner",
+          "weight": 2
+        },
+        {
+          "text": "patient",
+          "weight": 1
+        },
+        {
+          "text": "hospital number",
+          "weight": 2
+        },
+        {
+          "text": "clinic letter",
+          "weight": 2
+        },
+        {
+          "text": "discharge summary",
+          "weight": 2
+        },
+        {
+          "text": "diagnosis",
+          "weight": 2
+        },
+        {
+          "text": "medications",
+          "weight": 2
+        },
+        {
+          "text": "allergies",
+          "weight": 2
+        },
+        {
+          "text": "referral",
+          "weight": 1
+        },
+        {
+          "text": "consultant",
+          "weight": 1
+        },
+        {
+          "text": "a e",
+          "weight": 1
+        },
+        {
+          "text": "dear dr",
+          "weight": 1
+        },
+        {
+          "text": "date of birth",
+          "weight": 1
+        },
+        {
+          "text": "postcode",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "generic.invoice",
+      "label": {
+        "en": "an invoice",
+        "de": "eine Rechnung",
+        "es": "una factura",
+        "fr": "une facture",
+        "it": "una fattura"
+      },
+      "signs": [
+        {
+          "text": "invoice",
+          "weight": 2
+        },
+        {
+          "text": "invoice no",
+          "weight": 2
+        },
+        {
+          "text": "invoice number",
+          "weight": 2
+        },
+        {
+          "text": "invoice date",
+          "weight": 2
+        },
+        {
+          "text": "service invoice",
+          "weight": 2
+        },
+        {
+          "text": "bill to",
+          "weight": 2
+        },
+        {
+          "text": "billed to",
+          "weight": 2
+        },
+        {
+          "text": "due date",
+          "weight": 1
+        },
+        {
+          "text": "amount due",
+          "weight": 2
+        },
+        {
+          "text": "balance due",
+          "weight": 2
+        },
+        {
+          "text": "total due",
+          "weight": 2
+        },
+        {
+          "text": "subtotal",
+          "weight": 2
+        },
+        {
+          "text": "unit price",
+          "weight": 2
+        },
+        {
+          "text": "qty",
+          "weight": 1
+        },
+        {
+          "text": "quantity",
+          "weight": 1
+        },
+        {
+          "text": "payment terms",
+          "weight": 1
+        },
+        {
+          "text": "remit to",
+          "weight": 2
+        },
+        {
+          "text": "repair order",
+          "weight": 2
+        },
+        {
+          "text": "labor",
+          "weight": 1
+        },
+        {
+          "text": "customer id",
+          "weight": 1
+        },
+        {
+          "text": "customer no",
+          "weight": 1
+        },
+        {
+          "text": "vat",
+          "weight": 1
+        },
+        {
+          "text": "thank you for your business",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "us.equipment-invoice",
+      "refines": [
+        "generic.invoice"
+      ],
+      "label": {
+        "en": "an equipment invoice",
+        "de": "eine Rechnung für Maschinen",
+        "es": "una factura de maquinaria",
+        "fr": "une facture de matériel",
+        "it": "una fattura di macchinari"
+      },
+      "signs": [
+        {
+          "text": "sold to",
+          "weight": 2
+        },
+        {
+          "text": "sold by",
+          "weight": 2
+        },
+        {
+          "text": "ship to",
+          "weight": 1
+        },
+        {
+          "text": "ser",
+          "weight": 1
+        },
+        {
+          "text": "serial no",
+          "weight": 2
+        },
+        {
+          "text": "serial number",
+          "weight": 2
+        },
+        {
+          "text": "serial",
+          "weight": 1
+        },
+        {
+          "text": "hours",
+          "weight": 1
+        },
+        {
+          "text": "hrs",
+          "weight": 1
+        },
+        {
+          "text": "trade in",
+          "weight": 2
+        },
+        {
+          "text": "unit sale",
+          "weight": 3
+        },
+        {
+          "text": "unit trade",
+          "weight": 3
+        },
+        {
+          "text": "trade payoff",
+          "weight": 3
+        },
+        {
+          "text": "trade allowance",
+          "weight": 2
+        },
+        {
+          "text": "used equipment",
+          "weight": 2
+        },
+        {
+          "text": "equipment",
+          "weight": 2
+        },
+        {
+          "text": "sold as is",
+          "weight": 2
+        },
+        {
+          "text": "lien holder",
+          "weight": 2
+        },
+        {
+          "text": "tax exempt",
+          "weight": 2
+        },
+        {
+          "text": "sales order",
+          "weight": 2
+        },
+        {
+          "text": "make",
+          "weight": 1
+        },
+        {
+          "text": "model",
+          "weight": 1
+        },
+        {
+          "text": "stock",
+          "weight": 1
+        },
+        {
+          "text": "dealer",
+          "weight": 1
+        },
+        {
+          "text": "john deere",
+          "weight": 1
+        },
+        {
+          "text": "caterpillar",
+          "weight": 1
+        },
+        {
+          "text": "kubota",
+          "weight": 1
+        },
+        {
+          "text": "bobcat",
+          "weight": 1
+        },
+        {
+          "text": "tigercat",
+          "weight": 1
+        },
+        {
+          "text": "vermeer",
+          "weight": 1
+        },
+        {
+          "text": "new holland",
+          "weight": 1
+        },
+        {
+          "text": "kenworth",
+          "weight": 1
+        },
+        {
+          "text": "peterbilt",
+          "weight": 1
+        },
+        {
+          "text": "komatsu",
+          "weight": 1
+        },
+        {
+          "text": "case ih",
+          "weight": 1
+        },
+        {
+          "text": "excavator",
+          "weight": 1
+        },
+        {
+          "text": "loader",
+          "weight": 1
+        },
+        {
+          "text": "tractor",
+          "weight": 1
+        },
+        {
+          "text": "mulcher",
+          "weight": 1
+        },
+        {
+          "text": "trailer",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "it.fattura",
+      "label": {
+        "en": "an Italian invoice",
+        "de": "eine italienische Rechnung",
+        "es": "una factura italiana",
+        "fr": "une facture italienne",
+        "it": "una fattura"
+      },
+      "signs": [
+        {
+          "text": "fattura",
+          "weight": 3
+        },
+        {
+          "text": "fattura elettronica",
+          "weight": 2
+        },
+        {
+          "text": "numero fattura",
+          "weight": 2
+        },
+        {
+          "text": "data fattura",
+          "weight": 2
+        },
+        {
+          "text": "imponibile",
+          "weight": 3
+        },
+        {
+          "text": "aliquota iva",
+          "weight": 2
+        },
+        {
+          "text": "totale documento",
+          "weight": 3
+        },
+        {
+          "text": "codice destinatario",
+          "weight": 3
+        },
+        {
+          "text": "cedente prestatore",
+          "weight": 3
+        },
+        {
+          "text": "cessionario committente",
+          "weight": 3
+        },
+        {
+          "text": "partita iva",
+          "weight": 1
+        },
+        {
+          "text": "p iva",
+          "weight": 1
+        },
+        {
+          "text": "iva",
+          "weight": 1
+        },
+        {
+          "text": "pec",
+          "weight": 1
+        },
+        {
+          "text": "sdi",
+          "weight": 2
+        },
+        {
+          "text": "modalita di pagamento",
+          "weight": 2
+        },
+        {
+          "text": "scadenza",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "it.busta-paga",
+      "label": {
+        "en": "an Italian payslip",
+        "de": "eine italienische Lohnabrechnung",
+        "es": "una nómina italiana",
+        "fr": "une fiche de paie italienne",
+        "it": "una busta paga"
+      },
+      "signs": [
+        {
+          "text": "busta paga",
+          "weight": 3
+        },
+        {
+          "text": "cedolino",
+          "weight": 3
+        },
+        {
+          "text": "retribuzione",
+          "weight": 2
+        },
+        {
+          "text": "netto in busta",
+          "weight": 3
+        },
+        {
+          "text": "netto del mese",
+          "weight": 3
+        },
+        {
+          "text": "inps",
+          "weight": 2
+        },
+        {
+          "text": "inail",
+          "weight": 2
+        },
+        {
+          "text": "irpef",
+          "weight": 2
+        },
+        {
+          "text": "matricola",
+          "weight": 2
+        },
+        {
+          "text": "competenze",
+          "weight": 2
+        },
+        {
+          "text": "trattenute",
+          "weight": 2
+        },
+        {
+          "text": "tfr",
+          "weight": 2
+        },
+        {
+          "text": "ccnl",
+          "weight": 2
+        },
+        {
+          "text": "periodo di paga",
+          "weight": 3
+        },
+        {
+          "text": "imponibile previdenziale",
+          "weight": 3
+        },
+        {
+          "text": "imponibile fiscale",
+          "weight": 2
+        },
+        {
+          "text": "lordo",
+          "weight": 1
+        },
+        {
+          "text": "ferie",
+          "weight": 1
+        },
+        {
+          "text": "livello",
+          "weight": 1
+        },
+        {
+          "text": "qualifica",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "it.atto-contratto",
+      "label": {
+        "en": "an Italian contract or deed",
+        "de": "ein italienischer Vertrag",
+        "es": "un contrato italiano",
+        "fr": "un contrat italien",
+        "it": "un atto o contratto"
+      },
+      "signs": [
+        {
+          "text": "contratto",
+          "weight": 2
+        },
+        {
+          "text": "notaio",
+          "weight": 3
+        },
+        {
+          "text": "repertorio",
+          "weight": 3
+        },
+        {
+          "text": "rogito",
+          "weight": 3
+        },
+        {
+          "text": "compravendita",
+          "weight": 3
+        },
+        {
+          "text": "le parti",
+          "weight": 2
+        },
+        {
+          "text": "premesso che",
+          "weight": 3
+        },
+        {
+          "text": "si conviene e si stipula",
+          "weight": 3
+        },
+        {
+          "text": "comparente",
+          "weight": 3
+        },
+        {
+          "text": "comparenti",
+          "weight": 3
+        },
+        {
+          "text": "nato a",
+          "weight": 2
+        },
+        {
+          "text": "residente in",
+          "weight": 2
+        },
+        {
+          "text": "locazione",
+          "weight": 2
+        },
+        {
+          "text": "canone",
+          "weight": 1
+        },
+        {
+          "text": "codice fiscale",
+          "weight": 1
+        },
+        {
+          "text": "letto confermato e sottoscritto",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "it.atti-giudiziari",
+      "label": {
+        "en": "an Italian court document",
+        "de": "ein italienisches Gerichtsdokument",
+        "es": "un documento judicial italiano",
+        "fr": "un document judiciaire italien",
+        "it": "un atto giudiziario"
+      },
+      "signs": [
+        {
+          "text": "tribunale",
+          "weight": 3
+        },
+        {
+          "text": "sentenza",
+          "weight": 3
+        },
+        {
+          "text": "corte d appello",
+          "weight": 3
+        },
+        {
+          "text": "corte di cassazione",
+          "weight": 3
+        },
+        {
+          "text": "giudice",
+          "weight": 2
+        },
+        {
+          "text": "ricorso",
+          "weight": 2
+        },
+        {
+          "text": "ricorrente",
+          "weight": 2
+        },
+        {
+          "text": "resistente",
+          "weight": 2
+        },
+        {
+          "text": "in nome del popolo italiano",
+          "weight": 3
+        },
+        {
+          "text": "udienza",
+          "weight": 2
+        },
+        {
+          "text": "attore",
+          "weight": 2
+        },
+        {
+          "text": "convenuto",
+          "weight": 2
+        },
+        {
+          "text": "p q m",
+          "weight": 3
+        },
+        {
+          "text": "decreto",
+          "weight": 1
+        },
+        {
+          "text": "avv",
+          "weight": 1
+        },
+        {
+          "text": "cancelleria",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "it.visura",
+      "label": {
+        "en": "an Italian registry extract (visura)",
+        "de": "ein italienischer Registerauszug (Visura)",
+        "es": "un extracto de registro italiano (visura)",
+        "fr": "un extrait de registre italien (visura)",
+        "it": "una visura"
+      },
+      "signs": [
+        {
+          "text": "visura",
+          "weight": 3
+        },
+        {
+          "text": "visura per immobile",
+          "weight": 3
+        },
+        {
+          "text": "situazione degli atti informatizzati",
+          "weight": 3
+        },
+        {
+          "text": "dati di classamento",
+          "weight": 2
+        },
+        {
+          "text": "dati catastali",
+          "weight": 2
+        },
+        {
+          "text": "camera di commercio",
+          "weight": 3
+        },
+        {
+          "text": "registro delle imprese",
+          "weight": 3
+        },
+        {
+          "text": "visura catastale",
+          "weight": 3
+        },
+        {
+          "text": "visura camerale",
+          "weight": 3
+        },
+        {
+          "text": "catasto",
+          "weight": 2
+        },
+        {
+          "text": "particella",
+          "weight": 2
+        },
+        {
+          "text": "subalterno",
+          "weight": 2
+        },
+        {
+          "text": "rendita",
+          "weight": 1
+        },
+        {
+          "text": "foglio",
+          "weight": 1
+        },
+        {
+          "text": "codice ateco",
+          "weight": 3
+        },
+        {
+          "text": "sede legale",
+          "weight": 2
+        },
+        {
+          "text": "numero rea",
+          "weight": 2
+        },
+        {
+          "text": "partita iva",
+          "weight": 1
+        },
+        {
+          "text": "agenzia delle entrate",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "de.lohnabrechnung",
+      "label": {
+        "en": "a German payslip",
+        "de": "eine Lohnabrechnung",
+        "es": "una nómina alemana",
+        "fr": "une fiche de paie allemande",
+        "it": "una busta paga tedesca"
+      },
+      "signs": [
+        {
+          "text": "lohnabrechnung",
+          "weight": 3
+        },
+        {
+          "text": "gehaltsabrechnung",
+          "weight": 3
+        },
+        {
+          "text": "entgeltabrechnung",
+          "weight": 3
+        },
+        {
+          "text": "brutto netto",
+          "weight": 2
+        },
+        {
+          "text": "gesamtbrutto",
+          "weight": 2
+        },
+        {
+          "text": "nettoverdienst",
+          "weight": 2
+        },
+        {
+          "text": "auszahlungsbetrag",
+          "weight": 2
+        },
+        {
+          "text": "lohnsteuer",
+          "weight": 2
+        },
+        {
+          "text": "solidaritatszuschlag",
+          "weight": 2
+        },
+        {
+          "text": "kirchensteuer",
+          "weight": 2
+        },
+        {
+          "text": "steuerklasse",
+          "weight": 2
+        },
+        {
+          "text": "arbeitslosenversicherung",
+          "weight": 2
+        },
+        {
+          "text": "rentenversicherung",
+          "weight": 1
+        },
+        {
+          "text": "krankenversicherung",
+          "weight": 1
+        },
+        {
+          "text": "pflegeversicherung",
+          "weight": 1
+        },
+        {
+          "text": "personalnummer",
+          "weight": 2
+        },
+        {
+          "text": "sv nummer",
+          "weight": 2
+        },
+        {
+          "text": "brutto",
+          "weight": 1
+        },
+        {
+          "text": "netto",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "de.rechnung",
+      "label": {
+        "en": "a German invoice",
+        "de": "eine Rechnung",
+        "es": "una factura alemana",
+        "fr": "une facture allemande",
+        "it": "una fattura tedesca"
+      },
+      "signs": [
+        {
+          "text": "rechnung",
+          "weight": 2
+        },
+        {
+          "text": "rechnungsnummer",
+          "weight": 3
+        },
+        {
+          "text": "rechnungsdatum",
+          "weight": 3
+        },
+        {
+          "text": "rechnungsbetrag",
+          "weight": 2
+        },
+        {
+          "text": "ust id",
+          "weight": 2
+        },
+        {
+          "text": "ust idnr",
+          "weight": 2
+        },
+        {
+          "text": "umsatzsteuer",
+          "weight": 2
+        },
+        {
+          "text": "mwst",
+          "weight": 2
+        },
+        {
+          "text": "nettobetrag",
+          "weight": 2
+        },
+        {
+          "text": "zahlbar bis",
+          "weight": 2
+        },
+        {
+          "text": "zahlungsziel",
+          "weight": 2
+        },
+        {
+          "text": "leistungsdatum",
+          "weight": 2
+        },
+        {
+          "text": "lieferdatum",
+          "weight": 1
+        },
+        {
+          "text": "steuernummer",
+          "weight": 1
+        },
+        {
+          "text": "gesamtbetrag",
+          "weight": 1
+        },
+        {
+          "text": "bankverbindung",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "de.personalausweis",
+      "label": {
+        "en": "a German ID card",
+        "de": "ein Personalausweis",
+        "es": "un documento de identidad alemán",
+        "fr": "une carte d'identité allemande",
+        "it": "una carta d'identità tedesca"
+      },
+      "signs": [
+        {
+          "text": "personalausweis",
+          "weight": 3
+        },
+        {
+          "text": "bundesrepublik deutschland",
+          "weight": 2
+        },
+        {
+          "text": "identity card",
+          "weight": 2
+        },
+        {
+          "text": "staatsangehorigkeit",
+          "weight": 2
+        },
+        {
+          "text": "geburtsort",
+          "weight": 2
+        },
+        {
+          "text": "gultig bis",
+          "weight": 2
+        },
+        {
+          "text": "augenfarbe",
+          "weight": 2
+        },
+        {
+          "text": "geburtsname",
+          "weight": 1
+        },
+        {
+          "text": "ausweis",
+          "weight": 1
+        },
+        {
+          "text": "grosse",
+          "weight": 1
+        },
+        {
+          "text": "ordens und kunstlername",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "de.kontoauszug",
+      "refines": [
+        "generic.bank-statement"
+      ],
+      "label": {
+        "en": "a German bank statement",
+        "de": "ein Kontoauszug",
+        "es": "un extracto bancario alemán",
+        "fr": "un relevé bancaire allemand",
+        "it": "un estratto conto tedesco"
+      },
+      "signs": [
+        {
+          "text": "kontoauszug",
+          "weight": 3
+        },
+        {
+          "text": "alter kontostand",
+          "weight": 3
+        },
+        {
+          "text": "neuer kontostand",
+          "weight": 3
+        },
+        {
+          "text": "kontostand",
+          "weight": 2
+        },
+        {
+          "text": "buchungstag",
+          "weight": 3
+        },
+        {
+          "text": "valuta",
+          "weight": 2
+        },
+        {
+          "text": "wertstellung",
+          "weight": 2
+        },
+        {
+          "text": "verwendungszweck",
+          "weight": 2
+        },
+        {
+          "text": "lastschrift",
+          "weight": 2
+        },
+        {
+          "text": "gutschrift",
+          "weight": 2
+        },
+        {
+          "text": "uberweisung",
+          "weight": 1
+        },
+        {
+          "text": "kontoinhaber",
+          "weight": 2
+        },
+        {
+          "text": "auszug nr",
+          "weight": 2
+        },
+        {
+          "text": "saldo",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "de.fuehrerschein",
+      "label": {
+        "en": "a German driving licence",
+        "de": "ein Führerschein",
+        "es": "un permiso de conducir alemán",
+        "fr": "un permis de conduire allemand",
+        "it": "una patente tedesca"
+      },
+      "signs": [
+        {
+          "text": "fuhrerschein",
+          "weight": 3
+        },
+        {
+          "text": "fuehrerschein",
+          "weight": 3
+        },
+        {
+          "text": "fahrerlaubnis",
+          "weight": 2
+        },
+        {
+          "text": "fahrerlaubnisklasse",
+          "weight": 3
+        },
+        {
+          "text": "fuhrerscheinnummer",
+          "weight": 3
+        },
+        {
+          "text": "driving licence",
+          "weight": 2
+        },
+        {
+          "text": "kraftfahrt bundesamt",
+          "weight": 2
+        },
+        {
+          "text": "ausstellungsbehorde",
+          "weight": 2
+        },
+        {
+          "text": "klasse b",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "es.dni",
+      "label": {
+        "en": "a Spanish ID card (DNI or NIE)",
+        "de": "ein spanischer Ausweis (DNI oder NIE)",
+        "es": "un DNI o NIE",
+        "fr": "une pièce d'identité espagnole (DNI ou NIE)",
+        "it": "un documento d'identità spagnolo (DNI o NIE)"
+      },
+      "signs": [
+        {
+          "text": "documento nacional de identidad",
+          "weight": 3
+        },
+        {
+          "text": "dni",
+          "weight": 2
+        },
+        {
+          "text": "numero de identidad de extranjero",
+          "weight": 3
+        },
+        {
+          "text": "reino de espana",
+          "weight": 3
+        },
+        {
+          "text": "nacionalidad",
+          "weight": 2
+        },
+        {
+          "text": "lugar de nacimiento",
+          "weight": 2
+        },
+        {
+          "text": "valido hasta",
+          "weight": 2
+        },
+        {
+          "text": "num soporte",
+          "weight": 2
+        },
+        {
+          "text": "idesp",
+          "weight": 2
+        },
+        {
+          "text": "primer apellido",
+          "weight": 2
+        },
+        {
+          "text": "segundo apellido",
+          "weight": 2
+        },
+        {
+          "text": "domicilio",
+          "weight": 1
+        },
+        {
+          "text": "fecha de nacimiento",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "es.factura",
+      "label": {
+        "en": "a Spanish invoice",
+        "de": "eine spanische Rechnung",
+        "es": "una factura",
+        "fr": "une facture espagnole",
+        "it": "una fattura spagnola"
+      },
+      "signs": [
+        {
+          "text": "factura",
+          "weight": 3
+        },
+        {
+          "text": "numero de factura",
+          "weight": 3
+        },
+        {
+          "text": "fecha de factura",
+          "weight": 2
+        },
+        {
+          "text": "nif",
+          "weight": 2
+        },
+        {
+          "text": "cif",
+          "weight": 2
+        },
+        {
+          "text": "base imponible",
+          "weight": 3
+        },
+        {
+          "text": "total factura",
+          "weight": 2
+        },
+        {
+          "text": "forma de pago",
+          "weight": 2
+        },
+        {
+          "text": "razon social",
+          "weight": 2
+        },
+        {
+          "text": "iva",
+          "weight": 1
+        },
+        {
+          "text": "importe",
+          "weight": 1
+        },
+        {
+          "text": "vencimiento",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "be.documents-juridiques",
+      "label": {
+        "en": "a Belgian legal document",
+        "de": "ein belgisches Rechtsdokument",
+        "es": "un documento jurídico belga",
+        "fr": "un document juridique belge",
+        "it": "un documento legale belga"
+      },
+      "signs": [
+        {
+          "text": "tribunal de premiere instance",
+          "weight": 3
+        },
+        {
+          "text": "justice de paix",
+          "weight": 3
+        },
+        {
+          "text": "moniteur belge",
+          "weight": 3
+        },
+        {
+          "text": "numero national",
+          "weight": 3
+        },
+        {
+          "text": "registre national",
+          "weight": 3
+        },
+        {
+          "text": "royaume de belgique",
+          "weight": 3
+        },
+        {
+          "text": "par ces motifs",
+          "weight": 3
+        },
+        {
+          "text": "jugement",
+          "weight": 2
+        },
+        {
+          "text": "greffe",
+          "weight": 2
+        },
+        {
+          "text": "greffier",
+          "weight": 2
+        },
+        {
+          "text": "requerant",
+          "weight": 2
+        },
+        {
+          "text": "defendeur",
+          "weight": 2
+        },
+        {
+          "text": "huissier de justice",
+          "weight": 2
+        },
+        {
+          "text": "cour d appel",
+          "weight": 2
+        },
+        {
+          "text": "tribunal de l entreprise",
+          "weight": 3
+        },
+        {
+          "text": "belgique",
+          "weight": 1
+        },
+        {
+          "text": "bruxelles",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "fr.documents-administratifs",
+      "label": {
+        "en": "a French payslip, invoice or tax notice",
+        "de": "eine französische Lohnabrechnung, Rechnung oder ein Steuerbescheid",
+        "es": "una nómina, factura o aviso fiscal francés",
+        "fr": "un bulletin de paie, une facture ou un avis d'impôt",
+        "it": "una busta paga, fattura o avviso fiscale francese"
+      },
+      "signs": [
+        {
+          "text": "bulletin de paie",
+          "weight": 3
+        },
+        {
+          "text": "bulletin de salaire",
+          "weight": 3
+        },
+        {
+          "text": "net a payer",
+          "weight": 3
+        },
+        {
+          "text": "salaire brut",
+          "weight": 2
+        },
+        {
+          "text": "net imposable",
+          "weight": 2
+        },
+        {
+          "text": "cotisations",
+          "weight": 2
+        },
+        {
+          "text": "urssaf",
+          "weight": 3
+        },
+        {
+          "text": "securite sociale",
+          "weight": 2
+        },
+        {
+          "text": "avis d impot",
+          "weight": 3
+        },
+        {
+          "text": "avis d imposition",
+          "weight": 3
+        },
+        {
+          "text": "impot sur le revenu",
+          "weight": 2
+        },
+        {
+          "text": "numero fiscal",
+          "weight": 3
+        },
+        {
+          "text": "revenu fiscal de reference",
+          "weight": 3
+        },
+        {
+          "text": "facture",
+          "weight": 2
+        },
+        {
+          "text": "siret",
+          "weight": 3
+        },
+        {
+          "text": "siren",
+          "weight": 2
+        },
+        {
+          "text": "tva",
+          "weight": 1
+        },
+        {
+          "text": "total ttc",
+          "weight": 2
+        },
+        {
+          "text": "montant ttc",
+          "weight": 2
+        },
+        {
+          "text": "convention collective",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "de.gerichtsbeschluss",
+      "label": {
+        "en": "a German court order",
+        "de": "ein Gerichtsbeschluss",
+        "es": "una resolución judicial alemana",
+        "fr": "une décision de justice allemande",
+        "it": "un provvedimento giudiziario tedesco"
+      },
+      "signs": [
+        {
+          "text": "beschluss",
+          "weight": 3
+        },
+        {
+          "text": "amtsgericht",
+          "weight": 3
+        },
+        {
+          "text": "landgericht",
+          "weight": 3
+        },
+        {
+          "text": "oberlandesgericht",
+          "weight": 3
+        },
+        {
+          "text": "geschaftszeichen",
+          "weight": 2
+        },
+        {
+          "text": "aktenzeichen",
+          "weight": 2
+        },
+        {
+          "text": "in der betreuungssache",
+          "weight": 3
+        },
+        {
+          "text": "betreuungsgericht",
+          "weight": 3
+        },
+        {
+          "text": "familiengericht",
+          "weight": 2
+        },
+        {
+          "text": "rechtsbehelfsbelehrung",
+          "weight": 3
+        },
+        {
+          "text": "richterin",
+          "weight": 2
+        },
+        {
+          "text": "richter",
+          "weight": 2
+        },
+        {
+          "text": "verfahrensbevollmachtigte",
+          "weight": 2
+        },
+        {
+          "text": "antragsteller",
+          "weight": 2
+        },
+        {
+          "text": "antragsgegner",
+          "weight": 2
+        },
+        {
+          "text": "im namen des volkes",
+          "weight": 3
+        },
+        {
+          "text": "urteil",
+          "weight": 2
+        },
+        {
+          "text": "grunde",
+          "weight": 1
+        },
+        {
+          "text": "beteiligte",
+          "weight": 1
+        },
+        {
+          "text": "in der sache",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ch.medical-records",
+      "label": {
+        "en": "a Swiss medical record",
+        "de": "ein Schweizer Arztbericht",
+        "es": "un documento médico suizo",
+        "fr": "un dossier médical suisse",
+        "it": "un documento medico svizzero"
+      },
+      "signs": [
+        {
+          "text": "lettre de sortie",
+          "weight": 3
+        },
+        {
+          "text": "n avs",
+          "weight": 3
+        },
+        {
+          "text": "avs",
+          "weight": 1
+        },
+        {
+          "text": "medecin traitant",
+          "weight": 2
+        },
+        {
+          "text": "hopital",
+          "weight": 1
+        },
+        {
+          "text": "anamnese",
+          "weight": 2
+        },
+        {
+          "text": "diagnostic",
+          "weight": 2
+        },
+        {
+          "text": "diagnostics",
+          "weight": 1
+        },
+        {
+          "text": "hospitalise",
+          "weight": 2
+        },
+        {
+          "text": "hospitalisee",
+          "weight": 2
+        },
+        {
+          "text": "chere consoeur",
+          "weight": 2
+        },
+        {
+          "text": "cher confrere",
+          "weight": 2
+        },
+        {
+          "text": "lamal",
+          "weight": 3
+        },
+        {
+          "text": "gln",
+          "weight": 2
+        },
+        {
+          "text": "rcc",
+          "weight": 2
+        },
+        {
+          "text": "service de medecine",
+          "weight": 2
+        },
+        {
+          "text": "dossier medical",
+          "weight": 3
+        },
+        {
+          "text": "traitement",
+          "weight": 1
+        },
+        {
+          "text": "patiente",
+          "weight": 1
+        },
+        {
+          "text": "patient",
+          "weight": 1
+        },
+        {
+          "text": "assurance",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "de.werkstattauftrag",
+      "label": {
+        "en": "a German workshop order",
+        "de": "ein Werkstattauftrag",
+        "es": "una orden de taller alemana",
+        "fr": "un ordre de réparation allemand",
+        "it": "un ordine di officina tedesco"
+      },
+      "signs": [
+        {
+          "text": "werkstattauftrag",
+          "weight": 3
+        },
+        {
+          "text": "reparaturauftrag",
+          "weight": 3
+        },
+        {
+          "text": "auftragsbestatigung",
+          "weight": 2
+        },
+        {
+          "text": "amtl kennzeichen",
+          "weight": 3
+        },
+        {
+          "text": "kennzeichen",
+          "weight": 2
+        },
+        {
+          "text": "kennz",
+          "weight": 1
+        },
+        {
+          "text": "fahrgestell nr",
+          "weight": 3
+        },
+        {
+          "text": "fahrgestellnummer",
+          "weight": 3
+        },
+        {
+          "text": "fahrzeug ident nr",
+          "weight": 3
+        },
+        {
+          "text": "fg nr",
+          "weight": 2
+        },
+        {
+          "text": "hsn tsn",
+          "weight": 3
+        },
+        {
+          "text": "erstzulassung",
+          "weight": 3
+        },
+        {
+          "text": "km stand",
+          "weight": 3
+        },
+        {
+          "text": "serviceberater",
+          "weight": 2
+        },
+        {
+          "text": "monteur",
+          "weight": 2
+        },
+        {
+          "text": "autohaus",
+          "weight": 2
+        },
+        {
+          "text": "kfz",
+          "weight": 2
+        },
+        {
+          "text": "fahrzeug",
+          "weight": 1
+        },
+        {
+          "text": "inspektion",
+          "weight": 1
+        },
+        {
+          "text": "arbeitswerte",
+          "weight": 2
+        },
+        {
+          "text": "annahme",
+          "weight": 1
+        },
+        {
+          "text": "kunden nr",
+          "weight": 1
+        },
+        {
+          "text": "kd nr",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "uk.tax-return",
+      "label": {
+        "en": "a UK tax return or tax form",
+        "de": "eine britische Steuererklärung",
+        "es": "una declaración de impuestos británica",
+        "fr": "une déclaration d'impôts britannique",
+        "it": "una dichiarazione dei redditi britannica"
+      },
+      "signs": [
+        {
+          "text": "sa100",
+          "weight": 3
+        },
+        {
+          "text": "sa302",
+          "weight": 3
+        },
+        {
+          "text": "hm revenue and customs",
+          "weight": 3
+        },
+        {
+          "text": "hmrc",
+          "weight": 3
+        },
+        {
+          "text": "unique taxpayer reference",
+          "weight": 3
+        },
+        {
+          "text": "utr",
+          "weight": 2
+        },
+        {
+          "text": "national insurance number",
+          "weight": 2
+        },
+        {
+          "text": "national insurance",
+          "weight": 1
+        },
+        {
+          "text": "nino",
+          "weight": 2
+        },
+        {
+          "text": "p60",
+          "weight": 3
+        },
+        {
+          "text": "p45",
+          "weight": 3
+        },
+        {
+          "text": "end of year certificate",
+          "weight": 3
+        },
+        {
+          "text": "paye reference",
+          "weight": 3
+        },
+        {
+          "text": "self assessment",
+          "weight": 3
+        },
+        {
+          "text": "tax calculation",
+          "weight": 2
+        },
+        {
+          "text": "details of employee leaving work",
+          "weight": 3
+        },
+        {
+          "text": "tax code",
+          "weight": 1
+        },
+        {
+          "text": "tax return",
+          "weight": 1
+        },
+        {
+          "text": "tax year",
+          "weight": 1
+        },
+        {
+          "text": "postcode",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

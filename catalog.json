@@ -598,5 +598,10 @@
       "path": "presets/de/medical-records.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/de/medical-records.json"
     }
-  ]
+  ],
+  "recognition": {
+    "version": 1,
+    "path": "recognition.json",
+    "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/recognition.json"
+  }
 }
