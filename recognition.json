@@ -2403,6 +2403,210 @@
           "weight": 1
         }
       ]
+    },
+    {
+      "id": "de.medical-records",
+      "label": {
+        "en": "a German medical document",
+        "de": "ein Arztbrief oder Befund",
+        "es": "un documento médico alemán",
+        "fr": "un document médical allemand",
+        "it": "un documento medico tedesco"
+      },
+      "signs": [
+        {
+          "text": "arztbrief",
+          "weight": 3
+        },
+        {
+          "text": "entlassungsbrief",
+          "weight": 3
+        },
+        {
+          "text": "kurzarztbrief",
+          "weight": 3
+        },
+        {
+          "text": "befundbericht",
+          "weight": 3
+        },
+        {
+          "text": "laborbefund",
+          "weight": 3
+        },
+        {
+          "text": "entlassungsbericht",
+          "weight": 3
+        },
+        {
+          "text": "uberweisungsschein",
+          "weight": 3
+        },
+        {
+          "text": "epikrise",
+          "weight": 3
+        },
+        {
+          "text": "icd 10 gm",
+          "weight": 3
+        },
+        {
+          "text": "lanr",
+          "weight": 3
+        },
+        {
+          "text": "bsnr",
+          "weight": 3
+        },
+        {
+          "text": "kostentragerkennung",
+          "weight": 3
+        },
+        {
+          "text": "krankenversichertennummer",
+          "weight": 2
+        },
+        {
+          "text": "versicherten nr",
+          "weight": 2
+        },
+        {
+          "text": "wir berichten uber",
+          "weight": 2
+        },
+        {
+          "text": "stationaren behandlung",
+          "weight": 2
+        },
+        {
+          "text": "sehr geehrte frau kollegin",
+          "weight": 2
+        },
+        {
+          "text": "sehr geehrter herr kollege",
+          "weight": 2
+        },
+        {
+          "text": "kollegialen grussen",
+          "weight": 2
+        },
+        {
+          "text": "diagnosen",
+          "weight": 2
+        },
+        {
+          "text": "procedere",
+          "weight": 2
+        },
+        {
+          "text": "medikation",
+          "weight": 2
+        },
+        {
+          "text": "aufnahmebefund",
+          "weight": 2
+        },
+        {
+          "text": "fallnummer",
+          "weight": 2
+        },
+        {
+          "text": "referenzbereich",
+          "weight": 2
+        },
+        {
+          "text": "befunddatum",
+          "weight": 2
+        },
+        {
+          "text": "einsender",
+          "weight": 2
+        },
+        {
+          "text": "probenentnahme",
+          "weight": 2
+        },
+        {
+          "text": "klinische angaben",
+          "weight": 2
+        },
+        {
+          "text": "chefarzt",
+          "weight": 2
+        },
+        {
+          "text": "chefarztin",
+          "weight": 2
+        },
+        {
+          "text": "oberarzt",
+          "weight": 2
+        },
+        {
+          "text": "oberarztin",
+          "weight": 2
+        },
+        {
+          "text": "stationsarzt",
+          "weight": 1
+        },
+        {
+          "text": "stationsarztin",
+          "weight": 1
+        },
+        {
+          "text": "assistenzarzt",
+          "weight": 1
+        },
+        {
+          "text": "anamnese",
+          "weight": 1
+        },
+        {
+          "text": "befund",
+          "weight": 1
+        },
+        {
+          "text": "fragestellung",
+          "weight": 1
+        },
+        {
+          "text": "beurteilung",
+          "weight": 1
+        },
+        {
+          "text": "patientin",
+          "weight": 1
+        },
+        {
+          "text": "krankenhaus",
+          "weight": 1
+        },
+        {
+          "text": "klinikum",
+          "weight": 1
+        },
+        {
+          "text": "facharzt fur",
+          "weight": 1
+        },
+        {
+          "text": "facharztin fur",
+          "weight": 1
+        },
+        {
+          "text": "dr med",
+          "weight": 1
+        },
+        {
+          "text": "geb am",
+          "weight": 1
+        },
+        {
+          "text": "rehabilitation",
+          "weight": 1
+        }
+      ]
     }
   ]
 }
