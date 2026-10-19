@@ -1,6 +1,6 @@
 {
   "id": "generic.invoice",
-  "version": 6,
+  "version": 7,
   "name": "Generic Invoice",
   "emoji": "🧾",
   "description": "Generic invoice or receipt. Detects invoice numbers, EU VAT IDs, IBAN, BIC/SWIFT (context-anchored), phone numbers (US and Canada with extensions, European and international), plus names, addresses, emails. Dates and amounts stay visible; toggle Amounts manually to hide totals too.",
@@ -17,23 +17,23 @@
     {
       "name": "EU VAT Number",
       "regex": "(?-i)\\b(?:AT|BE|BG|CY|CZ|DE|DK|EE|EL|ES|FI|FR|GB|HR|HU|IE|IT|LT|LU|LV|MT|NL|PL|PT|RO|SE|SI|SK)\\s?\\d{8,12}\\b",
-      "description": "EU VAT number — 2-letter uppercase country code (optional space) + 8 to 12 digits",
+      "description": "EU VAT number: 2-letter uppercase country code (optional space) + 8 to 12 digits.",
       "enabled": true
     },
     {
       "name": "IBAN",
       "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:\\s?[A-Z0-9]){11,30}\\b",
-      "description": "International Bank Account Number — supports spaces between groups",
+      "description": "International Bank Account Number, with or without spaces between groups.",
       "enabled": true
     },
     {
       "name": "BIC / SWIFT",
       "regex": "(?-i)\\b(?:BIC|SWIFT)[\\s:.\\-]+[A-Z]{4}[A-Z]{2}[A-Z0-9]{2}(?:[A-Z0-9]{3})?\\b",
-      "description": "BIC/SWIFT code — anchored to BIC: or SWIFT: label to avoid matching ordinary uppercase words",
+      "description": "BIC/SWIFT code together with its BIC: or SWIFT: label, so ordinary uppercase words are not taken.",
       "enabled": true
     },
     {
-      "name": "Date (any common format)",
+      "name": "Date",
       "regex": "\\b\\d{1,2}[\\/.\\-]\\d{1,2}[\\/.\\-]\\d{2,4}\\b",
       "description": "Dates in DD/MM/YYYY, MM/DD/YYYY, DD.MM.YYYY, DD-MM-YY etc. Off by default, so invoice and service dates stay readable.",
       "enabled": false
@@ -45,9 +45,9 @@
       "enabled": true
     },
     {
-      "name": "Order / PO number",
+      "name": "Order number",
       "regex": "\\b(?:PO|ORDER|ORD)[-\\s:#]?[A-Z0-9\\-]{3,20}\\b",
-      "description": "Purchase order or order number — supports embedded dashes",
+      "description": "Purchase order or order number starting with PO, ORDER or ORD, dashes inside allowed.",
       "enabled": false
     }
   ],

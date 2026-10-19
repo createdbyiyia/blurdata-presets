@@ -1,6 +1,6 @@
 {
   "id": "de.kontoauszug",
-  "version": 1,
+  "version": 2,
   "name": "German Kontoauszug",
   "emoji": "🏦",
   "description": "German bank statement (Kontoauszug). Detects IBAN, BIC/SWIFT, Bankleitzahl (BLZ), Kontonummer, German dates, German phones and addresses, plus names and account holders. Amounts kept visible so you can prove income while redacting identities — toggle 'Amounts' manually to hide balances too.",
@@ -11,41 +11,41 @@
     {
       "name": "IBAN",
       "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:\\s?[A-Z0-9]){11,30}\\b",
-      "description": "International Bank Account Number — supports spaces between groups",
+      "description": "International Bank Account Number, with or without spaces between groups.",
       "enabled": true
     },
     {
       "name": "BIC / SWIFT",
       "regex": "(?i)\\b(?:BIC|SWIFT)\\s*[:\\-]?\\s*([A-Z]{4}[A-Z]{2}[A-Z0-9]{2}(?:[A-Z0-9]{3})?)\\b",
-      "description": "Bank identifier code — 8 or 11 chars, context-anchored",
+      "description": "Bank identifier code, 8 or 11 characters, matched with its BIC or SWIFT label.",
       "enabled": true
     },
     {
-      "name": "Bankleitzahl (BLZ)",
+      "name": "BLZ",
       "regex": "(?i)\\b(?:blz|bankleitzahl)\\s*[:\\-]?\\s*(\\d{8})\\b",
-      "description": "German bank sort code — 8 digits, context-anchored",
+      "description": "Bankleitzahl (German bank sort code): 8 digits, matched with its label (BLZ, Bankleitzahl).",
       "enabled": true
     },
     {
       "name": "Kontonummer",
       "regex": "(?i)\\b(?:kontonummer|konto-?nr\\.?|kto\\.?-?nr\\.?)\\s*[:\\-]?\\s*(\\d{6,10})\\b",
-      "description": "German account number — 6-10 digits, context-anchored",
+      "description": "German account number: 6-10 digits, matched with its label (Kontonummer, Konto-Nr., Kto.-Nr.).",
       "enabled": true
     },
     {
-      "name": "German date (DD.MM.YYYY)",
+      "name": "Date",
       "regex": "\\b\\d{2}\\.\\d{2}\\.\\d{4}\\b",
-      "description": "German date format — DD.MM.YYYY",
+      "description": "German date, DD.MM.YYYY.",
       "enabled": true
     },
     {
-      "name": "German street address",
+      "name": "Address",
       "regex": "(?i)\\b[A-ZÄÖÜ][\\p{L}.\\-]*(?:weg|stra(?:ß|ss)e|str\\.?|platz|gasse|allee|ring|hof|damm|ufer|steig|chaussee|tor|markt)\\s+\\d+\\s?[a-z]?\\b",
       "description": "German street name + number",
       "enabled": true
     },
     {
-      "name": "German postal code + city",
+      "name": "PLZ Ort",
       "regex": "(?-i)\\b\\d{5}\\s+[A-ZÄÖÜ][\\p{L}\\-]+(?:\\s+(?:am|an|im|in|bei|ob)\\s+(?:der|dem)?\\s*[A-ZÄÖÜ][\\p{L}\\-]+)?(?:\\s+[A-ZÄÖÜ][\\p{L}\\-]+){0,2}\\b",
       "description": "German PLZ (5 digits) + city name",
       "enabled": true

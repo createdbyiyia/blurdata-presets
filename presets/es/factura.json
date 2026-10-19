@@ -1,6 +1,6 @@
 {
   "id": "es.factura",
-  "version": 1,
+  "version": 2,
   "name": "Spanish Factura",
   "emoji": "🧾",
   "description": "Spanish invoice (factura). Detects NIF / CIF / DNI, IBAN, Spanish dates and phone numbers, plus names, addresses and emails. Amounts are kept visible so line items stay readable — toggle 'Amounts' manually to hide totals too.",
@@ -11,25 +11,25 @@
     {
       "name": "NIF / CIF / DNI",
       "regex": "(?i)\\b(?:[A-HJ-NP-SUVW]\\d{7}[0-9A-J]|\\d{8}[A-Za-z]|[XYZ]\\d{7}[A-Za-z])\\b",
-      "description": "Spanish tax IDs — company (CIF), individual (NIF/DNI) or foreigner (NIE)",
+      "description": "Spanish tax IDs: company (CIF), individual (NIF/DNI) or foreigner (NIE).",
       "enabled": true
     },
     {
       "name": "IBAN",
       "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:\\s?[A-Z0-9]){11,30}\\b",
-      "description": "International Bank Account Number — supports spaces between groups",
+      "description": "International Bank Account Number, with or without spaces between groups.",
       "enabled": true
     },
     {
-      "name": "Spanish date (DD/MM/YYYY)",
+      "name": "Date",
       "regex": "\\b\\d{2}[\\/.\\-]\\d{2}[\\/.\\-]\\d{4}\\b",
-      "description": "Spanish date format — DD/MM/YYYY, DD.MM.YYYY or DD-MM-YYYY",
+      "description": "Spanish date: DD/MM/YYYY, DD.MM.YYYY or DD-MM-YYYY.",
       "enabled": true
     },
     {
-      "name": "Spanish phone number",
+      "name": "Phone",
       "regex": "(?<!\\d)(?:\\+34\\s?)?[6789]\\d{2}[\\s.\\-]?\\d{3}[\\s.\\-]?\\d{3}(?!\\d)",
-      "description": "Spanish phone — mobile (6/7) or landline (8/9), optional +34, bounded",
+      "description": "Spanish phone number: mobile (6/7) or landline (8/9), optional +34, not inside longer numbers.",
       "enabled": true
     }
   ],

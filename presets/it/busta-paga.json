@@ -1,6 +1,6 @@
 {
   "id": "it.busta-paga",
-  "version": 4,
+  "version": 5,
   "name": "Italian Busta Paga",
   "emoji": "🇮🇹",
   "description": "Italian payslip. Detects Codice Fiscale, Partita IVA, Matricola INPS, IBAN, Italian dates and phone numbers, plus names, addresses. Disables the noisy 'Amounts' detector so salary figures aren't over-redacted.",
@@ -11,13 +11,13 @@
     {
       "name": "Codice Fiscale",
       "regex": "(?-i)\\b[A-Z]{6}\\d{2}[A-EHLMPR-T]\\d{2}[A-Z]\\d{3}[A-Z]\\b",
-      "description": "Italian tax code — 16 uppercase alphanumeric chars (case-sensitive)",
+      "description": "Italian tax code: 16 uppercase letters and digits (case-sensitive).",
       "enabled": true
     },
     {
       "name": "Partita IVA",
       "regex": "\\b(?:IT\\s?)?\\d{11}\\b",
-      "description": "Italian VAT number — 11 digits, optional 'IT' prefix",
+      "description": "Italian VAT number: 11 digits, optional 'IT' prefix.",
       "enabled": true
     },
     {
@@ -29,19 +29,19 @@
     {
       "name": "IBAN",
       "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:\\s?[A-Z0-9]){11,30}\\b",
-      "description": "International Bank Account Number — supports spaces between groups",
+      "description": "International Bank Account Number, with or without spaces between groups.",
       "enabled": true
     },
     {
-      "name": "Italian date (DD/MM/YYYY or DD-MM-YYYY)",
+      "name": "Date",
       "regex": "\\b\\d{2}[\\/.\\-]\\d{2}[\\/.\\-]\\d{4}\\b",
-      "description": "Italian date format — DD/MM/YYYY, DD.MM.YYYY or DD-MM-YYYY",
+      "description": "Italian date: DD/MM/YYYY, DD.MM.YYYY or DD-MM-YYYY.",
       "enabled": true
     },
     {
-      "name": "Italian phone number",
+      "name": "Phone",
       "regex": "(?<!\\d)(?:\\+39\\s?)?(?:0\\d{1,3}|3\\d{2})[\\s\\-./]?\\d{6,8}(?!\\d)",
-      "description": "Italian phone — fixed (0xx) or mobile (3xx), optional +39, bounded to avoid matching inside longer numbers",
+      "description": "Italian phone number: landline (0xx) or mobile (3xx), optional +39, not inside longer numbers.",
       "enabled": true
     }
   ],

@@ -1,6 +1,6 @@
 {
   "id": "de.lohnabrechnung",
-  "version": 5,
+  "version": 6,
   "name": "German Payslip",
   "emoji": "🇩🇪",
   "description": "German Lohn-/Gehaltsabrechnung. Detects Steuerident-Nr., Rentenversicherungs-Nr., Krankenversicherungs-Nr., IBAN, German dates, German phone numbers, German street addresses (Greta-Junges-Weg 14) and German PLZ + city (30916 Isernhagen). Disables the noisy 'Amounts' detector so salary figures aren't over-redacted.",
@@ -9,49 +9,49 @@
   "tags": ["payslip", "germany", "lohnabrechnung", "salary", "compliance"],
   "patterns": [
     {
-      "name": "Steueridentifikationsnummer",
+      "name": "Steuer-ID",
       "regex": "\\b\\d{11}\\b",
-      "description": "German Tax ID — 11 digits",
+      "description": "German tax ID (Steueridentifikationsnummer), 11 digits.",
       "enabled": true
     },
     {
-      "name": "Rentenversicherungsnummer",
+      "name": "SV-Nummer",
       "regex": "(?-i)\\b\\d{8}[A-Z]\\d{3}\\b",
-      "description": "German pension insurance number (8 digits + 1 uppercase letter + 3 digits)",
+      "description": "Rentenversicherungsnummer (social insurance number): 8 digits + 1 uppercase letter + 3 digits.",
       "enabled": true
     },
     {
-      "name": "Krankenversicherungsnummer",
+      "name": "KV-Nummer",
       "regex": "(?-i)\\b[A-Z]\\d{9}\\b",
-      "description": "German health insurance number (1 uppercase letter + 9 digits)",
+      "description": "Krankenversicherungsnummer (health insurance number): 1 uppercase letter + 9 digits.",
       "enabled": true
     },
     {
       "name": "IBAN",
       "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:\\s?[A-Z0-9]){11,30}\\b",
-      "description": "International Bank Account Number — supports spaces between groups",
+      "description": "International Bank Account Number, with or without spaces between groups.",
       "enabled": true
     },
     {
-      "name": "German date (DD.MM.YYYY)",
+      "name": "Date",
       "regex": "\\b\\d{2}\\.\\d{2}\\.\\d{4}\\b",
-      "description": "German date format — DD.MM.YYYY",
+      "description": "German date, DD.MM.YYYY.",
       "enabled": true
     },
     {
-      "name": "German phone number",
+      "name": "Phone",
       "regex": "(?<!\\d)(?:\\+49|0)[\\s/.\\-]?(?:\\(0\\))?[\\s/.\\-]?\\d{2,5}[\\s/.\\-]?\\d{4,10}(?!\\d)",
-      "description": "German phone numbers — bounded to avoid matching inside longer numbers",
+      "description": "German phone number, +49 or 0 prefix, not inside longer numbers.",
       "enabled": true
     },
     {
-      "name": "German street address",
+      "name": "Address",
       "regex": "(?i)\\b[A-ZÄÖÜ][\\p{L}.\\-]*(?:weg|stra(?:ß|ss)e|str\\.?|platz|gasse|allee|ring|hof|damm|ufer|steig|chaussee|tor|markt)\\s+\\d+\\s?[a-z]?\\b",
-      "description": "German street address — name (often hyphenated) ending in Weg/Straße/Strasse/Platz/Gasse/Allee/Ring/Hof/Damm/Ufer/Steig/Chaussee/Tor/Markt + house number. Example: 'Greta-Junges-Weg 14', 'Hauptstraße 27', 'Königsallee 2a'.",
+      "description": "German street address: name (often hyphenated) ending in Weg/Straße/Strasse/Platz/Gasse/Allee/Ring/Hof/Damm/Ufer/Steig/Chaussee/Tor/Markt + house number. Example: 'Greta-Junges-Weg 14', 'Hauptstraße 27', 'Königsallee 2a'.",
       "enabled": true
     },
     {
-      "name": "German postal code + city",
+      "name": "PLZ Ort",
       "regex": "(?-i)\\b\\d{5}\\s+[A-ZÄÖÜ][\\p{L}\\-]+(?:\\s+(?:am|an|im|in|bei|ob)\\s+(?:der|dem)?\\s*[A-ZÄÖÜ][\\p{L}\\-]+)?(?:\\s+[A-ZÄÖÜ][\\p{L}\\-]+){0,2}\\b",
       "description": "German PLZ + city. 5-digit postal code + capitalized city, supports multi-word names (e.g. 'Frankfurt am Main', 'Rothenburg ob der Tauber'). Example: '30916 Isernhagen', '10117 Berlin', '60311 Frankfurt am Main'.",
       "enabled": true

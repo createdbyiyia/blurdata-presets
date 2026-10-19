@@ -1,6 +1,6 @@
 {
   "id": "es.dni",
-  "version": 1,
+  "version": 2,
   "name": "Spanish DNI / NIE",
   "emoji": "🪪",
   "description": "Spanish ID document (DNI) or foreigner ID (NIE) copy. Detects the DNI number (8 digits + letter), NIE (X/Y/Z + 7 digits + letter), the support number (número de soporte / IDESP), dates of birth and Spanish addresses, plus names. Pair with manual redaction to black out the photo and signature.",
@@ -11,31 +11,31 @@
     {
       "name": "DNI",
       "regex": "(?i)\\b\\d{8}[A-Za-z]\\b",
-      "description": "Spanish national ID — 8 digits + control letter",
+      "description": "Spanish national ID: 8 digits + control letter.",
       "enabled": true
     },
     {
       "name": "NIE",
       "regex": "(?i)\\b[XYZ]\\d{7}[A-Za-z]\\b",
-      "description": "Foreigner ID number — X/Y/Z + 7 digits + control letter",
+      "description": "Foreigner ID number: X/Y/Z + 7 digits + control letter.",
       "enabled": true
     },
     {
-      "name": "Número de soporte (IDESP)",
+      "name": "Núm. soporte",
       "regex": "(?i)\\b(?:n[uú]m(?:ero)?\\.?\\s*(?:de\\s*)?soporte|idesp)\\s*[:\\-]?\\s*([A-Z]{3}\\d{6})\\b",
-      "description": "Support/document number on the DNI, context-anchored",
+      "description": "Support number on the DNI: 3 letters + 6 digits, matched with its label (número de soporte, IDESP).",
       "enabled": true
     },
     {
-      "name": "Spanish date (DD/MM/YYYY)",
+      "name": "Date",
       "regex": "\\b\\d{2}[\\/.\\-]\\d{2}[\\/.\\-]\\d{4}\\b",
-      "description": "Date of birth / expiry — DD/MM/YYYY, DD.MM.YYYY or DD-MM-YYYY",
+      "description": "Date of birth or expiry: DD/MM/YYYY, DD.MM.YYYY or DD-MM-YYYY.",
       "enabled": true
     },
     {
-      "name": "Spanish phone number",
+      "name": "Phone",
       "regex": "(?<!\\d)(?:\\+34\\s?)?[6789]\\d{2}[\\s.\\-]?\\d{3}[\\s.\\-]?\\d{3}(?!\\d)",
-      "description": "Spanish phone — mobile (6/7) or landline (8/9), optional +34, bounded",
+      "description": "Spanish phone number: mobile (6/7) or landline (8/9), optional +34, not inside longer numbers.",
       "enabled": true
     }
   ],
