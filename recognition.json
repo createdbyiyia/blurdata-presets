@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-19",
+  "updated": "2026-10-21",
   "about": "Signs of each document type, used by BlurData 1.6.3 and later to suggest a preset for an opened document. The check runs on the Mac: the app downloads this file, the document never leaves the Mac. A sign is a phrase typical of the document, matched as whole words, ignoring case, accents and punctuation; weight 1 (common), 2 (typical), 3 (distinctive). See CONTRIBUTING.md.",
   "thresholds": {
     "suggest": 5,
@@ -2604,6 +2604,210 @@
         },
         {
           "text": "rehabilitation",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "pt.medical-records",
+      "label": {
+        "en": "a Portuguese medical document",
+        "de": "ein portugiesisches medizinisches Dokument",
+        "es": "un documento médico portugués",
+        "fr": "un document médical portugais",
+        "it": "un documento medico portoghese"
+      },
+      "signs": [
+        {
+          "text": "nota de alta",
+          "weight": 3
+        },
+        {
+          "text": "boletim de análises",
+          "weight": 3
+        },
+        {
+          "text": "guia de tratamento",
+          "weight": 3
+        },
+        {
+          "text": "receita sem papel",
+          "weight": 3
+        },
+        {
+          "text": "código de acesso e dispensa",
+          "weight": 3
+        },
+        {
+          "text": "direito de opção",
+          "weight": 3
+        },
+        {
+          "text": "utente do sns",
+          "weight": 3
+        },
+        {
+          "text": "utente sns",
+          "weight": 3
+        },
+        {
+          "text": "número de utente",
+          "weight": 3
+        },
+        {
+          "text": "cédula profissional",
+          "weight": 3
+        },
+        {
+          "text": "atesto por minha honra",
+          "weight": 3
+        },
+        {
+          "text": "data de colheita",
+          "weight": 3
+        },
+        {
+          "text": "tomografia computorizada",
+          "weight": 3
+        },
+        {
+          "text": "serviço nacional de saúde",
+          "weight": 2
+        },
+        {
+          "text": "ordem dos médicos",
+          "weight": 2
+        },
+        {
+          "text": "análises clínicas",
+          "weight": 2
+        },
+        {
+          "text": "valores de referência",
+          "weight": 2
+        },
+        {
+          "text": "relatório clínico",
+          "weight": 2
+        },
+        {
+          "text": "relatório médico",
+          "weight": 2
+        },
+        {
+          "text": "atestado médico",
+          "weight": 2
+        },
+        {
+          "text": "data de admissão",
+          "weight": 2
+        },
+        {
+          "text": "data de alta",
+          "weight": 2
+        },
+        {
+          "text": "medicação habitual",
+          "weight": 2
+        },
+        {
+          "text": "medicação no domicílio",
+          "weight": 2
+        },
+        {
+          "text": "médico assistente",
+          "weight": 2
+        },
+        {
+          "text": "médico de família",
+          "weight": 2
+        },
+        {
+          "text": "médica de família",
+          "weight": 2
+        },
+        {
+          "text": "unidade de saúde familiar",
+          "weight": 2
+        },
+        {
+          "text": "unidade local de saúde",
+          "weight": 2
+        },
+        {
+          "text": "centro hospitalar",
+          "weight": 2
+        },
+        {
+          "text": "serviço de urgência",
+          "weight": 2
+        },
+        {
+          "text": "triagem de manchester",
+          "weight": 2
+        },
+        {
+          "text": "junta médica",
+          "weight": 2
+        },
+        {
+          "text": "imagiologia",
+          "weight": 2
+        },
+        {
+          "text": "receita médica",
+          "weight": 2
+        },
+        {
+          "text": "adse",
+          "weight": 2
+        },
+        {
+          "text": "colheita",
+          "weight": 2
+        },
+        {
+          "text": "internamento",
+          "weight": 1
+        },
+        {
+          "text": "doente",
+          "weight": 1
+        },
+        {
+          "text": "utente",
+          "weight": 1
+        },
+        {
+          "text": "requisição",
+          "weight": 1
+        },
+        {
+          "text": "achados",
+          "weight": 1
+        },
+        {
+          "text": "médis",
+          "weight": 1
+        },
+        {
+          "text": "multicare",
+          "weight": 1
+        },
+        {
+          "text": "advancecare",
+          "weight": 1
+        },
+        {
+          "text": "radiologista",
+          "weight": 1
+        },
+        {
+          "text": "data de nascimento",
+          "weight": 1
+        },
+        {
+          "text": "prescrição",
           "weight": 1
         }
       ]
