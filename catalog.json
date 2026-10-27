@@ -1,6 +1,6 @@
 {
-  "version": 38,
-  "updated": "2026-10-26T18:30",
+  "version": 39,
+  "updated": "2026-10-27T18:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -600,12 +600,12 @@
     },
     {
       "id": "pt.medical-records",
-      "presetVersion": 1,
+      "presetVersion": 2,
       "name": "Portuguese Medical Records (Relatório, Análises, Receita)",
       "emoji": "🇵🇹",
       "language": "pt",
       "country": "PT",
-      "description": "Portuguese medical documents: boletim de análises clínicas, nota de alta, relatório clínico, relatório de imagiologia (TAC, ecografia), guia de tratamento da receita sem papel, atestado e declaração médica, as text PDFs or scans. Detects the name of the patient and of relatives after their label (Nome, Utente, Doente, Exmo. Sr., Exma. Sra., Sra. D., filha), with accents and particles (da, dos, e), in capitals or surname first; doctors' and staff names after Dr., Dra., Prof., Enf.ª, Médico assistente:, Validado por:, Técnico:; the date of birth (Data de nascimento, D. Nasc., nascido a); the SNS user number, NIF, NISS and Cartão de Cidadão or BI; ADSE, SAMS and insurer numbers (Médis, Multicare, AdvanceCare, Apólice, N.º Beneficiário); processo, episódio, requisição and amostra numbers; the receita number, código de acesso e dispensa and código de direito de opção; cédula profissional and Ordem dos Médicos numbers; phones, street, código postal and town; plus e-mails, barcodes and QR codes. Keeps test names, results, units, reference intervals, collection and exam dates, medication, doses, diagnoses and the names of hospitals, clinics and labs; 9-digit lab values stay visible. Turn off Médico to keep doctors' names visible. Limits: the clinic's own address and phone in the letterhead are covered like the patient's (remove them with the X); handwriting is covered only when the scan text reads it; handwritten signatures need a manual box.",
+      "description": "Portuguese medical documents: boletim de análises clínicas, nota de alta, relatório clínico, relatório de imagiologia (TAC, ecografia), guia de tratamento da receita sem papel, atestado e declaração médica, as text PDFs or scans. Detects the name of the patient and of relatives after their label (Nome, Utente, Doente, Exmo. Sr., Exma. Sra., Sra. D., filha, also the English First name and Last name of exported reports), with accents and particles (da, dos, e), in capitals or surname first; doctors' and staff names after Dr., Dra., Prof., Enf.ª, Médico assistente:, Validado por:, Técnico:, and the printed name after Assinado por:, Assinado digitalmente por: or Signed by: (the date and time after it stay visible); the date of birth (Data de nascimento, D. Nasc., nascido a, Birth date); the SNS user number, NIF, NISS and Cartão de Cidadão or BI; ADSE, SAMS and insurer numbers (Médis, Multicare, AdvanceCare, Apólice, N.º Beneficiário); processo, episódio, requisição and amostra numbers and the Person ID; the receita number, código de acesso e dispensa and código de direito de opção; cédula profissional and Ordem dos Médicos numbers; phones, street, código postal and town; plus e-mails, barcodes and QR codes. Keeps test names, results, units, reference intervals, collection and exam dates, medication, doses, diagnoses and the names of hospitals, clinics and labs; 9-digit lab values stay visible, and so do the headers and values of glasses prescriptions (Esfera, Cilindro, Eixo, Adição, Esf., Cil., Adiç., OD, OE, DP, Longe, Perto, +1,25, -0,75, 90°) and the axes of audiograms. Turn off Médico to keep doctors' names visible. Limits: the clinic's own address and phone in the letterhead are covered like the patient's (remove them with the X); handwriting is covered only when the scan text reads it; handwritten signatures are covered by the Signatures detector (BlurData 1.6.5 and later).",
       "tags": [
         "medical",
         "healthcare",

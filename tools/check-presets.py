@@ -20,7 +20,8 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BUILTIN = {"email", "name", "address", "ip", "url", "amount", "accountNumber", "licensePlate", "barcode", "phone"}
+BUILTIN = {"email", "name", "address", "ip", "url", "amount", "accountNumber", "licensePlate", "barcode", "phone",
+           "signature"}  # signature: handwritten signatures, BlurData 1.6.5 (older apps ignore unknown keys)
 errors, warnings = [], []
 
 
