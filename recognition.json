@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-21",
+  "updated": "2026-10-27",
   "about": "Signs of each document type, used by BlurData 1.6.3 and later to suggest a preset for an opened document. The check runs on the Mac: the app downloads this file, the document never leaves the Mac. A sign is a phrase typical of the document, matched as whole words, ignoring case, accents and punctuation; weight 1 (common), 2 (typical), 3 (distinctive). See CONTRIBUTING.md.",
   "thresholds": {
     "suggest": 5,
@@ -2668,6 +2668,14 @@
         },
         {
           "text": "tomografia computorizada",
+          "weight": 3
+        },
+        {
+          "text": "receita de óculos",
+          "weight": 3
+        },
+        {
+          "text": "audiograma tonal",
           "weight": 3
         },
         {
