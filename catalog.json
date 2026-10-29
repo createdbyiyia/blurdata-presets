@@ -1,6 +1,6 @@
 {
-  "version": 39,
-  "updated": "2026-10-27T18:00",
+  "version": 40,
+  "updated": "2026-10-29T18:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -496,12 +496,12 @@
     },
     {
       "id": "de.werkstattauftrag",
-      "presetVersion": 1,
+      "presetVersion": 2,
       "name": "German Workshop Order (Werkstattauftrag)",
       "emoji": "🔧",
       "language": "de",
       "country": "DE",
-      "description": "German workshop and repair orders (Werkstattauftrag, Reparaturauftrag, Auftragsbestätigung) from dealer and independent-garage systems. Hides the customer: name or company (after Herrn/Frau/Firma, in the address window, after Kunde:/Auftraggeber:/Halter:/Ansprechpartner:/z. Hd.), street and PLZ Ort, phone and mobile numbers, e-mail, every German licence plate (M-AB 1234, LÖ-X 99E, HH XY 1234H, also in free text) and only the last 6 characters of the VIN/FIN, so the first 11 stay readable. The workshop's name, letterhead, sender line, footer, switchboard number (ending in -0), fax, e-mail at workshop domains and staff names (Serviceberater:, Annahme:, Monteur:) stay visible, as do order and customer numbers, dates, km-Stand, Erstzulassung, HSN/TSN, make and model, work positions, part numbers, AW, prices and VAT. Limits: on scans and photos a name or address with no label or salutation on the same line (the address window) is not found and must be covered by hand; a workshop number without -0 (or a direct line without a Durchwahl label) is covered like a customer number; a VIN wrapped onto two lines is not recognised.",
+      "description": "German workshop and repair orders (Werkstattauftrag, Reparaturauftrag, Auftragsbestätigung) from dealer and independent-garage systems, also scanned. Hides the customer: name or company (after Herrn/Frau/Firma, in the address window, after Kunde:/Auftraggeber:/Halter:/Ansprechpartner:/z. Hd.), street and PLZ Ort, phone and mobile numbers, e-mail, customer number, every German licence plate (M-AB 1234, LÖ-X 99E, HH XY 1234H, also in free text), the whole VIN/FIN (also printed in groups or split by a scan), any surname after Hr./Fr. (for example the service advisor in the header row) and the dealer's one-line sender line above the address window. The workshop's letterhead, stamp, footer, switchboard number (ending in -0), fax, e-mail at workshop domains and staff after Serviceberater:/Annahme:/Monteur: written as Herr/Frau or a full name stay visible, as do order numbers, dates, km-Stand, Erstzulassung, HSN/TSN, make and model, work positions, part numbers, AW, prices and VAT. Each row can be switched off (Absender to keep the sender line, Hr./Fr. Name to keep staff). Limits: on scans and photos a name or address with no label or salutation on the same line (the address window) and a customer number alone in its box under its label are not found and must be covered by hand; a workshop number without -0 (or a direct line without a Durchwahl label) is covered like a customer number; a VIN wrapped onto two lines is not recognised.",
       "tags": [
         "werkstattauftrag",
         "reparaturauftrag",
