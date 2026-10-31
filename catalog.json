@@ -1,6 +1,6 @@
 {
-  "version": 40,
-  "updated": "2026-10-29T18:00",
+  "version": 41,
+  "updated": "2026-10-31T11:21",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -496,12 +496,12 @@
     },
     {
       "id": "de.werkstattauftrag",
-      "presetVersion": 2,
+      "presetVersion": 3,
       "name": "German Workshop Order (Werkstattauftrag)",
       "emoji": "🔧",
       "language": "de",
       "country": "DE",
-      "description": "German workshop and repair orders (Werkstattauftrag, Reparaturauftrag, Auftragsbestätigung) from dealer and independent-garage systems, also scanned. Hides the customer: name or company (after Herrn/Frau/Firma, in the address window, after Kunde:/Auftraggeber:/Halter:/Ansprechpartner:/z. Hd.), street and PLZ Ort, phone and mobile numbers, e-mail, customer number, every German licence plate (M-AB 1234, LÖ-X 99E, HH XY 1234H, also in free text), the whole VIN/FIN (also printed in groups or split by a scan), any surname after Hr./Fr. (for example the service advisor in the header row) and the dealer's one-line sender line above the address window. The workshop's letterhead, stamp, footer, switchboard number (ending in -0), fax, e-mail at workshop domains and staff after Serviceberater:/Annahme:/Monteur: written as Herr/Frau or a full name stay visible, as do order numbers, dates, km-Stand, Erstzulassung, HSN/TSN, make and model, work positions, part numbers, AW, prices and VAT. Each row can be switched off (Absender to keep the sender line, Hr./Fr. Name to keep staff). Limits: on scans and photos a name or address with no label or salutation on the same line (the address window) and a customer number alone in its box under its label are not found and must be covered by hand; a workshop number without -0 (or a direct line without a Durchwahl label) is covered like a customer number; a VIN wrapped onto two lines is not recognised.",
+      "description": "German workshop and repair orders (Werkstattauftrag, Reparaturauftrag, Auftragsbestätigung) from dealer and independent-garage systems, also scanned. Hides the customer: name or company (after Herrn/Frau/Firma, in the address window, after Kunde:/Auftraggeber:/Halter:/Ansprechpartner:/z. Hd.), street and PLZ Ort, phone and mobile numbers, e-mail, customer number, every German licence plate (M-AB 1234, LÖ-X 99E, HH XY 1234H, also in free text), the whole VIN/FIN (also printed in groups or split by a scan, the serial and the maker code also alone), any surname after Hr./Fr. (for example the service advisor in the header row), the dealer's one-line sender line above the address window and every QR code and barcode on the order (for example the QR code next to the address window; the Barcodes & QR codes switch keeps them). The workshop's letterhead, stamp, footer, switchboard number (ending in -0), fax, e-mail at workshop domains and staff after Serviceberater:/Annahme:/Monteur: written as Herr/Frau or a full name stay visible, as do order numbers, dates, km-Stand, Erstzulassung, HSN/TSN, make and model, work positions, part numbers, AW, prices and VAT. Each row can be switched off (Absender to keep the sender line, Hr./Fr. Name to keep staff). Limits: on scans and photos a name or address with no label or salutation on the same line (the address window) and a customer number alone in its box under its label are not found and must be covered by hand; a workshop number without -0 (or a direct line without a Durchwahl label) is covered like a customer number; a VIN wrapped onto two lines is not recognised.",
       "tags": [
         "werkstattauftrag",
         "reparaturauftrag",
@@ -624,6 +624,31 @@
       "path": "presets/pt/medical-records.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/pt/medical-records.json",
       "minAppVersion": "1.6.5"
+    },
+    {
+      "id": "uk.social-care",
+      "presetVersion": 1,
+      "name": "UK Social Care (Care Act)",
+      "emoji": "🇬🇧",
+      "language": "en",
+      "country": "GB",
+      "description": "English adult social care records: Care Act assessments, care and support plans and one-page profiles, personal budget letters, Direct Payment and ISF agreements, carer's assessments, reviews, safeguarding forms and training case studies, as text PDFs or scans. Hides the person, family, friends, neighbours, personal assistants and named workers, also a first name alone in running text (Sarah enjoys, Tom’s mum, my daughter Joanne, Joanne Pritchard (daughter), Tomasz Wiśniewski, Social Worker), names after labels (Name, First name, Surname, Preferred name, Known as, Next of kin, Assessor, Reviewer, Please ask for, Dear), dates of birth, NHS and National Insurance numbers, Mosaic, LAS / Liquid Logic, Frameworki and other care record IDs, case, payroll and crime references, addresses with flat numbers, postcodes, phones, e-mails, Direct Payment account name, sort code, account and card numbers. Keeps councils, teams, providers, the Care Act and other legislation, eligibility outcomes, services, hours, amounts and assessment or review dates. Limits: on scans a value in its own table cell, away from its label, may need a manual box; a first name with nothing around it that says it is a person (lets Grace and Yvonne decide) is found only when the full name is elsewhere in the document; signatures need the Signatures switch or a manual box.",
+      "tags": [
+        "social care",
+        "care act",
+        "adult social care",
+        "personal budget",
+        "direct payment",
+        "isf",
+        "care and support plan",
+        "carer's assessment",
+        "safeguarding",
+        "nhs",
+        "uk",
+        "gdpr"
+      ],
+      "path": "presets/uk/social-care.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/uk/social-care.json"
     }
   ],
   "recognition": {

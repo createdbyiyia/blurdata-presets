@@ -6,7 +6,7 @@ A preset is a JSON file describing which detectors should run on a specific type
 
 The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user opens **Browse Community Presets**. After download, each preset is cached locally and works fully offline.
 
-## Available presets (29)
+## Available presets (30)
 
 | Preset | Country | Detects |
 |---|---|---|
@@ -39,6 +39,7 @@ The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user
 | 🚜 [US Equipment Invoice / Sales Order](presets/us/equipment-invoice.json) | US | Invoices, sales orders and quotes from US machinery and equipment dealers (forestry, construction,… |
 | 🇩🇪 [German Medical Records (Arztbrief, Befund)](presets/de/medical-records.json) | DE | German Arztbrief, Entlassungsbrief, Befundbericht, Laborbefund, Muster 6, Reha-Entlassungsbericht. Detects patient and… |
 | 🇵🇹 [Portuguese Medical Records (Relatório, Análises, Receita)](presets/pt/medical-records.json) | PT | Portuguese análises clínicas, nota de alta, relatório clínico and imagiologia, receita sem papel, atestado médico. Detects patient and… |
+| 🇬🇧 [UK Social Care (Care Act)](presets/uk/social-care.json) | GB | English adult social care records: Care Act assessments, care and support plans and one-page profiles, personal budget… |
 
 ## What you can anonymize, in your language
 
@@ -47,7 +48,7 @@ The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user
 - 🇫🇷 **Français**: anonymiser et caviarder un bulletin de paie, une facture ou un avis d'impôt (France), des documents juridiques belges et des dossiers médicaux suisses. Détecte le NIR (numéro de sécurité sociale), SIRET, SIREN, TVA intracommunautaire, numéro fiscal, numéro AVS, numéro BCE, références cadastrales, adresses et IBAN.
 - 🇪🇸 **Español**: anonimizar DNI, NIE y facturas. Detecta DNI, NIE, NIF/CIF, IBAN, teléfonos y fechas.
 - 🇵🇹 **Português**: anonimizar registos médicos: boletins de análises clínicas, notas de alta, relatórios clínicos e de imagiologia, guias de tratamento da receita sem papel e atestados médicos. Deteta nomes de doentes e médicos, data de nascimento, número de utente do SNS, NIF, NISS, Cartão de Cidadão, números ADSE, SAMS e de seguros, processo e episódio, código de acesso e de opção da receita, cédula profissional, moradas, códigos postais e telefones.
-- 🇬🇧 **English**: redact payslips, W-2s, broker tax statements (Consolidated 1099), invoices, bank and brokerage statements, medical records and court documents. Detects SSN, EIN, National Insurance and NHS numbers, IBAN, routing and account numbers, card numbers and dates.
+- 🇬🇧 **English**: redact payslips, W-2s, broker tax statements (Consolidated 1099), invoices, bank and brokerage statements, medical records, adult social care records (Care Act assessments, support plans, Direct Payments) and court documents. Detects SSN, EIN, National Insurance and NHS numbers, IBAN, routing and account numbers, card numbers and dates.
 
 Every preset works with both modes of the app: **Redact** removes the data from the file for good, **Pseudonymize** swaps it for consistent labels ([PERSON_1], [IBAN_1]…) so the document keeps its meaning for an AI, and can be saved as Markdown.
 
