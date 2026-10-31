@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-27",
+  "updated": "2026-10-31",
   "about": "Signs of each document type, used by BlurData 1.6.3 and later to suggest a preset for an opened document. The check runs on the Mac: the app downloads this file, the document never leaves the Mac. A sign is a phrase typical of the document, matched as whole words, ignoring case, accents and punctuation; weight 1 (common), 2 (typical), 3 (distinctive). See CONTRIBUTING.md.",
   "thresholds": {
     "suggest": 5,
@@ -2816,6 +2816,154 @@
         },
         {
           "text": "prescrição",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "uk.social-care",
+      "label": {
+        "en": "a UK social care record",
+        "de": "ein britisches Dokument der Sozialpflege",
+        "es": "un expediente británico de servicios sociales",
+        "fr": "un dossier britannique d'aide sociale",
+        "it": "una pratica britannica di assistenza sociale"
+      },
+      "signs": [
+        {
+          "text": "care act 2014",
+          "weight": 3
+        },
+        {
+          "text": "adult social care",
+          "weight": 3
+        },
+        {
+          "text": "care and support plan",
+          "weight": 3
+        },
+        {
+          "text": "personal budget",
+          "weight": 3
+        },
+        {
+          "text": "individual service fund",
+          "weight": 3
+        },
+        {
+          "text": "direct payment",
+          "weight": 3
+        },
+        {
+          "text": "carer s assessment",
+          "weight": 3
+        },
+        {
+          "text": "safeguarding adults",
+          "weight": 3
+        },
+        {
+          "text": "one page profile",
+          "weight": 3
+        },
+        {
+          "text": "making safeguarding personal",
+          "weight": 3
+        },
+        {
+          "text": "self directed support",
+          "weight": 3
+        },
+        {
+          "text": "direct payments",
+          "weight": 2
+        },
+        {
+          "text": "eligible needs",
+          "weight": 2
+        },
+        {
+          "text": "eligibility criteria",
+          "weight": 2
+        },
+        {
+          "text": "social worker",
+          "weight": 2
+        },
+        {
+          "text": "nominated person",
+          "weight": 2
+        },
+        {
+          "text": "adult at risk",
+          "weight": 2
+        },
+        {
+          "text": "mosaic",
+          "weight": 2
+        },
+        {
+          "text": "liquid logic",
+          "weight": 2
+        },
+        {
+          "text": "resource allocation system",
+          "weight": 2
+        },
+        {
+          "text": "carer s budget",
+          "weight": 2
+        },
+        {
+          "text": "circle of support",
+          "weight": 2
+        },
+        {
+          "text": "care coordinator",
+          "weight": 2
+        },
+        {
+          "text": "personal assistant",
+          "weight": 1
+        },
+        {
+          "text": "personal assistants",
+          "weight": 1
+        },
+        {
+          "text": "safeguarding",
+          "weight": 1
+        },
+        {
+          "text": "next of kin",
+          "weight": 1
+        },
+        {
+          "text": "care worker",
+          "weight": 1
+        },
+        {
+          "text": "support worker",
+          "weight": 1
+        },
+        {
+          "text": "home care",
+          "weight": 1
+        },
+        {
+          "text": "mental capacity",
+          "weight": 1
+        },
+        {
+          "text": "lasting power of attorney",
+          "weight": 1
+        },
+        {
+          "text": "learning disability",
+          "weight": 1
+        },
+        {
+          "text": "day opportunities",
           "weight": 1
         }
       ]
