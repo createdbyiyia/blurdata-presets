@@ -1,6 +1,6 @@
 # BlurData Presets
 
-Community-curated **Document Presets** for [BlurData](https://blurdata.app), the native macOS app that automatically detects and redacts PII in PDFs, scans, screenshots and images, or replaces it with consistent labels like [PERSON_1] (Pseudonymize) so documents can go to ChatGPT, Claude or any AI, with an optional clean Markdown export.
+Community-curated **Document Presets** for [BlurData](https://blurdata.app), the native macOS app that automatically detects and redacts PII in PDFs, scans, screenshots and images, or replaces it with consistent labels like [PERSON_1] (Pseudonymize) so documents can go to ChatGPT or any other AI, with an optional clean Markdown export.
 
 A preset is a JSON file describing which detectors should run on a specific type of document (German payslip, US W-2, bank statement…), so a user can switch from "manual toggling everything" to "one click, the right things are detected" depending on the file.
 
