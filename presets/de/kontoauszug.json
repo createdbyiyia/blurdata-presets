@@ -1,6 +1,6 @@
 {
   "id": "de.kontoauszug",
-  "version": 2,
+  "version": 3,
   "name": "German Kontoauszug",
   "emoji": "🏦",
   "description": "German bank statement (Kontoauszug). Detects IBAN, BIC/SWIFT, Bankleitzahl (BLZ), Kontonummer, German dates, German phones and addresses, plus names and account holders. Amounts kept visible so you can prove income while redacting identities — toggle 'Amounts' manually to hide balances too.",
@@ -10,7 +10,7 @@
   "patterns": [
     {
       "name": "IBAN",
-      "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:\\s?[A-Z0-9]){11,30}\\b",
+      "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:(?:[\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000]|(?:\\r\\n?|\\n)(?=[A-Z]{0,3}\\d[A-Z0-9]{0,3}(?![^\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000\\r\\n])))?[A-Z0-9]){11,30}\\b",
       "description": "International Bank Account Number, with or without spaces between groups.",
       "enabled": true
     },
@@ -40,13 +40,13 @@
     },
     {
       "name": "Address",
-      "regex": "(?i)\\b[A-ZÄÖÜ][\\p{L}.\\-]*(?:weg|stra(?:ß|ss)e|str\\.?|platz|gasse|allee|ring|hof|damm|ufer|steig|chaussee|tor|markt)\\s+\\d+\\s?[a-z]?\\b",
+      "regex": "(?i)\\b[A-ZÄÖÜ][\\p{L}.\\-]*(?:weg|stra(?:ß|ss)e|str\\.?|platz|gasse|allee|ring|hof|damm|ufer|steig|chaussee|tor|markt)[\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000]+\\d+[\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000]?[a-z]?\\b",
       "description": "German street name + number",
       "enabled": true
     },
     {
       "name": "PLZ Ort",
-      "regex": "(?-i)\\b\\d{5}\\s+[A-ZÄÖÜ][\\p{L}\\-]+(?:\\s+(?:am|an|im|in|bei|ob)\\s+(?:der|dem)?\\s*[A-ZÄÖÜ][\\p{L}\\-]+)?(?:\\s+[A-ZÄÖÜ][\\p{L}\\-]+){0,2}\\b",
+      "regex": "(?-i)\\b\\d{5}[\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000]+[A-ZÄÖÜ][\\p{L}\\-]+(?:[\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000]+(?:am|an|im|in|bei|ob)[\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000]+(?:der|dem)?[\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000]*[A-ZÄÖÜ][\\p{L}\\-]+)?(?:[\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000]+[A-ZÄÖÜ][\\p{L}\\-]+){0,2}\\b",
       "description": "German PLZ (5 digits) + city name",
       "enabled": true
     }

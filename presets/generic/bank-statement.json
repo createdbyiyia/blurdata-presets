@@ -1,6 +1,6 @@
 {
   "id": "generic.bank-statement",
-  "version": 6,
+  "version": 7,
   "name": "Bank Statement",
   "emoji": "🏦",
   "description": "Bank or credit card statement. Detects IBAN, BIC/SWIFT (context-anchored), masked card numbers, full card numbers (13-19 digits), transaction references, dates, phone numbers (US and Canada with extensions, European and international), plus names, addresses, account numbers and amounts.",
@@ -10,7 +10,7 @@
   "patterns": [
     {
       "name": "IBAN",
-      "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:\\s?[A-Z0-9]){11,30}\\b",
+      "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:(?:[\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000]|(?:\\r\\n?|\\n)(?=[A-Z]{0,3}\\d[A-Z0-9]{0,3}(?![^\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000\\r\\n])))?[A-Z0-9]){11,30}\\b",
       "description": "International Bank Account Number, with or without spaces between groups.",
       "enabled": true
     },
@@ -22,19 +22,19 @@
     },
     {
       "name": "Masked card",
-      "regex": "(?:\\*+|X+|x+|•+|\\.{4,})\\s?\\d{4}\\b",
+      "regex": "(?:\\*+|X+|x+|•+|\\.{4,})[\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000]?\\d{4}\\b",
       "description": "Card number with masked digits and the last 4 visible (****1234).",
       "enabled": true
     },
     {
       "name": "Card number",
-      "regex": "(?<!\\d)(?:\\d{4}[\\s\\-]?){2,4}\\d{1,4}(?!\\d)",
+      "regex": "(?<!\\d)(?:\\d{4}[\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000\\-]?){3,4}\\d{1,4}(?!\\d)",
       "description": "Full card number: 13 to 19 digits with optional spaces or dashes (Visa, Mastercard, Amex, UnionPay).",
       "enabled": true
     },
     {
       "name": "Reference",
-      "regex": "\\b(?:TXN|TRX|REF|RIF)[-\\s:#]?[A-Z0-9\\-]{6,25}\\b",
+      "regex": "\\b(?:TXN|TRX|REF|RIF)[\\t \\u00A0\\u1680\\u2000-\\u200A\\u202F\\u205F\\u3000:#\\-]?[A-Z0-9\\-]{6,25}\\b",
       "description": "Transaction or reference ID starting with TXN, TRX, REF or RIF, dashes inside allowed.",
       "enabled": true
     },

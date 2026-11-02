@@ -1,6 +1,6 @@
 {
-  "version": 41,
-  "updated": "2026-10-31T11:21",
+  "version": 42,
+  "updated": "2026-11-02T12:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -120,7 +120,7 @@
     },
     {
       "id": "generic.bank-statement",
-      "presetVersion": 6,
+      "presetVersion": 7,
       "name": "Bank Statement",
       "emoji": "🏦",
       "language": "en",
@@ -278,7 +278,7 @@
     },
     {
       "id": "de.kontoauszug",
-      "presetVersion": 2,
+      "presetVersion": 3,
       "name": "German Kontoauszug",
       "emoji": "🏦",
       "language": "de",
