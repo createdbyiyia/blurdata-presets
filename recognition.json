@@ -2967,6 +2967,430 @@
           "weight": 1
         }
       ]
+    },
+    {
+      "id": "ie.medical-records",
+      "label": {
+        "en": "an Irish medical record",
+        "de": "ein irisches medizinisches Dokument",
+        "es": "un documento médico irlandés",
+        "fr": "un dossier médical irlandais",
+        "it": "un documento medico irlandese"
+      },
+      "refines": [
+        "uk.medical-records",
+        "us.medical-records"
+      ],
+      "signs": [
+        {
+          "text": "eircode",
+          "weight": 3
+        },
+        {
+          "text": "health service executive",
+          "weight": 3
+        },
+        {
+          "text": "hse",
+          "weight": 2
+        },
+        {
+          "text": "individual health identifier",
+          "weight": 3
+        },
+        {
+          "text": "pps number",
+          "weight": 3
+        },
+        {
+          "text": "ppsn",
+          "weight": 3
+        },
+        {
+          "text": "mcrn",
+          "weight": 3
+        },
+        {
+          "text": "imc no",
+          "weight": 2
+        },
+        {
+          "text": "imc number",
+          "weight": 2
+        },
+        {
+          "text": "rcsi",
+          "weight": 2
+        },
+        {
+          "text": "ffr rcsi",
+          "weight": 3
+        },
+        {
+          "text": "beaumont hospital",
+          "weight": 3
+        },
+        {
+          "text": "mater misericordiae",
+          "weight": 3
+        },
+        {
+          "text": "mater private",
+          "weight": 3
+        },
+        {
+          "text": "tallaght university hospital",
+          "weight": 3
+        },
+        {
+          "text": "st vincent's university hospital",
+          "weight": 3
+        },
+        {
+          "text": "connolly hospital",
+          "weight": 3
+        },
+        {
+          "text": "cork university hospital",
+          "weight": 3
+        },
+        {
+          "text": "mercy university hospital",
+          "weight": 3
+        },
+        {
+          "text": "south infirmary victoria university hospital",
+          "weight": 3
+        },
+        {
+          "text": "university hospital galway",
+          "weight": 3
+        },
+        {
+          "text": "university hospital limerick",
+          "weight": 3
+        },
+        {
+          "text": "university hospital waterford",
+          "weight": 3
+        },
+        {
+          "text": "university hospital kerry",
+          "weight": 3
+        },
+        {
+          "text": "sligo university hospital",
+          "weight": 3
+        },
+        {
+          "text": "letterkenny university hospital",
+          "weight": 3
+        },
+        {
+          "text": "mayo university hospital",
+          "weight": 3
+        },
+        {
+          "text": "naas general hospital",
+          "weight": 3
+        },
+        {
+          "text": "cavan general hospital",
+          "weight": 3
+        },
+        {
+          "text": "midland regional hospital",
+          "weight": 3
+        },
+        {
+          "text": "blackrock clinic",
+          "weight": 3
+        },
+        {
+          "text": "beacon hospital",
+          "weight": 3
+        },
+        {
+          "text": "galway clinic",
+          "weight": 3
+        },
+        {
+          "text": "hermitage medical clinic",
+          "weight": 3
+        },
+        {
+          "text": "children's health ireland",
+          "weight": 3
+        },
+        {
+          "text": "saolta",
+          "weight": 3
+        },
+        {
+          "text": "ireland east hospital group",
+          "weight": 3
+        },
+        {
+          "text": "rcsi hospitals",
+          "weight": 3
+        },
+        {
+          "text": "ul hospitals",
+          "weight": 3
+        },
+        {
+          "text": "south/south west hospital group",
+          "weight": 3
+        },
+        {
+          "text": "dublin midlands hospital group",
+          "weight": 3
+        },
+        {
+          "text": "co carlow",
+          "weight": 3
+        },
+        {
+          "text": "co cavan",
+          "weight": 3
+        },
+        {
+          "text": "co clare",
+          "weight": 3
+        },
+        {
+          "text": "co cork",
+          "weight": 3
+        },
+        {
+          "text": "co donegal",
+          "weight": 3
+        },
+        {
+          "text": "co dublin",
+          "weight": 3
+        },
+        {
+          "text": "co galway",
+          "weight": 3
+        },
+        {
+          "text": "co kerry",
+          "weight": 3
+        },
+        {
+          "text": "co kildare",
+          "weight": 3
+        },
+        {
+          "text": "co kilkenny",
+          "weight": 3
+        },
+        {
+          "text": "co laois",
+          "weight": 3
+        },
+        {
+          "text": "co leitrim",
+          "weight": 3
+        },
+        {
+          "text": "co limerick",
+          "weight": 3
+        },
+        {
+          "text": "co longford",
+          "weight": 3
+        },
+        {
+          "text": "co louth",
+          "weight": 3
+        },
+        {
+          "text": "co mayo",
+          "weight": 3
+        },
+        {
+          "text": "co meath",
+          "weight": 3
+        },
+        {
+          "text": "co monaghan",
+          "weight": 3
+        },
+        {
+          "text": "co offaly",
+          "weight": 3
+        },
+        {
+          "text": "co roscommon",
+          "weight": 3
+        },
+        {
+          "text": "co sligo",
+          "weight": 3
+        },
+        {
+          "text": "co tipperary",
+          "weight": 3
+        },
+        {
+          "text": "co waterford",
+          "weight": 3
+        },
+        {
+          "text": "co westmeath",
+          "weight": 3
+        },
+        {
+          "text": "co wexford",
+          "weight": 3
+        },
+        {
+          "text": "co wicklow",
+          "weight": 3
+        },
+        {
+          "text": "dublin 1",
+          "weight": 3
+        },
+        {
+          "text": "dublin 2",
+          "weight": 3
+        },
+        {
+          "text": "dublin 3",
+          "weight": 3
+        },
+        {
+          "text": "dublin 4",
+          "weight": 3
+        },
+        {
+          "text": "dublin 5",
+          "weight": 3
+        },
+        {
+          "text": "dublin 6",
+          "weight": 3
+        },
+        {
+          "text": "dublin 7",
+          "weight": 3
+        },
+        {
+          "text": "dublin 8",
+          "weight": 3
+        },
+        {
+          "text": "dublin 9",
+          "weight": 3
+        },
+        {
+          "text": "dublin 10",
+          "weight": 3
+        },
+        {
+          "text": "dublin 11",
+          "weight": 3
+        },
+        {
+          "text": "dublin 12",
+          "weight": 3
+        },
+        {
+          "text": "dublin 13",
+          "weight": 3
+        },
+        {
+          "text": "dublin 14",
+          "weight": 3
+        },
+        {
+          "text": "dublin 15",
+          "weight": 3
+        },
+        {
+          "text": "dublin 16",
+          "weight": 3
+        },
+        {
+          "text": "dublin 17",
+          "weight": 3
+        },
+        {
+          "text": "dublin 18",
+          "weight": 3
+        },
+        {
+          "text": "dublin 19",
+          "weight": 3
+        },
+        {
+          "text": "dublin 20",
+          "weight": 3
+        },
+        {
+          "text": "dublin 21",
+          "weight": 3
+        },
+        {
+          "text": "dublin 22",
+          "weight": 3
+        },
+        {
+          "text": "dublin 23",
+          "weight": 3
+        },
+        {
+          "text": "dublin 24",
+          "weight": 3
+        },
+        {
+          "text": "dublin 6w",
+          "weight": 3
+        },
+        {
+          "text": "ireland",
+          "weight": 1
+        },
+        {
+          "text": "dublin",
+          "weight": 1
+        },
+        {
+          "text": "cork",
+          "weight": 1
+        },
+        {
+          "text": "galway",
+          "weight": 1
+        },
+        {
+          "text": "limerick",
+          "weight": 1
+        },
+        {
+          "text": "waterford",
+          "weight": 1
+        },
+        {
+          "text": "353",
+          "weight": 1
+        },
+        {
+          "text": "patient name",
+          "weight": 1
+        },
+        {
+          "text": "mrn",
+          "weight": 1
+        },
+        {
+          "text": "medical record number",
+          "weight": 2
+        }
+      ]
     }
   ]
 }

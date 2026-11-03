@@ -1,9 +1,9 @@
 {
     "id": "uk.medical-records",
-    "version": 3,
+    "version": 4,
     "name": "UK Medical Records",
     "emoji": "🇬🇧",
-    "description": "UK hospital and GP records. Detects NHS numbers, UK dates (dd/mm/yyyy and long form), UK postcodes, UK phone numbers, National Insurance numbers, hospital numbers and patient names. Preserves lab values and clinical scores — numbers with decimals or commas are left untouched. The value after a Patient Address or Patient ID label (radiology, RIS and PACS headers: 123 Main St, Springfield, IL 62704, MRN-00123, and the city or town and postcode on the next line) is covered too, while the label stays readable; the Patient name rule, off by default, does the same for the name after Patient Name (SMITH, JOHN A or SMITH^JOHN).",
+    "description": "UK hospital and GP records and radiology reports. Detects NHS numbers, UK dates (dd/mm/yyyy and long form, and every form after DOB or Date of Birth: 23.04.1975, 23-Apr-1975), UK postcodes, UK phone numbers, National Insurance numbers, hospital numbers, the value after MRN or Chart number (MRN-00123, CH-2023-1234) and patient names. Preserves lab values and clinical scores: numbers with decimals or commas are left untouched. The value after a Patient Name, Patient Address or Patient ID label (radiology, RIS and PACS headers: SMITH, JOHN A or SMITH^JOHN, 12 High Street, Leeds LS1 4AB and the town and postcode on the next line, MRN-00123) is covered too, while the label stays readable.",
     "language": "en",
     "country": "GB",
     "tags": [
@@ -26,14 +26,14 @@
         },
         {
             "name": "MRN",
-            "regex": "(?<![\\d.,])\\d{6,}(?![\\d.,])",
-            "description": "Hospital number or MRN: 6 or more digits in a row with no digit, period or comma next to them (hospital numbers, local patient IDs). Lab values like 12.4 or 1,234.56 and short numbers stay visible.",
+            "regex": "(?<=[ \\r\\n])(?=[A-Za-z0-9\\-/.]*\\d)(?<=(?:\\b(?:mrn|m\\.r\\.n\\.?)(?:[ \\t]?(?:\\#|no\\.?|nr\\.?|num\\.?|number))?|\\b(?:medical[ \\t]record|med\\.?[ \\t]?rec\\.?|chart)[ \\t]?(?:(?:\\#|no\\.?|nr\\.?|num\\.?|number)|id))(?:[ \\t]{0,3}(?:[:.#=\\-–—][ \\t]{0,3}){0,3}[ \\t]{0,19}[ ]|[ \\t]{0,3}[:#][ \\t]{0,10}(?:\\r\\n|\\r|\\n)(?:[ \\t]{0,29}[ ])?))(?<![A-Za-z0-9])(?!\\d{1,4}[/.\\-]\\d{1,2}[/.\\-]\\d{1,4}(?![A-Za-z0-9])|\\d{3}[ ]\\d{3}[ ]\\d{4}(?!\\d))(?=[A-Za-z0-9\\-/.]*\\d)[A-Za-z0-9](?:[A-Za-z0-9]|[\\-/.](?=[A-Za-z0-9])){2,39}(?![A-Za-z0-9])|(?<![\\d.,])\\d{6,}(?![\\d.,])",
+            "description": "Hospital number or MRN: 6 or more digits in a row with no digit, period or comma next to them (hospital numbers, local patient IDs), and the value after MRN, MRN No., MRN #, Medical Record Number, Chart number, Chart No. or Chart # (MRN-00123, A1234567, CH-2023-1234) with the label left readable. Lab values like 12.4 or 1,234.56 and short numbers stay visible.",
             "enabled": true
         },
         {
             "name": "Date",
-            "regex": "(?:\\b(?:0?[1-9]|[12]\\d|3[01])[/\\-](?:0?[1-9]|1[0-2])[/\\-](?:19|20)\\d{2}\\b)|(?:\\b\\d{1,2}(?:st|nd|rd|th)?\\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\\.?\\s+(?:19|20)\\d{2}\\b)|(?:\\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\\.?\\s+\\d{1,2},?\\s+(?:19|20)\\d{2}\\b)",
-            "description": "Full dates: day-first dd/mm/yyyy or dd-mm-yyyy, '5 January 1980' or '5th January 1980', and 'January 5, 1980', years 1900-2099.",
+            "regex": "(?:\\b(?:0?[1-9]|[12]\\d|3[01])[/\\-](?:0?[1-9]|1[0-2])[/\\-](?:19|20)\\d{2}\\b)|(?:\\b\\d{1,2}(?:st|nd|rd|th)?\\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\\.?\\s+(?:19|20)\\d{2}\\b)|(?:\\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\\.?\\s+\\d{1,2},?\\s+(?:19|20)\\d{2}\\b)|(?:(?<=[ \\r\\n])(?=\\d)(?<=(?:\\b(?:dob|d\\.o\\.b\\.?|date[ \\t]of[ \\t]birth|birth[ \\t]?date))(?:[ \\t]{0,3}(?:[:.#=\\-–—][ \\t]{0,3}){0,3}[ \\t]{0,19}[ ]|[ \\t]{0,3}[:#][ \\t]{0,10}(?:\\r\\n|\\r|\\n)(?:[ \\t]{0,29}[ ])?))(?:(?:0?[1-9]|[12]\\d|3[01])[/.\\-](?:0?[1-9]|[12]\\d|3[01])[/.\\-](?:(?:19|20)\\d{2}|\\d{2})(?!\\d|[/.\\-]\\d)|(?:0?[1-9]|[12]\\d|3[01])(?:st|nd|rd|th)?[ \\-./]?(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\\.?[ \\-./]?(?:(?:19|20)\\d{2}|\\d{2})(?![A-Za-z0-9])|(?:19|20)\\d{2}[/.\\-](?:0?[1-9]|1[0-2])[/.\\-](?:0?[1-9]|[12]\\d|3[01])(?![\\d/.\\-])))",
+            "description": "Full dates: day-first dd/mm/yyyy or dd-mm-yyyy, '5 January 1980' or '5th January 1980', and 'January 5, 1980', years 1900-2099. After DOB, D.O.B., Date of Birth or Birth Date every form of the date of birth is covered too: 23.04.1975, 23-Apr-1975, 23APR1975, 23/04/75 and 1975-04-23.",
             "enabled": true
         },
         {

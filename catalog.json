@@ -1,6 +1,6 @@
 {
-  "version": 44,
-  "updated": "2026-11-03T17:00",
+  "version": 45,
+  "updated": "2026-11-03T17:30",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -61,12 +61,12 @@
     },
     {
       "id": "us.medical-records",
-      "presetVersion": 3,
+      "presetVersion": 4,
       "name": "US Medical Records",
       "emoji": "🏥",
       "language": "en",
       "country": "US",
-      "description": "US medical records and clinical notes. Detects patient names, DOB (multiple formats), MRN (6+ digit runs without decimals), SSN, full US addresses, ZIP, emails and phones. Preserves lab values by ignoring numbers with commas/periods. Covers the value after the Patient Address and Patient ID labels, and after Patient Name with its rule on (radiology reports too).",
+      "description": "US medical records, clinical notes and radiology reports. Detects patient names, dates of birth in every common format (also day first after DOB or Date of Birth), Medical Record Numbers (6+ digit runs without decimals, and the value after MRN or Chart number: MRN-00123, CH-2023-1234), SSN, full US street addresses, ZIP codes, emails and US phone numbers. Preserves lab values by ignoring numbers with commas/periods and short runs (under 5 digits). The value after a Patient Name, Patient Address or Patient ID label (radiology, RIS and PACS headers: SMITH, JOHN A or SMITH^JOHN, 123 Main St, Springfield, IL 62704 and the city, state and ZIP on the next line, MRN-00123) is covered too, while the label stays readable.",
       "tags": [
         "medical",
         "healthcare",
@@ -81,12 +81,12 @@
     },
     {
       "id": "uk.medical-records",
-      "presetVersion": 3,
+      "presetVersion": 4,
       "name": "UK Medical Records",
       "emoji": "🇬🇧",
       "language": "en",
       "country": "GB",
-      "description": "UK hospital and GP records. Detects NHS numbers, UK dates (dd/mm/yyyy and long form), UK postcodes, UK phones, NI numbers, hospital numbers and patient names. Preserves lab values. Covers the value after the Patient Address and Patient ID labels, and after Patient Name with its rule on (radiology reports too).",
+      "description": "UK hospital and GP records and radiology reports. Detects NHS numbers, UK dates (dd/mm/yyyy and long form, and every form after DOB or Date of Birth: 23.04.1975, 23-Apr-1975), UK postcodes, UK phone numbers, National Insurance numbers, hospital numbers, the value after MRN or Chart number (MRN-00123, CH-2023-1234) and patient names. Preserves lab values and clinical scores: numbers with decimals or commas are left untouched. The value after a Patient Name, Patient Address or Patient ID label (radiology, RIS and PACS headers: SMITH, JOHN A or SMITH^JOHN, 12 High Street, Leeds LS1 4AB and the town and postcode on the next line, MRN-00123) is covered too, while the label stays readable.",
       "tags": [
         "medical",
         "healthcare",
@@ -649,6 +649,29 @@
       ],
       "path": "presets/uk/social-care.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/uk/social-care.json"
+    },
+    {
+      "id": "ie.medical-records",
+      "presetVersion": 1,
+      "name": "Irish Medical Records",
+      "emoji": "🇮🇪",
+      "language": "en",
+      "country": "IE",
+      "description": "Irish hospital, GP and radiology records (HSE and private hospitals). Detects the value after Patient Name, Patient Address, Patient ID, MRN, Medical Record Number and Chart number with the label left readable (MURPHY, SEAN or MURPHY^SEAN, 12 Main Street, Ballsbridge, Dublin 4, D04 X2Y3 and the town or county line under it: Ballincollig, Co. Cork, Galway H91 E2K3; MRN-00123, CH-2023-1234), the date of birth in every form after DOB or Date of Birth, Irish dates (dd/mm/yyyy and long form), Eircodes (D02 X285, A65 F4E2, D6W 1234), Irish phone numbers (+353 1 234 5678, (01) 234 5678, 087 123 4567), UK postcodes for Northern Ireland addresses, hospital numbers of 6 or more digits, plus names, addresses and emails from the built-in detectors. Preserves lab values, measurements, exam and accession details.",
+      "tags": [
+        "medical",
+        "healthcare",
+        "hospital",
+        "clinical",
+        "patient",
+        "radiology",
+        "ireland",
+        "hse",
+        "eircode",
+        "gdpr"
+      ],
+      "path": "presets/ie/medical-records.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/ie/medical-records.json"
     }
   ],
   "recognition": {
