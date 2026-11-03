@@ -1,6 +1,6 @@
 {
-  "version": 45,
-  "updated": "2026-11-03T17:30",
+  "version": 46,
+  "updated": "2026-11-03T23:30",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -672,6 +672,29 @@
       ],
       "path": "presets/ie/medical-records.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/ie/medical-records.json"
+    },
+    {
+      "id": "generic.patient-details-only",
+      "presetVersion": 1,
+      "name": "Patient Details Only",
+      "emoji": "🩺",
+      "language": "en",
+      "country": null,
+      "description": "Covers only the patient's own details, after their labels: the value after Patient Name, Patient Address (and the town, county or Eircode line under it), Patient ID, Hospital No., IHI, MRN or Chart No. and Date of Birth or DOB, also when the value touches the label (Date of Birth:12-Mar-1975). The labels stay readable, and so does everything else: the clinic, hospital or radiology centre with its address, phone, email and website, the referring GP, the radiologists and their registration numbers, report and exam dates, findings and measurements. Every built-in detector is off, so a name, address or number without one of these labels is not covered.",
+      "tags": [
+        "medical",
+        "healthcare",
+        "patient",
+        "radiology",
+        "hospital",
+        "clinical",
+        "labels",
+        "minimal",
+        "ireland",
+        "gdpr"
+      ],
+      "path": "presets/generic/patient-details-only.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/generic/patient-details-only.json"
     }
   ],
   "recognition": {

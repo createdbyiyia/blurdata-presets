@@ -6,7 +6,7 @@ A preset is a JSON file describing which detectors should run on a specific type
 
 The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user opens **Browse Community Presets**. After download, each preset is cached locally and works fully offline.
 
-## Available presets (30)
+## Available presets (32)
 
 | Preset | Country | Detects |
 |---|---|---|
@@ -41,6 +41,7 @@ The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user
 | 🇵🇹 [Portuguese Medical Records (Relatório, Análises, Receita)](presets/pt/medical-records.json) | PT | Portuguese análises clínicas, nota de alta, relatório clínico and imagiologia, receita sem papel, atestado médico. Detects patient and… |
 | 🇬🇧 [UK Social Care (Care Act)](presets/uk/social-care.json) | GB | English adult social care records: Care Act assessments, care and support plans and one-page profiles, personal budget… |
 | 🇮🇪 [Irish Medical Records](presets/ie/medical-records.json) | IE | Irish hospital, GP and radiology records. Detects the value after Patient Name, Patient Address, Patient ID, MRN and Chart number, the date of birth, Eircodes, Irish phone numbers… |
+| 🩺 [Patient Details Only](presets/generic/patient-details-only.json) | — | Covers only the patient's own details after their labels (Patient Name, Patient Address, Patient ID, Hospital No., IHI, MRN, Date of Birth); the clinic, GP and doctors stay readable… |
 
 ## What you can anonymize, in your language
 
