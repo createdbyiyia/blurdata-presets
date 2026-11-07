@@ -1,6 +1,6 @@
 {
-  "version": 46,
-  "updated": "2026-11-03T23:30",
+  "version": 47,
+  "updated": "2026-11-07T22:45",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -695,6 +695,31 @@
       ],
       "path": "presets/generic/patient-details-only.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/generic/patient-details-only.json"
+    },
+    {
+      "id": "au.medical-records",
+      "presetVersion": 1,
+      "name": "Australian Medical Records",
+      "emoji": "🇦🇺",
+      "language": "en",
+      "country": "AU",
+      "description": "Australian hospital, GP, specialist and pathology records: clinic letters, discharge summaries, pathology and radiology reports. Detects DVA file numbers (NX123456, VSM12345, QX12345A, after DVA No., DVA File Number, Gold Card or White Card and on their own), Medicare card numbers with the IRN (2123 45670 1 / 2), the IHI (8003 6012 3456 7890), the value after UR, URN, MRN, Hospital No. or Chart No., hospital numbers of 6 or more digits, dates (dd/mm/yyyy and long form, and every form after DOB or Date of Birth), postcodes after the state (Parramatta NSW 2150), Australian phone and mobile numbers ((02) 9123 4567, +61 412 345 678) and patient names. The value after a Patient Name, Patient Address or Patient ID label is covered too, while the label stays readable. Lab values, doses, Medicare item numbers, 1300 and 1800 numbers and the clinic's ABN stay visible. The doctor's Medicare provider number and AHPRA registration stay visible too: turn on Provider No and AHPRA to cover them. Handwritten signatures need the Signatures switch or a manual box.",
+      "tags": [
+        "medical",
+        "healthcare",
+        "hospital",
+        "gp",
+        "clinical",
+        "patient",
+        "pathology",
+        "australia",
+        "medicare",
+        "dva",
+        "ihi",
+        "privacy"
+      ],
+      "path": "presets/au/medical-records.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/au/medical-records.json"
     }
   ],
   "recognition": {

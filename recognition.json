@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-31",
+  "updated": "2026-11-07",
   "about": "Signs of each document type, used by BlurData 1.6.3 and later to suggest a preset for an opened document. The check runs on the Mac: the app downloads this file, the document never leaves the Mac. A sign is a phrase typical of the document, matched as whole words, ignoring case, accents and punctuation; weight 1 (common), 2 (typical), 3 (distinctive). See CONTRIBUTING.md.",
   "thresholds": {
     "suggest": 5,
@@ -3389,6 +3389,530 @@
         {
           "text": "medical record number",
           "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "au.medical-records",
+      "label": {
+        "en": "an Australian medical record",
+        "de": "ein australisches medizinisches Dokument",
+        "es": "un documento médico australiano",
+        "fr": "un dossier médical australien",
+        "it": "un documento medico australiano"
+      },
+      "refines": [
+        "uk.medical-records",
+        "us.medical-records"
+      ],
+      "signs": [
+        {
+          "text": "dva gold card",
+          "weight": 3
+        },
+        {
+          "text": "dva white card",
+          "weight": 3
+        },
+        {
+          "text": "dva file number",
+          "weight": 3
+        },
+        {
+          "text": "dva file no",
+          "weight": 3
+        },
+        {
+          "text": "veteran file number",
+          "weight": 3
+        },
+        {
+          "text": "rpbs",
+          "weight": 3
+        },
+        {
+          "text": "irn",
+          "weight": 3
+        },
+        {
+          "text": "individual healthcare identifier",
+          "weight": 3
+        },
+        {
+          "text": "medicare benefits schedule",
+          "weight": 3
+        },
+        {
+          "text": "mbs item",
+          "weight": 3
+        },
+        {
+          "text": "bulk billed",
+          "weight": 3
+        },
+        {
+          "text": "bulk billing",
+          "weight": 3
+        },
+        {
+          "text": "services australia",
+          "weight": 3
+        },
+        {
+          "text": "pharmaceutical benefits scheme",
+          "weight": 3
+        },
+        {
+          "text": "pbs authority",
+          "weight": 3
+        },
+        {
+          "text": "ahpra",
+          "weight": 3
+        },
+        {
+          "text": "gp management plan",
+          "weight": 3
+        },
+        {
+          "text": "team care arrangement",
+          "weight": 3
+        },
+        {
+          "text": "pensioner concession card",
+          "weight": 3
+        },
+        {
+          "text": "franzcr",
+          "weight": 3
+        },
+        {
+          "text": "fracgp",
+          "weight": 3
+        },
+        {
+          "text": "racgp",
+          "weight": 3
+        },
+        {
+          "text": "franzcp",
+          "weight": 3
+        },
+        {
+          "text": "fanzca",
+          "weight": 3
+        },
+        {
+          "text": "nata accredited",
+          "weight": 3
+        },
+        {
+          "text": "nata accreditation",
+          "weight": 3
+        },
+        {
+          "text": "nsw health",
+          "weight": 3
+        },
+        {
+          "text": "queensland health",
+          "weight": 3
+        },
+        {
+          "text": "sa health",
+          "weight": 3
+        },
+        {
+          "text": "wa health",
+          "weight": 3
+        },
+        {
+          "text": "nt health",
+          "weight": 3
+        },
+        {
+          "text": "act health",
+          "weight": 3
+        },
+        {
+          "text": "safer care victoria",
+          "weight": 3
+        },
+        {
+          "text": "tasmanian health service",
+          "weight": 3
+        },
+        {
+          "text": "royal prince alfred hospital",
+          "weight": 3
+        },
+        {
+          "text": "st vincent's hospital sydney",
+          "weight": 3
+        },
+        {
+          "text": "st vincent's hospital melbourne",
+          "weight": 3
+        },
+        {
+          "text": "westmead hospital",
+          "weight": 3
+        },
+        {
+          "text": "royal north shore hospital",
+          "weight": 3
+        },
+        {
+          "text": "concord repatriation general hospital",
+          "weight": 3
+        },
+        {
+          "text": "repatriation general hospital",
+          "weight": 3
+        },
+        {
+          "text": "john hunter hospital",
+          "weight": 3
+        },
+        {
+          "text": "royal melbourne hospital",
+          "weight": 3
+        },
+        {
+          "text": "alfred hospital",
+          "weight": 3
+        },
+        {
+          "text": "austin health",
+          "weight": 3
+        },
+        {
+          "text": "monash health",
+          "weight": 3
+        },
+        {
+          "text": "monash medical centre",
+          "weight": 3
+        },
+        {
+          "text": "box hill hospital",
+          "weight": 3
+        },
+        {
+          "text": "royal brisbane and women's hospital",
+          "weight": 3
+        },
+        {
+          "text": "gold coast university hospital",
+          "weight": 3
+        },
+        {
+          "text": "sunshine coast university hospital",
+          "weight": 3
+        },
+        {
+          "text": "royal adelaide hospital",
+          "weight": 3
+        },
+        {
+          "text": "flinders medical centre",
+          "weight": 3
+        },
+        {
+          "text": "fiona stanley hospital",
+          "weight": 3
+        },
+        {
+          "text": "sir charles gairdner hospital",
+          "weight": 3
+        },
+        {
+          "text": "royal perth hospital",
+          "weight": 3
+        },
+        {
+          "text": "royal hobart hospital",
+          "weight": 3
+        },
+        {
+          "text": "launceston general hospital",
+          "weight": 3
+        },
+        {
+          "text": "royal darwin hospital",
+          "weight": 3
+        },
+        {
+          "text": "canberra hospital",
+          "weight": 3
+        },
+        {
+          "text": "laverty pathology",
+          "weight": 3
+        },
+        {
+          "text": "douglass hanly moir",
+          "weight": 3
+        },
+        {
+          "text": "sullivan nicolaides",
+          "weight": 3
+        },
+        {
+          "text": "qml pathology",
+          "weight": 3
+        },
+        {
+          "text": "melbourne pathology",
+          "weight": 3
+        },
+        {
+          "text": "dorevitch pathology",
+          "weight": 3
+        },
+        {
+          "text": "australian clinical labs",
+          "weight": 3
+        },
+        {
+          "text": "clinipath",
+          "weight": 3
+        },
+        {
+          "text": "i-med radiology",
+          "weight": 3
+        },
+        {
+          "text": "qscan",
+          "weight": 3
+        },
+        {
+          "text": "lumus imaging",
+          "weight": 3
+        },
+        {
+          "text": "sydney nsw",
+          "weight": 3
+        },
+        {
+          "text": "melbourne vic",
+          "weight": 3
+        },
+        {
+          "text": "brisbane qld",
+          "weight": 3
+        },
+        {
+          "text": "perth wa",
+          "weight": 3
+        },
+        {
+          "text": "adelaide sa",
+          "weight": 3
+        },
+        {
+          "text": "hobart tas",
+          "weight": 3
+        },
+        {
+          "text": "darwin nt",
+          "weight": 3
+        },
+        {
+          "text": "canberra act",
+          "weight": 3
+        },
+        {
+          "text": "local health district",
+          "weight": 3
+        },
+        {
+          "text": "hospital and health service",
+          "weight": 3
+        },
+        {
+          "text": "mode of separation",
+          "weight": 3
+        },
+        {
+          "text": "pbs item",
+          "weight": 3
+        },
+        {
+          "text": "provider no",
+          "weight": 3
+        },
+        {
+          "text": "ur no",
+          "weight": 3
+        },
+        {
+          "text": "ur number",
+          "weight": 3
+        },
+        {
+          "text": "epworth richmond",
+          "weight": 3
+        },
+        {
+          "text": "epworth healthcare",
+          "weight": 3
+        },
+        {
+          "text": "healthscope",
+          "weight": 3
+        },
+        {
+          "text": "dva",
+          "weight": 2
+        },
+        {
+          "text": "dva no",
+          "weight": 2
+        },
+        {
+          "text": "dva number",
+          "weight": 2
+        },
+        {
+          "text": "gold card",
+          "weight": 2
+        },
+        {
+          "text": "pbs",
+          "weight": 2
+        },
+        {
+          "text": "my health record",
+          "weight": 2
+        },
+        {
+          "text": "medicare item",
+          "weight": 2
+        },
+        {
+          "text": "fracp",
+          "weight": 2
+        },
+        {
+          "text": "racp",
+          "weight": 2
+        },
+        {
+          "text": "fracs",
+          "weight": 2
+        },
+        {
+          "text": "frcpa",
+          "weight": 2
+        },
+        {
+          "text": "nata",
+          "weight": 2
+        },
+        {
+          "text": "ndis",
+          "weight": 2
+        },
+        {
+          "text": "health care card",
+          "weight": 2
+        },
+        {
+          "text": "nsw",
+          "weight": 2
+        },
+        {
+          "text": "qld",
+          "weight": 2
+        },
+        {
+          "text": "vic",
+          "weight": 2
+        },
+        {
+          "text": "royal brisbane",
+          "weight": 2
+        },
+        {
+          "text": "mental health care plan",
+          "weight": 2
+        },
+        {
+          "text": "separation date",
+          "weight": 2
+        },
+        {
+          "text": "date of separation",
+          "weight": 2
+        },
+        {
+          "text": "icd 10 am",
+          "weight": 2
+        },
+        {
+          "text": "ar drg",
+          "weight": 2
+        },
+        {
+          "text": "uec",
+          "weight": 2
+        },
+        {
+          "text": "euc",
+          "weight": 2
+        },
+        {
+          "text": "department of veterans affairs",
+          "weight": 1
+        },
+        {
+          "text": "repatriation",
+          "weight": 1
+        },
+        {
+          "text": "medicare",
+          "weight": 1
+        },
+        {
+          "text": "medicare number",
+          "weight": 1
+        },
+        {
+          "text": "medicare no",
+          "weight": 1
+        },
+        {
+          "text": "medicare card",
+          "weight": 1
+        },
+        {
+          "text": "provider number",
+          "weight": 1
+        },
+        {
+          "text": "ihi",
+          "weight": 1
+        },
+        {
+          "text": "tas",
+          "weight": 1
+        },
+        {
+          "text": "abn",
+          "weight": 1
+        },
+        {
+          "text": "australia",
+          "weight": 1
+        },
+        {
+          "text": "australian",
+          "weight": 1
+        },
+        {
+          "text": "princess alexandra hospital",
+          "weight": 1
         }
       ]
     }
