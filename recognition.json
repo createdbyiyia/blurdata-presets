@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-07",
+  "updated": "2026-11-10",
   "about": "Signs of each document type, used by BlurData 1.6.3 and later to suggest a preset for an opened document. The check runs on the Mac: the app downloads this file, the document never leaves the Mac. A sign is a phrase typical of the document, matched as whole words, ignoring case, accents and punctuation; weight 1 (common), 2 (typical), 3 (distinctive). See CONTRIBUTING.md.",
   "thresholds": {
     "suggest": 5,
@@ -3912,6 +3912,307 @@
         },
         {
           "text": "princess alexandra hospital",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "us.tax-returns",
+      "label": {
+        "en": "a US tax return or financial statement",
+        "de": "eine US-Steuererklärung oder ein Jahresabschluss",
+        "es": "una declaración de impuestos o un estado financiero de EE. UU.",
+        "fr": "une déclaration fiscale ou des états financiers américains",
+        "it": "una dichiarazione dei redditi o un bilancio USA"
+      },
+      "refines": [],
+      "signs": [
+        {
+          "text": "u s individual income tax return",
+          "weight": 3
+        },
+        {
+          "text": "u s corporation income tax return",
+          "weight": 3
+        },
+        {
+          "text": "u s income tax return for an s corporation",
+          "weight": 3
+        },
+        {
+          "text": "u s return of partnership income",
+          "weight": 3
+        },
+        {
+          "text": "form 1120",
+          "weight": 3
+        },
+        {
+          "text": "form 1120 s",
+          "weight": 3
+        },
+        {
+          "text": "form 1065",
+          "weight": 3
+        },
+        {
+          "text": "schedule k 1",
+          "weight": 3
+        },
+        {
+          "text": "profit or loss from business",
+          "weight": 3
+        },
+        {
+          "text": "shareholder s share of income deductions credits",
+          "weight": 3
+        },
+        {
+          "text": "partner s share of income deductions credits",
+          "weight": 3
+        },
+        {
+          "text": "paid preparer use only",
+          "weight": 3
+        },
+        {
+          "text": "firm s ein",
+          "weight": 3
+        },
+        {
+          "text": "third party designee",
+          "weight": 3
+        },
+        {
+          "text": "s election effective date",
+          "weight": 3
+        },
+        {
+          "text": "balance sheets per books",
+          "weight": 3
+        },
+        {
+          "text": "reconciliation of income loss per books with income per return",
+          "weight": 3
+        },
+        {
+          "text": "accountant s compilation report",
+          "weight": 3
+        },
+        {
+          "text": "independent accountant s review report",
+          "weight": 3
+        },
+        {
+          "text": "form 1040",
+          "weight": 2
+        },
+        {
+          "text": "schedule c",
+          "weight": 2
+        },
+        {
+          "text": "sole proprietorship",
+          "weight": 2
+        },
+        {
+          "text": "ordinary business income",
+          "weight": 2
+        },
+        {
+          "text": "gross receipts or sales",
+          "weight": 2
+        },
+        {
+          "text": "compensation of officers",
+          "weight": 2
+        },
+        {
+          "text": "business activity code",
+          "weight": 2
+        },
+        {
+          "text": "principal business activity",
+          "weight": 2
+        },
+        {
+          "text": "date incorporated",
+          "weight": 2
+        },
+        {
+          "text": "date business started",
+          "weight": 2
+        },
+        {
+          "text": "ptin",
+          "weight": 2
+        },
+        {
+          "text": "firm s name",
+          "weight": 2
+        },
+        {
+          "text": "firm s address",
+          "weight": 2
+        },
+        {
+          "text": "preparer s signature",
+          "weight": 2
+        },
+        {
+          "text": "adjusted gross income",
+          "weight": 2
+        },
+        {
+          "text": "standard deduction",
+          "weight": 2
+        },
+        {
+          "text": "filing status",
+          "weight": 2
+        },
+        {
+          "text": "identity protection pin",
+          "weight": 2
+        },
+        {
+          "text": "schedule l",
+          "weight": 2
+        },
+        {
+          "text": "schedule m 1",
+          "weight": 2
+        },
+        {
+          "text": "schedule m 2",
+          "weight": 2
+        },
+        {
+          "text": "guaranteed payments to partners",
+          "weight": 2
+        },
+        {
+          "text": "statement of income",
+          "weight": 2
+        },
+        {
+          "text": "income statement",
+          "weight": 2
+        },
+        {
+          "text": "compilation report",
+          "weight": 2
+        },
+        {
+          "text": "net operating income",
+          "weight": 2
+        },
+        {
+          "text": "total liabilities and equity",
+          "weight": 2
+        },
+        {
+          "text": "total liabilities and stockholders equity",
+          "weight": 2
+        },
+        {
+          "text": "total liabilities and members equity",
+          "weight": 2
+        },
+        {
+          "text": "department of the treasury internal revenue service",
+          "weight": 1
+        },
+        {
+          "text": "employer identification number",
+          "weight": 1
+        },
+        {
+          "text": "taxable income",
+          "weight": 1
+        },
+        {
+          "text": "married filing jointly",
+          "weight": 1
+        },
+        {
+          "text": "cost of goods sold",
+          "weight": 1
+        },
+        {
+          "text": "total assets",
+          "weight": 1
+        },
+        {
+          "text": "gross profit",
+          "weight": 1
+        },
+        {
+          "text": "net income",
+          "weight": 1
+        },
+        {
+          "text": "total revenue",
+          "weight": 1
+        },
+        {
+          "text": "operating expenses",
+          "weight": 1
+        },
+        {
+          "text": "members equity",
+          "weight": 1
+        },
+        {
+          "text": "stockholders equity",
+          "weight": 1
+        },
+        {
+          "text": "shareholders equity",
+          "weight": 1
+        },
+        {
+          "text": "retained earnings",
+          "weight": 1
+        },
+        {
+          "text": "total liabilities",
+          "weight": 1
+        },
+        {
+          "text": "depreciation",
+          "weight": 1
+        },
+        {
+          "text": "schedule e",
+          "weight": 1
+        },
+        {
+          "text": "form 1125 a",
+          "weight": 1
+        },
+        {
+          "text": "form 1125 e",
+          "weight": 1
+        },
+        {
+          "text": "form 4562",
+          "weight": 1
+        },
+        {
+          "text": "balance sheet",
+          "weight": 1
+        },
+        {
+          "text": "profit and loss",
+          "weight": 1
+        },
+        {
+          "text": "accrual basis",
+          "weight": 1
+        },
+        {
+          "text": "cash basis",
           "weight": 1
         }
       ]

@@ -1,6 +1,6 @@
 {
-  "version": 48,
-  "updated": "2026-11-10T13:45",
+  "version": 49,
+  "updated": "2026-11-10T16:30",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -722,6 +722,35 @@
       ],
       "path": "presets/au/medical-records.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/au/medical-records.json"
+    },
+    {
+      "id": "us.tax-returns",
+      "presetVersion": 1,
+      "name": "US Tax Returns (1040, 1120, 1120-S, 1065)",
+      "emoji": "🇺🇸",
+      "language": "en",
+      "country": "US",
+      "description": "US federal income tax returns and the financial statements that go with them: Form 1040 with Schedule C, Form 1120, 1120-S and 1065 with the Schedule K-1, and the P&L and balance sheet prepared by a CPA. Made for sharing a business's returns with a buyer, a lender or an AI without showing who the business and its owners are. Hides the SSN and ITIN (also masked, XXX-XX-6789), the EIN of the business and of the preparer's firm, the PTIN, the names after the form labels (your and your spouse's name, name of proprietor, corporation or partnership name, shareholder's, partner's and preparer's name, firm's name, business name), every name ending in LLC, Inc., Corp. or LLP, home and business addresses, city, state and ZIP, phone numbers, e-mail, the routing and account number for the refund, the Identity Protection PIN and other PINs, the CAF number, driver's license and date of birth. Keeps what a buyer needs to read: every amount and line number, form names and numbers (Form 1120-S, Schedule K-1, OMB No. 1545-0123), tax years, line descriptions (Gross receipts or sales, Cost of goods sold, Compensation of officers), the business activity code, the IRS's own address and helplines, checkboxes, signature dates and the lines of the P&L and balance sheet. The date incorporated stays visible: turn on Start date to hide it. Limits: on a scan, a name alone on the line under its label, without LLC or Inc. and without an SSN or EIN next to it, is left to the Names detector, so check it; signatures need a manual box.",
+      "tags": [
+        "tax",
+        "tax return",
+        "usa",
+        "irs",
+        "1040",
+        "1120",
+        "1120-s",
+        "1065",
+        "schedule c",
+        "schedule k-1",
+        "business",
+        "financial statements",
+        "ssn",
+        "ein",
+        "m&a",
+        "compliance"
+      ],
+      "path": "presets/us/tax-returns.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/tax-returns.json"
     }
   ],
   "recognition": {
