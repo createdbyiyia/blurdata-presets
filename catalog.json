@@ -1,6 +1,6 @@
 {
-  "version": 47,
-  "updated": "2026-11-07T22:45",
+  "version": 48,
+  "updated": "2026-11-10T13:45",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -357,12 +357,12 @@
     },
     {
       "id": "be.documents-juridiques",
-      "presetVersion": 2,
+      "presetVersion": 3,
       "name": "Belgian Legal Documents (FR)",
       "emoji": "🇧🇪",
       "language": "fr",
       "country": "BE",
-      "description": "Belgian legal documents in French (citations, conclusions, actes). Detects the BCE company number, cadastral references, Belgian addresses and postal codes, company names by legal form, IBAN, plus names. Amounts in € stay visible.",
+      "description": "Belgian legal documents in French (citations, conclusions, actes, contrats, devis, courriers). Detects the national register number (NN / NISS / BIS: 85.07.30-033.00 anywhere, 85073003300 after its label), the BCE / TVA company number in every form (0123.456.789, BE0123456789, 10 digits after BCE, TVA or n° d'entreprise), Belgian phone numbers and foreign ones written with +, cadastral references, Belgian street addresses and postal codes, company names by legal form (SRL, SA, ASBL…), IBAN, plus personal names. Amounts in €, dates, article references and roll numbers (RG) stay visible on purpose.",
       "tags": [
         "legal",
         "belgium",
@@ -370,6 +370,8 @@
         "citations",
         "conclusions",
         "bce",
+        "registre national",
+        "niss",
         "cadastre",
         "gdpr"
       ],

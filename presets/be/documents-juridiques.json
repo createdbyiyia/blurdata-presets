@@ -1,46 +1,58 @@
 {
   "id": "be.documents-juridiques",
-  "version": 2,
+  "version": 3,
   "name": "Belgian Legal Documents (FR)",
   "emoji": "🇧🇪",
-  "description": "Belgian legal documents in French (citations, conclusions, actes). Detects the BCE company number, cadastral references (division, section, parcelle), Belgian street addresses and postal codes, company names by legal form (SRL, SA, ASBL…), IBAN, plus personal names. Amounts in € are kept visible on purpose.",
+  "description": "Belgian legal documents in French (citations, conclusions, actes, contrats, devis, courriers). Detects the national register number (NN / NISS / BIS: 85.07.30-033.00 anywhere, 85073003300 after its label), the BCE / TVA company number in every form (0123.456.789, BE0123456789, 10 digits after BCE, TVA or n° d'entreprise), Belgian phone numbers and foreign ones written with +, cadastral references, Belgian street addresses and postal codes, company names by legal form (SRL, SA, ASBL…), IBAN, plus personal names. Amounts in €, dates, article references and roll numbers (RG) stay visible on purpose.",
   "language": "fr",
   "country": "BE",
-  "tags": ["legal", "belgium", "avocat", "citations", "conclusions", "bce", "cadastre", "gdpr"],
+  "tags": ["legal", "belgium", "avocat", "citations", "conclusions", "bce", "registre national", "niss", "cadastre", "gdpr"],
   "patterns": [
     {
+      "name": "NN",
+      "regex": "(?:(?=\\d{2}[. ]?(?:[024]\\d|[135][0-2])[. ]?(?:[0-2]\\d|3[01])(?:[ ]?[.\\-][ ]?|[ ])?\\d{3}(?:[ ]?[.\\-][ ]?|[ ])?\\d{2}(?!\\d))(?<=(?:\\bnational|\\bN\\.?N\\.?|\\bR\\.?R?\\.?N\\.?|\\bNRN|\\bNISS|\\bINSZ|\\bBIS|\\brijksregister(?:nummer|nr)?)\\.?(?:[ ]?(?:n[°o]|nr|num[ée]ro)\\.?)?[ \\t]{0,3}[:.]?[ \\t]{0,3})\\d{2}[. ]?(?:[024]\\d|[135][0-2])[. ]?(?:[0-2]\\d|3[01])(?:[ ]?[.\\-][ ]?|[ ])?\\d{3}(?:[ ]?[.\\-][ ]?|[ ])?\\d{2}|(?<![\\d.,/\\-])(?:\\d{2}\\.(?:[024]\\d|[135][0-2])\\.(?:[0-2]\\d|3[01])|\\d{2}[ ](?:[024]\\d|[135][0-2])[ ](?:[0-2]\\d|3[01])|\\d{2}(?:[024]\\d|[135][0-2])(?:[0-2]\\d|3[01]))(?:[ ]?[.\\-][ ]?|[ ])\\d{3}(?:[ ]?[.\\-][ ]?|[ ])\\d{2})(?![\\d]|[.,/\\-]\\d)",
+      "description": "National register number (numéro de registre national, NISS, INSZ) and BIS number: 85.07.30-033.00, 85 07 30 033 00, 850730-033-00 anywhere; 85073003300 after a label (NN, N.N., n° national, registre national, RN, NISS, INSZ, numéro BIS, rijksregisternummer).",
+      "enabled": true
+    },
+    {
       "name": "Numéro BCE / TVA",
-      "regex": "(?i)\\b(?:BE\\s?)?[01]\\d{3}[. ]\\d{3}[. ]\\d{3}\\b",
-      "description": "Banque-Carrefour des Entreprises number: 0xxx.xxx.xxx, optional BE prefix (TVA).",
+      "regex": "(?:\\bBE[ \\-]?(?:[01][. ]?)?\\d{3}[. ]?\\d{3}[. ]?\\d{3}|(?=[01]\\d{3}[. ]?\\d)(?<=(?:\\bBCE|\\bKBO|\\bTVA|\\bBTW|\\bRPM|\\bRPR|entreprise|\\bondernemingsnummer|\\bondernemingsnr|intracommunautaire)\\.?(?:[ \\-]?(?:n[°o]|nr|num[ée]ro|nummer)\\.?)?[ \\t]{0,3}[:.]?[ \\t]{0,3})[01]\\d{3}[. ]?\\d{3}[. ]?\\d{3}|(?<![\\w.,/+])(?!04[5-9]\\d[ ]\\d{3}[ ]\\d{3}(?!\\d))[01]\\d{3}[. ]\\d{3}[. ]\\d{3})(?![\\d]|[.,]\\d)",
+      "description": "Banque-Carrefour des Entreprises / KBO number: 0123.456.789 or 1042.891.837 anywhere, BE0123456789 or BE 0123.456.789 (TVA / BTW), 10 digits after BCE, KBO, TVA, BTW, RPM or n° d'entreprise.",
+      "enabled": true
+    },
+    {
+      "name": "Téléphone",
+      "regex": "(?:(?<![\\p{L}\\d+.,/\\-])(?<!\\d[ ])(?=(?:\\+|00)32|0[1-9])(?<!(?:\\bBE|\\bBCE|\\bKBO|\\bTVA|\\bBTW|\\bRPM|\\bRPR|entreprise|\\bondernemingsnummer|\\bondernemingsnr|intracommunautaire)\\.?(?:[ \\-]?(?:n[°o]|nr|num[ée]ro|nummer)\\.?)?[ \\t]{0,3}[:.]?[ \\t]{0,3})(?:(?:\\+|00)32\\)?[ ]?(?:\\(0\\)[ ]?)?|0(?!(?!4[5-9]\\d[ ]\\d{3}[ ]\\d{3}(?!\\d))\\d{3}[. ]\\d{3}[. ]\\d{3}(?!\\d)))(?=(?:[ ./\\-]{0,3}\\d){8,9}(?![ ./\\-]?\\d))(?:[1-9]\\d{7,8}|[1-9]\\d{0,2}(?:[ ]?[./\\-][ ]?|[ ])\\d{2,3}(?:[ .\\-]\\d{2,3}){1,3})|(?<![\\p{L}\\d+.,/\\-])\\+(?!32)[1-9]\\d{0,2}\\)?[ ]?(?:\\(0\\)[ ]?)?(?=(?:[ .\\-]?\\d){6,12}(?![ .\\-]?\\d))\\d{1,4}(?:[ .\\-/]?\\d{1,4}){1,5})(?![\\p{L}\\d]|[.,/\\-]\\d)",
+      "description": "Belgian phone numbers: 02 123 45 67, 010/45.67.89, 0475 12 34 56, +32 (0)2 123 45 67, +32 475 12 34 56, plus foreign numbers written with +.",
       "enabled": true
     },
     {
       "name": "Cadastre",
-      "regex": "(?i)\\b(?:division\\s+\\d{1,3}|section\\s+[A-Z](?![a-zà-ÿ])|parcelle\\s+n?[°o]?\\s*\\d{1,5}\\s?[a-zA-Z]?|n[°o]\\s*\\d{1,5}\\s?[a-zA-Z]\\b)",
+      "regex": "(?i)\\b(?:division[ \\t]+\\d{1,3}|section[ \\t]+(?-i:[A-Z])(?![\\p{L}'])|parcelle[ \\t]+n?[°o]?[ \\t]*\\d{1,5}(?:[ ]?(?-i:[A-Z])(?![\\p{L}])|[a-z](?![\\p{L}]))?|n[°o][ \\t]*\\d{1,5}(?:[ ]?(?-i:[A-Z])|[a-z])(?![\\p{L}\\d]))",
       "description": "Cadastral reference: division, section, parcelle or n° together with its number or letter.",
       "enabled": true
     },
     {
       "name": "Adresse",
-      "regex": "(?i)\\b(?:rue|avenue|av\\.|chauss[ée]e|boulevard|bd\\.?|place|quai|all[ée]e|impasse|square|chemin|clos|dr[èe]ve)\\s+(?:de\\s|du\\s|des\\s|de la\\s|d')?[A-ZÀ-Ÿ][\\w'À-ÿ.-]*(?:\\s+[\\w'À-ÿ.-]+){0,3},?\\s*\\d{1,4}\\b",
-      "description": "Belgian or French street address: street type + name + house number.",
+      "regex": "\\b(?:rue|avenue|av\\.|chauss[ée]e|boulevard|bd\\.?|place|quai|all[ée]e|impasse|square|chemin|clos|dr[èe]ve|route|sentier|esplanade|parvis|rond-point)[ \\t]+(?:(?:de|du|des|de la|aux|au|la|le|les)[ \\t]|d'|l')?(?-i:\\p{Lu})[\\w'À-ÿ.\\-]*(?:[ \\t]+(?:(?-i:\\p{Lu})|(?:de|du|des|la|le|les|aux|au|et|sur|sous|lez)(?![\\w'])|d'|l')[\\w'À-ÿ.\\-]*){0,3},?[ \\t]*\\d{1,4}(?!\\d)(?:[ ]?bis\\b|(?-i:[A-Z])\\b)?(?:[ ]?/[ ]?(?:b[ ]?)?\\d{1,3}\\b|,?[ ]+(?:bte|bo[îi]te|bt)\\.?[ ]?\\d{1,4}\\b)?",
+      "description": "Belgian or French street address: street type + name + house number (12A, 12 bis, 135/2, bte 4).",
       "enabled": true
     },
     {
       "name": "Code postal",
-      "regex": "(?-i)\\b[1-9]\\d{3}\\s+[A-ZÀ-Ÿ][\\wÀ-ÿ'-]+(?:-[A-ZÀ-Ÿ][\\wÀ-ÿ'-]+)?\\b",
+      "regex": "(?-i)\\b(?=[1-9]\\d{3}[ \\t]+\\p{Lu})(?<!\\d{4}[ ])(?<!(?i:\\bart\\.?|\\barticles?|\\ben|\\bdepuis|\\bdès|\\bann[ée]e|\\bavant|\\baprès|\\bfin|\\bd[ée]but|\\bexercice|janvier|f[ée]vrier|mars|avril|mai|juin|juillet|ao[ûu]t|septembre|octobre|novembre|d[ée]cembre)[ \\t]?)\\b[1-9]\\d{3}[ \\t]+\\p{Lu}[\\wÀ-ÿ'\\-]+(?:-\\p{Lu}[\\wÀ-ÿ'\\-]+)?\\b",
       "description": "Belgian 4-digit postal code followed by city name",
       "enabled": true
     },
     {
       "name": "Société",
-      "regex": "\\b[A-ZÀ-Ÿ][\\w'&À-ÿ.-]*(?:\\s+[\\w'&À-ÿ.-]+){0,4}\\s+(?:SRL|SPRL|SA|ASBL|SCS|SNC|SC|SCRL|BV|NV|VZW)\\b",
+      "regex": "(?-i)(?<![\\p{L}\\d])(?!(?:Entre|Pour|Par|Contre|Avec|Et|Ou|Chez|Selon|Vu|Attendu|Condamne|Concerne|Objet)[ \\t])(?!(?:La|Le|Les|L'|Une?|Cette|Ladite|Ledit|Notre|Votre|Leur|Sa|Son)[ \\t]+(?:SRL|SPRLU|SPRL|SA|ASBL|AISBL|SCS|SNC|SCRL|SComm|SCA|SC|BVBA|BV|NV|VZW|CommV|CVBA|S\\.R\\.L\\.|S\\.P\\.R\\.L\\.|S\\.A\\.|A\\.S\\.B\\.L\\.)(?![\\w]))\\p{Lu}[\\w'&À-ÿ.\\-]*(?:[ \\t]+(?:(?:de|du|des|la|le|les|et|en|sur|aux?)[ \\t]+)?(?!(?:SRL|SPRLU|SPRL|SA|ASBL|AISBL|SCS|SNC|SCRL|SComm|SCA|SC|BVBA|BV|NV|VZW|CommV|CVBA|S\\.R\\.L\\.|S\\.P\\.R\\.L\\.|S\\.A\\.|A\\.S\\.B\\.L\\.)(?![\\w]))(?:[\\p{Lu}\\d&]|d'|l')[\\w'&À-ÿ.\\-]*){0,4}[ \\t]+(?:SRL|SPRLU|SPRL|SA|ASBL|AISBL|SCS|SNC|SCRL|SComm|SCA|SC|BVBA|BV|NV|VZW|CommV|CVBA|S\\.R\\.L\\.|S\\.P\\.R\\.L\\.|S\\.A\\.|A\\.S\\.B\\.L\\.)(?![\\w])",
       "description": "Company name followed by a Belgian legal form (SRL, SA, ASBL, NV…)",
       "enabled": true
     },
     {
       "name": "IBAN",
-      "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?:\\s?[A-Z0-9]){11,30}\\b",
+      "regex": "(?-i)\\b[A-Z]{2}\\d{2}(?=(?:[ ]?[A-Z0-9]){11})(?:[ ]?[A-Z0-9]{4}){2,7}(?:[ ]?\\d{1,3})?(?![A-Z0-9])",
       "description": "International Bank Account Number, with or without spaces between groups.",
       "enabled": true
     }

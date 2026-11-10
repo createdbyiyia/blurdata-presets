@@ -28,7 +28,7 @@ The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user
 | 🚗 [German Führerschein](presets/de/fuehrerschein.json) | DE | German driving licence (Führerschein) copy. Detects the Führerscheinnummer, date and place of birth… |
 | 🪪 [Spanish DNI / NIE](presets/es/dni.json) | ES | Spanish ID (DNI) or foreigner ID (NIE) copy. Detects the DNI (8 digits + letter), NIE, the support number… |
 | 🧾 [Spanish Factura](presets/es/factura.json) | ES | Spanish invoice (factura). Detects NIF / CIF / DNI, IBAN, Spanish dates and phone numbers, plus names… |
-| 🇧🇪 [Belgian Legal Documents (FR)](presets/be/documents-juridiques.json) | BE | Belgian legal documents in French (citations, conclusions, actes). Detects the BCE company number, cadastral… |
+| 🇧🇪 [Belgian Legal Documents (FR)](presets/be/documents-juridiques.json) | BE | Belgian legal documents in French (citations, conclusions, actes, contrats, devis, courriers). Detects the national register number (NN / NISS / BIS), the BCE / TVA number in every form, Belgian phone numbers… |
 | 📈 [US Brokerage Account Statement](presets/us/brokerage-statement.json) | US | US individual brokerage account statement (Schwab, Fidelity, Vanguard, Merrill, Morgan Stanley, IBKR and… |
 | ⚖️ [German Court Order (Gerichtsbeschluss)](presets/de/gerichtsbeschluss.json) | DE | German court orders, decisions and judicial correspondence (Beschluss, Urteil, Verfügung). Detects… |
 | 🇨🇭 [Swiss Medical Records (Dossier médical)](presets/ch/medical-records.json) | CH | Swiss medical records in French, German or Italian: discharge letters, consultation reports, lab results… |
