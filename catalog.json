@@ -1,6 +1,6 @@
 {
-  "version": 50,
-  "updated": "2026-11-25T12:00",
+  "version": 51,
+  "updated": "2026-11-25T18:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -576,12 +576,12 @@
     },
     {
       "id": "de.medical-records",
-      "presetVersion": 1,
+      "presetVersion": 2,
       "name": "German Medical Records (Arztbrief, Befund)",
       "emoji": "🇩🇪",
       "language": "de",
       "country": "DE",
-      "description": "German medical documents: Arztbrief, Entlassungsbrief, Kurzarztbrief, Befundbericht, Laborbefund, Überweisungsschein (Muster 6), Reha-Entlassungsbericht, as text PDFs or scans. Detects the name of the patient and of relatives after their label (Patientin:, Name, Vorname:, Pat.:, Betr.:, Herr, Frau, Ehemann), also double-barrelled names with umlauts and particles (Müller-Lüdenscheidt, zu Hohenstetten, van der Heyde) and surname first; doctors' names after Dr. med., Prof., Dipl.-Med., OA or Chefärztin; the date of birth in every form (geb. am 03.07.1958, geb. 3.7.58, Geb.-Dat., *03.07.1958, (*1958), 3. Juli 1958); admission, discharge and other dates; the Krankenversichertennummer, the Rentenversicherungsnummer, case, patient and order numbers, LANR, BSNR and IK; German phone and fax numbers, street and house number, PLZ and town; plus e-mails and barcodes. Keeps diagnoses, ICD-10 codes, lab values, units and doses. Turn off Arzt to keep doctors' names visible, or Date to keep exam dates (dates of birth stay hidden). Limits: the clinic's own address in the letterhead is covered like the patient's (remove it with the X); on a form where the name sits under its printed label (Muster 6) the name may stay visible; handwritten signatures need a manual box.",
+      "description": "German medical documents: Arztbrief, Entlassungsbrief, Kurzarztbrief, Befundbericht, Laborbefund, Überweisungsschein (Muster 6), Reha-Entlassungsbericht, as text PDFs or scans. Detects the name of the patient and of relatives after their label (Patientin:, Name, Vorname:, Pat.:, Betr.:, Herr, Frau, Ehemann), also double-barrelled names with umlauts and particles (Müller-Lüdenscheidt, zu Hohenstetten, van der Heyde) and surname first; doctors' names after Dr. med., Prof., Dipl.-Med., OA or Chefärztin; the date of birth in every form (geb. am 03.07.1958, geb. 3.7.58, Geb.-Dat., *03.07.1958, (*1958), 3. Juli 1958), or only its day with Geburtsdatum: nur Tag (off by default: switch off Geburtsdatum with it); admission, discharge and other dates; the Krankenversichertennummer, the Rentenversicherungsnummer, case, patient and order numbers, LANR, BSNR and IK; German phone and fax numbers, street and house number, PLZ and town; plus e-mails and barcodes. Keeps diagnoses, ICD-10 codes, lab values, units and doses. Turn off Arzt to keep doctors' names visible, or Date to keep exam dates (dates of birth stay hidden). Limits: the clinic's own address in the letterhead is covered like the patient's (remove it with the X); on a form where the name sits under its printed label (Muster 6) the name may stay visible; handwritten signatures need a manual box.",
       "tags": [
         "medical",
         "healthcare",
