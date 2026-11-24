@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-10",
+  "updated": "2026-11-25",
   "about": "Signs of each document type, used by BlurData 1.6.3 and later to suggest a preset for an opened document. The check runs on the Mac: the app downloads this file, the document never leaves the Mac. A sign is a phrase typical of the document, matched as whole words, ignoring case, accents and punctuation; weight 1 (common), 2 (typical), 3 (distinctive). See CONTRIBUTING.md.",
   "thresholds": {
     "suggest": 5,
@@ -4213,6 +4213,126 @@
         },
         {
           "text": "cash basis",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "fr.demande-admission",
+      "label": {
+        "en": "a French admission request",
+        "de": "ein französischer Aufnahmeantrag",
+        "es": "una solicitud de admisión francesa",
+        "fr": "une demande d'admission en établissement de soins",
+        "it": "una domanda di ricovero francese"
+      },
+      "signs": [
+        {
+          "text": "demande d'admission",
+          "weight": 3
+        },
+        {
+          "text": "établissement de soins",
+          "weight": 2
+        },
+        {
+          "text": "unité receveuse",
+          "weight": 3
+        },
+        {
+          "text": "prescripteur",
+          "weight": 2
+        },
+        {
+          "text": "personne de confiance",
+          "weight": 2
+        },
+        {
+          "text": "personne ressource",
+          "weight": 3
+        },
+        {
+          "text": "à prévenir",
+          "weight": 1
+        },
+        {
+          "text": "adresse de domiciliation",
+          "weight": 3
+        },
+        {
+          "text": "adresse des soins",
+          "weight": 3
+        },
+        {
+          "text": "caisse d'affiliation",
+          "weight": 3
+        },
+        {
+          "text": "mutuelle complémentaire",
+          "weight": 2
+        },
+        {
+          "text": "référent actuel",
+          "weight": 3
+        },
+        {
+          "text": "médecin spécialiste à contacter",
+          "weight": 3
+        },
+        {
+          "text": "médecin responsable",
+          "weight": 1
+        },
+        {
+          "text": "médecin traitant",
+          "weight": 1
+        },
+        {
+          "text": "assistant social",
+          "weight": 2
+        },
+        {
+          "text": "assistante sociale",
+          "weight": 2
+        },
+        {
+          "text": "ViaTrajectoire",
+          "weight": 3
+        },
+        {
+          "text": "admission souhaitée",
+          "weight": 2
+        },
+        {
+          "text": "soins de suite",
+          "weight": 2
+        },
+        {
+          "text": "soins médicaux et de réadaptation",
+          "weight": 2
+        },
+        {
+          "text": "SMR",
+          "weight": 1
+        },
+        {
+          "text": "SSR",
+          "weight": 1
+        },
+        {
+          "text": "USLD",
+          "weight": 2
+        },
+        {
+          "text": "GIR",
+          "weight": 1
+        },
+        {
+          "text": "projet de sortie",
+          "weight": 1
+        },
+        {
+          "text": "sécurité sociale",
           "weight": 1
         }
       ]

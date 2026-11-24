@@ -6,7 +6,7 @@ A preset is a JSON file describing which detectors should run on a specific type
 
 The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user opens **Browse Community Presets**. After download, each preset is cached locally and works fully offline.
 
-## Available presets (34)
+## Available presets (35)
 
 | Preset | Country | Detects |
 |---|---|---|
@@ -44,12 +44,13 @@ The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user
 | 🩺 [Patient Details Only](presets/generic/patient-details-only.json) | — | Covers only the patient's own details after their labels (Patient Name, Patient Address, Patient ID, Hospital No., IHI, MRN, Date of Birth); the clinic, GP and doctors stay readable… |
 | 🇦🇺 [Australian Medical Records](presets/au/medical-records.json) | AU | Australian hospital, GP, specialist and pathology records. Detects DVA file numbers, Medicare numbers with the IRN, the IHI, UR and MRN numbers, the date of birth, postcodes after the state, Australian phone numbers… |
 | 🇺🇸 [US Tax Returns (1040, 1120, 1120-S, 1065)](presets/us/tax-returns.json) | US | US federal income tax returns and CPA financial statements: Form 1040 and Schedule C, Form 1120, 1120-S and 1065 with the K-1, P&L and balance sheet. Hides SSN, EIN, PTIN, names, business names and addresses; amounts and line numbers stay readable… |
+| 🇫🇷 [French Admission Request (Demande d'admission)](presets/fr/demande-admission.json) | FR | French requests for admission to a care facility (SMR / SSR, HAD, USLD, EHPAD, ViaTrajectoire). Hides the patient, relatives, doctors and care team, addresses, phones, NIR, caisse, mutuelle and IDs; the dossier number keeps its last 3 digits… |
 
 ## What you can anonymize, in your language
 
 - 🇮🇹 **Italiano**: anonimizzazione di sentenze, atti giudiziari, atti notarili, buste paga, fatture e visure. Rileva codice fiscale, partita IVA, dati catastali (foglio, particella, subalterno), targhe, IBAN e date.
 - 🇩🇪 **Deutsch**: Lohnabrechnungen, Rechnungen, Kontoauszüge, Personalausweis, Führerschein, Gerichtsbeschlüsse, Werkstattaufträge sowie Arztbriefe, Entlassungsbriefe, Befundberichte und Laborbefunde schwärzen. Erkennt Steuer-ID, Rentenversicherungsnummer, Krankenversicherungsnummer, LANR, BSNR, IK, USt-IdNr, Ausweisnummer, IBAN, Kfz-Kennzeichen, FIN (nur die letzten 6 Stellen), Patientennamen mit Namenszusätzen (von, zu, van der), Geburtsdaten und Datumsangaben.
-- 🇫🇷 **Français**: anonymiser et caviarder un bulletin de paie, une facture ou un avis d'impôt (France), des documents juridiques belges et des dossiers médicaux suisses. Détecte le NIR (numéro de sécurité sociale), SIRET, SIREN, TVA intracommunautaire, numéro fiscal, numéro AVS, numéro BCE, références cadastrales, adresses et IBAN.
+- 🇫🇷 **Français**: anonymiser et caviarder un bulletin de paie, une facture, un avis d'impôt ou une demande d'admission en établissement de soins (France), des documents juridiques belges et des dossiers médicaux suisses. Détecte le NIR (numéro de sécurité sociale), SIRET, SIREN, TVA intracommunautaire, numéro fiscal, numéro AVS, numéro BCE, références cadastrales, adresses et IBAN, et dans une demande d'admission le patient, ses proches, les médecins, la caisse, la mutuelle et le numéro de dossier (sauf ses 3 derniers chiffres).
 - 🇪🇸 **Español**: anonimizar DNI, NIE y facturas. Detecta DNI, NIE, NIF/CIF, IBAN, teléfonos y fechas.
 - 🇵🇹 **Português**: anonimizar registos médicos: boletins de análises clínicas, notas de alta, relatórios clínicos e de imagiologia, guias de tratamento da receita sem papel e atestados médicos. Deteta nomes de doentes e médicos, data de nascimento, número de utente do SNS, NIF, NISS, Cartão de Cidadão, números ADSE, SAMS e de seguros, processo e episódio, código de acesso e de opção da receita, cédula profissional, moradas, códigos postais e telefones.
 - 🇬🇧 **English**: redact payslips, W-2s, broker tax statements (Consolidated 1099), invoices, bank and brokerage statements, medical records, adult social care records (Care Act assessments, support plans, Direct Payments) and court documents. Detects SSN, EIN, National Insurance and NHS numbers, IBAN, routing and account numbers, card numbers and dates.

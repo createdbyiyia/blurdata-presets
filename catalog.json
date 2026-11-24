@@ -1,6 +1,6 @@
 {
-  "version": 49,
-  "updated": "2026-11-10T16:30",
+  "version": 50,
+  "updated": "2026-11-25T12:00",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
   "presets": [
     {
@@ -751,6 +751,38 @@
       ],
       "path": "presets/us/tax-returns.json",
       "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/us/tax-returns.json"
+    },
+    {
+      "id": "fr.demande-admission",
+      "presetVersion": 1,
+      "name": "French Admission Request (Demande d'admission)",
+      "emoji": "🇫🇷",
+      "language": "fr",
+      "country": "FR",
+      "description": "French requests for admission to a care facility (demande d'admission en établissement de soins: SMR / SSR, HAD, USLD, EHPAD; ViaTrajectoire and in-house forms), made to anonymize a request before an AI checks it against the receiving unit's admission criteria. Hides every identifying field, also on two-column rows and with the label above the value: the patient's name (the civility stays), place of birth and the day and month of birth (the year stays so the age is known), home and care addresses, postal code and town, phones, e-mail, the trusted person and the relatives to contact (their relation stays: fils, fille, épouse), the GP, the specialist to contact, the responsible doctor, the cadre de santé and the social worker, the prescriber, the receiving unit, the current establishment and unit, the NIR (numéro de sécurité sociale) with its key, the caisse d'affiliation, the mutuelle and its member number, IPP, NDA, RPPS, FINESS and other IDs. The dossier number is hidden except its last 3 digits (2024-00157 shows 157). In the free text, names after M., Mme, Dr, Pr, née, épouse or a relation (sa fille Sophie) and street addresses are hidden too. Keeps what the criteria check needs: diagnoses and history, disease names (Parkinson, Alzheimer), treatments and doses, lab values, scores (GIR, MMSE, Barthel), age, sex, the dates of surgery, stay and admission, care needs and the discharge plan. Limits: on a scan, a value printed under its label is hidden only when it is a name after M., Mme or Dr, a phone, a NIR, a street or a postal code and town; on a scan the edge of the dossier box can cover part of the first kept digit, and the Markdown export replaces a dossier number written in one block with its label; handwriting is covered only when the scan text reads it; signatures are covered by the Signatures detector (BlurData 1.6.5 and later). Turn on Names in the side panel to also catch a name written alone in the text (it can hide disease names such as Parkinson too).",
+      "tags": [
+        "france",
+        "medical",
+        "demande d'admission",
+        "admission",
+        "établissement de soins",
+        "SMR",
+        "SSR",
+        "HAD",
+        "USLD",
+        "EHPAD",
+        "ViaTrajectoire",
+        "patient",
+        "NIR",
+        "sécurité sociale",
+        "mutuelle",
+        "anonymiser",
+        "pseudonymiser",
+        "RGPD",
+        "IA"
+      ],
+      "path": "presets/fr/demande-admission.json",
+      "url": "https://raw.githubusercontent.com/createdbyiyia/blurdata-presets/main/presets/fr/demande-admission.json"
     }
   ],
   "recognition": {
