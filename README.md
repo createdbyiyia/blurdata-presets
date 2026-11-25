@@ -6,7 +6,7 @@ A preset is a JSON file describing which detectors should run on a specific type
 
 The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user opens **Browse Community Presets**. After download, each preset is cached locally and works fully offline.
 
-## Available presets (35)
+## Available presets (36)
 
 | Preset | Country | Detects |
 |---|---|---|
@@ -45,6 +45,7 @@ The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user
 | 🇦🇺 [Australian Medical Records](presets/au/medical-records.json) | AU | Australian hospital, GP, specialist and pathology records. Detects DVA file numbers, Medicare numbers with the IRN, the IHI, UR and MRN numbers, the date of birth, postcodes after the state, Australian phone numbers… |
 | 🇺🇸 [US Tax Returns (1040, 1120, 1120-S, 1065)](presets/us/tax-returns.json) | US | US federal income tax returns and CPA financial statements: Form 1040 and Schedule C, Form 1120, 1120-S and 1065 with the K-1, P&L and balance sheet. Hides SSN, EIN, PTIN, names, business names and addresses; amounts and line numbers stay readable… |
 | 🇫🇷 [French Admission Request (Demande d'admission)](presets/fr/demande-admission.json) | FR | French requests for admission to a care facility (SMR / SSR, HAD, USLD, EHPAD, ViaTrajectoire). Hides the patient, relatives, doctors and care team, addresses, phones, NIR, caisse, mutuelle and IDs; the dossier number keeps its last 3 digits… |
+| 🏦 [US Bank Statement](presets/us/bank-statement.json) | US | US checking, savings and credit union statements, also business, church and nonprofit accounts, with the check images and deposited items. Hides the routing number, account numbers after the product name, in headers and masked, the MICR line, the account holder (people, churches, businesses), the mailing address and phones; amounts, dates and descriptions stay readable… |
 
 ## What you can anonymize, in your language
 
@@ -53,7 +54,7 @@ The BlurData app fetches [`catalog.json`](catalog.json) at runtime when the user
 - 🇫🇷 **Français**: anonymiser et caviarder un bulletin de paie, une facture, un avis d'impôt ou une demande d'admission en établissement de soins (France), des documents juridiques belges et des dossiers médicaux suisses. Détecte le NIR (numéro de sécurité sociale), SIRET, SIREN, TVA intracommunautaire, numéro fiscal, numéro AVS, numéro BCE, références cadastrales, adresses et IBAN, et dans une demande d'admission le patient, ses proches, les médecins, la caisse, la mutuelle et le numéro de dossier (sauf ses 3 derniers chiffres).
 - 🇪🇸 **Español**: anonimizar DNI, NIE y facturas. Detecta DNI, NIE, NIF/CIF, IBAN, teléfonos y fechas.
 - 🇵🇹 **Português**: anonimizar registos médicos: boletins de análises clínicas, notas de alta, relatórios clínicos e de imagiologia, guias de tratamento da receita sem papel e atestados médicos. Deteta nomes de doentes e médicos, data de nascimento, número de utente do SNS, NIF, NISS, Cartão de Cidadão, números ADSE, SAMS e de seguros, processo e episódio, código de acesso e de opção da receita, cédula profissional, moradas, códigos postais e telefones.
-- 🇬🇧 **English**: redact payslips, W-2s, broker tax statements (Consolidated 1099), invoices, bank and brokerage statements, medical records, adult social care records (Care Act assessments, support plans, Direct Payments) and court documents. Detects SSN, EIN, National Insurance and NHS numbers, IBAN, routing and account numbers, card numbers and dates.
+- 🇬🇧 **English**: redact payslips, W-2s, broker tax statements (Consolidated 1099), invoices, bank statements (also US statements with check images and MICR lines) and brokerage statements, medical records, adult social care records (Care Act assessments, support plans, Direct Payments) and court documents. Detects SSN, EIN, National Insurance and NHS numbers, IBAN, routing and account numbers, card numbers and dates.
 
 Every preset works with both modes of the app: **Redact** removes the data from the file for good, **Pseudonymize** swaps it for consistent labels ([PERSON_1], [IBAN_1]…) so the document keeps its meaning for an AI, and can be saved as Markdown.
 

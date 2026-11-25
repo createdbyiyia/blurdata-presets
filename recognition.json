@@ -184,6 +184,222 @@
       ]
     },
     {
+      "id": "us.bank-statement",
+      "refines": [
+        "generic.bank-statement"
+      ],
+      "autoApply": false,
+      "label": {
+        "en": "a US bank statement",
+        "de": "ein US-Kontoauszug",
+        "es": "un extracto bancario de EE. UU.",
+        "fr": "un relevé bancaire américain",
+        "it": "un estratto conto USA"
+      },
+      "signs": [
+        {
+          "text": "member fdic",
+          "weight": 3
+        },
+        {
+          "text": "equal housing lender",
+          "weight": 2
+        },
+        {
+          "text": "federally insured by ncua",
+          "weight": 3
+        },
+        {
+          "text": "routing number",
+          "weight": 2
+        },
+        {
+          "text": "aba routing",
+          "weight": 2
+        },
+        {
+          "text": "statement period",
+          "weight": 3
+        },
+        {
+          "text": "beginning balance",
+          "weight": 2
+        },
+        {
+          "text": "ending balance",
+          "weight": 2
+        },
+        {
+          "text": "daily ending balance",
+          "weight": 2
+        },
+        {
+          "text": "daily balance",
+          "weight": 2
+        },
+        {
+          "text": "deposits and other additions",
+          "weight": 3
+        },
+        {
+          "text": "withdrawals and other subtractions",
+          "weight": 3
+        },
+        {
+          "text": "deposits and additions",
+          "weight": 2
+        },
+        {
+          "text": "deposits and other credits",
+          "weight": 2
+        },
+        {
+          "text": "withdrawals and other debits",
+          "weight": 2
+        },
+        {
+          "text": "electronic withdrawals",
+          "weight": 2
+        },
+        {
+          "text": "atm debit card withdrawals",
+          "weight": 2
+        },
+        {
+          "text": "deposits and credits",
+          "weight": 2
+        },
+        {
+          "text": "withdrawals and debits",
+          "weight": 2
+        },
+        {
+          "text": "checks paid",
+          "weight": 2
+        },
+        {
+          "text": "checks and other debits",
+          "weight": 2
+        },
+        {
+          "text": "check images",
+          "weight": 2
+        },
+        {
+          "text": "deposited items",
+          "weight": 2
+        },
+        {
+          "text": "deposit ticket",
+          "weight": 1
+        },
+        {
+          "text": "pay to the order of",
+          "weight": 1
+        },
+        {
+          "text": "small business checking",
+          "weight": 2
+        },
+        {
+          "text": "business checking",
+          "weight": 2
+        },
+        {
+          "text": "share draft",
+          "weight": 2
+        },
+        {
+          "text": "annual percentage yield earned",
+          "weight": 3
+        },
+        {
+          "text": "average ledger balance",
+          "weight": 2
+        },
+        {
+          "text": "monthly service fee",
+          "weight": 2
+        },
+        {
+          "text": "service charges",
+          "weight": 1
+        },
+        {
+          "text": "ppd id",
+          "weight": 2
+        },
+        {
+          "text": "ccd id",
+          "weight": 2
+        },
+        {
+          "text": "ach",
+          "weight": 1
+        },
+        {
+          "text": "zelle",
+          "weight": 1
+        },
+        {
+          "text": "mobile deposit",
+          "weight": 1
+        },
+        {
+          "text": "online transfer",
+          "weight": 1
+        },
+        {
+          "text": "purchase authorized on",
+          "weight": 2
+        },
+        {
+          "text": "direct deposit",
+          "weight": 1
+        },
+        {
+          "text": "debit card",
+          "weight": 1
+        },
+        {
+          "text": "checking",
+          "weight": 1
+        },
+        {
+          "text": "savings",
+          "weight": 1
+        },
+        {
+          "text": "overdraft",
+          "weight": 1
+        },
+        {
+          "text": "account summary",
+          "weight": 1
+        },
+        {
+          "text": "bank statement",
+          "weight": 2
+        },
+        {
+          "text": "account statement",
+          "weight": 2
+        },
+        {
+          "text": "activity summary",
+          "weight": 1
+        },
+        {
+          "text": "deposits credits",
+          "weight": 2
+        },
+        {
+          "text": "withdrawals debits",
+          "weight": 2
+        }
+      ]
+    },
+    {
       "id": "us.brokerage-statement",
       "refines": [
         "generic.bank-statement"
