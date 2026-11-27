@@ -1,7 +1,10 @@
 {
-  "version": 52,
-  "updated": "2026-11-25T23:30",
+  "version": 53,
+  "updated": "2026-11-27T13:30",
   "schema": "https://github.com/createdbyiyia/blurdata-presets/blob/main/CONTRIBUTING.md",
+  "appWindows": {
+    "minimumVersion": "1.7.2"
+  },
   "presets": [
     {
       "id": "de.lohnabrechnung",
