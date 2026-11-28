@@ -1,6 +1,6 @@
 {
   "id": "us.common-surnames",
-  "version": 3,
+  "version": 4,
   "name": "Common Surnames (US + Canada)",
   "emoji": "🌎",
   "description": "Opt-in preset that hides the top 10389 most common surnames across the US and Canada — covers ~70% of the US population (US Census 2010 top 10k) plus curated French-Canadian, Scottish/Irish-Canadian, Asian-Canadian, and Eastern European immigrant surnames very common in Canadian rosters and reservation lists. False positives are expected on common-word surnames (Brown, Green, Stone, etc.) — that's the tradeoff for opt-in coverage when your document is mostly names.",
@@ -24,13 +24,13 @@
     }
   ],
   "builtin": {
-    "email": false,
-    "name": false,
-    "address": false,
-    "ip": false,
-    "url": false,
-    "amount": false,
-    "accountNumber": false,
-    "licensePlate": false
+    "email": null,
+    "name": null,
+    "address": null,
+    "ip": null,
+    "url": null,
+    "amount": null,
+    "accountNumber": null,
+    "licensePlate": null
   }
 }
